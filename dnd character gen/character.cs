@@ -69,10 +69,17 @@ namespace dnd_character_gen {
             intelligence = statArray[3];
             wisdom = statArray[4];
             charisma = statArray[5];
+
+            strengthModifier = calculateStatModifier(strength);
+            dexterityModifier = calculateStatModifier(dexterity);
+            constitutionModifier = calculateStatModifier(constitution);
+            intelligenceModifier = calculateStatModifier(intelligence);
+            wisdomModifier = calculateStatModifier(wisdom);
+            charismaModifier = calculateStatModifier(charisma);
         }
 
-        public void calculateStatModifier(int stat) {
-            int modifier = 0; //TODO calculate modifiers for all stats.. make reusable code
+        private int calculateStatModifier(int stat) {
+            int modifier = 0;
             if (stat == 1) {
                 modifier = -5;
             }
@@ -106,6 +113,7 @@ namespace dnd_character_gen {
             if (stat == 20 || stat == 21) {
                 modifier = 5;
             }
+            return modifier;
         }
     }
 }

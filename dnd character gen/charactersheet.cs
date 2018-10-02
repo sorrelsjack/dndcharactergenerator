@@ -44,6 +44,13 @@ namespace dnd_character_gen {
             intelligenceValueTextBox.Text = currentCharacter.intelligence.ToString();
             wisdomValueTextBox.Text = currentCharacter.wisdom.ToString();
             charismaValueTextBox.Text = currentCharacter.charisma.ToString();
+
+            strengthModifierTextBox.Text = currentCharacter.strengthModifier.ToString();
+            dexterityModifierTextBox.Text = currentCharacter.dexterityModifier.ToString();
+            constitutionModifierTextBox.Text = currentCharacter.constitutionModifier.ToString();
+            intelligenceModifierTextBox.Text = currentCharacter.intelligenceModifier.ToString();
+            wisdomModifierTextBox.Text = currentCharacter.wisdomModifier.ToString();
+            charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
         }
     }
 }
