@@ -13,7 +13,11 @@ namespace dnd_character_gen {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new charactersheet());
+            //TODO talk to SQL DB
+            //TODO change connection string for friends
+            //TODO run SQL scripts upon getting the software
+            //TODO source character name from API
         }
     }
 }
