@@ -18,6 +18,7 @@ namespace dnd_character_gen {
             //TODO change connection string for friends
             //TODO run SQL scripts upon getting the software
             //TODO source character name from API
+            //TODO ask user if they want to save upon quit
         }
     }
 }

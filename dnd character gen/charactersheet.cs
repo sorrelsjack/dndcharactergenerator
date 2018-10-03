@@ -13,30 +13,19 @@ using System.Windows.Forms;
 namespace dnd_character_gen {
     public partial class charactersheet : Form {
         character currentCharacter = new character();
+
         public charactersheet() {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void characterNameLabel_Click(object sender, EventArgs e) {
-
-        }
-
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
-
         }
 
         private void charactersheet_Load(object sender, EventArgs e) {
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
             playerNameTextBox.Text = currentCharacter.playerName.ToString();
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
+
         }
 
         private void statsButton_Click(object sender, EventArgs e) {
@@ -56,11 +45,8 @@ namespace dnd_character_gen {
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
         }
 
-        private void wisdomSavingThrowLabel_Click(object sender, EventArgs e) {
-
-        }
-
         private void rollButton_Click(object sender, EventArgs e) {
+            //TODO make new class for these sorts of buttons?
             SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\MANYDICE.WAV");
             diceSound.Play();
 

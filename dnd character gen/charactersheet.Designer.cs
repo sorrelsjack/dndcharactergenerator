@@ -250,7 +250,6 @@
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Background";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -260,7 +259,6 @@
             this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Class / Level";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // xpTextBox
             // 
@@ -312,7 +310,6 @@
             this.characterNameLabel.Size = new System.Drawing.Size(111, 17);
             this.characterNameLabel.TabIndex = 1;
             this.characterNameLabel.Text = "Character Name";
-            this.characterNameLabel.Click += new System.EventHandler(this.characterNameLabel_Click);
             // 
             // characterNameTextBox
             // 
@@ -853,7 +850,6 @@
             this.wisdomSavingThrowLabel.Size = new System.Drawing.Size(58, 17);
             this.wisdomSavingThrowLabel.TabIndex = 5;
             this.wisdomSavingThrowLabel.Text = "Wisdom";
-            this.wisdomSavingThrowLabel.Click += new System.EventHandler(this.wisdomSavingThrowLabel_Click);
             // 
             // intelligenceSavingThrowLabel
             // 

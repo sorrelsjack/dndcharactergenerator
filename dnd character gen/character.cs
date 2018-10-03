@@ -10,10 +10,10 @@ namespace dnd_character_gen {
         public string adventureClass;
         public int level = 1; //All DnD characters start at Level 1.
         public string background;
-        public string playerName = Environment.UserName;
-        public string race; //TODO class for each race?
+        public string playerName = Environment.UserName; //But what if they're not running a Windows machine? TODO maybe account for this.
+        public string race;
         public string alignment;
-        public int xp = 0;
+        public int xp = 0; //Default amount of XP is 0.
 
         public int strength { get; private set; }
         public int dexterity { get; private set; }
@@ -162,7 +162,7 @@ namespace dnd_character_gen {
             for (int i = 0; i < 6; i++) {
                 statArray[i] = generateStat();
             }
-            strength = statArray[0]; //TODO optomise for each class
+            strength = statArray[0]; //TODO optomize for each class.. Prioritize certain stats for certain classes.
             dexterity = statArray[1];
             constitution = statArray[2];
             intelligence = statArray[3];
