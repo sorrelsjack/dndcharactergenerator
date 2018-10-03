@@ -80,40 +80,55 @@
             this.strengthModifierTextBox = new System.Windows.Forms.TextBox();
             this.statsButton = new System.Windows.Forms.Button();
             this.proficiencyBonusPanel = new System.Windows.Forms.Panel();
-            this.savingThrowsPanel = new System.Windows.Forms.Panel();
-            this.skillsPanel = new System.Windows.Forms.Panel();
-            this.hitPanel = new System.Windows.Forms.Panel();
-            this.personalityPanel = new System.Windows.Forms.Panel();
-            this.proficiencyLabel = new System.Windows.Forms.Label();
             this.proficiencyTextBox = new System.Windows.Forms.TextBox();
-            this.savingThrowsLabel = new System.Windows.Forms.Label();
-            this.strengthSavingThrowLabel = new System.Windows.Forms.Label();
-            this.dexteritySavingThrowLabel = new System.Windows.Forms.Label();
-            this.constitutionSavingThrowLabel = new System.Windows.Forms.Label();
-            this.intelligenceSavingThrowLabel = new System.Windows.Forms.Label();
-            this.wisdomSavingThrowLabel = new System.Windows.Forms.Label();
-            this.charismaSavingThrowLabel = new System.Windows.Forms.Label();
-            this.strengthSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.strengthSavingThrowTextBox = new System.Windows.Forms.TextBox();
-            this.charismaSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.wisdomSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.intelligenceSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.constitutionSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.dexteritySavingThrowCheckBox = new System.Windows.Forms.CheckBox();
-            this.wisdomSavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.proficiencyLabel = new System.Windows.Forms.Label();
+            this.savingThrowsPanel = new System.Windows.Forms.Panel();
             this.charismaSavingThrowTextBox = new System.Windows.Forms.TextBox();
-            this.intelligenceSavingThrowTextBox = new System.Windows.Forms.TextBox();
-            this.dexteritySavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.wisdomSavingThrowTextBox = new System.Windows.Forms.TextBox();
             this.constitutionSavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.intelligenceSavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.dexteritySavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.dexteritySavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.constitutionSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.intelligenceSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.wisdomSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.charismaSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.strengthSavingThrowTextBox = new System.Windows.Forms.TextBox();
+            this.strengthSavingThrowCheckBox = new System.Windows.Forms.CheckBox();
+            this.charismaSavingThrowLabel = new System.Windows.Forms.Label();
+            this.wisdomSavingThrowLabel = new System.Windows.Forms.Label();
+            this.intelligenceSavingThrowLabel = new System.Windows.Forms.Label();
+            this.constitutionSavingThrowLabel = new System.Windows.Forms.Label();
+            this.dexteritySavingThrowLabel = new System.Windows.Forms.Label();
+            this.strengthSavingThrowLabel = new System.Windows.Forms.Label();
+            this.savingThrowsLabel = new System.Windows.Forms.Label();
+            this.skillsPanel = new System.Windows.Forms.Panel();
             this.skillsLabel = new System.Windows.Forms.Label();
-            this.personalityTraitsTextBox = new System.Windows.Forms.RichTextBox();
-            this.personalityTraitsLabel = new System.Windows.Forms.Label();
-            this.idealsTextBox = new System.Windows.Forms.RichTextBox();
-            this.bondsTextBox = new System.Windows.Forms.RichTextBox();
-            this.flawsTextBox = new System.Windows.Forms.RichTextBox();
-            this.idealsLabel = new System.Windows.Forms.Label();
-            this.bondsLabel = new System.Windows.Forms.Label();
+            this.hitPanel = new System.Windows.Forms.Panel();
+            this.deathSavesPanel = new System.Windows.Forms.Panel();
+            this.deathSavesLabel = new System.Windows.Forms.Label();
+            this.hitDicePanel = new System.Windows.Forms.Panel();
+            this.hitDiceTextBox = new System.Windows.Forms.TextBox();
+            this.totalHitDiceTextBox = new System.Windows.Forms.TextBox();
+            this.totalHitDiceLabel = new System.Windows.Forms.Label();
+            this.hitDiceLabel = new System.Windows.Forms.Label();
+            this.temporaryHitPointsPanel = new System.Windows.Forms.Panel();
+            this.temporaryHitPointsTextBox = new System.Windows.Forms.TextBox();
+            this.temporaryHitPointsLabel = new System.Windows.Forms.Label();
+            this.currentHitPointsPanel = new System.Windows.Forms.Panel();
+            this.currentHitPointsTextBox = new System.Windows.Forms.TextBox();
+            this.hitPointMaximumTextBox = new System.Windows.Forms.TextBox();
+            this.hitPointMaximumLabel = new System.Windows.Forms.Label();
+            this.currentHitPointsLabel = new System.Windows.Forms.Label();
+            this.personalityPanel = new System.Windows.Forms.Panel();
             this.flawsLabel = new System.Windows.Forms.Label();
+            this.bondsLabel = new System.Windows.Forms.Label();
+            this.idealsLabel = new System.Windows.Forms.Label();
+            this.flawsTextBox = new System.Windows.Forms.RichTextBox();
+            this.bondsTextBox = new System.Windows.Forms.RichTextBox();
+            this.idealsTextBox = new System.Windows.Forms.RichTextBox();
+            this.personalityTraitsLabel = new System.Windows.Forms.Label();
+            this.personalityTraitsTextBox = new System.Windows.Forms.RichTextBox();
             this.passivePerceptionPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.passivePerceptionLabel = new System.Windows.Forms.Label();
@@ -125,6 +140,15 @@
             this.featuresTraitsLabel = new System.Windows.Forms.Label();
             this.equipmentPanel = new System.Windows.Forms.Panel();
             this.equipmentLabel = new System.Windows.Forms.Label();
+            this.successesLabel = new System.Windows.Forms.Label();
+            this.failuresLabel = new System.Windows.Forms.Label();
+            this.proficiencesLanguagesTextBox = new System.Windows.Forms.RichTextBox();
+            this.armorClassPanel = new System.Windows.Forms.Panel();
+            this.initiativePanel = new System.Windows.Forms.Panel();
+            this.speedPanel = new System.Windows.Forms.Panel();
+            this.speedLabel = new System.Windows.Forms.Label();
+            this.initiativeLabel = new System.Windows.Forms.Label();
+            this.armorClassLabel = new System.Windows.Forms.Label();
             this.basicInfoPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statsPanel.SuspendLayout();
@@ -143,17 +167,25 @@
             this.proficiencyBonusPanel.SuspendLayout();
             this.savingThrowsPanel.SuspendLayout();
             this.skillsPanel.SuspendLayout();
+            this.hitPanel.SuspendLayout();
+            this.deathSavesPanel.SuspendLayout();
+            this.hitDicePanel.SuspendLayout();
+            this.temporaryHitPointsPanel.SuspendLayout();
+            this.currentHitPointsPanel.SuspendLayout();
             this.personalityPanel.SuspendLayout();
             this.passivePerceptionPanel.SuspendLayout();
             this.attacksSpellcastingPanel.SuspendLayout();
             this.proficiencesLanguagesPanel.SuspendLayout();
             this.featuresTraitsPanel.SuspendLayout();
             this.equipmentPanel.SuspendLayout();
+            this.armorClassPanel.SuspendLayout();
+            this.initiativePanel.SuspendLayout();
+            this.speedPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // basicInfoPanel
             // 
-            this.basicInfoPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.basicInfoPanel.BackColor = System.Drawing.Color.LightGray;
             this.basicInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.basicInfoPanel.Controls.Add(this.label6);
             this.basicInfoPanel.Controls.Add(this.label5);
@@ -273,7 +305,7 @@
             // characterNameLabel
             // 
             this.characterNameLabel.AutoSize = true;
-            this.characterNameLabel.Location = new System.Drawing.Point(132, 99);
+            this.characterNameLabel.Location = new System.Drawing.Point(132, 102);
             this.characterNameLabel.Name = "characterNameLabel";
             this.characterNameLabel.Size = new System.Drawing.Size(111, 17);
             this.characterNameLabel.TabIndex = 1;
@@ -282,9 +314,10 @@
             // 
             // characterNameTextBox
             // 
-            this.characterNameTextBox.Location = new System.Drawing.Point(29, 65);
+            this.characterNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.characterNameTextBox.Location = new System.Drawing.Point(29, 37);
             this.characterNameTextBox.Name = "characterNameTextBox";
-            this.characterNameTextBox.Size = new System.Drawing.Size(343, 22);
+            this.characterNameTextBox.Size = new System.Drawing.Size(343, 61);
             this.characterNameTextBox.TabIndex = 2;
             // 
             // menuStrip1
@@ -351,7 +384,7 @@
             // 
             // statsPanel
             // 
-            this.statsPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.statsPanel.BackColor = System.Drawing.Color.LightGray;
             this.statsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.statsPanel.Controls.Add(this.charismaPanel);
             this.statsPanel.Controls.Add(this.wisdomPanel);
@@ -371,7 +404,7 @@
             this.charismaPanel.Controls.Add(this.charismaValueTextBox);
             this.charismaPanel.Controls.Add(this.charismaLabel);
             this.charismaPanel.Controls.Add(this.charismaModifierPanel);
-            this.charismaPanel.Location = new System.Drawing.Point(25, 913);
+            this.charismaPanel.Location = new System.Drawing.Point(25, 943);
             this.charismaPanel.Name = "charismaPanel";
             this.charismaPanel.Size = new System.Drawing.Size(136, 138);
             this.charismaPanel.TabIndex = 8;
@@ -418,7 +451,7 @@
             this.wisdomPanel.Controls.Add(this.wisdomValueTextBox);
             this.wisdomPanel.Controls.Add(this.wisdomLabel);
             this.wisdomPanel.Controls.Add(this.wisdomModifierPanel);
-            this.wisdomPanel.Location = new System.Drawing.Point(25, 739);
+            this.wisdomPanel.Location = new System.Drawing.Point(25, 769);
             this.wisdomPanel.Name = "wisdomPanel";
             this.wisdomPanel.Size = new System.Drawing.Size(136, 138);
             this.wisdomPanel.TabIndex = 8;
@@ -465,7 +498,7 @@
             this.intelligencePanel.Controls.Add(this.intelligenceValueTextBox);
             this.intelligencePanel.Controls.Add(this.intelligenceLabel);
             this.intelligencePanel.Controls.Add(this.intelligenceModifierPanel);
-            this.intelligencePanel.Location = new System.Drawing.Point(25, 564);
+            this.intelligencePanel.Location = new System.Drawing.Point(25, 594);
             this.intelligencePanel.Name = "intelligencePanel";
             this.intelligencePanel.Size = new System.Drawing.Size(136, 138);
             this.intelligencePanel.TabIndex = 8;
@@ -512,7 +545,7 @@
             this.constitutionPanel.Controls.Add(this.constitutionValueTextBox);
             this.constitutionPanel.Controls.Add(this.constitutionLabel);
             this.constitutionPanel.Controls.Add(this.constitutionModifierPanel);
-            this.constitutionPanel.Location = new System.Drawing.Point(25, 390);
+            this.constitutionPanel.Location = new System.Drawing.Point(25, 420);
             this.constitutionPanel.Name = "constitutionPanel";
             this.constitutionPanel.Size = new System.Drawing.Size(136, 138);
             this.constitutionPanel.TabIndex = 8;
@@ -559,7 +592,7 @@
             this.dexterityPanel.Controls.Add(this.dexterityValueTextBox);
             this.dexterityPanel.Controls.Add(this.dexterityLabel);
             this.dexterityPanel.Controls.Add(this.dexterityModifierPanel);
-            this.dexterityPanel.Location = new System.Drawing.Point(25, 211);
+            this.dexterityPanel.Location = new System.Drawing.Point(25, 241);
             this.dexterityPanel.Name = "dexterityPanel";
             this.dexterityPanel.Size = new System.Drawing.Size(136, 138);
             this.dexterityPanel.TabIndex = 7;
@@ -606,7 +639,7 @@
             this.strengthPanel.Controls.Add(this.strengthValueTextBox);
             this.strengthPanel.Controls.Add(this.strengthLabel);
             this.strengthPanel.Controls.Add(this.strengthModifierPanel);
-            this.strengthPanel.Location = new System.Drawing.Point(25, 30);
+            this.strengthPanel.Location = new System.Drawing.Point(25, 60);
             this.strengthPanel.Name = "strengthPanel";
             this.strengthPanel.Size = new System.Drawing.Size(136, 138);
             this.strengthPanel.TabIndex = 6;
@@ -668,6 +701,23 @@
             this.proficiencyBonusPanel.Size = new System.Drawing.Size(165, 60);
             this.proficiencyBonusPanel.TabIndex = 6;
             // 
+            // proficiencyTextBox
+            // 
+            this.proficiencyTextBox.Location = new System.Drawing.Point(4, 18);
+            this.proficiencyTextBox.Name = "proficiencyTextBox";
+            this.proficiencyTextBox.Size = new System.Drawing.Size(29, 22);
+            this.proficiencyTextBox.TabIndex = 1;
+            this.proficiencyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // proficiencyLabel
+            // 
+            this.proficiencyLabel.AutoSize = true;
+            this.proficiencyLabel.Location = new System.Drawing.Point(39, 21);
+            this.proficiencyLabel.Name = "proficiencyLabel";
+            this.proficiencyLabel.Size = new System.Drawing.Size(121, 17);
+            this.proficiencyLabel.TabIndex = 0;
+            this.proficiencyLabel.Text = "Proficiency Bonus";
+            // 
             // savingThrowsPanel
             // 
             this.savingThrowsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -695,6 +745,166 @@
             this.savingThrowsPanel.Size = new System.Drawing.Size(165, 203);
             this.savingThrowsPanel.TabIndex = 7;
             // 
+            // charismaSavingThrowTextBox
+            // 
+            this.charismaSavingThrowTextBox.Location = new System.Drawing.Point(25, 146);
+            this.charismaSavingThrowTextBox.Name = "charismaSavingThrowTextBox";
+            this.charismaSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.charismaSavingThrowTextBox.TabIndex = 12;
+            // 
+            // wisdomSavingThrowTextBox
+            // 
+            this.wisdomSavingThrowTextBox.Location = new System.Drawing.Point(25, 121);
+            this.wisdomSavingThrowTextBox.Name = "wisdomSavingThrowTextBox";
+            this.wisdomSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.wisdomSavingThrowTextBox.TabIndex = 11;
+            // 
+            // constitutionSavingThrowTextBox
+            // 
+            this.constitutionSavingThrowTextBox.Location = new System.Drawing.Point(25, 64);
+            this.constitutionSavingThrowTextBox.Name = "constitutionSavingThrowTextBox";
+            this.constitutionSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.constitutionSavingThrowTextBox.TabIndex = 15;
+            // 
+            // intelligenceSavingThrowTextBox
+            // 
+            this.intelligenceSavingThrowTextBox.Location = new System.Drawing.Point(25, 92);
+            this.intelligenceSavingThrowTextBox.Name = "intelligenceSavingThrowTextBox";
+            this.intelligenceSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.intelligenceSavingThrowTextBox.TabIndex = 13;
+            // 
+            // dexteritySavingThrowCheckBox
+            // 
+            this.dexteritySavingThrowCheckBox.AutoSize = true;
+            this.dexteritySavingThrowCheckBox.Location = new System.Drawing.Point(4, 38);
+            this.dexteritySavingThrowCheckBox.Name = "dexteritySavingThrowCheckBox";
+            this.dexteritySavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.dexteritySavingThrowCheckBox.TabIndex = 13;
+            this.dexteritySavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dexteritySavingThrowTextBox
+            // 
+            this.dexteritySavingThrowTextBox.Location = new System.Drawing.Point(25, 35);
+            this.dexteritySavingThrowTextBox.Name = "dexteritySavingThrowTextBox";
+            this.dexteritySavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.dexteritySavingThrowTextBox.TabIndex = 14;
+            // 
+            // constitutionSavingThrowCheckBox
+            // 
+            this.constitutionSavingThrowCheckBox.AutoSize = true;
+            this.constitutionSavingThrowCheckBox.Location = new System.Drawing.Point(4, 67);
+            this.constitutionSavingThrowCheckBox.Name = "constitutionSavingThrowCheckBox";
+            this.constitutionSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.constitutionSavingThrowCheckBox.TabIndex = 12;
+            this.constitutionSavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // intelligenceSavingThrowCheckBox
+            // 
+            this.intelligenceSavingThrowCheckBox.AutoSize = true;
+            this.intelligenceSavingThrowCheckBox.Location = new System.Drawing.Point(4, 95);
+            this.intelligenceSavingThrowCheckBox.Name = "intelligenceSavingThrowCheckBox";
+            this.intelligenceSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.intelligenceSavingThrowCheckBox.TabIndex = 11;
+            this.intelligenceSavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // wisdomSavingThrowCheckBox
+            // 
+            this.wisdomSavingThrowCheckBox.AutoSize = true;
+            this.wisdomSavingThrowCheckBox.Location = new System.Drawing.Point(4, 124);
+            this.wisdomSavingThrowCheckBox.Name = "wisdomSavingThrowCheckBox";
+            this.wisdomSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.wisdomSavingThrowCheckBox.TabIndex = 10;
+            this.wisdomSavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // charismaSavingThrowCheckBox
+            // 
+            this.charismaSavingThrowCheckBox.AutoSize = true;
+            this.charismaSavingThrowCheckBox.Location = new System.Drawing.Point(4, 149);
+            this.charismaSavingThrowCheckBox.Name = "charismaSavingThrowCheckBox";
+            this.charismaSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.charismaSavingThrowCheckBox.TabIndex = 9;
+            this.charismaSavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // strengthSavingThrowTextBox
+            // 
+            this.strengthSavingThrowTextBox.Location = new System.Drawing.Point(25, 7);
+            this.strengthSavingThrowTextBox.Name = "strengthSavingThrowTextBox";
+            this.strengthSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
+            this.strengthSavingThrowTextBox.TabIndex = 8;
+            // 
+            // strengthSavingThrowCheckBox
+            // 
+            this.strengthSavingThrowCheckBox.AutoSize = true;
+            this.strengthSavingThrowCheckBox.Location = new System.Drawing.Point(4, 10);
+            this.strengthSavingThrowCheckBox.Name = "strengthSavingThrowCheckBox";
+            this.strengthSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.strengthSavingThrowCheckBox.TabIndex = 7;
+            this.strengthSavingThrowCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // charismaSavingThrowLabel
+            // 
+            this.charismaSavingThrowLabel.AutoSize = true;
+            this.charismaSavingThrowLabel.Location = new System.Drawing.Point(54, 149);
+            this.charismaSavingThrowLabel.Name = "charismaSavingThrowLabel";
+            this.charismaSavingThrowLabel.Size = new System.Drawing.Size(67, 17);
+            this.charismaSavingThrowLabel.TabIndex = 6;
+            this.charismaSavingThrowLabel.Text = "Charisma";
+            // 
+            // wisdomSavingThrowLabel
+            // 
+            this.wisdomSavingThrowLabel.AutoSize = true;
+            this.wisdomSavingThrowLabel.Location = new System.Drawing.Point(54, 124);
+            this.wisdomSavingThrowLabel.Name = "wisdomSavingThrowLabel";
+            this.wisdomSavingThrowLabel.Size = new System.Drawing.Size(58, 17);
+            this.wisdomSavingThrowLabel.TabIndex = 5;
+            this.wisdomSavingThrowLabel.Text = "Wisdom";
+            this.wisdomSavingThrowLabel.Click += new System.EventHandler(this.wisdomSavingThrowLabel_Click);
+            // 
+            // intelligenceSavingThrowLabel
+            // 
+            this.intelligenceSavingThrowLabel.AutoSize = true;
+            this.intelligenceSavingThrowLabel.Location = new System.Drawing.Point(57, 95);
+            this.intelligenceSavingThrowLabel.Name = "intelligenceSavingThrowLabel";
+            this.intelligenceSavingThrowLabel.Size = new System.Drawing.Size(79, 17);
+            this.intelligenceSavingThrowLabel.TabIndex = 4;
+            this.intelligenceSavingThrowLabel.Text = "Intelligence";
+            // 
+            // constitutionSavingThrowLabel
+            // 
+            this.constitutionSavingThrowLabel.AutoSize = true;
+            this.constitutionSavingThrowLabel.Location = new System.Drawing.Point(54, 67);
+            this.constitutionSavingThrowLabel.Name = "constitutionSavingThrowLabel";
+            this.constitutionSavingThrowLabel.Size = new System.Drawing.Size(82, 17);
+            this.constitutionSavingThrowLabel.TabIndex = 3;
+            this.constitutionSavingThrowLabel.Text = "Constitution";
+            // 
+            // dexteritySavingThrowLabel
+            // 
+            this.dexteritySavingThrowLabel.AutoSize = true;
+            this.dexteritySavingThrowLabel.Location = new System.Drawing.Point(54, 38);
+            this.dexteritySavingThrowLabel.Name = "dexteritySavingThrowLabel";
+            this.dexteritySavingThrowLabel.Size = new System.Drawing.Size(63, 17);
+            this.dexteritySavingThrowLabel.TabIndex = 2;
+            this.dexteritySavingThrowLabel.Text = "Dexterity";
+            // 
+            // strengthSavingThrowLabel
+            // 
+            this.strengthSavingThrowLabel.AutoSize = true;
+            this.strengthSavingThrowLabel.Location = new System.Drawing.Point(54, 10);
+            this.strengthSavingThrowLabel.Name = "strengthSavingThrowLabel";
+            this.strengthSavingThrowLabel.Size = new System.Drawing.Size(62, 17);
+            this.strengthSavingThrowLabel.TabIndex = 1;
+            this.strengthSavingThrowLabel.Text = "Strength";
+            // 
+            // savingThrowsLabel
+            // 
+            this.savingThrowsLabel.AutoSize = true;
+            this.savingThrowsLabel.Location = new System.Drawing.Point(31, 180);
+            this.savingThrowsLabel.Name = "savingThrowsLabel";
+            this.savingThrowsLabel.Size = new System.Drawing.Size(101, 17);
+            this.savingThrowsLabel.TabIndex = 0;
+            this.savingThrowsLabel.Text = "Saving Throws";
+            // 
             // skillsPanel
             // 
             this.skillsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -704,18 +914,172 @@
             this.skillsPanel.Size = new System.Drawing.Size(165, 844);
             this.skillsPanel.TabIndex = 8;
             // 
+            // skillsLabel
+            // 
+            this.skillsLabel.AutoSize = true;
+            this.skillsLabel.Location = new System.Drawing.Point(54, 812);
+            this.skillsLabel.Name = "skillsLabel";
+            this.skillsLabel.Size = new System.Drawing.Size(40, 17);
+            this.skillsLabel.TabIndex = 0;
+            this.skillsLabel.Text = "Skills";
+            // 
             // hitPanel
             // 
-            this.hitPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.hitPanel.BackColor = System.Drawing.Color.LightGray;
             this.hitPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hitPanel.Controls.Add(this.speedPanel);
+            this.hitPanel.Controls.Add(this.initiativePanel);
+            this.hitPanel.Controls.Add(this.armorClassPanel);
+            this.hitPanel.Controls.Add(this.deathSavesPanel);
+            this.hitPanel.Controls.Add(this.hitDicePanel);
+            this.hitPanel.Controls.Add(this.temporaryHitPointsPanel);
+            this.hitPanel.Controls.Add(this.currentHitPointsPanel);
             this.hitPanel.Location = new System.Drawing.Point(418, 173);
             this.hitPanel.Name = "hitPanel";
             this.hitPanel.Size = new System.Drawing.Size(300, 550);
             this.hitPanel.TabIndex = 9;
             // 
+            // deathSavesPanel
+            // 
+            this.deathSavesPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.deathSavesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.deathSavesPanel.Controls.Add(this.failuresLabel);
+            this.deathSavesPanel.Controls.Add(this.successesLabel);
+            this.deathSavesPanel.Controls.Add(this.deathSavesLabel);
+            this.deathSavesPanel.Location = new System.Drawing.Point(152, 432);
+            this.deathSavesPanel.Name = "deathSavesPanel";
+            this.deathSavesPanel.Size = new System.Drawing.Size(128, 100);
+            this.deathSavesPanel.TabIndex = 16;
+            // 
+            // deathSavesLabel
+            // 
+            this.deathSavesLabel.AutoSize = true;
+            this.deathSavesLabel.Location = new System.Drawing.Point(19, 73);
+            this.deathSavesLabel.Name = "deathSavesLabel";
+            this.deathSavesLabel.Size = new System.Drawing.Size(89, 17);
+            this.deathSavesLabel.TabIndex = 0;
+            this.deathSavesLabel.Text = "Death Saves";
+            // 
+            // hitDicePanel
+            // 
+            this.hitDicePanel.BackColor = System.Drawing.SystemColors.Control;
+            this.hitDicePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hitDicePanel.Controls.Add(this.hitDiceTextBox);
+            this.hitDicePanel.Controls.Add(this.totalHitDiceTextBox);
+            this.hitDicePanel.Controls.Add(this.totalHitDiceLabel);
+            this.hitDicePanel.Controls.Add(this.hitDiceLabel);
+            this.hitDicePanel.Location = new System.Drawing.Point(18, 432);
+            this.hitDicePanel.Name = "hitDicePanel";
+            this.hitDicePanel.Size = new System.Drawing.Size(128, 100);
+            this.hitDicePanel.TabIndex = 5;
+            // 
+            // hitDiceTextBox
+            // 
+            this.hitDiceTextBox.Location = new System.Drawing.Point(14, 48);
+            this.hitDiceTextBox.Name = "hitDiceTextBox";
+            this.hitDiceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.hitDiceTextBox.TabIndex = 3;
+            // 
+            // totalHitDiceTextBox
+            // 
+            this.totalHitDiceTextBox.Location = new System.Drawing.Point(56, 11);
+            this.totalHitDiceTextBox.Name = "totalHitDiceTextBox";
+            this.totalHitDiceTextBox.Size = new System.Drawing.Size(58, 22);
+            this.totalHitDiceTextBox.TabIndex = 2;
+            // 
+            // totalHitDiceLabel
+            // 
+            this.totalHitDiceLabel.AutoSize = true;
+            this.totalHitDiceLabel.Location = new System.Drawing.Point(10, 11);
+            this.totalHitDiceLabel.Name = "totalHitDiceLabel";
+            this.totalHitDiceLabel.Size = new System.Drawing.Size(40, 17);
+            this.totalHitDiceLabel.TabIndex = 1;
+            this.totalHitDiceLabel.Text = "Total";
+            // 
+            // hitDiceLabel
+            // 
+            this.hitDiceLabel.AutoSize = true;
+            this.hitDiceLabel.Location = new System.Drawing.Point(35, 73);
+            this.hitDiceLabel.Name = "hitDiceLabel";
+            this.hitDiceLabel.Size = new System.Drawing.Size(57, 17);
+            this.hitDiceLabel.TabIndex = 0;
+            this.hitDiceLabel.Text = "Hit Dice";
+            // 
+            // temporaryHitPointsPanel
+            // 
+            this.temporaryHitPointsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.temporaryHitPointsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.temporaryHitPointsPanel.Controls.Add(this.temporaryHitPointsTextBox);
+            this.temporaryHitPointsPanel.Controls.Add(this.temporaryHitPointsLabel);
+            this.temporaryHitPointsPanel.Location = new System.Drawing.Point(24, 270);
+            this.temporaryHitPointsPanel.Name = "temporaryHitPointsPanel";
+            this.temporaryHitPointsPanel.Size = new System.Drawing.Size(251, 131);
+            this.temporaryHitPointsPanel.TabIndex = 4;
+            // 
+            // temporaryHitPointsTextBox
+            // 
+            this.temporaryHitPointsTextBox.Location = new System.Drawing.Point(74, 62);
+            this.temporaryHitPointsTextBox.Name = "temporaryHitPointsTextBox";
+            this.temporaryHitPointsTextBox.Size = new System.Drawing.Size(100, 22);
+            this.temporaryHitPointsTextBox.TabIndex = 3;
+            // 
+            // temporaryHitPointsLabel
+            // 
+            this.temporaryHitPointsLabel.AutoSize = true;
+            this.temporaryHitPointsLabel.Location = new System.Drawing.Point(54, 105);
+            this.temporaryHitPointsLabel.Name = "temporaryHitPointsLabel";
+            this.temporaryHitPointsLabel.Size = new System.Drawing.Size(141, 17);
+            this.temporaryHitPointsLabel.TabIndex = 0;
+            this.temporaryHitPointsLabel.Text = "Temporary Hit Points";
+            // 
+            // currentHitPointsPanel
+            // 
+            this.currentHitPointsPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.currentHitPointsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.currentHitPointsPanel.Controls.Add(this.currentHitPointsTextBox);
+            this.currentHitPointsPanel.Controls.Add(this.hitPointMaximumTextBox);
+            this.currentHitPointsPanel.Controls.Add(this.hitPointMaximumLabel);
+            this.currentHitPointsPanel.Controls.Add(this.currentHitPointsLabel);
+            this.currentHitPointsPanel.Location = new System.Drawing.Point(24, 127);
+            this.currentHitPointsPanel.Name = "currentHitPointsPanel";
+            this.currentHitPointsPanel.Size = new System.Drawing.Size(251, 131);
+            this.currentHitPointsPanel.TabIndex = 0;
+            // 
+            // currentHitPointsTextBox
+            // 
+            this.currentHitPointsTextBox.Location = new System.Drawing.Point(74, 62);
+            this.currentHitPointsTextBox.Name = "currentHitPointsTextBox";
+            this.currentHitPointsTextBox.Size = new System.Drawing.Size(100, 22);
+            this.currentHitPointsTextBox.TabIndex = 3;
+            // 
+            // hitPointMaximumTextBox
+            // 
+            this.hitPointMaximumTextBox.Location = new System.Drawing.Point(133, 10);
+            this.hitPointMaximumTextBox.Name = "hitPointMaximumTextBox";
+            this.hitPointMaximumTextBox.Size = new System.Drawing.Size(100, 22);
+            this.hitPointMaximumTextBox.TabIndex = 2;
+            // 
+            // hitPointMaximumLabel
+            // 
+            this.hitPointMaximumLabel.AutoSize = true;
+            this.hitPointMaximumLabel.Location = new System.Drawing.Point(4, 10);
+            this.hitPointMaximumLabel.Name = "hitPointMaximumLabel";
+            this.hitPointMaximumLabel.Size = new System.Drawing.Size(123, 17);
+            this.hitPointMaximumLabel.TabIndex = 1;
+            this.hitPointMaximumLabel.Text = "Hit Point Maximum";
+            // 
+            // currentHitPointsLabel
+            // 
+            this.currentHitPointsLabel.AutoSize = true;
+            this.currentHitPointsLabel.Location = new System.Drawing.Point(64, 101);
+            this.currentHitPointsLabel.Name = "currentHitPointsLabel";
+            this.currentHitPointsLabel.Size = new System.Drawing.Size(119, 17);
+            this.currentHitPointsLabel.TabIndex = 0;
+            this.currentHitPointsLabel.Text = "Current Hit Points";
+            // 
             // personalityPanel
             // 
-            this.personalityPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.personalityPanel.BackColor = System.Drawing.Color.LightGray;
             this.personalityPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.personalityPanel.Controls.Add(this.flawsLabel);
             this.personalityPanel.Controls.Add(this.bondsLabel);
@@ -730,245 +1094,14 @@
             this.personalityPanel.Size = new System.Drawing.Size(300, 550);
             this.personalityPanel.TabIndex = 10;
             // 
-            // proficiencyLabel
+            // flawsLabel
             // 
-            this.proficiencyLabel.AutoSize = true;
-            this.proficiencyLabel.Location = new System.Drawing.Point(39, 21);
-            this.proficiencyLabel.Name = "proficiencyLabel";
-            this.proficiencyLabel.Size = new System.Drawing.Size(121, 17);
-            this.proficiencyLabel.TabIndex = 0;
-            this.proficiencyLabel.Text = "Proficiency Bonus";
-            // 
-            // proficiencyTextBox
-            // 
-            this.proficiencyTextBox.Location = new System.Drawing.Point(4, 18);
-            this.proficiencyTextBox.Name = "proficiencyTextBox";
-            this.proficiencyTextBox.Size = new System.Drawing.Size(29, 22);
-            this.proficiencyTextBox.TabIndex = 1;
-            this.proficiencyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // savingThrowsLabel
-            // 
-            this.savingThrowsLabel.AutoSize = true;
-            this.savingThrowsLabel.Location = new System.Drawing.Point(31, 180);
-            this.savingThrowsLabel.Name = "savingThrowsLabel";
-            this.savingThrowsLabel.Size = new System.Drawing.Size(101, 17);
-            this.savingThrowsLabel.TabIndex = 0;
-            this.savingThrowsLabel.Text = "Saving Throws";
-            // 
-            // strengthSavingThrowLabel
-            // 
-            this.strengthSavingThrowLabel.AutoSize = true;
-            this.strengthSavingThrowLabel.Location = new System.Drawing.Point(54, 10);
-            this.strengthSavingThrowLabel.Name = "strengthSavingThrowLabel";
-            this.strengthSavingThrowLabel.Size = new System.Drawing.Size(62, 17);
-            this.strengthSavingThrowLabel.TabIndex = 1;
-            this.strengthSavingThrowLabel.Text = "Strength";
-            // 
-            // dexteritySavingThrowLabel
-            // 
-            this.dexteritySavingThrowLabel.AutoSize = true;
-            this.dexteritySavingThrowLabel.Location = new System.Drawing.Point(54, 38);
-            this.dexteritySavingThrowLabel.Name = "dexteritySavingThrowLabel";
-            this.dexteritySavingThrowLabel.Size = new System.Drawing.Size(63, 17);
-            this.dexteritySavingThrowLabel.TabIndex = 2;
-            this.dexteritySavingThrowLabel.Text = "Dexterity";
-            // 
-            // constitutionSavingThrowLabel
-            // 
-            this.constitutionSavingThrowLabel.AutoSize = true;
-            this.constitutionSavingThrowLabel.Location = new System.Drawing.Point(54, 67);
-            this.constitutionSavingThrowLabel.Name = "constitutionSavingThrowLabel";
-            this.constitutionSavingThrowLabel.Size = new System.Drawing.Size(82, 17);
-            this.constitutionSavingThrowLabel.TabIndex = 3;
-            this.constitutionSavingThrowLabel.Text = "Constitution";
-            // 
-            // intelligenceSavingThrowLabel
-            // 
-            this.intelligenceSavingThrowLabel.AutoSize = true;
-            this.intelligenceSavingThrowLabel.Location = new System.Drawing.Point(57, 95);
-            this.intelligenceSavingThrowLabel.Name = "intelligenceSavingThrowLabel";
-            this.intelligenceSavingThrowLabel.Size = new System.Drawing.Size(79, 17);
-            this.intelligenceSavingThrowLabel.TabIndex = 4;
-            this.intelligenceSavingThrowLabel.Text = "Intelligence";
-            // 
-            // wisdomSavingThrowLabel
-            // 
-            this.wisdomSavingThrowLabel.AutoSize = true;
-            this.wisdomSavingThrowLabel.Location = new System.Drawing.Point(54, 124);
-            this.wisdomSavingThrowLabel.Name = "wisdomSavingThrowLabel";
-            this.wisdomSavingThrowLabel.Size = new System.Drawing.Size(58, 17);
-            this.wisdomSavingThrowLabel.TabIndex = 5;
-            this.wisdomSavingThrowLabel.Text = "Wisdom";
-            this.wisdomSavingThrowLabel.Click += new System.EventHandler(this.wisdomSavingThrowLabel_Click);
-            // 
-            // charismaSavingThrowLabel
-            // 
-            this.charismaSavingThrowLabel.AutoSize = true;
-            this.charismaSavingThrowLabel.Location = new System.Drawing.Point(54, 149);
-            this.charismaSavingThrowLabel.Name = "charismaSavingThrowLabel";
-            this.charismaSavingThrowLabel.Size = new System.Drawing.Size(67, 17);
-            this.charismaSavingThrowLabel.TabIndex = 6;
-            this.charismaSavingThrowLabel.Text = "Charisma";
-            // 
-            // strengthSavingThrowCheckBox
-            // 
-            this.strengthSavingThrowCheckBox.AutoSize = true;
-            this.strengthSavingThrowCheckBox.Location = new System.Drawing.Point(4, 10);
-            this.strengthSavingThrowCheckBox.Name = "strengthSavingThrowCheckBox";
-            this.strengthSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.strengthSavingThrowCheckBox.TabIndex = 7;
-            this.strengthSavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // strengthSavingThrowTextBox
-            // 
-            this.strengthSavingThrowTextBox.Location = new System.Drawing.Point(25, 7);
-            this.strengthSavingThrowTextBox.Name = "strengthSavingThrowTextBox";
-            this.strengthSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.strengthSavingThrowTextBox.TabIndex = 8;
-            // 
-            // charismaSavingThrowCheckBox
-            // 
-            this.charismaSavingThrowCheckBox.AutoSize = true;
-            this.charismaSavingThrowCheckBox.Location = new System.Drawing.Point(4, 149);
-            this.charismaSavingThrowCheckBox.Name = "charismaSavingThrowCheckBox";
-            this.charismaSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.charismaSavingThrowCheckBox.TabIndex = 9;
-            this.charismaSavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // wisdomSavingThrowCheckBox
-            // 
-            this.wisdomSavingThrowCheckBox.AutoSize = true;
-            this.wisdomSavingThrowCheckBox.Location = new System.Drawing.Point(4, 124);
-            this.wisdomSavingThrowCheckBox.Name = "wisdomSavingThrowCheckBox";
-            this.wisdomSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.wisdomSavingThrowCheckBox.TabIndex = 10;
-            this.wisdomSavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // intelligenceSavingThrowCheckBox
-            // 
-            this.intelligenceSavingThrowCheckBox.AutoSize = true;
-            this.intelligenceSavingThrowCheckBox.Location = new System.Drawing.Point(4, 95);
-            this.intelligenceSavingThrowCheckBox.Name = "intelligenceSavingThrowCheckBox";
-            this.intelligenceSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.intelligenceSavingThrowCheckBox.TabIndex = 11;
-            this.intelligenceSavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // constitutionSavingThrowCheckBox
-            // 
-            this.constitutionSavingThrowCheckBox.AutoSize = true;
-            this.constitutionSavingThrowCheckBox.Location = new System.Drawing.Point(4, 67);
-            this.constitutionSavingThrowCheckBox.Name = "constitutionSavingThrowCheckBox";
-            this.constitutionSavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.constitutionSavingThrowCheckBox.TabIndex = 12;
-            this.constitutionSavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // dexteritySavingThrowCheckBox
-            // 
-            this.dexteritySavingThrowCheckBox.AutoSize = true;
-            this.dexteritySavingThrowCheckBox.Location = new System.Drawing.Point(4, 38);
-            this.dexteritySavingThrowCheckBox.Name = "dexteritySavingThrowCheckBox";
-            this.dexteritySavingThrowCheckBox.Size = new System.Drawing.Size(18, 17);
-            this.dexteritySavingThrowCheckBox.TabIndex = 13;
-            this.dexteritySavingThrowCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // wisdomSavingThrowTextBox
-            // 
-            this.wisdomSavingThrowTextBox.Location = new System.Drawing.Point(25, 121);
-            this.wisdomSavingThrowTextBox.Name = "wisdomSavingThrowTextBox";
-            this.wisdomSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.wisdomSavingThrowTextBox.TabIndex = 11;
-            // 
-            // charismaSavingThrowTextBox
-            // 
-            this.charismaSavingThrowTextBox.Location = new System.Drawing.Point(25, 146);
-            this.charismaSavingThrowTextBox.Name = "charismaSavingThrowTextBox";
-            this.charismaSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.charismaSavingThrowTextBox.TabIndex = 12;
-            // 
-            // intelligenceSavingThrowTextBox
-            // 
-            this.intelligenceSavingThrowTextBox.Location = new System.Drawing.Point(25, 92);
-            this.intelligenceSavingThrowTextBox.Name = "intelligenceSavingThrowTextBox";
-            this.intelligenceSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.intelligenceSavingThrowTextBox.TabIndex = 13;
-            // 
-            // dexteritySavingThrowTextBox
-            // 
-            this.dexteritySavingThrowTextBox.Location = new System.Drawing.Point(25, 35);
-            this.dexteritySavingThrowTextBox.Name = "dexteritySavingThrowTextBox";
-            this.dexteritySavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.dexteritySavingThrowTextBox.TabIndex = 14;
-            // 
-            // constitutionSavingThrowTextBox
-            // 
-            this.constitutionSavingThrowTextBox.Location = new System.Drawing.Point(25, 64);
-            this.constitutionSavingThrowTextBox.Name = "constitutionSavingThrowTextBox";
-            this.constitutionSavingThrowTextBox.Size = new System.Drawing.Size(25, 22);
-            this.constitutionSavingThrowTextBox.TabIndex = 15;
-            // 
-            // skillsLabel
-            // 
-            this.skillsLabel.AutoSize = true;
-            this.skillsLabel.Location = new System.Drawing.Point(54, 812);
-            this.skillsLabel.Name = "skillsLabel";
-            this.skillsLabel.Size = new System.Drawing.Size(40, 17);
-            this.skillsLabel.TabIndex = 0;
-            this.skillsLabel.Text = "Skills";
-            // 
-            // personalityTraitsTextBox
-            // 
-            this.personalityTraitsTextBox.Location = new System.Drawing.Point(21, 30);
-            this.personalityTraitsTextBox.Name = "personalityTraitsTextBox";
-            this.personalityTraitsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.personalityTraitsTextBox.Size = new System.Drawing.Size(255, 96);
-            this.personalityTraitsTextBox.TabIndex = 0;
-            this.personalityTraitsTextBox.Text = "";
-            // 
-            // personalityTraitsLabel
-            // 
-            this.personalityTraitsLabel.AutoSize = true;
-            this.personalityTraitsLabel.Location = new System.Drawing.Point(89, 134);
-            this.personalityTraitsLabel.Name = "personalityTraitsLabel";
-            this.personalityTraitsLabel.Size = new System.Drawing.Size(118, 17);
-            this.personalityTraitsLabel.TabIndex = 1;
-            this.personalityTraitsLabel.Text = "Personality Traits";
-            // 
-            // idealsTextBox
-            // 
-            this.idealsTextBox.Location = new System.Drawing.Point(21, 154);
-            this.idealsTextBox.Name = "idealsTextBox";
-            this.idealsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.idealsTextBox.Size = new System.Drawing.Size(255, 96);
-            this.idealsTextBox.TabIndex = 2;
-            this.idealsTextBox.Text = "";
-            // 
-            // bondsTextBox
-            // 
-            this.bondsTextBox.Location = new System.Drawing.Point(21, 280);
-            this.bondsTextBox.Name = "bondsTextBox";
-            this.bondsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.bondsTextBox.Size = new System.Drawing.Size(255, 96);
-            this.bondsTextBox.TabIndex = 3;
-            this.bondsTextBox.Text = "";
-            // 
-            // flawsTextBox
-            // 
-            this.flawsTextBox.Location = new System.Drawing.Point(21, 402);
-            this.flawsTextBox.Name = "flawsTextBox";
-            this.flawsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.flawsTextBox.Size = new System.Drawing.Size(255, 96);
-            this.flawsTextBox.TabIndex = 4;
-            this.flawsTextBox.Text = "";
-            // 
-            // idealsLabel
-            // 
-            this.idealsLabel.AutoSize = true;
-            this.idealsLabel.Location = new System.Drawing.Point(125, 260);
-            this.idealsLabel.Name = "idealsLabel";
-            this.idealsLabel.Size = new System.Drawing.Size(45, 17);
-            this.idealsLabel.TabIndex = 5;
-            this.idealsLabel.Text = "Ideals";
+            this.flawsLabel.AutoSize = true;
+            this.flawsLabel.Location = new System.Drawing.Point(122, 506);
+            this.flawsLabel.Name = "flawsLabel";
+            this.flawsLabel.Size = new System.Drawing.Size(43, 17);
+            this.flawsLabel.TabIndex = 7;
+            this.flawsLabel.Text = "Flaws";
             // 
             // bondsLabel
             // 
@@ -979,14 +1112,63 @@
             this.bondsLabel.TabIndex = 6;
             this.bondsLabel.Text = "Bonds";
             // 
-            // flawsLabel
+            // idealsLabel
             // 
-            this.flawsLabel.AutoSize = true;
-            this.flawsLabel.Location = new System.Drawing.Point(122, 506);
-            this.flawsLabel.Name = "flawsLabel";
-            this.flawsLabel.Size = new System.Drawing.Size(43, 17);
-            this.flawsLabel.TabIndex = 7;
-            this.flawsLabel.Text = "Flaws";
+            this.idealsLabel.AutoSize = true;
+            this.idealsLabel.Location = new System.Drawing.Point(125, 260);
+            this.idealsLabel.Name = "idealsLabel";
+            this.idealsLabel.Size = new System.Drawing.Size(45, 17);
+            this.idealsLabel.TabIndex = 5;
+            this.idealsLabel.Text = "Ideals";
+            // 
+            // flawsTextBox
+            // 
+            this.flawsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.flawsTextBox.Location = new System.Drawing.Point(21, 402);
+            this.flawsTextBox.Name = "flawsTextBox";
+            this.flawsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.flawsTextBox.Size = new System.Drawing.Size(255, 96);
+            this.flawsTextBox.TabIndex = 4;
+            this.flawsTextBox.Text = "";
+            // 
+            // bondsTextBox
+            // 
+            this.bondsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bondsTextBox.Location = new System.Drawing.Point(21, 280);
+            this.bondsTextBox.Name = "bondsTextBox";
+            this.bondsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.bondsTextBox.Size = new System.Drawing.Size(255, 96);
+            this.bondsTextBox.TabIndex = 3;
+            this.bondsTextBox.Text = "";
+            // 
+            // idealsTextBox
+            // 
+            this.idealsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.idealsTextBox.Location = new System.Drawing.Point(21, 154);
+            this.idealsTextBox.Name = "idealsTextBox";
+            this.idealsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.idealsTextBox.Size = new System.Drawing.Size(255, 96);
+            this.idealsTextBox.TabIndex = 2;
+            this.idealsTextBox.Text = "";
+            // 
+            // personalityTraitsLabel
+            // 
+            this.personalityTraitsLabel.AutoSize = true;
+            this.personalityTraitsLabel.Location = new System.Drawing.Point(89, 134);
+            this.personalityTraitsLabel.Name = "personalityTraitsLabel";
+            this.personalityTraitsLabel.Size = new System.Drawing.Size(118, 17);
+            this.personalityTraitsLabel.TabIndex = 1;
+            this.personalityTraitsLabel.Text = "Personality Traits";
+            // 
+            // personalityTraitsTextBox
+            // 
+            this.personalityTraitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.personalityTraitsTextBox.Location = new System.Drawing.Point(21, 30);
+            this.personalityTraitsTextBox.Name = "personalityTraitsTextBox";
+            this.personalityTraitsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.personalityTraitsTextBox.Size = new System.Drawing.Size(255, 96);
+            this.personalityTraitsTextBox.TabIndex = 0;
+            this.personalityTraitsTextBox.Text = "";
             // 
             // passivePerceptionPanel
             // 
@@ -1036,6 +1218,7 @@
             // proficiencesLanguagesPanel
             // 
             this.proficiencesLanguagesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.proficiencesLanguagesPanel.Controls.Add(this.proficiencesLanguagesTextBox);
             this.proficiencesLanguagesPanel.Controls.Add(this.label7);
             this.proficiencesLanguagesPanel.Location = new System.Drawing.Point(29, 1423);
             this.proficiencesLanguagesPanel.Name = "proficiencesLanguagesPanel";
@@ -1086,6 +1269,90 @@
             this.equipmentLabel.Size = new System.Drawing.Size(75, 17);
             this.equipmentLabel.TabIndex = 0;
             this.equipmentLabel.Text = "Equipment";
+            // 
+            // successesLabel
+            // 
+            this.successesLabel.AutoSize = true;
+            this.successesLabel.Location = new System.Drawing.Point(10, 11);
+            this.successesLabel.Name = "successesLabel";
+            this.successesLabel.Size = new System.Drawing.Size(17, 17);
+            this.successesLabel.TabIndex = 1;
+            this.successesLabel.Text = "S";
+            // 
+            // failuresLabel
+            // 
+            this.failuresLabel.AutoSize = true;
+            this.failuresLabel.Location = new System.Drawing.Point(10, 48);
+            this.failuresLabel.Name = "failuresLabel";
+            this.failuresLabel.Size = new System.Drawing.Size(16, 17);
+            this.failuresLabel.TabIndex = 17;
+            this.failuresLabel.Text = "F";
+            // 
+            // proficiencesLanguagesTextBox
+            // 
+            this.proficiencesLanguagesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.proficiencesLanguagesTextBox.Location = new System.Drawing.Point(14, 16);
+            this.proficiencesLanguagesTextBox.Name = "proficiencesLanguagesTextBox";
+            this.proficiencesLanguagesTextBox.Size = new System.Drawing.Size(338, 221);
+            this.proficiencesLanguagesTextBox.TabIndex = 1;
+            this.proficiencesLanguagesTextBox.Text = "";
+            // 
+            // armorClassPanel
+            // 
+            this.armorClassPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.armorClassPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.armorClassPanel.Controls.Add(this.armorClassLabel);
+            this.armorClassPanel.Location = new System.Drawing.Point(3, 12);
+            this.armorClassPanel.Name = "armorClassPanel";
+            this.armorClassPanel.Size = new System.Drawing.Size(81, 100);
+            this.armorClassPanel.TabIndex = 17;
+            // 
+            // initiativePanel
+            // 
+            this.initiativePanel.BackColor = System.Drawing.SystemColors.Control;
+            this.initiativePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.initiativePanel.Controls.Add(this.initiativeLabel);
+            this.initiativePanel.Location = new System.Drawing.Point(109, 12);
+            this.initiativePanel.Name = "initiativePanel";
+            this.initiativePanel.Size = new System.Drawing.Size(81, 100);
+            this.initiativePanel.TabIndex = 18;
+            // 
+            // speedPanel
+            // 
+            this.speedPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.speedPanel.Controls.Add(this.speedLabel);
+            this.speedPanel.Location = new System.Drawing.Point(215, 12);
+            this.speedPanel.Name = "speedPanel";
+            this.speedPanel.Size = new System.Drawing.Size(81, 100);
+            this.speedPanel.TabIndex = 19;
+            // 
+            // speedLabel
+            // 
+            this.speedLabel.AutoSize = true;
+            this.speedLabel.Location = new System.Drawing.Point(17, 79);
+            this.speedLabel.Name = "speedLabel";
+            this.speedLabel.Size = new System.Drawing.Size(49, 17);
+            this.speedLabel.TabIndex = 0;
+            this.speedLabel.Text = "Speed";
+            // 
+            // initiativeLabel
+            // 
+            this.initiativeLabel.AutoSize = true;
+            this.initiativeLabel.Location = new System.Drawing.Point(11, 77);
+            this.initiativeLabel.Name = "initiativeLabel";
+            this.initiativeLabel.Size = new System.Drawing.Size(59, 17);
+            this.initiativeLabel.TabIndex = 0;
+            this.initiativeLabel.Text = "Initiative";
+            // 
+            // armorClassLabel
+            // 
+            this.armorClassLabel.AutoSize = true;
+            this.armorClassLabel.Location = new System.Drawing.Point(25, 77);
+            this.armorClassLabel.Name = "armorClassLabel";
+            this.armorClassLabel.Size = new System.Drawing.Size(26, 17);
+            this.armorClassLabel.TabIndex = 0;
+            this.armorClassLabel.Text = "AC";
             // 
             // charactersheet
             // 
@@ -1152,6 +1419,15 @@
             this.savingThrowsPanel.PerformLayout();
             this.skillsPanel.ResumeLayout(false);
             this.skillsPanel.PerformLayout();
+            this.hitPanel.ResumeLayout(false);
+            this.deathSavesPanel.ResumeLayout(false);
+            this.deathSavesPanel.PerformLayout();
+            this.hitDicePanel.ResumeLayout(false);
+            this.hitDicePanel.PerformLayout();
+            this.temporaryHitPointsPanel.ResumeLayout(false);
+            this.temporaryHitPointsPanel.PerformLayout();
+            this.currentHitPointsPanel.ResumeLayout(false);
+            this.currentHitPointsPanel.PerformLayout();
             this.personalityPanel.ResumeLayout(false);
             this.personalityPanel.PerformLayout();
             this.passivePerceptionPanel.ResumeLayout(false);
@@ -1164,6 +1440,12 @@
             this.featuresTraitsPanel.PerformLayout();
             this.equipmentPanel.ResumeLayout(false);
             this.equipmentPanel.PerformLayout();
+            this.armorClassPanel.ResumeLayout(false);
+            this.armorClassPanel.PerformLayout();
+            this.initiativePanel.ResumeLayout(false);
+            this.initiativePanel.PerformLayout();
+            this.speedPanel.ResumeLayout(false);
+            this.speedPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1272,6 +1554,30 @@
         private System.Windows.Forms.Label featuresTraitsLabel;
         private System.Windows.Forms.Panel equipmentPanel;
         private System.Windows.Forms.Label equipmentLabel;
+        private System.Windows.Forms.Panel currentHitPointsPanel;
+        private System.Windows.Forms.TextBox currentHitPointsTextBox;
+        private System.Windows.Forms.TextBox hitPointMaximumTextBox;
+        private System.Windows.Forms.Label hitPointMaximumLabel;
+        private System.Windows.Forms.Label currentHitPointsLabel;
+        private System.Windows.Forms.Panel temporaryHitPointsPanel;
+        private System.Windows.Forms.TextBox temporaryHitPointsTextBox;
+        private System.Windows.Forms.Label temporaryHitPointsLabel;
+        private System.Windows.Forms.Panel deathSavesPanel;
+        private System.Windows.Forms.Panel hitDicePanel;
+        private System.Windows.Forms.Label hitDiceLabel;
+        private System.Windows.Forms.Label deathSavesLabel;
+        private System.Windows.Forms.TextBox hitDiceTextBox;
+        private System.Windows.Forms.TextBox totalHitDiceTextBox;
+        private System.Windows.Forms.Label totalHitDiceLabel;
+        private System.Windows.Forms.Label failuresLabel;
+        private System.Windows.Forms.Label successesLabel;
+        private System.Windows.Forms.RichTextBox proficiencesLanguagesTextBox;
+        private System.Windows.Forms.Panel speedPanel;
+        private System.Windows.Forms.Panel initiativePanel;
+        private System.Windows.Forms.Panel armorClassPanel;
+        private System.Windows.Forms.Label speedLabel;
+        private System.Windows.Forms.Label initiativeLabel;
+        private System.Windows.Forms.Label armorClassLabel;
     }
 }
 
