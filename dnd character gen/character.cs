@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace dnd_character_gen {
     class character {
         string name;
-        string adventureClass;
+        string adventureClass; //TODO class for each class?
+        int level = 1; //All DnD characters start at Level 1.
         string background;
         public string playerName = Environment.UserName;
-        string race;
+        string race; //TODO class for each race?
         string alignment; //TODO Lawful Good, Chaotic Good, Neutral Good, Lawful Neutral, True Neutral, Chaotic Neutral, Lawful Evil, Chaotic Evil, Neutral Evil
         public int xp = 0;
 
@@ -27,6 +28,8 @@ namespace dnd_character_gen {
         public int intelligenceModifier { get; private set; }
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
+
+        public int proficiencyBonus = 2;
 
         private int generateStat() {
             int stat = 0;

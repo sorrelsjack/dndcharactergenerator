@@ -33,6 +33,7 @@ namespace dnd_character_gen {
 
         private void charactersheet_Load(object sender, EventArgs e) {
             xpTextBox.Text = currentCharacter.xp.ToString();
+            proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
             playerNameTextBox.Text = currentCharacter.playerName.ToString();
         }
 
@@ -51,6 +52,10 @@ namespace dnd_character_gen {
             intelligenceModifierTextBox.Text = currentCharacter.intelligenceModifier.ToString();
             wisdomModifierTextBox.Text = currentCharacter.wisdomModifier.ToString();
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
+        }
+
+        private void wisdomSavingThrowLabel_Click(object sender, EventArgs e) {
+
         }
     }
 }
