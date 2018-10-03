@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen {
     class character {
-        string name;
-        string adventureClass; //TODO class for each class?
-        int level = 1; //All DnD characters start at Level 1.
-        string background;
+        public string name;
+        public string adventureClass;
+        public int level = 1; //All DnD characters start at Level 1.
+        public string background;
         public string playerName = Environment.UserName;
-        string race; //TODO class for each race?
-        string alignment; //TODO Lawful Good, Chaotic Good, Neutral Good, Lawful Neutral, True Neutral, Chaotic Neutral, Lawful Evil, Chaotic Evil, Neutral Evil
+        public string race; //TODO class for each race?
+        public string alignment;
         public int xp = 0;
 
         public int strength { get; private set; }
@@ -29,7 +29,104 @@ namespace dnd_character_gen {
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
 
-        public int proficiencyBonus = 2;
+        public int proficiencyBonus = 2; //This is the default at level 1.
+
+        public void generateBasicInfo() {
+            this.adventureClass = generateClass();
+            this.background = generateBackground();
+            this.race = generateRace();
+            this.alignment = generateAlignment();
+        }
+
+        private string generateClass() {
+            string adventureClass = "";
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            int randomNumber = rnd.Next(1, 13);
+            if (randomNumber == 1) {
+                adventureClass = "Barbarian";
+            }
+            else if (randomNumber == 2) {
+                adventureClass = "Bard";
+            }
+            else if (randomNumber == 3) {
+                adventureClass = "Cleric";
+            }
+            else if (randomNumber == 4) {
+                adventureClass = "Druid";
+            }
+            else if (randomNumber == 5) {
+                adventureClass = "Fighter";
+            }
+            else if (randomNumber == 6) {
+                adventureClass = "Monk";
+            }
+            else if (randomNumber == 7) {
+                adventureClass = "Paladin";
+            }
+            else if (randomNumber == 8) {
+                adventureClass = "Ranger";
+            }
+            else if (randomNumber == 9) {
+                adventureClass = "Rogue";
+            }
+            else if (randomNumber == 10) {
+                adventureClass = "Sorcerer";
+            }
+            else if (randomNumber == 11) {
+                adventureClass = "Warlock";
+            }
+            else if(randomNumber == 12) {
+                adventureClass = "Wizard";
+            }
+            return adventureClass;
+        }
+
+        private string generateBackground() {
+            string background = "";
+            //16
+            return background;
+        }
+
+        private string generateRace() {
+            string race = "";
+
+            return race;
+        }
+
+        private string generateAlignment() {
+            string alignment = "";
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
+            int randomNumber = rnd.Next(1, 10);
+
+            if (randomNumber == 1) {
+                alignment = "Lawful Good";
+            }
+            else if(randomNumber == 2) {
+                alignment = "Neutral Good";
+            }
+            else if (randomNumber == 3) {
+                alignment = "Chaotic Good";
+            }
+            else if(randomNumber == 4) {
+                alignment = "Lawful Neutral";
+            }
+            else if (randomNumber == 5) {
+                alignment = "True Neutral";
+            }
+            else if (randomNumber == 6) {
+                alignment = "Chaotic Neutral";
+            }
+            else if (randomNumber == 7) {
+                alignment = "Lawful Evil";
+            }
+            else if(randomNumber == 8) {
+                alignment = "Neutral Evil";
+            }
+            else if(randomNumber == 9) {
+                alignment = "Chaotic Evil";
+            }
+            return alignment;
+        }
 
         private int generateStat() {
             int stat = 0;
@@ -57,7 +154,6 @@ namespace dnd_character_gen {
                     stat = stat + generatedNumbers[i];
                 }
             }
-
             return stat;
         }
 
