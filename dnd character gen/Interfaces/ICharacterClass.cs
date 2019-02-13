@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.Interfaces {
     public interface ICharacterClass {
-        void setHitDie();
-        void setHitPoints();
-        void setArmorProf();
-        void setWeaponProf();
-        void setToolsProf();
-        void setSkills();
-        void setPrimaryStat();
-        void setSaves();
+        int setHitDie();
+        int setHitPoints(int hitDie, int constitution);
+        List<string> setArmorProf();
+        List<string> setWeaponProf();
+        List<string> setToolsProf();
+        List<string> setSkills();
+        string setPrimaryStat();
+        List<string> setSaves();
         void setFeatures();
         void setSubType();
         void setEquipment();
-        void setSpellSaveDC();
-        void setSpellAttackMod();
+        int? setSpellSaveDC();
+        int? setSpellAttackMod();
+        //Spells known? Cantrips? Spell slots?
     }
 }

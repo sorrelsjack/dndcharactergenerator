@@ -3,12 +3,10 @@ using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dnd_character_gen {
     public class Character {
+        #region Basic Info
         public string name;
         public string adventureClass; //TODO replace with interface
         public int level = 1;
@@ -16,12 +14,37 @@ namespace dnd_character_gen {
         public string race;
         public string alignment;
         public int xp = 0;
+        #endregion
 
-        public List<string> skillProficiencies = new List<string>(); //TODO populate this with race, class, and background skills. Check to make sure a skill isn't picked twice.
-
+        #region Class, Race, and Background interfaces
         public ICharacterClass characterClass { get; set; }
         public ICharacterRace characterRace { get; set; }
         public ICharacterBackground characterBackground { get; set; }
+        #endregion
+
+        #region AC, Init, Speed, HP
+        int armorClass { get; set; }
+        int initiative { get; set; }
+        int movementSpeed { get; set; }
+        int hitDie { get; set; }
+        int hitPoints { get; set; }
+        #endregion
+
+        #region Proficiencies
+        public int proficiencyBonus = 2;
+        public List<string> armorProficiencies = new List<string>();
+        public List<string> weaponProficiencies = new List<string>();
+        public List<string> toolProficiencies = new List<string>();
+        public List<string> savingThrowProficiencies = new List<string>();
+        public List<string> skillProficiencies = new List<string>();
+        public List<string> languageProficiencies = new List<string>();
+        #endregion
+
+        public List<string> equipment = new List<string>();
+        public Dictionary<string, string> features = new Dictionary<string, string>();
+
+        #region Stats and Modifiers
+        string primaryStat { get; set; }
 
         public int strength { get; private set; }
         public int dexterity { get; private set; }
@@ -36,18 +59,18 @@ namespace dnd_character_gen {
         public int intelligenceModifier { get; private set; }
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
+        #endregion
 
-        public int hitDie { get; set; }
-
-        public int proficiencyBonus = 2;
-
+        #region Basic Character Generator Method
         public void generateBasicInfo() {
             this.adventureClass = generateClass();
             this.background = generateBackground();
             this.race = generateRace();
             this.alignment = generateAlignment();
         }
+        #endregion
 
+        #region
         private string generateClass() {
             string adventureClass = "";
             int randomNumber = NumberGen.gen(12);
@@ -281,5 +304,6 @@ namespace dnd_character_gen {
             }
             return modifier;
         }
+        #endregion
     }
 }

@@ -8,61 +8,33 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Barbarian : ICharacterClass {
-        int hitDie;
-        int hitPoints;
-        string primaryStat;
-
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
 
         public Barbarian() {
 
         }
 
         public void setSubType() {
-            throw new NotImplementedException();
+            //Barbarians don't get a subtype at level 1.
         }
 
-        public void setPrimaryStat() {
-            primaryStat = "Strength";
-        }
+        public string setPrimaryStat() => "Strength";
 
-        public void setHitDie() {
-            hitDie = 12;
-        }
+        public int setHitDie() => 12;
 
-        public void setHitPoints() {
-            //Need con modifier for this.
-            throw new NotImplementedException();
-        }
+        public int setHitPoints(int hitDie, int constitution) => 12 + constitution;
 
-        public void setArmorProf() {
-            armorProficiencies.Add("Light armor");
-            armorProficiencies.Add("Medium armor");
-            armorProficiencies.Add("Shields");
-        }
+        public List<string> setArmorProf() => new List<string>() { "Light armor", "Medium armor", "Shields" };
 
-        public void setWeaponProf() {
-            weaponProficiencies.Add("Simple weapons");
-            weaponProficiencies.Add("Martial weapons");
-        }
+        public List<string> setWeaponProf() => new List<string>() { "Simple weapons", "Martial weapons" };
 
-        public void setToolsProf() {
-            
-        }
+        public List<string> setToolsProf() => null;
 
-        public void setSaves() {
-            savingThrowProficiencies.Add("Strength");
-            savingThrowProficiencies.Add("Constitution");
-        }
+        public List<string> setSaves() => new List<string>() { "Strength", "Constitution" };
 
-        public void setSkills() {
+        public List<string> setSkills() {
+            List<string> skillProficiencies = new List<string>();
             List<string> availableSkills = new List<string>()
-            { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}; //TODO Figure out how to determine modifiers..?
+            { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}; //Use global dict to know what stat each is.
 
             string skill = availableSkills[NumberGen.gen(6)];
             skillProficiencies.Add(skill);
@@ -70,6 +42,8 @@ namespace dnd_character_gen.CharacterClasses {
 
             skill = availableSkills[NumberGen.gen(5)];
             skillProficiencies.Add(skill);
+
+            return availableSkills;
         }
 
         public void setEquipment() {
@@ -81,12 +55,8 @@ namespace dnd_character_gen.CharacterClasses {
             //TODO deal with this
         }
 
-        public void setSpellAttackMod() {
-            //TODO deal with this
-        }
+        public int? setSpellAttackMod() => null;
 
-        public void setSpellSaveDC() {
-            //TODO deal with this
-        }
+        public int? setSpellSaveDC() => null;
     }
 }
