@@ -1,19 +1,27 @@
-﻿using System;
+﻿using dnd_character_gen.CharacterClasses;
+using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace dnd_character_gen {
-    class character {
+    public class Character {
         public string name;
-        public string adventureClass;
-        public int level = 1; //All DnD characters start at Level 1.
+        public string adventureClass; //TODO replace with interface
+        public int level = 1;
         public string background;
-        public string playerName = Environment.UserName; //But what if they're not running a Windows machine? TODO maybe account for this.
         public string race;
         public string alignment;
-        public int xp = 0; //Default amount of XP is 0.
+        public int xp = 0;
+
+        public List<string> skillProficiencies = new List<string>(); //TODO populate this with race, class, and background skills. Check to make sure a skill isn't picked twice.
+
+        public ICharacterClass characterClass { get; set; }
+        public ICharacterRace characterRace { get; set; }
+        public ICharacterBackground characterBackground { get; set; }
 
         public int strength { get; private set; }
         public int dexterity { get; private set; }
@@ -29,7 +37,9 @@ namespace dnd_character_gen {
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
 
-        public int proficiencyBonus = 2; //This is the default at level 1.
+        public int hitDie { get; set; }
+
+        public int proficiencyBonus = 2;
 
         public void generateBasicInfo() {
             this.adventureClass = generateClass();
@@ -40,10 +50,10 @@ namespace dnd_character_gen {
 
         private string generateClass() {
             string adventureClass = "";
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int randomNumber = rnd.Next(1, 13);
+            int randomNumber = NumberGen.gen(12);
             if (randomNumber == 1) {
                 adventureClass = "Barbarian";
+                characterClass = new Barbarian();
             }
             else if (randomNumber == 2) {
                 adventureClass = "Bard";
@@ -83,20 +93,77 @@ namespace dnd_character_gen {
 
         private string generateBackground() {
             string background = "";
-            //16
+            int randomNumber = NumberGen.gen(18);
+
+            if (randomNumber == 1)
+                background = "Acolyte";
+            else if (randomNumber == 2)
+                background = "Charlatan";
+            else if (randomNumber == 3)
+                background = "Criminal";
+            else if (randomNumber == 4)
+                background = "Entertainer";
+            else if (randomNumber == 5)
+                background = "Folk Hero";
+            else if (randomNumber == 6)
+                background = "Gladiator";
+            else if (randomNumber == 7)
+                background = "Guild Artisan";
+            else if (randomNumber == 8)
+                background = "Guild Merchant";
+            else if (randomNumber == 9)
+                background = "Hermit";
+            else if (randomNumber == 10)
+                background = "Knight";
+            else if (randomNumber == 11)
+                background = "Noble";
+            else if (randomNumber == 12)
+                background = "Outlander";
+            else if (randomNumber == 13)
+                background = "Pirate";
+            else if (randomNumber == 14)
+                background = "Sage";
+            else if (randomNumber == 15)
+                background = "Sailor";
+            else if (randomNumber == 16)
+                background = "Solider";
+            else if (randomNumber == 17)
+                background = "Spy";
+            else if (randomNumber == 18)
+                background = "Urchin";
+
             return background;
         }
 
         private string generateRace() {
             string race = "";
+            int randomNumber = NumberGen.gen(9);
+
+            if (randomNumber == 1)
+                race = "Dragonborn";
+            if (randomNumber == 2)
+                race = "Dwarf";
+            if (randomNumber == 3)
+                race = "Elf";
+            if (randomNumber == 4)
+                race = "Gnome";
+            if (randomNumber == 5)
+                race = "Half-Elf";
+            if (randomNumber == 6)
+                race = "Halfling";
+            if (randomNumber == 7)
+                race = "Half-Orc";
+            if (randomNumber == 8)
+                race = "Human";
+            if (randomNumber == 9)
+                race = "Tiefling";
 
             return race;
         }
 
         private string generateAlignment() {
             string alignment = "";
-            Random rnd = new Random(Guid.NewGuid().GetHashCode());
-            int randomNumber = rnd.Next(1, 10);
+            int randomNumber = NumberGen.gen(9);
 
             if (randomNumber == 1) {
                 alignment = "Lawful Good";
@@ -135,7 +202,7 @@ namespace dnd_character_gen {
             int lowestValueCount = 0;
 
             for (int i = 0; i < 3; i++) {
-                Random rnd = new Random(Guid.NewGuid().GetHashCode());
+                Random rnd = new Random(Guid.NewGuid().GetHashCode()); //TODO convert this to my extension method
                 int randomNumber = rnd.Next(1, 7);
                 generatedNumbers[i] = randomNumber;
             }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace dnd_character_gen {
     public partial class charactersheet : Form {
-        character currentCharacter = new character();
+        Character currentCharacter = new Character();
 
         public charactersheet() {
             InitializeComponent();
@@ -21,7 +21,6 @@ namespace dnd_character_gen {
         private void charactersheet_Load(object sender, EventArgs e) {
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
-            playerNameTextBox.Text = currentCharacter.playerName.ToString();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -47,7 +46,7 @@ namespace dnd_character_gen {
 
         private void rollButton_Click(object sender, EventArgs e) {
             //TODO make new class for these sorts of buttons?
-            SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\MANYDICE.WAV");
+            SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
             diceSound.Play();
 
             currentCharacter.generateStatArray();
@@ -79,6 +78,8 @@ namespace dnd_character_gen {
             currentCharacter.generateBasicInfo();
             classLevelTextBox.Text = currentCharacter.adventureClass + " " + currentCharacter.level.ToString();
             alignmentTextBox.Text = currentCharacter.alignment;
+            backgroundTextBox.Text = currentCharacter.background;
+            raceTextBox.Text = currentCharacter.race;
             //TODO randomize all these things
         }
     }

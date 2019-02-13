@@ -15,10 +15,11 @@ namespace dnd_character_gen {
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new charactersheet());
             //TODO talk to SQL DB
-            //TODO change connection string for friends
+            //TODO change connection string for friends automatically
             //TODO run SQL scripts upon getting the software
-            //TODO source character name from API
+            //TODO source character name from API?
             //TODO ask user if they want to save upon quit
+            //TODO pronouns?
         }
     }
 }

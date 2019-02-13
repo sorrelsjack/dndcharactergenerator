@@ -46,13 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="character.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="CharacterClasses\Barbarian.cs" />
     <Compile Include="charactersheet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="charactersheet.Designer.cs">
       <DependentUpon>charactersheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dictionaries\Skills.cs" />
+    <Compile Include="Extensions\NumberGen.cs" />
+    <Compile Include="Interfaces\ICharacterBackground.cs" />
+    <Compile Include="Interfaces\ICharacterClass.cs" />
+    <Compile Include="Interfaces\ICharacterRace.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="charactersheet.resx">
@@ -81,7 +87,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MANYDICE.WAV" />
+    <Content Include="Assets\MANYDICE.WAV" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CharacterBackgrounds\" />
+    <Folder Include="CharacterRaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
