@@ -1,4 +1,5 @@
-﻿using dnd_character_gen.Interfaces;
+﻿using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +14,16 @@ namespace dnd_character_gen.CharacterClasses {
         public List<string> savingThrowProficiencies = new List<string>();
         public List<string> skillProficiencies = new List<string>();
 
-        public List<string> setArmorProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setArmorProf() => new List<string>() { "Light armor", "Medium armor", "Shields" }; //What if we need to add more later if there's more proficiences?
 
         public List<string> setEquipment() {
             List<string> equipment = new List<string>();
-            //Wooden Shield or Simple weapon
-            //Scimitar or Simple weapon
-            equipment.Add("Leather Armor");
-            equipment.Add("Explorer's Pack");
-            equipment.Add("Druidic Focus");
+            //Mace or Warhammer (if proficient)
+            //Scale mail, leather armor, or chain mail (if proficient)
+            //Light crossbow and 20 bolts or any simple weapon
+            //Priests pack or explorer's pack
+            equipment.Add("Shield");
+            equipment.Add("Holy Symbol");
 
             return equipment;
         }
@@ -32,27 +32,17 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int setHitDie() {
-            throw new NotImplementedException();
-        }
+        public int setHitDie() => 8;
 
-        public int setHitPoints(int hitDie, int constitution) {
-            throw new NotImplementedException();
-        }
+        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution; //TODO could this go in the main class?
 
-        public List<string> setLanguages() {
-            throw new NotImplementedException();
-        }
+        public List<string> setLanguages() => null;
 
-        public string setPrimaryStat() {
-            throw new NotImplementedException();
-        }
+        public string setPrimaryStat() => "Wisdom";
 
-        public List<string> setSaves() {
-            throw new NotImplementedException();
-        }
+        public List<string> setSaves() => new List<string>() { "Wisdom", "Charisma" };
 
-        public List<string> setSkills() => new List<string>() { "Herbalism Kit" };
+        public List<string> setSkills() => null; //TODO fix. History, Insight, Medicine, Persuasion, Religion
 
         public int? setSpellAttackMod() {
             throw new NotImplementedException();
@@ -63,14 +53,19 @@ namespace dnd_character_gen.CharacterClasses {
         }
 
         public string setSubType() {
-            throw new NotImplementedException();
+            List<string> domains = new List<string>() 
+            { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
+
+            //TODO fill this out. Pick one at random!
+            //TODO codify the benefits of each subtype...
+
+            return null;
         }
 
-        public List<string> setToolsProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setToolsProf() => null;
 
-        public List<string> setWeaponProf() => new List<string>()
-            { "Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears" };
-}
+        //TODO if proficient in simple weapons, return that list
+
+        public List<string> setWeaponProf() => SimpleWeapons.Instance.weapons;
+    }
 }

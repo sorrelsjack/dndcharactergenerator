@@ -38,7 +38,7 @@ namespace dnd_character_gen.CharacterClasses {
             List<string> availableSkills = new List<string>()
             { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}; //Use global dict to know what stat each is.
 
-            string skill = availableSkills[NumberGen.gen(6)];
+            string skill = availableSkills[NumberGen.gen(6)]; //TODO perhaps change this to "Skill Choices" and then just randomize in main class so I don't have to write the same thing over and over.
             skillProficiencies.Add(skill);
             availableSkills.Remove(skill);
 

@@ -72,7 +72,7 @@ namespace dnd_character_gen {
         #endregion
 
         public void initializeClass() {
-            characterClassSubtype = characterClass.setSubType();
+            characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
             hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order.
