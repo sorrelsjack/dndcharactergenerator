@@ -1,5 +1,5 @@
 ﻿namespace dnd_character_gen {
-    partial class charactersheet {
+    partial class CharacterSheet {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(charactersheet));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterSheet));
             this.basicInfoPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -1396,7 +1396,7 @@
             this.Name = "charactersheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dungeons & Dragons Character Generator";
-            this.Load += new System.EventHandler(this.charactersheet_Load);
+            this.Load += new System.EventHandler(this.CharacterSheet_Load);
             this.basicInfoPanel.ResumeLayout(false);
             this.basicInfoPanel.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

@@ -13,7 +13,7 @@ namespace dnd_character_gen {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new charactersheet());
+            Application.Run(new CharacterSheet());
             //TODO talk to SQL DB
             //TODO change connection string for friends automatically
             //TODO run SQL scripts upon getting the software

@@ -1,4 +1,5 @@
-﻿using dnd_character_gen.Extensions;
+﻿using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace dnd_character_gen.CharacterClasses {
 
         }
 
-        public void setSubType() {
+        public string setSubType() {
+            return null;
             //Barbarians don't get a subtype at level 1.
         }
 
@@ -46,9 +48,20 @@ namespace dnd_character_gen.CharacterClasses {
             return availableSkills;
         }
 
-        public void setEquipment() {
-            //TODO put in a way to choose btween equipment
-            throw new NotImplementedException();
+        public List<string> setEquipment() {
+            List<string> equipment = new List<string>();
+            int randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1 
+                ? "Greataxe" : MartialWeapons.Instance.weapons[NumberGen.gen(MartialWeapons.Instance.weapons.Count)]);
+
+            randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1
+                ? "Two Handaxe" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
+
+            equipment.Add("Explorer's Pack");
+            equipment.Add("Four Javelins");
+
+            return equipment;
         }
 
         public void setFeatures() {

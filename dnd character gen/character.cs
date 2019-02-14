@@ -8,7 +8,7 @@ namespace dnd_character_gen {
     public class Character {
         #region Basic Info
         public string name;
-        public string adventureClass; //TODO replace with interface
+        public string characterClassSubtype; //Instead of this, make the field ClassName + (Subtype)
         public int level = 1;
         public string background;
         public string race;
@@ -63,55 +63,69 @@ namespace dnd_character_gen {
 
         #region Basic Character Generator Method
         public void generateBasicInfo() {
-            this.adventureClass = generateClass();
+            generateClass();
+            initializeClass();
             this.background = generateBackground();
             this.race = generateRace();
             this.alignment = generateAlignment();
         }
         #endregion
 
+        public void initializeClass() {
+            characterClassSubtype = characterClass.setSubType();
+            primaryStat = characterClass.setPrimaryStat();
+            hitDie = characterClass.setHitDie();
+            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order.
+            armorProficiencies.AddRange(characterClass.setArmorProf()); //Prevent dupes.
+            weaponProficiencies.AddRange(characterClass.setWeaponProf());
+            toolProficiencies.AddRange(characterClass.setToolsProf());
+            savingThrowProficiencies.AddRange(characterClass.setSaves());
+            equipment.AddRange(characterClass.setEquipment());
+            //setFeatures();
+            //setSpellAttackMod();
+            //setSpellSaveDC();
+        }
+
         #region
-        private string generateClass() {
-            string adventureClass = "";
+        private void generateClass() {
             int randomNumber = NumberGen.gen(12);
             if (randomNumber == 1) {
-                adventureClass = "Barbarian";
                 characterClass = new Barbarian();
             }
             else if (randomNumber == 2) {
-                adventureClass = "Bard";
+                characterClass = new Bard();
             }
             else if (randomNumber == 3) {
-                adventureClass = "Cleric";
+                characterClass = new Cleric();
             }
             else if (randomNumber == 4) {
-                adventureClass = "Druid";
+
+                characterClass = new Druid();
             }
             else if (randomNumber == 5) {
-                adventureClass = "Fighter";
+                characterClass = new Fighter();
             }
             else if (randomNumber == 6) {
-                adventureClass = "Monk";
+                characterClass = new Monk();
             }
             else if (randomNumber == 7) {
-                adventureClass = "Paladin";
+                characterClass = new Paladin();
             }
             else if (randomNumber == 8) {
-                adventureClass = "Ranger";
+                characterClass = new Ranger();
             }
             else if (randomNumber == 9) {
-                adventureClass = "Rogue";
+                characterClass = new Rogue();
             }
             else if (randomNumber == 10) {
-                adventureClass = "Sorcerer";
+                characterClass = new Sorcerer();
             }
             else if (randomNumber == 11) {
-                adventureClass = "Warlock";
+                characterClass = new Warlock();
             }
             else if(randomNumber == 12) {
-                adventureClass = "Wizard";
+                characterClass = new Wizard();
             }
-            return adventureClass;
         }
 
         private string generateBackground() {

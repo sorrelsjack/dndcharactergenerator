@@ -59,12 +59,14 @@
     <Compile Include="CharacterClasses\Sorcerer.cs" />
     <Compile Include="CharacterClasses\Warlock.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
-    <Compile Include="charactersheet.cs">
+    <Compile Include="CharacterSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="charactersheet.Designer.cs">
-      <DependentUpon>charactersheet.cs</DependentUpon>
+    <Compile Include="CharacterSheet.Designer.cs">
+      <DependentUpon>CharacterSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dictionaries\MartialWeapons.cs" />
+    <Compile Include="Dictionaries\SimpleWeapons.cs" />
     <Compile Include="Dictionaries\Skills.cs" />
     <Compile Include="Extensions\NumberGen.cs" />
     <Compile Include="Interfaces\ICharacterBackground.cs" />
@@ -72,8 +74,8 @@
     <Compile Include="Interfaces\ICharacterRace.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="charactersheet.resx">
-      <DependentUpon>charactersheet.cs</DependentUpon>
+    <EmbeddedResource Include="CharacterSheet.resx">
+      <DependentUpon>CharacterSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -4,14 +4,14 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace dnd_character_gen {
-    public partial class charactersheet : Form {
+    public partial class CharacterSheet : Form {
         Character currentCharacter = new Character();
 
-        public charactersheet() {
+        public CharacterSheet() {
             InitializeComponent();
         }
 
-        private void charactersheet_Load(object sender, EventArgs e) {
+        private void CharacterSheet_Load(object sender, EventArgs e) {
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
         }
@@ -69,7 +69,7 @@ namespace dnd_character_gen {
 
         private void rollMainInfoButton_Click(object sender, EventArgs e) {
             currentCharacter.generateBasicInfo();
-            classLevelTextBox.Text = currentCharacter.adventureClass + " " + currentCharacter.level.ToString();
+            classLevelTextBox.Text = currentCharacter.characterClass.GetType().ToString() + " " + currentCharacter.level.ToString();
             alignmentTextBox.Text = currentCharacter.alignment;
             backgroundTextBox.Text = currentCharacter.background;
             raceTextBox.Text = currentCharacter.race;

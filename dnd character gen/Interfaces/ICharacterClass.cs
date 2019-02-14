@@ -15,8 +15,8 @@ namespace dnd_character_gen.Interfaces {
         string setPrimaryStat();
         List<string> setSaves();
         void setFeatures();
-        void setSubType();
-        void setEquipment();
+        string setSubType();
+        List<string> setEquipment();
         int? setSpellSaveDC();
         int? setSpellAttackMod();
         //Spells known? Cantrips? Spell slots?
