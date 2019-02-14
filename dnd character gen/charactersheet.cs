@@ -20,8 +20,10 @@ namespace dnd_character_gen {
 
         }
 
-        private void statsButton_Click(object sender, EventArgs e) {
+        private void PopulateStatBoxes() {
             currentCharacter.generateStatArray();
+            //TODO: Tooltip over every stat to show where it's coming from (e.g. Dex mod: Base roll, race, etc..)
+
             strengthValueTextBox.Text = currentCharacter.strength.ToString();
             dexterityValueTextBox.Text = currentCharacter.dexterity.ToString();
             constitutionValueTextBox.Text = currentCharacter.constitution.ToString();
@@ -37,26 +39,15 @@ namespace dnd_character_gen {
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
         }
 
+        private void statsButton_Click(object sender, EventArgs e) {
+            PopulateStatBoxes();
+        }
+
         private void rollButton_Click(object sender, EventArgs e) {
-            //TODO make new class for these sorts of buttons?
             SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
             diceSound.Play();
 
-            currentCharacter.generateStatArray();
-
-            strengthValueTextBox.Text = currentCharacter.strength.ToString();
-            dexterityValueTextBox.Text = currentCharacter.dexterity.ToString();
-            constitutionValueTextBox.Text = currentCharacter.constitution.ToString();
-            intelligenceValueTextBox.Text = currentCharacter.intelligence.ToString();
-            wisdomValueTextBox.Text = currentCharacter.wisdom.ToString();
-            charismaValueTextBox.Text = currentCharacter.charisma.ToString();
-
-            strengthModifierTextBox.Text = currentCharacter.strengthModifier.ToString();
-            dexterityModifierTextBox.Text = currentCharacter.dexterityModifier.ToString();
-            constitutionModifierTextBox.Text = currentCharacter.constitutionModifier.ToString();
-            intelligenceModifierTextBox.Text = currentCharacter.intelligenceModifier.ToString();
-            wisdomModifierTextBox.Text = currentCharacter.wisdomModifier.ToString();
-            charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
+            PopulateStatBoxes();
         }
 
         [DllImport("user32.dll")]

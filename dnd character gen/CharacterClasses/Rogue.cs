@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Rogue : ICharacterClass {
-        int hitDie;
-        int hitPoints;
-        string primaryStat;
-
         public List<string> armorProficiencies = new List<string>();
         public List<string> weaponProficiencies = new List<string>();
         public List<string> toolProficiencies = new List<string>();
@@ -18,35 +14,11 @@ namespace dnd_character_gen.CharacterClasses {
         public List<string> skillProficiencies = new List<string>();
         public List<string> equipment = new List<string>();
 
-        public void setHitDie() {
+        public List<string> setArmorProf() {
             throw new NotImplementedException();
         }
 
-        public void setHitPoints() {
-            throw new NotImplementedException();
-        }
-
-        public void setArmorProf() {
-            throw new NotImplementedException();
-        }
-
-        public void setWeaponProf() {
-            throw new NotImplementedException();
-        }
-
-        public void setToolsProf() {
-            throw new NotImplementedException();
-        }
-
-        public void setSkills() {
-            throw new NotImplementedException();
-        }
-
-        public void setPrimaryStat() {
-            throw new NotImplementedException();
-        }
-
-        public void setSaves() {
+        public List<string> setEquipment() {
             throw new NotImplementedException();
         }
 
@@ -54,19 +26,43 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public void setSubType() {
+        public int setHitDie() {
             throw new NotImplementedException();
         }
 
-        public void setEquipment() {
+        public int setHitPoints(int hitDie, int constitution) {
             throw new NotImplementedException();
         }
 
-        public void setSpellSaveDC() {
+        public string setPrimaryStat() {
             throw new NotImplementedException();
         }
 
-        public void setSpellAttackMod() {
+        public List<string> setSaves() {
+            throw new NotImplementedException();
+        }
+
+        public List<string> setSkills() {
+            throw new NotImplementedException();
+        }
+
+        public int? setSpellAttackMod() {
+            throw new NotImplementedException();
+        }
+
+        public int? setSpellSaveDC() {
+            throw new NotImplementedException();
+        }
+
+        public string setSubType() {
+            throw new NotImplementedException();
+        }
+
+        public List<string> setToolsProf() {
+            throw new NotImplementedException();
+        }
+
+        public List<string> setWeaponProf() {
             throw new NotImplementedException();
         }
     }

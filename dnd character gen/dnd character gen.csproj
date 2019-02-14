@@ -66,6 +66,7 @@
       <DependentUpon>CharacterSheet.cs</DependentUpon>
     </Compile>
     <Compile Include="Dictionaries\MartialWeapons.cs" />
+    <Compile Include="Dictionaries\MusicalInstruments.cs" />
     <Compile Include="Dictionaries\SimpleWeapons.cs" />
     <Compile Include="Dictionaries\Skills.cs" />
     <Compile Include="Extensions\NumberGen.cs" />

@@ -23,7 +23,7 @@ namespace dnd_character_gen.CharacterClasses {
 
         public int setHitDie() => 12;
 
-        public int setHitPoints(int hitDie, int constitution) => 12 + constitution;
+        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
 
         public List<string> setArmorProf() => new List<string>() { "Light armor", "Medium armor", "Shields" };
 
