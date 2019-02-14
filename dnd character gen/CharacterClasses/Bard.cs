@@ -63,5 +63,9 @@ namespace dnd_character_gen.CharacterClasses {
         public int? setSpellAttackMod() {
             throw new NotImplementedException();
         }
+
+        public List<string> setLanguages() {
+            throw new NotImplementedException();
+        }
     }
 }

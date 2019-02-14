@@ -34,6 +34,8 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
+        public List<string> setLanguages() => new List<string>() { "Druidic" };
+
         public string setPrimaryStat() {
             throw new NotImplementedException();
         }

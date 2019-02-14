@@ -71,5 +71,7 @@ namespace dnd_character_gen.CharacterClasses {
         public int? setSpellAttackMod() => null;
 
         public int? setSpellSaveDC() => null;
+
+        public List<string> setLanguages() => null;
     }
 }

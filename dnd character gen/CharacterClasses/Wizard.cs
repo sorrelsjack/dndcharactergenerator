@@ -34,6 +34,10 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
+        public List<string> setLanguages() {
+            throw new NotImplementedException();
+        }
+
         public string setPrimaryStat() {
             throw new NotImplementedException();
         }

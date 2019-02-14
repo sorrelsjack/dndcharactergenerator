@@ -12,6 +12,7 @@ namespace dnd_character_gen.Interfaces {
         List<string> setWeaponProf();
         List<string> setToolsProf();
         List<string> setSkills();
+        List<string> setLanguages();
         string setPrimaryStat();
         List<string> setSaves();
         void setFeatures();

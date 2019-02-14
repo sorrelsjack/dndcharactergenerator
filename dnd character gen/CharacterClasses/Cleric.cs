@@ -12,14 +12,20 @@ namespace dnd_character_gen.CharacterClasses {
         public List<string> toolProficiencies = new List<string>();
         public List<string> savingThrowProficiencies = new List<string>();
         public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
 
         public List<string> setArmorProf() {
             throw new NotImplementedException();
         }
 
         public List<string> setEquipment() {
-            throw new NotImplementedException();
+            List<string> equipment = new List<string>();
+            //Wooden Shield or Simple weapon
+            //Scimitar or Simple weapon
+            equipment.Add("Leather Armor");
+            equipment.Add("Explorer's Pack");
+            equipment.Add("Druidic Focus");
+
+            return equipment;
         }
 
         public void setFeatures() {
@@ -34,6 +40,10 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
+        public List<string> setLanguages() {
+            throw new NotImplementedException();
+        }
+
         public string setPrimaryStat() {
             throw new NotImplementedException();
         }
@@ -42,9 +52,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public List<string> setSkills() {
-            throw new NotImplementedException();
-        }
+        public List<string> setSkills() => new List<string>() { "Herbalism Kit" };
 
         public int? setSpellAttackMod() {
             throw new NotImplementedException();
@@ -62,8 +70,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public List<string> setWeaponProf() {
-            throw new NotImplementedException();
-        }
-    }
+        public List<string> setWeaponProf() => new List<string>()
+            { "Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears" };
+}
 }
