@@ -9,16 +9,19 @@ namespace dnd_character_gen.CharacterClasses {
     public class Paladin : ICharacterClass {
         public List<string> armorProficiencies = new List<string>();
         public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
         public List<string> skillProficiencies = new List<string>();
         public List<string> equipment = new List<string>();
 
-        public List<string> setArmorProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setArmorProf() => new List<string> { "Shields" }; //And all armor.
 
         public List<string> setEquipment() {
+            /*(a) a martial weapon and a shield or (b) two martial weapons
+(a) five javelins or (b) any simple melee weapon
+(a) a priest’s pack or (b) an explorer’s pack
+Chain mail and a holy symbol
+             * 
+             *
+             * */
             throw new NotImplementedException();
         }
 
@@ -26,47 +29,29 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int setHitDie() {
+        public int setHitDie() => 10;
+
+        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
+
+        public List<string> setLanguages() => null;
+
+        public string setPrimaryStat() => "Strength";
+
+        public List<string> setSaves() => new List<string> { "Wisdom", "Charisma" };
+
+        public List<string> setSkills() { //Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion
             throw new NotImplementedException();
         }
 
-        public int setHitPoints(int hitDie, int constitution) {
-            throw new NotImplementedException();
-        }
+        public int? setSpellAttackMod() => null; // Spell attack modifier = your proficiency bonus + your Charisma modifier
 
-        public List<string> setLanguages() {
-            throw new NotImplementedException();
-        }
+        public int? setSpellSaveDC() => null; // Spell save DC = 8 + your proficiency bonus + your Charisma modifier
 
-        public string setPrimaryStat() {
-            throw new NotImplementedException();
-        }
+        public string setSubType() => null;
 
-        public List<string> setSaves() {
-            throw new NotImplementedException();
-        }
+        public List<string> setToolsProf() => null;
 
-        public List<string> setSkills() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellAttackMod() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellSaveDC() {
-            throw new NotImplementedException();
-        }
-
-        public string setSubType() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setToolsProf() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setWeaponProf() {
+        public List<string> setWeaponProf() { //Simple and Martial
             throw new NotImplementedException();
         }
     }

@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Wizard : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
 
-        public List<string> setArmorProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setArmorProf() => null;
 
         public List<string> setEquipment() {
+            //Quarterstaff or dagger
+            //Compontent pouch or arcane focus
+            //Scholar's pack or explorer's pack
+            //Spellbook
             throw new NotImplementedException();
         }
 
@@ -26,48 +22,32 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int setHitDie() {
+        public int setHitDie() => 6;
+
+        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
+
+        public List<string> setLanguages() => null;
+
+        public string setPrimaryStat() => "Intelligence";
+
+        public List<string> setSaves() => new List<string> { "Intelligence", "Wisdom" };
+
+        public List<string> setSkills() { //Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion
             throw new NotImplementedException();
         }
 
-        public int setHitPoints(int hitDie, int constitution) {
+        public int? setSpellAttackMod() { // Spell attack modifier = your proficiency bonus + your Intelligence modifier
             throw new NotImplementedException();
         }
 
-        public List<string> setLanguages() {
+        public int? setSpellSaveDC() { // 8 + your proficiency bonus + your Intelligence modifier
             throw new NotImplementedException();
         }
 
-        public string setPrimaryStat() {
-            throw new NotImplementedException();
-        }
+        public string setSubType() => null;
 
-        public List<string> setSaves() {
-            throw new NotImplementedException();
-        }
+        public List<string> setToolsProf() => null;
 
-        public List<string> setSkills() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellAttackMod() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellSaveDC() {
-            throw new NotImplementedException();
-        }
-
-        public string setSubType() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setToolsProf() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setWeaponProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setWeaponProf() => new List<string> { "Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows" };
     }
 }

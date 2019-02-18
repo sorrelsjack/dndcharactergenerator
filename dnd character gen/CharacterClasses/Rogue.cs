@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Rogue : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
         public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
         public List<string> skillProficiencies = new List<string>();
         public List<string> equipment = new List<string>();
 
-        public List<string> setArmorProf() {
-            throw new NotImplementedException();
-        }
+        public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment() {
+            //Rapier or shortsword
+            //Shortbow and quiver of 20 arrows or shortsword
+            //Burglar's pack, dungeoneer's pack, or explorer's pack
+            //Leather armor, two daggers, and thieves' tools
             throw new NotImplementedException();
         }
 
@@ -26,47 +25,29 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int setHitDie() {
+        public int setHitDie() => 8;
+
+        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
+
+        public List<string> setLanguages() => new List<string> { "Thieves' Cant" };
+
+        public string setPrimaryStat() => "Dexterity";
+
+        public List<string> setSaves() => new List<string> { "Dexterity", "Intelligence" };
+
+        public List<string> setSkills() { //Skills: Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth
             throw new NotImplementedException();
         }
 
-        public int setHitPoints(int hitDie, int constitution) {
-            throw new NotImplementedException();
-        }
+        public int? setSpellAttackMod() => null;
 
-        public List<string> setLanguages() {
-            throw new NotImplementedException();
-        }
+        public int? setSpellSaveDC() => null;
 
-        public string setPrimaryStat() {
-            throw new NotImplementedException();
-        }
+        public string setSubType() => null;
 
-        public List<string> setSaves() {
-            throw new NotImplementedException();
-        }
+        public List<string> setToolsProf() => new List<string> { "Thieves' Tools" };
 
-        public List<string> setSkills() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellAttackMod() {
-            throw new NotImplementedException();
-        }
-
-        public int? setSpellSaveDC() {
-            throw new NotImplementedException();
-        }
-
-        public string setSubType() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setToolsProf() {
-            throw new NotImplementedException();
-        }
-
-        public List<string> setWeaponProf() {
+        public List<string> setWeaponProf() { //Weapons: Simple weapons, hand crossbows, longswords, rapiers, shortswords
             throw new NotImplementedException();
         }
     }

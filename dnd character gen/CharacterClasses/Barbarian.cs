@@ -14,10 +14,7 @@ namespace dnd_character_gen.CharacterClasses {
 
         }
 
-        public string setSubType() {
-            return null;
-            //Barbarians don't get a subtype at level 1.
-        }
+        public string setSubType() => null;
 
         public string setPrimaryStat() => "Strength";
 
