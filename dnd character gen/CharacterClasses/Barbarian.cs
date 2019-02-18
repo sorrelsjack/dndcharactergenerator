@@ -9,11 +9,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Barbarian : ICharacterClass {
-
-        public Barbarian() {
-
-        }
-
         public string setSubType() => null;
 
         public string setPrimaryStat() => "Strength";
@@ -61,13 +56,16 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public void setFeatures() {
-            //TODO deal with this
-        }
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string> 
+        {
+            { "Rage", "-Can enter Rage as bonus action/n-Advantage on Strength checks and Strength saving throws" +
+                "/n-Melee weapon attacks using Strength get a bonus to damage rolls/n-Resistance to bludgeoning, piercing, and slashing damage" },
+            { "Unarmored Defense", "-While not wearing armor, AC is 10 + Dexterity modifier + Constitution modifier. Can use a shield still." }
+        };
 
-        public int? setSpellAttackMod() => null;
+        public int? setSpellAttackMod(int proficiency, int charisma) => null;
 
-        public int? setSpellSaveDC() => null;
+        public int? setSpellSaveDC(int proficiency, int charisma) => null;
 
         public List<string> setLanguages() => null;
     }

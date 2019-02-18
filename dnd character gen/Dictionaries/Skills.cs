@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.Dictionaries {
     public class Skills {
-        public Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        public Dictionary<string, string> skills = new Dictionary<string, string>();
 
         private Skills() {
-            dictionary.Add("Acrobatics", "Dexterity");
-            dictionary.Add("Animal Handling", "Wisdom");
-            dictionary.Add("Arcana", "Intelligence");
-            dictionary.Add("Athletics", "Strength");
-            dictionary.Add("Deception", "Charisma");
-            dictionary.Add("History", "Intelligence");
-            dictionary.Add("Insight", "Wisdom");
-            dictionary.Add("Intimidation", "Charisma");
-            dictionary.Add("Investigation", "Intelligence");
-            dictionary.Add("Medicine", "Wisdom");
-            dictionary.Add("Nature", "Intelligence");
-            dictionary.Add("Perception", "Wisdom");
-            dictionary.Add("Performance", "Charisma");
-            dictionary.Add("Persuasion", "Charisma");
-            dictionary.Add("Religion", "Intelligence");
-            dictionary.Add("Sleight of Hand", "Dexterity");
-            dictionary.Add("Stealth", "Dexterity");
-            dictionary.Add("Survival", "Wisdom");
+            skills.Add("Acrobatics", "Dexterity");
+            skills.Add("Animal Handling", "Wisdom");
+            skills.Add("Arcana", "Intelligence");
+            skills.Add("Athletics", "Strength");
+            skills.Add("Deception", "Charisma");
+            skills.Add("History", "Intelligence");
+            skills.Add("Insight", "Wisdom");
+            skills.Add("Intimidation", "Charisma");
+            skills.Add("Investigation", "Intelligence");
+            skills.Add("Medicine", "Wisdom");
+            skills.Add("Nature", "Intelligence");
+            skills.Add("Perception", "Wisdom");
+            skills.Add("Performance", "Charisma");
+            skills.Add("Persuasion", "Charisma");
+            skills.Add("Religion", "Intelligence");
+            skills.Add("Sleight of Hand", "Dexterity");
+            skills.Add("Stealth", "Dexterity");
+            skills.Add("Survival", "Wisdom");
         }
 
         private static Skills instance;

@@ -1,4 +1,6 @@
-﻿using dnd_character_gen.Interfaces;
+﻿using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +9,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Bard : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-
         public int setHitDie() => 8;
 
         public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
@@ -23,32 +19,66 @@ namespace dnd_character_gen.CharacterClasses {
         { "Simple weapons", "Hand crossbows", "Longswords", "Rapiers", "Shortswords" };
 
         public List<string> setToolsProf() {
-            //Three instruments.
-            throw new NotImplementedException();
+            List<string> toolProficiencies = new List<string>();
+            string skill = "";
+
+            while (toolProficiencies.Count < 3) {
+                skill = MusicalInstruments.Instance.instruments[NumberGen.gen(MusicalInstruments.Instance.instruments.Count)];
+
+                if (!toolProficiencies.Contains(skill)) {
+                    toolProficiencies.Add(skill);
+                }
+            }
+
+            return toolProficiencies;
         }
 
         public List<string> setSkills() {
-            //Any three.
-            throw new NotImplementedException();
+            List<string> skillProficiencies = new List<string>();
+            string skill = "";
+
+            while (skillProficiencies.Count < 3) {
+                skill = Skills.Instance.skills.Keys.ElementAt(NumberGen.gen(Skills.Instance.skills.Count));
+
+                if (!skillProficiencies.Contains(skill)) {
+                    skillProficiencies.Add(skill);
+                }
+            }
+
+            return skillProficiencies;
         }
 
         public string setPrimaryStat() => "Charisma";
 
         public List<string> setSaves() => new List<string>() { "Dexterity", "Charisma" };
 
-        public void setFeatures() {
-            throw new NotImplementedException();
-        }
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string> 
+        {
+            { "Spellcasting", "-Oh you know."},
+            { "Bardic Inspiration", "-Can inspire another creature within 60ft as bonus action" +
+                "\n-Inspired creature gains 1d6, which can be added to any roll it makes" }
+        };
 
-        public string setSubType() {
-            throw new NotImplementedException();
-        }
+        public string setSubType() => null;
 
         public List<string> setEquipment() {
             List<string> equipment = new List<string>();
-            //Rapier, Longsword, or any simple weapon
-            //Diplomat's Pack or Entertainer's Pack
-            //Lute or other instrument
+            int randomNumber = NumberGen.gen(3);
+
+            if (randomNumber == 1)
+                equipment.Add("Rapier");
+            else if (randomNumber == 2)
+                equipment.Add("Longsword");
+            else if (randomNumber == 3)
+                equipment.Add(SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
+
+            randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1
+                ? "Diplomat's Pack" : "Entertainer's Pack");
+
+            randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1
+                ? "Lute" : MusicalInstruments.Instance.instruments[NumberGen.gen(MusicalInstruments.Instance.instruments.Count)]);
 
             equipment.Add("Leather Armor");
             equipment.Add("Dagger");
@@ -56,16 +86,10 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public int? setSpellSaveDC() {
-            throw new NotImplementedException();
-        }
+        public int? setSpellSaveDC(int proficiency, int charisma) => 8 + proficiency + charisma;
 
-        public int? setSpellAttackMod() {
-            throw new NotImplementedException();
-        }
+        public int? setSpellAttackMod(int proficiency, int charisma) => proficiency + charisma;
 
-        public List<string> setLanguages() {
-            throw new NotImplementedException();
-        }
+        public List<string> setLanguages() => null;
     }
 }

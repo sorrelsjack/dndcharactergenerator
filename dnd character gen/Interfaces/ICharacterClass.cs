@@ -15,11 +15,11 @@ namespace dnd_character_gen.Interfaces {
         List<string> setLanguages();
         string setPrimaryStat();
         List<string> setSaves();
-        void setFeatures();
+        Dictionary<string, string> setFeatures();
         string setSubType();
         List<string> setEquipment();
-        int? setSpellSaveDC();
-        int? setSpellAttackMod();
+        int? setSpellSaveDC(int proficiency, int charisma);
+        int? setSpellAttackMod(int proficiency, int charisma);
         //Spells known? Cantrips? Spell slots?
     }
 }
