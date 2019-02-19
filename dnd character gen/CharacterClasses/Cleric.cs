@@ -60,7 +60,7 @@ namespace dnd_character_gen.CharacterClasses {
         public string setSubType() {
             List<string> domains = new List<string>() { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
 
-            return domains[NumberGen.gen(7)];
+            return domains[NumberGen.gen(7)]; //TODO minus one or something
         }
 
         public List<string> setToolsProf() => null;

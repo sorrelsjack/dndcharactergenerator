@@ -79,6 +79,7 @@
     <Compile Include="CharacterSubClasses\TrickeryCleric.cs" />
     <Compile Include="CharacterSubClasses\TwoWeaponFightingFighter.cs" />
     <Compile Include="CharacterSubClasses\WarCleric.cs" />
+    <Compile Include="Dictionaries\ArtisansTools.cs" />
     <Compile Include="Dictionaries\MartialWeapons.cs" />
     <Compile Include="Dictionaries\MusicalInstruments.cs" />
     <Compile Include="Dictionaries\SimpleWeapons.cs" />
