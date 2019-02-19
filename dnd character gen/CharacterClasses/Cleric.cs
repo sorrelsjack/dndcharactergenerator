@@ -53,13 +53,12 @@ namespace dnd_character_gen.CharacterClasses {
             return skillProficiencies;
         } 
 
-        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 8 + proficiency + modifiers["Wisdom"];
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Wisdom"];
 
-        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Wisdom"];
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 8 + proficiency + modifiers["Wisdom"];
 
         public string setSubType() {
-            List<string> domains = new List<string>() 
-            { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
+            List<string> domains = new List<string>() { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
 
             return domains[NumberGen.gen(7)];
         }

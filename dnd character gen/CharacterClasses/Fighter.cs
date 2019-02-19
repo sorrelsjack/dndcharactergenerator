@@ -1,4 +1,5 @@
-﻿using dnd_character_gen.Interfaces;
+﻿using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,18 +8,7 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Fighter : ICharacterClass {
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
-
-        public List<string> setArmorProf() {
-            List<string> armorProficiencies = new List<string>();
-            //All armor
-            armorProficiencies.Add("Shields");
-            return armorProficiencies;
-        }
+        public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Heavy armor", "Shields" };
 
         public List<string> setEquipment() {
             //Chain mail or leather armor, longbow, and 20 arrows
@@ -28,7 +18,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -46,26 +36,33 @@ namespace dnd_character_gen.CharacterClasses {
         public List<string> setSaves() => new List<string>() { "Strength", "Constitution" };
 
         public List<string> setSkills() {
-            //Two from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival
-            throw new NotImplementedException();
+            List<string> skillProficiencies = new List<string>();
+            List<string> availableSkills = new List<string>()
+                { "Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival" };
+
+            string skill = availableSkills[NumberGen.gen(8)];
+            skillProficiencies.Add(skill);
+            availableSkills.Remove(skill);
+
+            skill = availableSkills[NumberGen.gen(7)];
+            skillProficiencies.Add(skill);
+
+            return skillProficiencies;
         }
 
-        public int? setSpellAttackMod() => null;
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 0;
 
-        public int? setSpellSaveDC() => null;
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 0;
 
         public string setSubType() {
             List<string> fightingStyle = new List<string>() 
             { "Archery", "Defense", "Dueling", "Great Weapon Fighting", "Protection", "Two-Weapon Fighting" };
-            //TODO do stuff with this
-            throw new NotImplementedException();
+
+            return fightingStyle[NumberGen.gen(6)];
         }
 
         public List<string> setToolsProf() => null;
 
-        public List<string> setWeaponProf() {
-            //Simple weapons and martial weapons
-            throw new NotImplementedException();
-        }
+        public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Martial weapons" };
     }
 }

@@ -17,7 +17,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -35,13 +35,11 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int? setSpellAttackMod() { //Spell attack modifier = your proficiency bonus + your Charisma modifier
-            throw new NotImplementedException();
-        }
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) =>
+            proficiency + modifiers["Charisma"];
 
-        public int? setSpellSaveDC() { //Spell save DC = 8 + your proficiency bonus + your Charisma modifier
-            throw new NotImplementedException();
-        }
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) =>
+            8 + proficiency + modifiers["Charisma"];
 
         public string setSubType() { //Origin
             throw new NotImplementedException();

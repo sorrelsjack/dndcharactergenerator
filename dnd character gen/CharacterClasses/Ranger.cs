@@ -7,12 +7,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Ranger : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
-
         public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Shields" };
 
         public List<string> setEquipment() {
@@ -23,7 +17,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -43,16 +37,14 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int? setSpellAttackMod() => null;
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Wisdom"];
 
-        public int? setSpellSaveDC() => null;
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 8 + proficiency + modifiers["Wisdom"];
 
         public string setSubType() => null;
 
         public List<string> setToolsProf() => null;
 
-        public List<string> setWeaponProf() { //Simple weapons and martial weapons
-            throw new NotImplementedException();
-        }
+        public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Martial weapons" };
     }
 }

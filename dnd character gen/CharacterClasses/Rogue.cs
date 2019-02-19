@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Rogue : ICharacterClass {
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
-
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment() {
@@ -21,7 +17,7 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -39,9 +35,9 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int? setSpellAttackMod() => null;
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 0;
 
-        public int? setSpellSaveDC() => null;
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 0;
 
         public string setSubType() => null;
 

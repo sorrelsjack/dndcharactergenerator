@@ -135,6 +135,23 @@ namespace dnd_character_gen {
             if(characterClassSubtype == "War")
                 characterSubClass = new WarCleric();
 
+            if(characterClassSubtype == "Archery")
+                characterSubClass = new ArcheryFighter();
+            if (characterClassSubtype == "Defense")
+                characterSubClass = new DefenseFighter();
+            if (characterClassSubtype == "Dueling")
+                characterSubClass = new DuelingFighter();
+            if (characterClassSubtype == "Great Weapon Fighting")
+                characterSubClass = new GreatWeaponFightingFighter();
+            if (characterClassSubtype == "Protection")
+                characterSubClass = new ProtectionFighter();
+            if (characterClassSubtype == "Two-Weapon Fighting")
+                characterSubClass = new TwoWeaponFightingFighter();
+
+            if(characterClassSubtype == "Fiend")
+                characterSubClass = new FiendWarlock();
+            //TODO do stuff if its a class that doesnt have subclasses yet
+
             foreach(var feature in characterSubClass.setFeatures())
                 classFeatures.Add(feature.Key, feature.Value);
             armorProficiencies.AddRange(characterSubClass.setArmorProf());

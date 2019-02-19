@@ -23,7 +23,7 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -42,9 +42,9 @@ namespace dnd_character_gen.CharacterClasses {
             throw new NotImplementedException();
         }
 
-        public int? setSpellAttackMod() => null;
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 0;
 
-        public int? setSpellSaveDC() => null;
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 0;
 
         public string setSubType() {
             //Some monk stuff idk

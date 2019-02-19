@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Paladin : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-        public List<string> equipment = new List<string>();
-
         public List<string> setArmorProf() => new List<string> { "Shields" }; //And all armor.
 
         public List<string> setEquipment() {
@@ -25,7 +20,7 @@ Chain mail and a holy symbol
             throw new NotImplementedException();
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -43,9 +38,11 @@ Chain mail and a holy symbol
             throw new NotImplementedException();
         }
 
-        public int? setSpellAttackMod() => null; // Spell attack modifier = your proficiency bonus + your Charisma modifier
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) =>
+            proficiency + modifiers["Charisma"];
 
-        public int? setSpellSaveDC() => null; // Spell save DC = 8 + your proficiency bonus + your Charisma modifier
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 
+            8 + proficiency + modifiers["Charisma"];
 
         public string setSubType() => null;
 

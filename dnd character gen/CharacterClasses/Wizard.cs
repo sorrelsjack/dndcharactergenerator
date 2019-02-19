@@ -1,4 +1,5 @@
-﻿using dnd_character_gen.Interfaces;
+﻿using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,26 @@ namespace dnd_character_gen.CharacterClasses {
         public List<string> setArmorProf() => null;
 
         public List<string> setEquipment() {
-            //Quarterstaff or dagger
-            //Compontent pouch or arcane focus
-            //Scholar's pack or explorer's pack
-            //Spellbook
-            throw new NotImplementedException();
+            List<string> equipment = new List<string>();
+            int randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1 ? "Quarterstaff" : "Dagger");
+
+            randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1 ? "Component pouch" : "Arcane focus");
+
+            randomNumber = NumberGen.gen(2);
+            equipment.Add(randomNumber == 1 ? "Scholar's pack" : "Explorer's pack");
+
+            equipment.Add("Spellbook");
+
+            return equipment;
         }
 
-        public void setFeatures() {
-            throw new NotImplementedException();
-        }
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        {
+            { "Spellcasting", "Oh you know." },
+            { "Arcane Recovery", "-1/day, when finishing a short rest, choose expended spell slots to recover./n-Slots can have a combined level equal to or less than half of your Wizard level (rounded up)"}
+        };
 
         public int setHitDie() => 6;
 
@@ -32,17 +43,25 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string> { "Intelligence", "Wisdom" };
 
-        public List<string> setSkills() { //Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion
-            throw new NotImplementedException();
+        public List<string> setSkills() {
+            List<string> skillProficiencies = new List<string>();
+            List<string> availableSkills = new List<string>() { "Arcana", "History", "Insight", "Investigation", "Medicine", "Religion" };
+
+            string skill = availableSkills[NumberGen.gen(6)];
+            skillProficiencies.Add(skill);
+            availableSkills.Remove(skill);
+
+            skill = availableSkills[NumberGen.gen(5)];
+            skillProficiencies.Add(skill);
+
+            return skillProficiencies;
         }
 
-        public int? setSpellAttackMod() { // Spell attack modifier = your proficiency bonus + your Intelligence modifier
-            throw new NotImplementedException();
-        }
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 
+            proficiency + modifiers["Intelligence"];
 
-        public int? setSpellSaveDC() { // 8 + your proficiency bonus + your Intelligence modifier
-            throw new NotImplementedException();
-        }
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) =>
+            8 + proficiency + modifiers["Intelligence"];
 
         public string setSubType() => null;
 
