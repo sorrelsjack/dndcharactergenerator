@@ -86,9 +86,9 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public int? setSpellSaveDC(int proficiency, int charisma) => 8 + proficiency + charisma;
+        public int? setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 8 + proficiency + modifiers["Charisma"];
 
-        public int? setSpellAttackMod(int proficiency, int charisma) => proficiency + charisma;
+        public int? setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Charisma"];
 
         public List<string> setLanguages() => null;
     }

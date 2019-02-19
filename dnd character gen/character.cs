@@ -3,9 +3,16 @@ using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
+using dnd_character_gen.CharacterSubClasses;
 
 namespace dnd_character_gen {
     public class Character {
+
+        public Character()
+        {
+            generateBasicInfo();
+        }
+
         #region Basic Info
         public string name;
         public string characterClassSubtype; //Instead of this, make the field ClassName + (Subtype)
@@ -16,18 +23,20 @@ namespace dnd_character_gen {
         public int xp = 0;
         #endregion
 
-        #region Class, Race, and Background interfaces
+        #region Class, Subclass, Race, and Background interfaces
         public ICharacterClass characterClass { get; set; }
+        public ICharacterSubClass characterSubClass { get; set; }
         public ICharacterRace characterRace { get; set; }
         public ICharacterBackground characterBackground { get; set; }
         #endregion
 
-        #region AC, Init, Speed, HP
+        #region AC, Init, Speed, HP, Spell Save DC
         int armorClass { get; set; }
         int initiative { get; set; }
         int movementSpeed { get; set; }
         int hitDie { get; set; }
         int hitPoints { get; set; }
+        int spellSaveDC { get; set; }
         #endregion
 
         #region Proficiencies
@@ -59,7 +68,10 @@ namespace dnd_character_gen {
         public int intelligenceModifier { get; private set; }
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
+        public int spellAttackModifier { get; set; }
         #endregion
+
+        public Dictionary<string, string> classFeatures { get; set; }
 
         #region Basic Character Generator Method
         public void generateBasicInfo() {
@@ -73,17 +85,60 @@ namespace dnd_character_gen {
 
         public void initializeClass() {
             characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
+            initializeSubClass();
+
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
             hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order.
-            armorProficiencies.AddRange(characterClass.setArmorProf()); //Prevent dupes.
+
+            armorProficiencies.AddRange(characterClass.setArmorProf()); //Prevent dupes. Also, take into account subclass. Same for below.
             weaponProficiencies.AddRange(characterClass.setWeaponProf());
             toolProficiencies.AddRange(characterClass.setToolsProf());
             savingThrowProficiencies.AddRange(characterClass.setSaves());
+
             equipment.AddRange(characterClass.setEquipment());
-            //setFeatures();
-            //setSpellAttackMod();
-            //setSpellSaveDC();
+            classFeatures = characterClass.setFeatures();
+
+            spellAttackModifier = characterClass.setSpellAttackMod(proficiencyBonus, new Dictionary<string, int>
+            {
+                { "Strength", strengthModifier },
+                { "Dexterity", dexterityModifier },
+                { "Constitution", constitutionModifier },
+                { "Intelligence", intelligenceModifier },
+                { "Wisdom", wisdomModifier },
+                { "Charisma", charismaModifier }
+            });
+            spellSaveDC = characterClass.setSpellSaveDC(proficiencyBonus, new Dictionary<string, int>
+            {
+                { "Strength", strengthModifier },
+                { "Dexterity", dexterityModifier },
+                { "Constitution", constitutionModifier },
+                { "Intelligence", intelligenceModifier },
+                { "Wisdom", wisdomModifier },
+                { "Charisma", charismaModifier }
+            });
+        }
+
+        public void initializeSubClass() {
+            if (characterClassSubtype == "Knowledge")
+                characterSubClass = new KnowledgeCleric();
+            if(characterClassSubtype == "Life")
+                characterSubClass = new LifeCleric();
+            if(characterClassSubtype == "Light")
+                characterSubClass = new LightCleric();
+            if(characterClassSubtype == "Nature")
+                characterSubClass = new NatureCleric();
+            if(characterClassSubtype == "Tempest")
+                characterSubClass = new TempestCleric();
+            if(characterClassSubtype == "Trickery")
+                characterSubClass = new TrickeryCleric();
+            if(characterClassSubtype == "War")
+                characterSubClass = new WarCleric();
+
+            foreach(var feature in characterSubClass.setFeatures())
+                classFeatures.Add(feature.Key, feature.Value);
+            armorProficiencies.AddRange(characterSubClass.setArmorProf());
+            weaponProficiencies.AddRange(characterSubClass.setWeaponProf());
         }
 
         #region

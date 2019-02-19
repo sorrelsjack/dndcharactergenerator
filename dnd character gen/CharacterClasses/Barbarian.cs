@@ -63,9 +63,9 @@ namespace dnd_character_gen.CharacterClasses {
             { "Unarmored Defense", "-While not wearing armor, AC is 10 + Dexterity modifier + Constitution modifier. Can use a shield still." }
         };
 
-        public int? setSpellAttackMod(int proficiency, int charisma) => null;
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 0;
 
-        public int? setSpellSaveDC(int proficiency, int charisma) => null;
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 0;
 
         public List<string> setLanguages() => null;
     }

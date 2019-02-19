@@ -18,8 +18,8 @@ namespace dnd_character_gen.Interfaces {
         Dictionary<string, string> setFeatures();
         string setSubType();
         List<string> setEquipment();
-        int? setSpellSaveDC(int proficiency, int charisma);
-        int? setSpellAttackMod(int proficiency, int charisma);
+        int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers);
+        int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers);
         //Spells known? Cantrips? Spell slots?
     }
 }

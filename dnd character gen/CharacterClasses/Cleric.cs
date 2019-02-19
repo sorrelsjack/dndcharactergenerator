@@ -1,4 +1,6 @@
-﻿using dnd_character_gen.Dictionaries;
+﻿using dnd_character_gen.CharacterSubClasses;
+using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,12 +10,6 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Cleric : ICharacterClass {
-        public List<string> armorProficiencies = new List<string>();
-        public List<string> weaponProficiencies = new List<string>();
-        public List<string> toolProficiencies = new List<string>();
-        public List<string> savingThrowProficiencies = new List<string>();
-        public List<string> skillProficiencies = new List<string>();
-
         public List<string> setArmorProf() => new List<string>() { "Light armor", "Medium armor", "Shields" }; //What if we need to add more later if there's more proficiences?
 
         public List<string> setEquipment() {
@@ -28,7 +24,7 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public void setFeatures() {
+        public Dictionary<string, string> setFeatures() {
             throw new NotImplementedException();
         }
 
@@ -42,30 +38,34 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string>() { "Wisdom", "Charisma" };
 
-        public List<string> setSkills() => null; //TODO fix. History, Insight, Medicine, Persuasion, Religion
+        public List<string> setSkills() {
+            List<string> skillProficiencies = new List<string>();
+            List<string> availableSkills = new List<string>()
+            { "History", "Insight", "Medicine", "Persuasion", "Religion" };
 
-        public int? setSpellAttackMod() {
-            throw new NotImplementedException();
-        }
+            string skill = availableSkills[NumberGen.gen(5)];
+            skillProficiencies.Add(skill);
+            availableSkills.Remove(skill);
 
-        public int? setSpellSaveDC() {
-            throw new NotImplementedException();
-        }
+            skill = availableSkills[NumberGen.gen(4)];
+            skillProficiencies.Add(skill);
+
+            return skillProficiencies;
+        } 
+
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 8 + proficiency + modifiers["Wisdom"];
+
+        public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Wisdom"];
 
         public string setSubType() {
             List<string> domains = new List<string>() 
             { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
 
-            //TODO fill this out. Pick one at random!
-            //TODO codify the benefits of each subtype...
-
-            return null;
+            return domains[NumberGen.gen(7)];
         }
 
         public List<string> setToolsProf() => null;
 
-        //TODO if proficient in simple weapons, return that list
-
-        public List<string> setWeaponProf() => SimpleWeapons.Instance.weapons;
+        public List<string> setWeaponProf() => new List<string> { "Simple weapons" };
     }
 }

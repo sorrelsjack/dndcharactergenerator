@@ -65,6 +65,13 @@
     <Compile Include="CharacterSheet.Designer.cs">
       <DependentUpon>CharacterSheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="CharacterSubClasses\KnowledgeCleric.cs" />
+    <Compile Include="CharacterSubClasses\LifeCleric.cs" />
+    <Compile Include="CharacterSubClasses\LightCleric.cs" />
+    <Compile Include="CharacterSubClasses\NatureCleric.cs" />
+    <Compile Include="CharacterSubClasses\TempestCleric.cs" />
+    <Compile Include="CharacterSubClasses\TrickeryCleric.cs" />
+    <Compile Include="CharacterSubClasses\WarCleric.cs" />
     <Compile Include="Dictionaries\MartialWeapons.cs" />
     <Compile Include="Dictionaries\MusicalInstruments.cs" />
     <Compile Include="Dictionaries\SimpleWeapons.cs" />
@@ -73,6 +80,7 @@
     <Compile Include="Interfaces\ICharacterBackground.cs" />
     <Compile Include="Interfaces\ICharacterClass.cs" />
     <Compile Include="Interfaces\ICharacterRace.cs" />
+    <Compile Include="Interfaces\ICharacterSubClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CharacterSheet.resx">
