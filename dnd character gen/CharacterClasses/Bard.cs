@@ -65,19 +65,19 @@ namespace dnd_character_gen.CharacterClasses {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(3);
 
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 equipment.Add("Rapier");
-            else if (randomNumber == 2)
+            else if (randomNumber == 1)
                 equipment.Add("Longsword");
-            else if (randomNumber == 3)
+            else if (randomNumber == 2)
                 equipment.Add(SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Diplomat's Pack" : "Entertainer's Pack");
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Lute" : MusicalInstruments.Instance.instruments[NumberGen.gen(MusicalInstruments.Instance.instruments.Count)]);
 
             equipment.Add("Leather Armor");

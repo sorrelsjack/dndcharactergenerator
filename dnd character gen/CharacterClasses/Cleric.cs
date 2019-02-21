@@ -33,7 +33,7 @@ namespace dnd_character_gen.CharacterClasses
             if (!_armorProficiencies.Contains("Chain mail"))
             {
                 randomNumber = NumberGen.gen(2);
-                equipment.Add(randomNumber == 1 ? "Scale mail" : "Leather armor");
+                equipment.Add(randomNumber == 0 ? "Scale mail" : "Leather armor");
             }
             else
             {
@@ -41,11 +41,11 @@ namespace dnd_character_gen.CharacterClasses
             }
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Light crossbow and 20 bolts" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Priest's pack" : "Explorer's pack");
+            equipment.Add(randomNumber == 0 ? "Priest's pack" : "Explorer's pack");
 
             equipment.Add("Shield");
             equipment.Add("Holy Symbol");
@@ -71,7 +71,7 @@ namespace dnd_character_gen.CharacterClasses
 
         public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
 
-        public List<string> setLanguages() => null;
+        public List<string> setLanguages() => _languageProficiencies;
 
         public string setPrimaryStat() => "Wisdom";
 
@@ -145,7 +145,7 @@ namespace dnd_character_gen.CharacterClasses
 
             var subClassWeaponProf = subClass.setWeaponProf();
             if (subClassArmorProf != null)
-                _weaponProficiencies.AddRange(subClassWeaponProf);
+                _weaponProficiencies.AddRange(subClassWeaponProf); //Getting a null here.
 
             var subClassLanguageProf = subClass.setLanguageProf();
             if (subClassLanguageProf != null)

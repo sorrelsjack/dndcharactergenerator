@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using dnd_character_gen.CharacterClasses;
 using dnd_character_gen.CharacterSubClasses;
 using dnd_character_gen.Extensions;
@@ -16,7 +17,7 @@ namespace dnd_character_gen
 
         #region Basic Info
         public string name;
-        public string characterClassSubtype; //Instead of this, make the field ClassName + (Subtype)
+        public string characterClassSubtype = "";
         public int level = 1;
         public string background;
         public string race;
@@ -89,9 +90,7 @@ namespace dnd_character_gen
 
         public void initializeClass()
         {
-            characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
-            /*if (characterClassSubtype != null)
-                initializeSubClass();*/
+            characterClassSubtype = characterClass.setSubType(); //TODO fix a NRE here
 
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
@@ -135,84 +134,35 @@ namespace dnd_character_gen
                 { "Charisma", charismaModifier }
             });
         }
-
-        public void initializeSubClass()
-        {
-            if (characterClassSubtype == "Knowledge")
-                characterSubClass = new KnowledgeCleric();
-            if (characterClassSubtype == "Life")
-                characterSubClass = new LifeCleric();
-            if (characterClassSubtype == "Light")
-                characterSubClass = new LightCleric();
-            if (characterClassSubtype == "Nature")
-                characterSubClass = new NatureCleric();
-            if (characterClassSubtype == "Tempest")
-                characterSubClass = new TempestCleric();
-            if (characterClassSubtype == "Trickery")
-                characterSubClass = new TrickeryCleric();
-            if (characterClassSubtype == "War")
-                characterSubClass = new WarCleric();
-
-            if (characterClassSubtype == "Archery")
-                characterSubClass = new ArcheryFighter();
-            if (characterClassSubtype == "Defense")
-                characterSubClass = new DefenseFighter();
-            if (characterClassSubtype == "Dueling")
-                characterSubClass = new DuelingFighter();
-            if (characterClassSubtype == "Great Weapon Fighting")
-                characterSubClass = new GreatWeaponFightingFighter();
-            if (characterClassSubtype == "Protection")
-                characterSubClass = new ProtectionFighter();
-            if (characterClassSubtype == "Two-Weapon Fighting")
-                characterSubClass = new TwoWeaponFightingFighter();
-
-            if (characterClassSubtype == "Archfey")
-                characterSubClass = new ArchfeyWarlock();
-            if (characterClassSubtype == "Fiend")
-                characterSubClass = new FiendWarlock();
-            if (characterClassSubtype == "Great Old One")
-                characterSubClass = new GreatOldOneWarlock();
-
-            if (characterClassSubtype == "Draconic Bloodline")
-                characterSubClass = new DraconicBloodlineSorcerer();
-            if (characterClassSubtype == "Wild Magic")
-                characterSubClass = new WildMagicSorcerer();
-
-            foreach (var feature in characterSubClass.setFeatures())
-                classFeatures.Add(feature.Key, feature.Value);
-            armorProficiencies.AddRange(characterSubClass.setArmorProf());
-            weaponProficiencies.AddRange(characterSubClass.setWeaponProf());
-        }
-
         #region
 
         private void generateClass()
         {
-            int randomNumber = NumberGen.gen(13);
+            int randomNumber = NumberGen.gen(11);
 
-            if (randomNumber == 1)
-                characterClass = new Barbarian();
-            else if (randomNumber == 2)
+            if (randomNumber == 0)
+                characterClass = new Barbarian(); //TODO: Fix an issue where it takes other classes equipment???
+            else if (randomNumber == 1)
                 characterClass = new Bard();
-            else if (randomNumber == 3)
+            else if (randomNumber == 2)
                 characterClass = new Cleric();
-            else if (randomNumber == 4)
+            else if (randomNumber == 3)
                 characterClass = new Druid();
-            else if (randomNumber == 5)
+            else if (randomNumber == 4)
                 characterClass = new Fighter();
-            else if (randomNumber == 6)
+            else if (randomNumber == 5)
                 characterClass = new Monk();
-            else if (randomNumber == 7)
+            else if (randomNumber == 6)
                 characterClass = new Paladin();
-            else if (randomNumber == 8)
+            else if (randomNumber == 7)
                 characterClass = new Ranger();
-            else if (randomNumber == 9)
+            else if (randomNumber == 8)
                 characterClass = new Rogue();
-            else if (randomNumber == 10)
+            else if (randomNumber == 9)
                 characterClass = new Sorcerer();
-            else if (randomNumber == 11)
+            else if (randomNumber == 10)
                 characterClass = new Warlock();
-            else if (randomNumber == 12)
+            else if (randomNumber == 11)
                 characterClass = new Wizard();
         }
 
@@ -291,7 +241,7 @@ namespace dnd_character_gen
         private string generateAlignment()
         {
             string alignment = "";
-            int randomNumber = NumberGen.gen(10);
+            int randomNumber = NumberGen.gen(10); //TODO fix an issue where I'm not getting any of these options
 
             if (randomNumber == 1)
                 alignment = "Lawful Good";
@@ -353,11 +303,16 @@ namespace dnd_character_gen
 
         public void generateStatArray()
         {
-            int[] statArray = new int[6];
+            List<int> statArray = new List<int>();
+
             for (int i = 0; i < 6; i++)
             {
-                statArray[i] = generateStat();
+                statArray.Add(generateStat());
             }
+
+            statArray = statArray.OrderBy(x => x).ToList<int>(); //Ordering by lowest to highest value.
+            //TODO: Do some sorting to get the highest stat, while also randomly distributing the lowest
+
             strength = statArray[0]; //TODO optomize for each class.. Prioritize certain stats for certain classes.
             dexterity = statArray[1];
             constitution = statArray[2];
@@ -371,6 +326,10 @@ namespace dnd_character_gen
             intelligenceModifier = calculateStatModifier(intelligence);
             wisdomModifier = calculateStatModifier(wisdom);
             charismaModifier = calculateStatModifier(charisma);
+        }
+
+        private void distributeStats() { //Our leftover stats. i.e., not the primary stat.
+
         }
 
         private int calculateStatModifier(int stat)

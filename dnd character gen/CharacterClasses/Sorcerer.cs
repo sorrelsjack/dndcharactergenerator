@@ -91,7 +91,7 @@ namespace dnd_character_gen.CharacterClasses
 
         private void initializeSubType()
         {
-            foreach (var feature in subClass.setFeatures())
+            foreach (var feature in subClass.setFeatures()) //TODO fix a "key already added" issue here
                 _features.Add(feature.Key, feature.Value);
 
             var subClassLanguageProf = subClass.setLanguageProf();

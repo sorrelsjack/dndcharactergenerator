@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Media;
 using System.Windows.Forms;
 
 namespace dnd_character_gen
@@ -14,8 +16,11 @@ namespace dnd_character_gen
 
         private void CharacterSheet_Load(object sender, EventArgs e)
         {
-            /*xpTextBox.Text = currentCharacter.xp.ToString();
-            proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();*/
+            equipmentListView.View = View.List;
+            equipmentListView.GridLines = true;
+
+            xpTextBox.Text = currentCharacter.xp.ToString();
+            proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -24,7 +29,7 @@ namespace dnd_character_gen
 
         private void PopulateStatBoxes()
         {
-            /*currentCharacter.generateStatArray();
+            currentCharacter.generateStatArray();
             //TODO: Tooltip over every stat to show where it's coming from (e.g. Dex mod: Base roll, race, etc..)
 
             strengthValueTextBox.Text = currentCharacter.strength.ToString();
@@ -39,7 +44,25 @@ namespace dnd_character_gen
             constitutionModifierTextBox.Text = currentCharacter.constitutionModifier.ToString();
             intelligenceModifierTextBox.Text = currentCharacter.intelligenceModifier.ToString();
             wisdomModifierTextBox.Text = currentCharacter.wisdomModifier.ToString();
-            charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();*/
+            charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
+        }
+
+        private void PopulateSkillProficiencies() {
+
+        }
+
+        private void PopulateOtherProficiencies() {
+            List<string> proficienciesLanguagesList = new List<string>();
+            proficienciesLanguagesList.AddRange(currentCharacter.toolProficiencies);
+            proficienciesLanguagesList.AddRange(currentCharacter.languageProficiencies);
+
+            proficienciesLanguagesTextBox.Text = String.Join(Environment.NewLine, proficienciesLanguagesList);
+        }
+
+        private void PopulateEquipment() {
+            foreach(var item in currentCharacter.equipment) {
+                equipmentListView.Items.Add(new ListViewItem(new[] { item }));
+            }
         }
 
         private void statsButton_Click(object sender, EventArgs e)
@@ -49,8 +72,8 @@ namespace dnd_character_gen
 
         private void rollButton_Click(object sender, EventArgs e)
         {
-            //SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
-            //diceSound.Play();
+            SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
+            diceSound.Play();
 
             PopulateStatBoxes();
         }
@@ -66,11 +89,19 @@ namespace dnd_character_gen
 
         private void rollMainInfoButton_Click(object sender, EventArgs e)
         {
+            equipmentListView.Clear();
+            equipmentListView.Items.Clear();
+
+            currentCharacter = new Character();
+
             currentCharacter.generateBasicInfo();
-            classLevelTextBox.Text = currentCharacter.characterClassSubtype + " " + currentCharacter.characterClass.GetType().Name + " " + currentCharacter.level.ToString();
+            classLevelTextBox.Text = $"{currentCharacter.characterClassSubtype}{(currentCharacter.characterClassSubtype != null ? " " : "")}{currentCharacter.characterClass.GetType().Name} {currentCharacter.level.ToString()}";
             alignmentTextBox.Text = currentCharacter.alignment;
             backgroundTextBox.Text = currentCharacter.background;
             raceTextBox.Text = currentCharacter.race;
+
+            PopulateOtherProficiencies();
+            PopulateEquipment();
         }
     }
 }

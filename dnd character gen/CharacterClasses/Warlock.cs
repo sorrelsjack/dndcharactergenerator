@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using dnd_character_gen.CharacterSubClasses;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -8,11 +9,14 @@ namespace dnd_character_gen.CharacterClasses
     public class Warlock : ICharacterClass
     {
         private string patron;
+        private ICharacterSubClass subClass;
+
+        private Dictionary<string, string> _features = new Dictionary<string, string>();
 
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment()
-        {
+        { 
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
             equipment.Add(randomNumber == 1
@@ -71,10 +75,25 @@ namespace dnd_character_gen.CharacterClasses
 
         public string setSubType()
         {
-            List<string> patrons = new List<string>() { "Archfey", "Fiend", "Great Old One" }; //TODO create subclasses for Archfey and GOO
+            List<string> patrons = new List<string>() { "Archfey", "Fiend", "Great Old One" };
 
             patron = patrons[NumberGen.gen(3)];
+            if (patron == "Archfey")
+                subClass = new ArchfeyWarlock();
+            else if (patron == "Fiend")
+                subClass = new FiendWarlock();
+            else if (patron == "Great Old One")
+                subClass = new GreatOldOneWarlock();
+
+            initializeSubType();
+
             return patron;
+        }
+
+        private void initializeSubType() 
+        {
+            foreach (var feature in subClass.setFeatures())
+                _features.Add(feature.Key, feature.Value);
         }
 
         public List<string> setToolsProf() => null;
