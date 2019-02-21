@@ -1,14 +1,12 @@
-﻿using dnd_character_gen.Dictionaries;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace dnd_character_gen.CharacterClasses {
-    public class Barbarian : ICharacterClass {
+namespace dnd_character_gen.CharacterClasses
+{
+    public class Barbarian : ICharacterClass
+    {
         public string setSubType() => null;
 
         public string setPrimaryStat() => "Strength";
@@ -25,10 +23,11 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string>() { "Strength", "Constitution" };
 
-        public List<string> setSkills() {
+        public List<string> setSkills()
+        {
             List<string> skillProficiencies = new List<string>();
             List<string> availableSkills = new List<string>()
-            { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}; //Use global dict to know what stat each is.
+            { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}; //TODO: Use global dict to know what stat each is.
 
             string skill = availableSkills[NumberGen.gen(6)]; //TODO perhaps change this to "Skill Choices" and then just randomize in main class so I don't have to write the same thing over and over.
             skillProficiencies.Add(skill);
@@ -40,10 +39,11 @@ namespace dnd_character_gen.CharacterClasses {
             return availableSkills;
         }
 
-        public List<string> setEquipment() {
+        public List<string> setEquipment()
+        {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 
+            equipment.Add(randomNumber == 1
                 ? "Greataxe" : MartialWeapons.Instance.weapons[NumberGen.gen(MartialWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
@@ -56,7 +56,7 @@ namespace dnd_character_gen.CharacterClasses {
             return equipment;
         }
 
-        public Dictionary<string, string> setFeatures() => new Dictionary<string, string> 
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Rage", "-Can enter Rage as bonus action/n-Advantage on Strength checks and Strength saving throws" +
                 "/n-Melee weapon attacks using Strength get a bonus to damage rolls/n-Resistance to bludgeoning, piercing, and slashing damage" },

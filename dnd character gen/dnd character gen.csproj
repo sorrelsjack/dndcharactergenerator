@@ -66,9 +66,12 @@
       <DependentUpon>CharacterSheet.cs</DependentUpon>
     </Compile>
     <Compile Include="CharacterSubClasses\ArcheryFighter.cs" />
+    <Compile Include="CharacterSubClasses\ArchfeyWarlock.cs" />
     <Compile Include="CharacterSubClasses\DefenseFighter.cs" />
+    <Compile Include="CharacterSubClasses\DraconicBloodlineSorcerer.cs" />
     <Compile Include="CharacterSubClasses\DuelingFighter.cs" />
     <Compile Include="CharacterSubClasses\FiendWarlock.cs" />
+    <Compile Include="CharacterSubClasses\GreatOldOneWarlock.cs" />
     <Compile Include="CharacterSubClasses\GreatWeaponFightingFighter.cs" />
     <Compile Include="CharacterSubClasses\KnowledgeCleric.cs" />
     <Compile Include="CharacterSubClasses\LifeCleric.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="CharacterSubClasses\TrickeryCleric.cs" />
     <Compile Include="CharacterSubClasses\TwoWeaponFightingFighter.cs" />
     <Compile Include="CharacterSubClasses\WarCleric.cs" />
+    <Compile Include="CharacterSubClasses\WildMagicSorcerer.cs" />
     <Compile Include="Dictionaries\ArtisansTools.cs" />
     <Compile Include="Dictionaries\MartialWeapons.cs" />
     <Compile Include="Dictionaries\MusicalInstruments.cs" />

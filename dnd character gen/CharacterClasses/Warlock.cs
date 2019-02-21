@@ -1,17 +1,16 @@
-﻿using dnd_character_gen.Dictionaries;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace dnd_character_gen.CharacterClasses {
-    public class Warlock : ICharacterClass {
+namespace dnd_character_gen.CharacterClasses
+{
+    public class Warlock : ICharacterClass
+    {
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
-        public List<string> setEquipment() {
+        public List<string> setEquipment()
+        {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
             equipment.Add(randomNumber == 1
@@ -46,7 +45,8 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string> { "Wisdom", "Charisma" };
 
-        public List<string> setSkills() {
+        public List<string> setSkills()
+        {
             List<string> skillProficiencies = new List<string>();
             List<string> availableSkills = new List<string>()
                 { "Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion" };
@@ -67,10 +67,11 @@ namespace dnd_character_gen.CharacterClasses {
         public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) =>
             8 + proficiency + modifiers["Charisma"];
 
-        public string setSubType() {
-            List<string> patrons = new List<string>() {"Fiend"}; //TODO fill this out
+        public string setSubType()
+        {
+            List<string> patrons = new List<string>() { "Archfey", "Fiend", "Great Old One" }; //TODO create subclasses for Archfey and GOO
 
-            return patrons[NumberGen.gen(1)];
+            return patrons[NumberGen.gen(3)];
         }
 
         public List<string> setToolsProf() => null;
