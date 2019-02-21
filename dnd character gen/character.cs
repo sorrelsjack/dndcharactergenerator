@@ -89,17 +89,29 @@ namespace dnd_character_gen
 
         public void initializeClass()
         {
-            characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
-            initializeSubClass();
+            /*characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
+            if (characterClassSubtype != null)
+                initializeSubClass();*/
 
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
             hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order.
 
-            armorProficiencies.AddRange(characterClass.setArmorProf()); //Prevent dupes. Also, take into account subclass. Same for below.
-            weaponProficiencies.AddRange(characterClass.setWeaponProf());
-            toolProficiencies.AddRange(characterClass.setToolsProf());
-            savingThrowProficiencies.AddRange(characterClass.setSaves());
+            var classArmorProficiencies = characterClass.setArmorProf();
+            if (classArmorProficiencies != null)
+                armorProficiencies.AddRange(classArmorProficiencies); //Prevent dupes. Also, take into account subclass. Same for below.
+
+            var classWeaponProficiencies = characterClass.setWeaponProf();
+            if (classWeaponProficiencies != null)
+                weaponProficiencies.AddRange(classWeaponProficiencies);
+
+            var classToolProficiencies = characterClass.setToolsProf();
+            if (classToolProficiencies != null)
+                toolProficiencies.AddRange(classToolProficiencies);
+
+            var classSavingThrowProficiencies = characterClass.setSaves();
+            if (classSavingThrowProficiencies != null)
+                savingThrowProficiencies.AddRange(classSavingThrowProficiencies);
 
             equipment.AddRange(characterClass.setEquipment());
             classFeatures = characterClass.setFeatures();
@@ -176,7 +188,7 @@ namespace dnd_character_gen
 
         private void generateClass()
         {
-            int randomNumber = NumberGen.gen(12);
+            int randomNumber = NumberGen.gen(13);
             if (randomNumber == 1)
             {
                 characterClass = new Barbarian();
