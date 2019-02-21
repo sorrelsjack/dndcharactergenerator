@@ -1,24 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class TwoWeaponFightingFighter : ICharacterSubClass {
+    public class TwoWeaponFightingFighter : ICharacterSubClass
+    {
         public List<string> setArmorProf()
         {
             throw new NotImplementedException();
         }
 
-        public Dictionary<string, string> setFeatures()
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        {
+            { "Two-Weapon Fighting", "-When engaging in two-weapon fighting, can add ability modifier to the damage of the second attack" }
+        };
+
+        public List<string> setLanguageProf()
         {
             throw new NotImplementedException();
         }
 
         public string setName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> setSkillProf()
         {
             throw new NotImplementedException();
         }

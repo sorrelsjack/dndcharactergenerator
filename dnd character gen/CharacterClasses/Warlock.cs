@@ -7,6 +7,8 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Warlock : ICharacterClass
     {
+        private string patron;
+
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment()
@@ -71,7 +73,8 @@ namespace dnd_character_gen.CharacterClasses
         {
             List<string> patrons = new List<string>() { "Archfey", "Fiend", "Great Old One" }; //TODO create subclasses for Archfey and GOO
 
-            return patrons[NumberGen.gen(3)];
+            patron = patrons[NumberGen.gen(3)];
+            return patron;
         }
 
         public List<string> setToolsProf() => null;

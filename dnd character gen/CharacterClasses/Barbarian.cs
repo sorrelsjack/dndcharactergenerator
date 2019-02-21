@@ -36,7 +36,7 @@ namespace dnd_character_gen.CharacterClasses
             skill = availableSkills[NumberGen.gen(5)];
             skillProficiencies.Add(skill);
 
-            return availableSkills;
+            return skillProficiencies;
         }
 
         public List<string> setEquipment()

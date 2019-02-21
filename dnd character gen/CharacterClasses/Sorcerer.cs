@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using dnd_character_gen.CharacterSubClasses;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -7,6 +8,12 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Sorcerer : ICharacterClass
     {
+        private string origin;
+        private ICharacterSubClass subClass;
+
+        private Dictionary<string, string> _features = new Dictionary<string, string>();
+        private List<string> _languageProficiencies = new List<string>();
+
         public List<string> setArmorProf() => null;
 
         public List<string> setEquipment()
@@ -31,15 +38,15 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Spellcasting", "Oh you know." },
+            { "Spellcasting", "-Oh you know." },
             { "Sorcerous Origin", "-Choose a sorcerous origin." }
         };
 
         public int setHitDie() => 6;
 
-        public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
+        public int setHitPoints(int hitDie, int constitution) => origin != "Draconic Bloodline" ? hitDie + constitution : hitDie + constitution + 1; //For first level characters, of course.
 
-        public List<string> setLanguages() => null;
+        public List<string> setLanguages() => _languageProficiencies;
 
         public string setPrimaryStat() => "Charisma";
 
@@ -67,7 +74,30 @@ namespace dnd_character_gen.CharacterClasses
         public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) =>
             8 + proficiency + modifiers["Charisma"];
 
-        public string setSubType() => NumberGen.gen(2) == 1 ? "Draconic Bloodline" : "Wild Magic";
+        public string setSubType()
+        {
+            List<string> origins = new List<string> { "Draconic Bloodline", "Wild Magic" };
+
+            origin = origins[NumberGen.gen(2)];
+            if (origin == "Draconic Bloodline")
+                subClass = new DraconicBloodlineSorcerer();
+            else if (origin == "Wild Magic")
+                subClass = new WildMagicSorcerer();
+
+            initializeSubType();
+
+            return origin;
+        }
+
+        private void initializeSubType()
+        {
+            foreach (var feature in subClass.setFeatures())
+                _features.Add(feature.Key, feature.Value);
+
+            var subClassLanguageProf = subClass.setLanguageProf();
+            if (subClassLanguageProf != null)
+                _languageProficiencies.AddRange(subClassLanguageProf);
+        }
 
         public List<string> setToolsProf() => null;
 

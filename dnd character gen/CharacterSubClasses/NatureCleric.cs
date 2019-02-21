@@ -1,31 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class NatureCleric : ICharacterSubClass {
-        public List<string> setArmorProf()
-        {
-            throw new NotImplementedException();
-        }
+    public class NatureCleric : ICharacterSubClass
+    {
+        public List<string> setArmorProf() => new List<string> { "Heavy armor" };
 
-        public Dictionary<string, string> setFeatures()
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>()
         {
-            throw new NotImplementedException();
-        }
+            { "Acolyte of Nature", "-Learn one Druid cantrip\n-Gain proficiency in one of the following: Animal Handling, Nature, Survival" },
+            { "Bonus Proficiency", "-Proficiency with heavy armor" }
+        };
+
+        public List<string> setLanguageProf() => null;
 
         public string setName()
         {
             throw new NotImplementedException();
         }
 
-        public List<string> setWeaponProf()
+        public List<string> setSkillProf()
         {
-            throw new NotImplementedException();
+            List<string> skillProficiencies = new List<string>();
+            List<string> availableSkills = new List<string>() { "Animal Handling", "Nature", "Survival" };
+
+            string skill = availableSkills[NumberGen.gen(3)];
+            skillProficiencies.Add(skill);
+            availableSkills.Remove(skill);
+
+            skill = availableSkills[NumberGen.gen(2)];
+            skillProficiencies.Add(skill);
+
+            return skillProficiencies;
         }
+
+        public List<string> setWeaponProf() => null;
     }
 }

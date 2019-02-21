@@ -1,31 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class WarCleric : ICharacterSubClass {
-        public List<string> setArmorProf()
-        {
-            throw new NotImplementedException();
-        }
+    public class WarCleric : ICharacterSubClass
+    {
+        public List<string> setArmorProf() => new List<string> { "Heavy armor" };
 
-        public Dictionary<string, string> setFeatures()
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            throw new NotImplementedException();
-        }
+            { "Bonus Proficiencies", "-Gain proficiency with martial weapons and heavy armor" },
+            { "War Priest", "-When using the Attack action, can make one weapon attack as a bonus action" }
+        };
+
+        public List<string> setLanguageProf() => null;
 
         public string setName()
         {
             throw new NotImplementedException();
         }
 
-        public List<string> setWeaponProf()
-        {
-            throw new NotImplementedException();
-        }
+        public List<string> setSkillProf() => null;
+
+        public List<string> setWeaponProf() => new List<string> { "Martial weapons" };
     }
 }

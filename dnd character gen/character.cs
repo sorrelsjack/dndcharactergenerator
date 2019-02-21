@@ -89,8 +89,8 @@ namespace dnd_character_gen
 
         public void initializeClass()
         {
-            /*characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
-            if (characterClassSubtype != null)
+            characterClassSubtype = characterClass.setSubType(); //TODO deal with an issue where class, race, and background could have same skills.
+            /*if (characterClassSubtype != null)
                 initializeSubClass();*/
 
             primaryStat = characterClass.setPrimaryStat();
@@ -189,54 +189,31 @@ namespace dnd_character_gen
         private void generateClass()
         {
             int randomNumber = NumberGen.gen(13);
+
             if (randomNumber == 1)
-            {
                 characterClass = new Barbarian();
-            }
             else if (randomNumber == 2)
-            {
                 characterClass = new Bard();
-            }
             else if (randomNumber == 3)
-            {
                 characterClass = new Cleric();
-            }
             else if (randomNumber == 4)
-            {
                 characterClass = new Druid();
-            }
             else if (randomNumber == 5)
-            {
                 characterClass = new Fighter();
-            }
             else if (randomNumber == 6)
-            {
                 characterClass = new Monk();
-            }
             else if (randomNumber == 7)
-            {
                 characterClass = new Paladin();
-            }
             else if (randomNumber == 8)
-            {
                 characterClass = new Ranger();
-            }
             else if (randomNumber == 9)
-            {
                 characterClass = new Rogue();
-            }
             else if (randomNumber == 10)
-            {
                 characterClass = new Sorcerer();
-            }
             else if (randomNumber == 11)
-            {
                 characterClass = new Warlock();
-            }
             else if (randomNumber == 12)
-            {
                 characterClass = new Wizard();
-            }
         }
 
         private string generateBackground()
@@ -287,7 +264,7 @@ namespace dnd_character_gen
         private string generateRace()
         {
             string race = "";
-            int randomNumber = NumberGen.gen(9);
+            int randomNumber = NumberGen.gen(10);
 
             if (randomNumber == 1)
                 race = "Dragonborn";
@@ -314,44 +291,27 @@ namespace dnd_character_gen
         private string generateAlignment()
         {
             string alignment = "";
-            int randomNumber = NumberGen.gen(9);
+            int randomNumber = NumberGen.gen(10);
 
             if (randomNumber == 1)
-            {
                 alignment = "Lawful Good";
-            }
             else if (randomNumber == 2)
-            {
                 alignment = "Neutral Good";
-            }
             else if (randomNumber == 3)
-            {
                 alignment = "Chaotic Good";
-            }
             else if (randomNumber == 4)
-            {
                 alignment = "Lawful Neutral";
-            }
             else if (randomNumber == 5)
-            {
                 alignment = "True Neutral";
-            }
             else if (randomNumber == 6)
-            {
                 alignment = "Chaotic Neutral";
-            }
             else if (randomNumber == 7)
-            {
                 alignment = "Lawful Evil";
-            }
             else if (randomNumber == 8)
-            {
                 alignment = "Neutral Evil";
-            }
             else if (randomNumber == 9)
-            {
                 alignment = "Chaotic Evil";
-            }
+
             return alignment;
         }
 
@@ -416,50 +376,30 @@ namespace dnd_character_gen
         private int calculateStatModifier(int stat)
         {
             int modifier = 0;
+
             if (stat == 1)
-            {
                 modifier = -5;
-            }
             if (stat == 2 || stat == 3)
-            {
                 modifier = -4;
-            }
             if (stat == 4 || stat == 5)
-            {
                 modifier = -3;
-            }
             if (stat == 6 || stat == 7)
-            {
                 modifier = -2;
-            }
             if (stat == 8 || stat == 9)
-            {
                 modifier = -1;
-            }
             if (stat == 10 || stat == 11)
-            {
                 modifier = 0;
-            }
             if (stat == 12 || stat == 13)
-            {
                 modifier = 1;
-            }
             if (stat == 14 || stat == 15)
-            {
                 modifier = 2;
-            }
             if (stat == 16 || stat == 17)
-            {
                 modifier = 3;
-            }
             if (stat == 18 || stat == 19)
-            {
                 modifier = 4;
-            }
             if (stat == 20 || stat == 21)
-            {
                 modifier = 5;
-            }
+
             return modifier;
         }
 

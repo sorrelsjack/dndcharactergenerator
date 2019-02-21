@@ -60,18 +60,17 @@ namespace dnd_character_gen
 
         private void characterNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            //currentCharacter.name = characterNameTextBox.Text;
+            currentCharacter.name = characterNameTextBox.Text;
             //HideCaret(characterNameTextBox.Handle);
         }
 
         private void rollMainInfoButton_Click(object sender, EventArgs e)
         {
             currentCharacter.generateBasicInfo();
-            classLevelTextBox.Text = currentCharacter.characterClass.GetType().Name + " " + currentCharacter.level.ToString();
+            classLevelTextBox.Text = currentCharacter.characterClassSubtype + " " + currentCharacter.characterClass.GetType().Name + " " + currentCharacter.level.ToString();
             alignmentTextBox.Text = currentCharacter.alignment;
             backgroundTextBox.Text = currentCharacter.background;
             raceTextBox.Text = currentCharacter.race;
-            //TODO randomize all these things
         }
     }
 }
