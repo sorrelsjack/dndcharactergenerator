@@ -178,7 +178,7 @@ namespace dnd_character_gen
             else if (randomNumber == 2)
                 characterBackground = new Criminal();
             else if (randomNumber == 3)
-                background = "Entertainer";
+                characterBackground = new Entertainer();
             else if (randomNumber == 4)
                 background = "Folk Hero";
             else if (randomNumber == 5)
