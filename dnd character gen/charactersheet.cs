@@ -47,11 +47,12 @@ namespace dnd_character_gen
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
         }
 
-        private void PopulateSkillProficiencies() {
-
+        private void PopulateSkillProficiencies()
+        {
         }
 
-        private void PopulateOtherProficiencies() {
+        private void PopulateOtherProficiencies()
+        {
             List<string> proficienciesLanguagesList = new List<string>();
             proficienciesLanguagesList.AddRange(currentCharacter.toolProficiencies);
             proficienciesLanguagesList.AddRange(currentCharacter.languageProficiencies);
@@ -59,8 +60,10 @@ namespace dnd_character_gen
             proficienciesLanguagesTextBox.Text = String.Join(Environment.NewLine, proficienciesLanguagesList);
         }
 
-        private void PopulateEquipment() {
-            foreach(var item in currentCharacter.equipment) {
+        private void PopulateEquipment()
+        {
+            foreach (var item in currentCharacter.equipment)
+            {
                 equipmentListView.Items.Add(new ListViewItem(new[] { item }));
             }
         }

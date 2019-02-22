@@ -49,9 +49,6 @@ namespace dnd_character_gen.CharacterClasses
             equipment.Add(randomNumber == 1
                 ? "Dungeoneer's pack" : "Explorer's pack");
 
-            equipment.Add("Explorer's Pack");
-            equipment.Add("Four Javelins");
-
             return equipment;
         }
 

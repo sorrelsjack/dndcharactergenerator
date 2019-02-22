@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using dnd_character_gen.CharacterClasses;
-using dnd_character_gen.CharacterSubClasses;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 
@@ -12,7 +11,6 @@ namespace dnd_character_gen
     {
         public Character()
         {
-            generateBasicInfo();
         }
 
         #region Basic Info
@@ -98,7 +96,7 @@ namespace dnd_character_gen
 
             var classArmorProficiencies = characterClass.setArmorProf();
             if (classArmorProficiencies != null)
-                armorProficiencies.AddRange(classArmorProficiencies); //Prevent dupes. Also, take into account subclass. Same for below.
+                armorProficiencies.AddRange(classArmorProficiencies); //TODO: prevent dupes
 
             var classWeaponProficiencies = characterClass.setWeaponProf();
             if (classWeaponProficiencies != null)
@@ -134,6 +132,7 @@ namespace dnd_character_gen
                 { "Charisma", charismaModifier }
             });
         }
+
         #region
 
         private void generateClass()
@@ -328,8 +327,8 @@ namespace dnd_character_gen
             charismaModifier = calculateStatModifier(charisma);
         }
 
-        private void distributeStats() { //Our leftover stats. i.e., not the primary stat.
-
+        private void distributeStats()
+        { //Our leftover stats. i.e., not the primary stat.
         }
 
         private int calculateStatModifier(int stat)
