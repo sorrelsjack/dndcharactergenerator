@@ -302,7 +302,17 @@ namespace dnd_character_gen
 
         public void generateStatArray()
         {
+            int randomNumber = 0;
             List<int> statArray = new List<int>();
+            Dictionary<string, int> sortedStats = new Dictionary<string, int>
+            {
+                { "Strength", 0 },
+                { "Dexterity", 0 },
+                { "Constitution", 0 },
+                { "Intelligence", 0 },
+                { "Wisdom", 0 },
+                { "Charisma", 0 }
+            };
 
             for (int i = 0; i < 6; i++)
             {
@@ -310,14 +320,24 @@ namespace dnd_character_gen
             }
 
             statArray = statArray.OrderBy(x => x).ToList<int>(); //Ordering by lowest to highest value.
-            //TODO: Do some sorting to get the highest stat, while also randomly distributing the lowest
 
-            strength = statArray[0]; //TODO optomize for each class.. Prioritize certain stats for certain classes.
-            dexterity = statArray[1];
-            constitution = statArray[2];
-            intelligence = statArray[3];
-            wisdom = statArray[4];
-            charisma = statArray[5];
+            sortedStats[primaryStat] = statArray[statArray.Count - 1];
+            statArray.RemoveAt(statArray.Count - 1);
+
+            while (statArray.Count > 0)
+            {
+                randomNumber = NumberGen.gen(statArray.Count);
+                var nextKey = sortedStats.FirstOrDefault(x => x.Value == 0);
+                sortedStats[nextKey.Key] = statArray[randomNumber];
+                statArray.RemoveAt(randomNumber);
+            }
+
+            strength = sortedStats["Strength"];
+            dexterity = sortedStats["Dexterity"];
+            constitution = sortedStats["Constitution"];
+            intelligence = sortedStats["Intelligence"];
+            wisdom = sortedStats["Wisdom"];
+            charisma = sortedStats["Charisma"];
 
             strengthModifier = calculateStatModifier(strength);
             dexterityModifier = calculateStatModifier(dexterity);
@@ -325,10 +345,6 @@ namespace dnd_character_gen
             intelligenceModifier = calculateStatModifier(intelligence);
             wisdomModifier = calculateStatModifier(wisdom);
             charismaModifier = calculateStatModifier(charisma);
-        }
-
-        private void distributeStats()
-        { //Our leftover stats. i.e., not the primary stat.
         }
 
         private int calculateStatModifier(int stat)

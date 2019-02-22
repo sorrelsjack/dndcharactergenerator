@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Media;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -48,6 +47,27 @@ namespace dnd_character_gen
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
         }
 
+        private void PopulateSavingThrows()
+        {
+            strengthSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Strength") ? true : false;
+            strengthSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.strengthModifier).ToString();
+
+            dexteritySavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Dexterity") ? true : false;
+            dexteritySavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.dexterityModifier).ToString();
+
+            constitutionSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Constitution") ? true : false;
+            constitutionSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.constitutionModifier).ToString();
+
+            intelligenceSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Intelligence") ? true : false;
+            intelligenceSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.intelligenceModifier).ToString();
+
+            wisdomSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Wisdom") ? true : false;
+            wisdomSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.wisdomModifier).ToString();
+
+            charismaSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Charisma") ? true : false;
+            charismaSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.charismaModifier).ToString();
+        }
+
         private void PopulateSkillProficiencies()
         {
         }
@@ -76,10 +96,11 @@ namespace dnd_character_gen
 
         private void rollButton_Click(object sender, EventArgs e)
         {
-            SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
-            diceSound.Play();
+            //SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
+            //diceSound.Play();
 
             PopulateStatBoxes();
+            PopulateSavingThrows();
         }
 
         [DllImport("user32.dll")]
