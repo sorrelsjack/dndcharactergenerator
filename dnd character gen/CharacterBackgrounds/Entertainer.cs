@@ -12,7 +12,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         private List<string> admirerFavor = new List<string> { "Love letter", "Lock of hair", "Trinket" };
 
-        private List<string> entertainerRoutines = new List<string>
+        protected List<string> entertainerRoutines = new List<string>
         {
             "Actor", "Dancer", "Fire-eater", "Jester", "Juggler", "Instrumentalist", "Poet", "Singer", "Storyteller",
             "Tumbler"
@@ -62,7 +62,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
-        public List<string> setEquipment() => new List<string>
+        public virtual List<string> setEquipment() => new List<string>
         {
             $"{musicalInstrument}", $"{admirerFavor[NumberGen.gen(admirerFavor.Count)]}", "Costume",
             "Belt pouch containing 15 gp"
@@ -83,17 +83,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Acrobatics", "Performance" };
 
-        public Dictionary<string, string> setSpecial()
-        {
-            Dictionary<string, string> specials = new Dictionary<string, string> { { "Entertainer Routine", $"{entertainerRoutines[NumberGen.gen(entertainerRoutines.Count)]}" } };
-
-            if (NumberGen.gen(2) == 0)
-                specials.Add("Entertainer Variant: Gladiator",
-                    "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment—perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net.");
-            //TODO address Entertainer variant
-
-            return specials;
-        }
+        public virtual Dictionary<string, string> setSpecial() => new Dictionary<string, string> { { "Entertainer Routine", $"{entertainerRoutines[NumberGen.gen(entertainerRoutines.Count)]}" } };
 
         public List<string> setToolsProf() => new List<string> { "Disguise kit", $"{musicalInstrument}" };
     }

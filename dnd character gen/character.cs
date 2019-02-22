@@ -171,22 +171,46 @@ namespace dnd_character_gen
             string background = "";
             int randomNumber = NumberGen.gen(18);
 
-            if (randomNumber == 0)
+            if (randomNumber == 0) 
+            {
+                background = "Acolyte";
                 characterBackground = new Acolyte();
-            else if (randomNumber == 1)
+            }
+            else if (randomNumber == 1) 
+            {
+                background = "Charlatan";
                 characterBackground = new Charlatan();
-            else if (randomNumber == 2)
+            }
+            else if (randomNumber == 2) 
+            {
+                background = "Criminal";
                 characterBackground = new Criminal();
-            else if (randomNumber == 3)
+            }
+            else if (randomNumber == 3) 
+            {
+                background = "Entertainer";
                 characterBackground = new Entertainer();
-            else if (randomNumber == 4)
+            }
+            else if (randomNumber == 4) 
+            {
                 background = "Folk Hero";
-            else if (randomNumber == 5)
-                background = "Gladiator";
-            else if (randomNumber == 6)
+                characterBackground = new FolkHero();
+            }
+            else if (randomNumber == 5) 
+            {
+                background = "Entertainer (Gladiator)";
+                characterBackground = new Gladiator();
+            }
+            else if (randomNumber == 6) 
+            {
                 background = "Guild Artisan";
-            else if (randomNumber == 7)
-                background = "Guild Merchant";
+                characterBackground = new GuildArtisan();
+            }
+            else if (randomNumber == 7) 
+            {
+                background = "Guild Artisan (Guild Merchant)";
+                characterBackground = new GuildMerchant();
+            }
             else if (randomNumber == 8)
                 background = "Hermit";
             else if (randomNumber == 9)

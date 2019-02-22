@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterBackgrounds
 {
-    class GuildMerchant
+    public class GuildMerchant : GuildArtisan
     {
     }
 }
