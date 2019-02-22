@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class FiendWarlock : ICharacterSubClass {
+    public class FiendWarlock : ICharacterSubClass
+    {
         public List<string> setArmorProf() => null;
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string> {
@@ -15,11 +12,6 @@ namespace dnd_character_gen.CharacterSubClasses
         };
 
         public List<string> setLanguageProf() => null;
-
-        public string setName()
-        {
-            throw new NotImplementedException();
-        }
 
         public List<string> setSkillProf() => null;
 

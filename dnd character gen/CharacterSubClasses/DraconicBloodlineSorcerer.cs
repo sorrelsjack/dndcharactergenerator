@@ -47,11 +47,6 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public List<string> setLanguageProf() => new List<string> { "Draconic" };
 
-        public string setName()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<string> setSkillProf()
         {
             throw new NotImplementedException();

@@ -47,6 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterBackgrounds\Acolyte.cs" />
+    <Compile Include="CharacterBackgrounds\Charlatan.cs" />
+    <Compile Include="CharacterBackgrounds\Criminal.cs" />
+    <Compile Include="CharacterBackgrounds\Entertainer.cs" />
+    <Compile Include="CharacterBackgrounds\FolkHero.cs" />
+    <Compile Include="CharacterBackgrounds\Gladiator.cs" />
+    <Compile Include="CharacterBackgrounds\GuildArtisan.cs" />
+    <Compile Include="CharacterBackgrounds\GuildMerchant.cs" />
+    <Compile Include="CharacterBackgrounds\Hermit.cs" />
+    <Compile Include="CharacterBackgrounds\Knight.cs" />
+    <Compile Include="CharacterBackgrounds\Noble.cs" />
+    <Compile Include="CharacterBackgrounds\Outlander.cs" />
+    <Compile Include="CharacterBackgrounds\Pirate.cs" />
+    <Compile Include="CharacterBackgrounds\Sage.cs" />
+    <Compile Include="CharacterBackgrounds\Sailor.cs" />
+    <Compile Include="CharacterBackgrounds\Soldier.cs" />
+    <Compile Include="CharacterBackgrounds\Spy.cs" />
+    <Compile Include="CharacterBackgrounds\Urchin.cs" />
     <Compile Include="CharacterClasses\Barbarian.cs" />
     <Compile Include="CharacterClasses\Bard.cs" />
     <Compile Include="CharacterClasses\Cleric.cs" />
@@ -125,7 +143,6 @@
     <Content Include="Assets\MANYDICE.WAV" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CharacterBackgrounds\" />
     <Folder Include="CharacterRaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

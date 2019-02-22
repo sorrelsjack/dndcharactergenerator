@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -28,11 +27,6 @@ namespace dnd_character_gen.CharacterSubClasses
             }
 
             return languages;
-        }
-
-        public string setName()
-        {
-            throw new NotImplementedException();
         }
 
         public List<string> setSkillProf()

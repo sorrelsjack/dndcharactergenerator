@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using dnd_character_gen.CharacterBackgrounds;
 using dnd_character_gen.CharacterClasses;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -31,12 +32,12 @@ namespace dnd_character_gen
         #endregion Class, Subclass, Race, and Background interfaces
 
         #region AC, Init, Speed, HP, Spell Save DC
-        private int armorClass { get; set; }
-        private int initiative { get; set; }
-        private int movementSpeed { get; set; }
-        private int hitDie { get; set; }
-        private int hitPoints { get; set; }
-        private int spellSaveDC { get; set; }
+        public int armorClass { get; set; }
+        public int initiative { get; set; }
+        public int movementSpeed { get; set; }
+        public int hitDie { get; set; }
+        public int hitPoints { get; set; }
+        public int spellSaveDC { get; set; }
         #endregion AC, Init, Speed, HP, Spell Save DC
 
         #region Proficiencies
@@ -88,15 +89,14 @@ namespace dnd_character_gen
 
         public void initializeClass()
         {
-            characterClassSubtype = characterClass.setSubType(); //TODO fix a NRE here
+            characterClassSubtype = characterClass.setSubType();
 
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
-            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order. Needs to be after we've got our stats.
 
             var classArmorProficiencies = characterClass.setArmorProf();
             if (classArmorProficiencies != null)
-                armorProficiencies.AddRange(classArmorProficiencies); //TODO: prevent dupes
+                armorProficiencies.AddRange(classArmorProficiencies);
 
             var classWeaponProficiencies = characterClass.setWeaponProf();
             if (classWeaponProficiencies != null)
@@ -167,15 +167,16 @@ namespace dnd_character_gen
 
         private string generateBackground()
         {
+            //TODO need a method to resolve conflicts between things selected in background and class and race
             string background = "";
             int randomNumber = NumberGen.gen(18);
 
             if (randomNumber == 0)
-                background = "Acolyte";
+                characterBackground = new Acolyte();
             else if (randomNumber == 1)
-                background = "Charlatan";
+                characterBackground = new Charlatan();
             else if (randomNumber == 2)
-                background = "Criminal";
+                characterBackground = new Criminal();
             else if (randomNumber == 3)
                 background = "Entertainer";
             else if (randomNumber == 4)
@@ -201,7 +202,7 @@ namespace dnd_character_gen
             else if (randomNumber == 14)
                 background = "Sailor";
             else if (randomNumber == 15)
-                background = "Solider";
+                background = "Soldier";
             else if (randomNumber == 16)
                 background = "Spy";
             else if (randomNumber == 17)
@@ -345,6 +346,8 @@ namespace dnd_character_gen
             intelligenceModifier = calculateStatModifier(intelligence);
             wisdomModifier = calculateStatModifier(wisdom);
             charismaModifier = calculateStatModifier(charisma);
+
+            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO: Maybe find a more appropriate place for this? idk
         }
 
         private int calculateStatModifier(int stat)

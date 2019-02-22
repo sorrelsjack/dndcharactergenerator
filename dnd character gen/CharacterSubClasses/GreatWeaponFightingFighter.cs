@@ -21,11 +21,6 @@ namespace dnd_character_gen.CharacterSubClasses
             throw new NotImplementedException();
         }
 
-        public string setName()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<string> setSkillProf()
         {
             throw new NotImplementedException();

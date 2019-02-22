@@ -14,6 +14,10 @@ namespace dnd_character_gen
             InitializeComponent();
         }
 
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
         private void CharacterSheet_Load(object sender, EventArgs e)
         {
             equipmentListView.View = View.List;
@@ -21,10 +25,6 @@ namespace dnd_character_gen
 
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
-        }
-
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
         }
 
         private void PopulateStatBoxes()
@@ -66,6 +66,9 @@ namespace dnd_character_gen
 
             charismaSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Charisma") ? true : false;
             charismaSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.charismaModifier).ToString();
+
+            hitPointMaximumTextBox.Text = currentCharacter.hitPoints.ToString();
+            currentHitPointsTextBox.Text = currentCharacter.hitPoints.ToString();
         }
 
         private void PopulateSkillProficiencies()
@@ -91,6 +94,9 @@ namespace dnd_character_gen
 
         private void statsButton_Click(object sender, EventArgs e)
         {
+            if (currentCharacter.characterClass == null)
+                rollMainInfo();
+
             PopulateStatBoxes();
         }
 
@@ -98,6 +104,9 @@ namespace dnd_character_gen
         {
             //SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
             //diceSound.Play();
+
+            if (currentCharacter.characterClass == null)
+                rollMainInfo();
 
             PopulateStatBoxes();
             PopulateSavingThrows();
@@ -113,6 +122,11 @@ namespace dnd_character_gen
         }
 
         private void rollMainInfoButton_Click(object sender, EventArgs e)
+        {
+            rollMainInfo();
+        }
+
+        private void rollMainInfo()
         {
             equipmentListView.Clear();
             equipmentListView.Items.Clear();
