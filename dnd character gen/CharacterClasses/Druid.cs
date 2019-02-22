@@ -1,25 +1,23 @@
-﻿using dnd_character_gen.Extensions;
-using dnd_character_gen.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
 
-namespace dnd_character_gen.CharacterClasses {
+namespace dnd_character_gen.CharacterClasses
+{
     public class Druid : ICharacterClass
     {
-        public List<string> setArmorProf() => new List<string> {"Light armor", "Medium armor", "Shields"};
+        public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Shields" };
 
-        public List<string> setEquipment() {
+        public List<string> setEquipment()
+        {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Wooden Shield" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Scimitar" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             equipment.Add("Leather Armor");
@@ -45,7 +43,8 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string>() { "Intelligence", "Wisdom" };
 
-        public List<string> setSkills() {
+        public List<string> setSkills()
+        {
             List<string> skillProficiencies = new List<string>();
             List<string> availableSkills = new List<string>()
             { "Arcana", "Animal Handling", "Medicine", "Nature", "Perception", "Religion", "Surival" };
@@ -70,7 +69,7 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setToolsProf() => new List<string>() { "Herbalism Kit" };
 
-        public List<string> setWeaponProf() => new List<string>() 
+        public List<string> setWeaponProf() => new List<string>()
             { "Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears" };
     }
 }

@@ -16,17 +16,17 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment()
-        { 
+        {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Light crossbow and 20 bolts" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Component pouch" : "Arcane focus");
+            equipment.Add(randomNumber == 0 ? "Component pouch" : "Arcane focus");
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Scholar's pack" : "Dungeoneer's pack");
+            equipment.Add(randomNumber == 0 ? "Scholar's pack" : "Dungeoneer's pack");
 
             equipment.Add("Leather armor");
             equipment.Add(SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
@@ -90,7 +90,7 @@ namespace dnd_character_gen.CharacterClasses
             return patron;
         }
 
-        private void initializeSubType() 
+        private void initializeSubType()
         {
             foreach (var feature in subClass.setFeatures())
                 _features.Add(feature.Key, feature.Value);

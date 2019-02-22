@@ -144,8 +144,8 @@ namespace dnd_character_gen.CharacterClasses
                 _armorProficiencies.AddRange(subClassArmorProf);
 
             var subClassWeaponProf = subClass.setWeaponProf();
-            if (subClassArmorProf != null)
-                _weaponProficiencies.AddRange(subClassWeaponProf); //Getting a null here.
+            if (subClassWeaponProf != null)
+                _weaponProficiencies.AddRange(subClassWeaponProf);
 
             var subClassLanguageProf = subClass.setLanguageProf();
             if (subClassLanguageProf != null)

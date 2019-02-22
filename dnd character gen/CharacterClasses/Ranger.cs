@@ -13,11 +13,11 @@ namespace dnd_character_gen.CharacterClasses
         {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Scale mail" : "Leather armor");
 
             randomNumber = NumberGen.gen(2);
-            if (randomNumber == 1)
+            if (randomNumber == 0)
             {
                 equipment.Add("Two shortswords");
             }
@@ -28,11 +28,11 @@ namespace dnd_character_gen.CharacterClasses
             }
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Wooden Shield" : SimpleWeapons.Instance.weapons[NumberGen.gen(SimpleWeapons.Instance.weapons.Count)]);
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Dungeoneer's pack" : "Explorer's pack");
 
             equipment.Add("Longbow");
@@ -59,7 +59,7 @@ namespace dnd_character_gen.CharacterClasses
                 "Arctic", "Coast", "Desert", "Forest", "Grassland", "Mountain", "Swamp", "The Underdark"
             };
 
-            string favoredEnemies = NumberGen.gen(2) == 1
+            string favoredEnemies = NumberGen.gen(2) == 0
                 ? availableFavoredEnemies[NumberGen.gen(13)]
                 : "Gnolls and Orcs";
 

@@ -20,7 +20,7 @@ namespace dnd_character_gen.CharacterClasses
             List<string> equipment = new List<string>();
 
             int randomNumber = NumberGen.gen(2);
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 equipment.Add("Chain mail");
             else
             {
@@ -30,7 +30,7 @@ namespace dnd_character_gen.CharacterClasses
             }
 
             randomNumber = NumberGen.gen(2);
-            if (randomNumber == 1)
+            if (randomNumber == 0)
             {
                 equipment.Add(MartialWeapons.Instance.weapons[NumberGen.gen(MartialWeapons.Instance.weapons.Count)]);
                 equipment.Add("Shield");
@@ -42,11 +42,11 @@ namespace dnd_character_gen.CharacterClasses
             }
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Light crossbow and 20 bolts" : "Two handaxes");
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Dungeoneer's pack" : "Explorer's pack");
 
             return equipment;
@@ -72,7 +72,7 @@ namespace dnd_character_gen.CharacterClasses
 
         public List<string> setLanguages() => null;
 
-        public string setPrimaryStat() => NumberGen.gen(2) == 1 ? "Strength" : "Dexterity";
+        public string setPrimaryStat() => NumberGen.gen(2) == 0 ? "Strength" : "Dexterity";
 
         public List<string> setSaves() => new List<string>() { "Strength", "Constitution" };
 

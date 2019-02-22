@@ -1,26 +1,24 @@
-﻿using dnd_character_gen.Extensions;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace dnd_character_gen.CharacterClasses {
-    public class Wizard : ICharacterClass {
-
+namespace dnd_character_gen.CharacterClasses
+{
+    public class Wizard : ICharacterClass
+    {
         public List<string> setArmorProf() => null;
 
-        public List<string> setEquipment() {
+        public List<string> setEquipment()
+        {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Quarterstaff" : "Dagger");
+            equipment.Add(randomNumber == 0 ? "Quarterstaff" : "Dagger");
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Component pouch" : "Arcane focus");
+            equipment.Add(randomNumber == 0 ? "Component pouch" : "Arcane focus");
 
             randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1 ? "Scholar's pack" : "Explorer's pack");
+            equipment.Add(randomNumber == 0 ? "Scholar's pack" : "Explorer's pack");
 
             equipment.Add("Spellbook");
 
@@ -43,7 +41,8 @@ namespace dnd_character_gen.CharacterClasses {
 
         public List<string> setSaves() => new List<string> { "Intelligence", "Wisdom" };
 
-        public List<string> setSkills() {
+        public List<string> setSkills()
+        {
             List<string> skillProficiencies = new List<string>();
             List<string> availableSkills = new List<string>() { "Arcana", "History", "Insight", "Investigation", "Medicine", "Religion" };
 
@@ -57,7 +56,7 @@ namespace dnd_character_gen.CharacterClasses {
             return skillProficiencies;
         }
 
-        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 
+        public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) =>
             proficiency + modifiers["Intelligence"];
 
         public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) =>

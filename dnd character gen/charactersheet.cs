@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace dnd_character_gen
@@ -81,13 +82,13 @@ namespace dnd_character_gen
             PopulateStatBoxes();
         }
 
-        /*[DllImport("user32.dll")]
-        private static bool HideCaret(IntPtr hWnd);*/
+        [DllImport("user32.dll")]
+        private static extern bool HideCaret(IntPtr hWnd);
 
         private void characterNameTextBox_TextChanged(object sender, EventArgs e)
         {
             currentCharacter.name = characterNameTextBox.Text;
-            //HideCaret(characterNameTextBox.Handle);
+            HideCaret(characterNameTextBox.Handle);
         }
 
         private void rollMainInfoButton_Click(object sender, EventArgs e)

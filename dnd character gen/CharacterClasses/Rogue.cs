@@ -12,11 +12,11 @@ namespace dnd_character_gen.CharacterClasses
         {
             List<string> equipment = new List<string>();
             int randomNumber = NumberGen.gen(2);
-            equipment.Add(randomNumber == 1
+            equipment.Add(randomNumber == 0
                 ? "Rapier" : "Shortsword");
 
             randomNumber = NumberGen.gen(2);
-            if (randomNumber == 1)
+            if (randomNumber == 0)
             {
                 equipment.Add("Shortbow");
                 equipment.Add("Quiver of 20 arrows");
@@ -27,11 +27,11 @@ namespace dnd_character_gen.CharacterClasses
             }
 
             randomNumber = NumberGen.gen(3);
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 equipment.Add("Burglar's pack");
-            else if (randomNumber == 2)
+            else if (randomNumber == 1)
                 equipment.Add("Dungeoneer's pack");
-            else if (randomNumber == 3)
+            else if (randomNumber == 2)
                 equipment.Add("Explorer's pack");
 
             equipment.Add("Leather armor");

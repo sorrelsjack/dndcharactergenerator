@@ -92,7 +92,7 @@ namespace dnd_character_gen
 
             primaryStat = characterClass.setPrimaryStat();
             hitDie = characterClass.setHitDie();
-            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order.
+            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO make this generate in the correct order. Needs to be after we've got our stats.
 
             var classArmorProficiencies = characterClass.setArmorProf();
             if (classArmorProficiencies != null)
@@ -137,10 +137,10 @@ namespace dnd_character_gen
 
         private void generateClass()
         {
-            int randomNumber = NumberGen.gen(11);
+            int randomNumber = NumberGen.gen(12);
 
             if (randomNumber == 0)
-                characterClass = new Barbarian(); //TODO: Fix an issue where it takes other classes equipment???
+                characterClass = new Barbarian();
             else if (randomNumber == 1)
                 characterClass = new Bard();
             else if (randomNumber == 2)
@@ -170,41 +170,41 @@ namespace dnd_character_gen
             string background = "";
             int randomNumber = NumberGen.gen(18);
 
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 background = "Acolyte";
-            else if (randomNumber == 2)
+            else if (randomNumber == 1)
                 background = "Charlatan";
-            else if (randomNumber == 3)
+            else if (randomNumber == 2)
                 background = "Criminal";
-            else if (randomNumber == 4)
+            else if (randomNumber == 3)
                 background = "Entertainer";
-            else if (randomNumber == 5)
+            else if (randomNumber == 4)
                 background = "Folk Hero";
-            else if (randomNumber == 6)
+            else if (randomNumber == 5)
                 background = "Gladiator";
-            else if (randomNumber == 7)
+            else if (randomNumber == 6)
                 background = "Guild Artisan";
-            else if (randomNumber == 8)
+            else if (randomNumber == 7)
                 background = "Guild Merchant";
-            else if (randomNumber == 9)
+            else if (randomNumber == 8)
                 background = "Hermit";
-            else if (randomNumber == 10)
+            else if (randomNumber == 9)
                 background = "Knight";
-            else if (randomNumber == 11)
+            else if (randomNumber == 10)
                 background = "Noble";
-            else if (randomNumber == 12)
+            else if (randomNumber == 11)
                 background = "Outlander";
-            else if (randomNumber == 13)
+            else if (randomNumber == 12)
                 background = "Pirate";
-            else if (randomNumber == 14)
+            else if (randomNumber == 13)
                 background = "Sage";
-            else if (randomNumber == 15)
+            else if (randomNumber == 14)
                 background = "Sailor";
-            else if (randomNumber == 16)
+            else if (randomNumber == 15)
                 background = "Solider";
-            else if (randomNumber == 17)
+            else if (randomNumber == 16)
                 background = "Spy";
-            else if (randomNumber == 18)
+            else if (randomNumber == 17)
                 background = "Urchin";
 
             return background;
@@ -213,25 +213,25 @@ namespace dnd_character_gen
         private string generateRace()
         {
             string race = "";
-            int randomNumber = NumberGen.gen(10);
+            int randomNumber = NumberGen.gen(9);
 
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 race = "Dragonborn";
-            if (randomNumber == 2)
+            if (randomNumber == 1)
                 race = "Dwarf";
-            if (randomNumber == 3)
+            if (randomNumber == 2)
                 race = "Elf";
-            if (randomNumber == 4)
+            if (randomNumber == 3)
                 race = "Gnome";
-            if (randomNumber == 5)
+            if (randomNumber == 4)
                 race = "Half-Elf";
-            if (randomNumber == 6)
+            if (randomNumber == 5)
                 race = "Halfling";
-            if (randomNumber == 7)
+            if (randomNumber == 6)
                 race = "Half-Orc";
-            if (randomNumber == 8)
+            if (randomNumber == 7)
                 race = "Human";
-            if (randomNumber == 9)
+            if (randomNumber == 8)
                 race = "Tiefling";
 
             return race;
@@ -240,25 +240,25 @@ namespace dnd_character_gen
         private string generateAlignment()
         {
             string alignment = "";
-            int randomNumber = NumberGen.gen(10); //TODO fix an issue where I'm not getting any of these options
+            int randomNumber = NumberGen.gen(9); //TODO fix an issue where I'm not getting any of these options
 
-            if (randomNumber == 1)
+            if (randomNumber == 0)
                 alignment = "Lawful Good";
-            else if (randomNumber == 2)
+            else if (randomNumber == 1)
                 alignment = "Neutral Good";
-            else if (randomNumber == 3)
+            else if (randomNumber == 2)
                 alignment = "Chaotic Good";
-            else if (randomNumber == 4)
+            else if (randomNumber == 3)
                 alignment = "Lawful Neutral";
-            else if (randomNumber == 5)
+            else if (randomNumber == 4)
                 alignment = "True Neutral";
-            else if (randomNumber == 6)
+            else if (randomNumber == 5)
                 alignment = "Chaotic Neutral";
-            else if (randomNumber == 7)
+            else if (randomNumber == 6)
                 alignment = "Lawful Evil";
-            else if (randomNumber == 8)
+            else if (randomNumber == 7)
                 alignment = "Neutral Evil";
-            else if (randomNumber == 9)
+            else if (randomNumber == 8)
                 alignment = "Chaotic Evil";
 
             return alignment;
