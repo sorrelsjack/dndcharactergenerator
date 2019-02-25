@@ -62,12 +62,12 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
-        public List<string> setEquipment() => new List<string>
+        public virtual List<string> setEquipment() => new List<string>
         {
             $"{artisansTools}", "Letter of introduction from guild", "Set of traveler's clothes", "Belt pouch containing 15 gp"
         };
 
-        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Guild Membership", "If you are in good standing with your guild, your guild can arrange for you to meet powerful politicians." }
         };
@@ -76,7 +76,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public string setIdeal() => ideals[NumberGen.gen(ideals.Count)];
 
-        public List<string> setLanguages() =>
+        public virtual List<string> setLanguages() =>
             new List<string> { Languages.Instance.languages[NumberGen.gen(Languages.Instance.languages.Count)] };
 
         public string setPersonalityTrait() => personalityTraits[NumberGen.gen(personalityTraits.Count)];
@@ -88,6 +88,6 @@ namespace dnd_character_gen.CharacterBackgrounds
             { "Guild Business", $"{guild}" }
         };
 
-        public List<string> setToolsProf() => new List<string> { $"{artisansTools}" };
+        public virtual List<string> setToolsProf() => new List<string> { $"{artisansTools}" };
     }
 }

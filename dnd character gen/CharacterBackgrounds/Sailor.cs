@@ -22,17 +22,32 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         private List<string> ideals = new List<string> 
         {
-
+            "Respect. The thing that keeps a ship together is mutual respect between captain and crew. (Good)",
+            "Fairness. We all do the work, so we all share in the rewards. (Lawful)",
+            "Freedom. The sea is freedom— the freedom to go anywhere and do anything. (Chaotic)",
+            "Mastery. I’m a predator, and the other ships on the sea are my prey. (Evil)",
+            "People. I’m committed to my crewmates, not to ideals. (Neutral)",
+            "Aspiration. Someday I’ll own my own ship and chart my own destiny. (Any)"
         };
 
         private List<string> bonds = new List<string> 
         {
-
+            "I'm loyal to my captain first, everything else second.",
+            "The ship is most important— crewmates and captains come and go.",
+            "I'll always remember my first ship.",
+            "In a harbor town, I have a paramour whose eyes nearly stole me from the sea.",
+            "I was cheated out of my fair share of the profits, and I want to get my due.",
+            "Ruthless pirates murdered my captain and crewmates, plundered our ship, and left me to die. Vengeance will be mine."
         };
 
         private List<string> flaws = new List<string> 
         {
-
+            "I follow orders, even if I think they're wrong.",
+            "I'll say anything to avoid having to do extra work.",
+            "Once someone questions my courage, I never back down no matter how dangerous the situation.",
+            "Once I start drinking, it's hard for me to stop.",
+            "I can't help but pocket loose coins and other trinkets I come across.",
+            "My pride will probably lead to my destruction."
         };
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];

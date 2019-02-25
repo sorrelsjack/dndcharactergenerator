@@ -230,7 +230,7 @@ namespace dnd_character_gen
             else if (randomNumber == 8)
             {
                 background = "Hermit";
-                //TODO: hermit class
+                characterBackground = new Hermit();
             }
             else if (randomNumber == 9)
             {
@@ -245,7 +245,7 @@ namespace dnd_character_gen
             else if (randomNumber == 11)
             {
                 background = "Outlander";
-                //TODO: outlander class
+                characterBackground = new Outlander();
             }
             else if (randomNumber == 12)
             {
@@ -275,7 +275,7 @@ namespace dnd_character_gen
             else if (randomNumber == 17)
             {
                 background = "Urchin";
-                //TODO urchin class
+                characterBackground = new Urchin();
             }
 
             return background;
