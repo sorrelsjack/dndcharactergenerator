@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterBackgrounds
 {
+    //TODO finish Guild Merchant
     public class GuildMerchant : GuildArtisan
     {
     }

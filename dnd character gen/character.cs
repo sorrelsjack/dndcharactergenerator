@@ -250,7 +250,7 @@ namespace dnd_character_gen
             else if (randomNumber == 12)
             {
                 background = "Pirate";
-                //TODO: Pirate class
+                characterBackground = new Pirate();
             }
             else if (randomNumber == 13)
             {
@@ -260,7 +260,7 @@ namespace dnd_character_gen
             else if (randomNumber == 14)
             {
                 background = "Sailor";
-                //TODO: sailor class
+                characterBackground = new Sailor();
             }
             else if (randomNumber == 15)
             {
