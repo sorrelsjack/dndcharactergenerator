@@ -77,6 +77,20 @@
     <Compile Include="CharacterClasses\Sorcerer.cs" />
     <Compile Include="CharacterClasses\Warlock.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
+    <Compile Include="CharacterRaces\DeepGnome.cs" />
+    <Compile Include="CharacterRaces\Dragonborn.cs" />
+    <Compile Include="CharacterRaces\Dwarf.cs" />
+    <Compile Include="CharacterRaces\Elf.cs" />
+    <Compile Include="CharacterRaces\Gnome.cs" />
+    <Compile Include="CharacterRaces\HalfElf.cs" />
+    <Compile Include="CharacterRaces\Halfling.cs" />
+    <Compile Include="CharacterRaces\HalfOrc.cs" />
+    <Compile Include="CharacterRaces\HillDwarf.cs" />
+    <Compile Include="CharacterRaces\Human.cs" />
+    <Compile Include="CharacterRaces\MarkOfScribingGnome.cs" />
+    <Compile Include="CharacterRaces\MountainDwarf.cs" />
+    <Compile Include="CharacterRaces\RockGnome.cs" />
+    <Compile Include="CharacterRaces\Tiefling.cs" />
     <Compile Include="CharacterSheet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,8 +158,6 @@
   <ItemGroup>
     <Content Include="Assets\MANYDICE.WAV" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CharacterRaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
