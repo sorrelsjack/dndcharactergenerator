@@ -15,6 +15,7 @@ namespace dnd_character_gen
         }
 
         #region Basic Info
+
         public string name;
         public string characterClassSubtype = "";
         public int level = 1;
@@ -22,25 +23,31 @@ namespace dnd_character_gen
         public string race;
         public string alignment;
         public int xp = 0;
+
         #endregion Basic Info
 
         #region Class, Subclass, Race, and Background interfaces
+
         public ICharacterClass characterClass { get; set; }
         public ICharacterSubClass characterSubClass { get; set; }
         public ICharacterRace characterRace { get; set; }
         public ICharacterBackground characterBackground { get; set; }
+
         #endregion Class, Subclass, Race, and Background interfaces
 
         #region AC, Init, Speed, HP, Spell Save DC
+
         public int armorClass { get; set; }
         public int initiative { get; set; }
         public int movementSpeed { get; set; }
         public int hitDie { get; set; }
         public int hitPoints { get; set; }
         public int spellSaveDC { get; set; }
+
         #endregion AC, Init, Speed, HP, Spell Save DC
 
         #region Proficiencies
+
         public int proficiencyBonus = 2;
         public List<string> armorProficiencies = new List<string>();
         public List<string> weaponProficiencies = new List<string>();
@@ -48,12 +55,14 @@ namespace dnd_character_gen
         public List<string> savingThrowProficiencies = new List<string>();
         public List<string> skillProficiencies = new List<string>();
         public List<string> languageProficiencies = new List<string>();
+
         #endregion Proficiencies
 
         public List<string> equipment = new List<string>();
         public Dictionary<string, string> features = new Dictionary<string, string>();
 
         #region Stats and Modifiers
+
         private string primaryStat { get; set; }
 
         public int strength { get; private set; }
@@ -70,6 +79,7 @@ namespace dnd_character_gen
         public int wisdomModifier { get; private set; }
         public int charismaModifier { get; private set; }
         public int spellAttackModifier { get; set; }
+
         #endregion Stats and Modifiers
 
         public Dictionary<string, string> classFeatures { get; set; }
@@ -133,8 +143,6 @@ namespace dnd_character_gen
             });
         }
 
-        #region
-
         private void generateClass()
         {
             int randomNumber = NumberGen.gen(12);
@@ -171,42 +179,42 @@ namespace dnd_character_gen
             string background = "";
             int randomNumber = NumberGen.gen(18);
 
-            if (randomNumber == 0) 
+            if (randomNumber == 0)
             {
                 background = "Acolyte";
                 characterBackground = new Acolyte();
             }
-            else if (randomNumber == 1) 
+            else if (randomNumber == 1)
             {
                 background = "Charlatan";
                 characterBackground = new Charlatan();
             }
-            else if (randomNumber == 2) 
+            else if (randomNumber == 2)
             {
                 background = "Criminal";
                 characterBackground = new Criminal();
             }
-            else if (randomNumber == 3) 
+            else if (randomNumber == 3)
             {
                 background = "Entertainer";
                 characterBackground = new Entertainer();
             }
-            else if (randomNumber == 4) 
+            else if (randomNumber == 4)
             {
                 background = "Folk Hero";
                 characterBackground = new FolkHero();
             }
-            else if (randomNumber == 5) 
+            else if (randomNumber == 5)
             {
                 background = "Entertainer (Gladiator)";
                 characterBackground = new Gladiator();
             }
-            else if (randomNumber == 6) 
+            else if (randomNumber == 6)
             {
                 background = "Guild Artisan";
                 characterBackground = new GuildArtisan();
             }
-            else if (randomNumber == 7) 
+            else if (randomNumber == 7)
             {
                 background = "Guild Artisan (Guild Merchant)";
                 characterBackground = new GuildMerchant();
@@ -214,21 +222,36 @@ namespace dnd_character_gen
             else if (randomNumber == 8)
                 background = "Hermit";
             else if (randomNumber == 9)
+            {
                 background = "Knight";
+                characterBackground = new Knight();
+            }
             else if (randomNumber == 10)
+            {
                 background = "Noble";
+                characterBackground = new Noble();
+            }
             else if (randomNumber == 11)
                 background = "Outlander";
             else if (randomNumber == 12)
                 background = "Pirate";
             else if (randomNumber == 13)
+            {
                 background = "Sage";
+                characterBackground = new Sage();
+            }
             else if (randomNumber == 14)
                 background = "Sailor";
             else if (randomNumber == 15)
+            {
                 background = "Soldier";
+                characterBackground = new Soldier();
+            }
             else if (randomNumber == 16)
+            {
                 background = "Spy";
+                characterBackground = new Spy();
+            }
             else if (randomNumber == 17)
                 background = "Urchin";
 
@@ -403,7 +426,5 @@ namespace dnd_character_gen
 
             return modifier;
         }
-
-        #endregion
     }
 }

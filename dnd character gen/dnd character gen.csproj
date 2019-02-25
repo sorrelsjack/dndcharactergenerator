@@ -102,6 +102,8 @@
     <Compile Include="CharacterSubClasses\WarCleric.cs" />
     <Compile Include="CharacterSubClasses\WildMagicSorcerer.cs" />
     <Compile Include="Dictionaries\ArtisansTools.cs" />
+    <Compile Include="Dictionaries\GamingSets.cs" />
+    <Compile Include="Dictionaries\GuildBusinesses.cs" />
     <Compile Include="Dictionaries\Languages.cs" />
     <Compile Include="Dictionaries\MartialWeapons.cs" />
     <Compile Include="Dictionaries\MusicalInstruments.cs" />

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 
@@ -58,7 +58,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setEquipment() => new List<string> { "Crowbar", "Set of dark common clothes including a hood", "Belt pouch containing 15 gp" };
 
-        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Criminal Contact", "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you." }
         };
@@ -73,22 +73,19 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Deception", "Stealth" };
 
-        public Dictionary<string, string> setSpecial()
+        public Dictionary<string, string> setSpecial() => new Dictionary<string, string>
         {
-            Dictionary<string, string> specials = new Dictionary<string, string>
-            {
-                { "Criminal Speciality", $"{criminalSpecialities[NumberGen.gen(criminalSpecialities.Count)]}" },
-            };
+            { "Criminal Speciality", $"{criminalSpecialities[NumberGen.gen(criminalSpecialities.Count)]}" }
+        };
 
-            if (NumberGen.gen(2) == 0)
-                specials.Add("Criminal Variant: Spy", "Although your capabilities are not much different from those of a burglar or smuggler, you learned and practiced them in a very different context: as an espionage agent.You might have been an officially sanctioned agent of the crown, or perhaps you sold the secrets you uncovered to the highest bidder.");
-
-            return specials;
-        }
-
-        public List<string> setToolsProf() //TODO: One type of gaming set and thieve's tools
+        public List<string> setToolsProf()
         {
-            throw new NotImplementedException();
+            List<string> tools = new List<string>();
+
+            tools.Add("Thieves' tools");
+            tools.Add(GamingSets.Instance.sets[NumberGen.gen(GamingSets.Instance.sets.Count)]);
+
+            return tools;
         }
     }
 }
