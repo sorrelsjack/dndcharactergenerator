@@ -2,7 +2,7 @@
 
 namespace dnd_character_gen.CharacterRaces
 {
-    public class MountainDwarf : Dwarf //TODO: Finish?
+    public class MountainDwarf : Dwarf
     {
         public override Dictionary<string, int> setAbilityScores() => new Dictionary<string, int>
         {

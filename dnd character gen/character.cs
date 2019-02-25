@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using dnd_character_gen.CharacterBackgrounds;
 using dnd_character_gen.CharacterClasses;
+using dnd_character_gen.CharacterRaces;
+using dnd_character_gen.CharacterSubRaces;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 
@@ -91,7 +93,9 @@ namespace dnd_character_gen
             generateClass();
             initializeClass();
             this.background = generateBackground();
+            initializeBackground();
             this.race = generateRace();
+            initializeRace();
             this.alignment = generateAlignment();
         }
 
@@ -173,6 +177,10 @@ namespace dnd_character_gen
                 characterClass = new Wizard();
         }
 
+        public void initializeBackground()
+        {
+        }
+
         private string generateBackground()
         {
             //TODO need a method to resolve conflicts between things selected in background and class and race
@@ -220,7 +228,10 @@ namespace dnd_character_gen
                 characterBackground = new GuildMerchant();
             }
             else if (randomNumber == 8)
+            {
                 background = "Hermit";
+                //TODO: hermit class
+            }
             else if (randomNumber == 9)
             {
                 background = "Knight";
@@ -232,16 +243,25 @@ namespace dnd_character_gen
                 characterBackground = new Noble();
             }
             else if (randomNumber == 11)
+            {
                 background = "Outlander";
+                //TODO: outlander class
+            }
             else if (randomNumber == 12)
+            {
                 background = "Pirate";
+                //TODO: Pirate class
+            }
             else if (randomNumber == 13)
             {
                 background = "Sage";
                 characterBackground = new Sage();
             }
             else if (randomNumber == 14)
+            {
                 background = "Sailor";
+                //TODO: sailor class
+            }
             else if (randomNumber == 15)
             {
                 background = "Soldier";
@@ -253,34 +273,156 @@ namespace dnd_character_gen
                 characterBackground = new Spy();
             }
             else if (randomNumber == 17)
+            {
                 background = "Urchin";
+                //TODO urchin class
+            }
 
             return background;
         }
 
-        private string generateRace()
+        public void initializeRace()
+        {
+        }
+
+        private string generateRace() //TODO: Fix where I overwrote base class stuff when I wasn't supposed to...
         {
             string race = "";
             int randomNumber = NumberGen.gen(9);
 
             if (randomNumber == 0)
+            {
                 race = "Dragonborn";
-            if (randomNumber == 1)
-                race = "Dwarf";
-            if (randomNumber == 2)
+                characterRace = new Dragonborn();
+            }
+            else if (randomNumber == 1)
+            {
+                randomNumber = NumberGen.gen(3);
+                if (randomNumber == 0)
+                {
+                    race = "Hill Dwarf";
+                    characterRace = new HillDwarf();
+                }
+                else if (randomNumber == 1)
+                {
+                    race = "Mark Of Warding Dwarf";
+                    characterRace = new MarkOfWardingDwarf();
+                }
+                else if (randomNumber == 2)
+                {
+                    race = "Mountain Dwarf";
+                    characterRace = new MountainDwarf();
+                }
+            }
+
+            if (randomNumber == 2) //TODO: Integrate
                 race = "Elf";
+
             if (randomNumber == 3)
-                race = "Gnome";
+            {
+                randomNumber = NumberGen.gen(3);
+                if (randomNumber == 0)
+                {
+                    race = "Deep Gnome";
+                    characterRace = new DeepGnome();
+                }
+                else if (randomNumber == 1)
+                {
+                    race = "Mark Of Scribing Gnome";
+                    characterRace = new MarkOfScribingGnome();
+                }
+                else if (randomNumber == 2)
+                {
+                    race = "Rock Gnome";
+                    characterRace = new RockGnome();
+                }
+            }
+
             if (randomNumber == 4)
-                race = "Half-Elf";
+            {
+                randomNumber = NumberGen.gen(2);
+                if (randomNumber == 0)
+                {
+                    race = "Mark of Detection Half-Elf";
+                    characterRace = new MarkOfDetectionHalfElf();
+                }
+                else
+                {
+                    race = "Mark of Storm Half-Elf";
+                    characterRace = new MarkOfStormHalfElf();
+                }
+            }
+
             if (randomNumber == 5)
-                race = "Halfling";
+            {
+                randomNumber = NumberGen.gen(4);
+                if (randomNumber == 0)
+                {
+                    race = "Lightfoot Halfling";
+                    characterRace = new LightfootHalfling();
+                }
+                else if (randomNumber == 1)
+                {
+                    race = "Mark of Healing Halfling";
+                    characterRace = new MarkOfHealingHalfling();
+                }
+                else if (randomNumber == 2)
+                {
+                    race = "Mark of Hospitality Halfling";
+                    characterRace = new MarkOfHospitalityHalfling();
+                }
+                else if (randomNumber == 3)
+                {
+                    race = "Stout Halfling";
+                    characterRace = new StoutHalfling();
+                }
+            }
+
             if (randomNumber == 6)
-                race = "Half-Orc";
+            {
+                randomNumber = NumberGen.gen(2);
+                if (randomNumber == 0)
+                {
+                    race = "Half-Orc";
+                    characterRace = new HalfOrc();
+                }
+                else
+                {
+                    race = "Mark of Finding Half-Orc";
+                    characterRace = new MarkOfFindingHalfOrc();
+                }
+            }
+
             if (randomNumber == 7)
-                race = "Human";
+            {
+                randomNumber = NumberGen.gen(4);
+                if (randomNumber == 0)
+                {
+                    race = "Mark of Handling Human";
+                    characterRace = new MarkOfHandlingHuman();
+                }
+                else if (randomNumber == 1)
+                {
+                    race = "Mark of Making Human";
+                    characterRace = new MarkOfMakingHuman();
+                }
+                else if (randomNumber == 2)
+                {
+                    race = "Mark of Passage Human";
+                    characterRace = new MarkOfPassageHuman();
+                }
+                else if (randomNumber == 3)
+                {
+                    race = "Mark of Sentinel Human";
+                    characterRace = new MarkOfSentinelHuman();
+                }
+            }
+
             if (randomNumber == 8)
+            {
                 race = "Tiefling";
+                characterRace = new Tiefling();
+            }
 
             return race;
         }
