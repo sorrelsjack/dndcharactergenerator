@@ -104,10 +104,13 @@
             this.skillsLabel = new System.Windows.Forms.Label();
             this.hitPanel = new System.Windows.Forms.Panel();
             this.speedPanel = new System.Windows.Forms.Panel();
+            this.speedTextBox = new System.Windows.Forms.TextBox();
             this.speedLabel = new System.Windows.Forms.Label();
             this.initiativePanel = new System.Windows.Forms.Panel();
+            this.initiativeTextBox = new System.Windows.Forms.TextBox();
             this.initiativeLabel = new System.Windows.Forms.Label();
             this.armorClassPanel = new System.Windows.Forms.Panel();
+            this.armorClassTextBox = new System.Windows.Forms.TextBox();
             this.armorClassLabel = new System.Windows.Forms.Label();
             this.deathSavesPanel = new System.Windows.Forms.Panel();
             this.failuresLabel = new System.Windows.Forms.Label();
@@ -149,9 +152,10 @@
             this.equipmentListView = new System.Windows.Forms.ListView();
             this.equipmentLabel = new System.Windows.Forms.Label();
             this.rollButton = new System.Windows.Forms.PictureBox();
-            this.armorClassTextBox = new System.Windows.Forms.TextBox();
-            this.initiativeTextBox = new System.Windows.Forms.TextBox();
-            this.speedTextBox = new System.Windows.Forms.TextBox();
+            this.featuresTraitsListView = new System.Windows.Forms.ListView();
+            this.acrobaticsCheckBox = new System.Windows.Forms.CheckBox();
+            this.acrobaticsTextBox = new System.Windows.Forms.TextBox();
+            this.acrobaticsLabel = new System.Windows.Forms.Label();
             this.basicInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -206,7 +210,7 @@
             this.basicInfoPanel.Controls.Add(this.backgroundTextBox);
             this.basicInfoPanel.Controls.Add(this.classLevelTextBox);
             this.basicInfoPanel.Location = new System.Drawing.Point(331, 10);
-            this.basicInfoPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.basicInfoPanel.Margin = new System.Windows.Forms.Padding(2);
             this.basicInfoPanel.Name = "basicInfoPanel";
             this.basicInfoPanel.Size = new System.Drawing.Size(450, 112);
             this.basicInfoPanel.TabIndex = 0;
@@ -214,7 +218,7 @@
             // playerNameTextBox
             // 
             this.playerNameTextBox.Location = new System.Drawing.Point(293, 17);
-            this.playerNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playerNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(127, 20);
             this.playerNameTextBox.TabIndex = 2;
@@ -222,7 +226,7 @@
             // xpTextBox
             // 
             this.xpTextBox.Location = new System.Drawing.Point(293, 72);
-            this.xpTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.xpTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.xpTextBox.Name = "xpTextBox";
             this.xpTextBox.Size = new System.Drawing.Size(127, 20);
             this.xpTextBox.TabIndex = 5;
@@ -232,7 +236,7 @@
             this.rollMainInfoButton.BackColor = System.Drawing.Color.Transparent;
             this.rollMainInfoButton.Image = ((System.Drawing.Image)(resources.GetObject("rollMainInfoButton.Image")));
             this.rollMainInfoButton.Location = new System.Drawing.Point(404, 36);
-            this.rollMainInfoButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rollMainInfoButton.Margin = new System.Windows.Forms.Padding(2);
             this.rollMainInfoButton.Name = "rollMainInfoButton";
             this.rollMainInfoButton.Size = new System.Drawing.Size(42, 37);
             this.rollMainInfoButton.TabIndex = 17;
@@ -302,7 +306,7 @@
             // alignmentTextBox
             // 
             this.alignmentTextBox.Location = new System.Drawing.Point(160, 72);
-            this.alignmentTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.alignmentTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.alignmentTextBox.Name = "alignmentTextBox";
             this.alignmentTextBox.Size = new System.Drawing.Size(127, 20);
             this.alignmentTextBox.TabIndex = 4;
@@ -310,7 +314,7 @@
             // raceTextBox
             // 
             this.raceTextBox.Location = new System.Drawing.Point(26, 72);
-            this.raceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.raceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.raceTextBox.Name = "raceTextBox";
             this.raceTextBox.Size = new System.Drawing.Size(127, 20);
             this.raceTextBox.TabIndex = 3;
@@ -318,7 +322,7 @@
             // backgroundTextBox
             // 
             this.backgroundTextBox.Location = new System.Drawing.Point(160, 17);
-            this.backgroundTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backgroundTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.backgroundTextBox.Name = "backgroundTextBox";
             this.backgroundTextBox.Size = new System.Drawing.Size(127, 20);
             this.backgroundTextBox.TabIndex = 1;
@@ -326,7 +330,7 @@
             // classLevelTextBox
             // 
             this.classLevelTextBox.Location = new System.Drawing.Point(26, 17);
-            this.classLevelTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.classLevelTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.classLevelTextBox.Name = "classLevelTextBox";
             this.classLevelTextBox.Size = new System.Drawing.Size(127, 20);
             this.classLevelTextBox.TabIndex = 0;
@@ -345,7 +349,7 @@
             // 
             this.characterNameTextBox.Font = new System.Drawing.Font("Perpetua", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.characterNameTextBox.Location = new System.Drawing.Point(22, 30);
-            this.characterNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.characterNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.characterNameTextBox.Name = "characterNameTextBox";
             this.characterNameTextBox.Size = new System.Drawing.Size(258, 51);
             this.characterNameTextBox.TabIndex = 2;
@@ -404,7 +408,7 @@
             this.statsPanel.Controls.Add(this.dexterityPanel);
             this.statsPanel.Controls.Add(this.strengthPanel);
             this.statsPanel.Location = new System.Drawing.Point(22, 141);
-            this.statsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.statsPanel.Name = "statsPanel";
             this.statsPanel.Size = new System.Drawing.Size(141, 935);
             this.statsPanel.TabIndex = 4;
@@ -417,7 +421,7 @@
             this.charismaPanel.Controls.Add(this.charismaLabel);
             this.charismaPanel.Controls.Add(this.charismaModifierPanel);
             this.charismaPanel.Location = new System.Drawing.Point(19, 766);
-            this.charismaPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaPanel.Margin = new System.Windows.Forms.Padding(2);
             this.charismaPanel.Name = "charismaPanel";
             this.charismaPanel.Size = new System.Drawing.Size(102, 112);
             this.charismaPanel.TabIndex = 8;
@@ -426,7 +430,7 @@
             // 
             this.charismaValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.charismaValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.charismaValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.charismaValueTextBox.Name = "charismaValueTextBox";
             this.charismaValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.charismaValueTextBox.TabIndex = 8;
@@ -448,7 +452,7 @@
             this.charismaModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.charismaModifierPanel.Controls.Add(this.charismaModifierTextBox);
             this.charismaModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.charismaModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.charismaModifierPanel.Name = "charismaModifierPanel";
             this.charismaModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.charismaModifierPanel.TabIndex = 6;
@@ -457,7 +461,7 @@
             // 
             this.charismaModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.charismaModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.charismaModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.charismaModifierTextBox.Name = "charismaModifierTextBox";
             this.charismaModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.charismaModifierTextBox.TabIndex = 9;
@@ -471,7 +475,7 @@
             this.wisdomPanel.Controls.Add(this.wisdomLabel);
             this.wisdomPanel.Controls.Add(this.wisdomModifierPanel);
             this.wisdomPanel.Location = new System.Drawing.Point(19, 625);
-            this.wisdomPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomPanel.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomPanel.Name = "wisdomPanel";
             this.wisdomPanel.Size = new System.Drawing.Size(102, 112);
             this.wisdomPanel.TabIndex = 8;
@@ -480,7 +484,7 @@
             // 
             this.wisdomValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wisdomValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.wisdomValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomValueTextBox.Name = "wisdomValueTextBox";
             this.wisdomValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.wisdomValueTextBox.TabIndex = 8;
@@ -502,7 +506,7 @@
             this.wisdomModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wisdomModifierPanel.Controls.Add(this.wisdomModifierTextBox);
             this.wisdomModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.wisdomModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomModifierPanel.Name = "wisdomModifierPanel";
             this.wisdomModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.wisdomModifierPanel.TabIndex = 6;
@@ -511,7 +515,7 @@
             // 
             this.wisdomModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.wisdomModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.wisdomModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomModifierTextBox.Name = "wisdomModifierTextBox";
             this.wisdomModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.wisdomModifierTextBox.TabIndex = 9;
@@ -525,7 +529,7 @@
             this.intelligencePanel.Controls.Add(this.intelligenceLabel);
             this.intelligencePanel.Controls.Add(this.intelligenceModifierPanel);
             this.intelligencePanel.Location = new System.Drawing.Point(19, 483);
-            this.intelligencePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligencePanel.Margin = new System.Windows.Forms.Padding(2);
             this.intelligencePanel.Name = "intelligencePanel";
             this.intelligencePanel.Size = new System.Drawing.Size(102, 112);
             this.intelligencePanel.TabIndex = 8;
@@ -534,7 +538,7 @@
             // 
             this.intelligenceValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.intelligenceValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.intelligenceValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligenceValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.intelligenceValueTextBox.Name = "intelligenceValueTextBox";
             this.intelligenceValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.intelligenceValueTextBox.TabIndex = 8;
@@ -556,7 +560,7 @@
             this.intelligenceModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.intelligenceModifierPanel.Controls.Add(this.intelligenceModifierTextBox);
             this.intelligenceModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.intelligenceModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligenceModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.intelligenceModifierPanel.Name = "intelligenceModifierPanel";
             this.intelligenceModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.intelligenceModifierPanel.TabIndex = 6;
@@ -565,7 +569,7 @@
             // 
             this.intelligenceModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.intelligenceModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.intelligenceModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligenceModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.intelligenceModifierTextBox.Name = "intelligenceModifierTextBox";
             this.intelligenceModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.intelligenceModifierTextBox.TabIndex = 9;
@@ -579,7 +583,7 @@
             this.constitutionPanel.Controls.Add(this.constitutionLabel);
             this.constitutionPanel.Controls.Add(this.constitutionModifierPanel);
             this.constitutionPanel.Location = new System.Drawing.Point(19, 341);
-            this.constitutionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionPanel.Name = "constitutionPanel";
             this.constitutionPanel.Size = new System.Drawing.Size(102, 112);
             this.constitutionPanel.TabIndex = 8;
@@ -588,7 +592,7 @@
             // 
             this.constitutionValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.constitutionValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.constitutionValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionValueTextBox.Name = "constitutionValueTextBox";
             this.constitutionValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.constitutionValueTextBox.TabIndex = 8;
@@ -610,7 +614,7 @@
             this.constitutionModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.constitutionModifierPanel.Controls.Add(this.constitutionModifierTextBox);
             this.constitutionModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.constitutionModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionModifierPanel.Name = "constitutionModifierPanel";
             this.constitutionModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.constitutionModifierPanel.TabIndex = 6;
@@ -619,7 +623,7 @@
             // 
             this.constitutionModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.constitutionModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.constitutionModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionModifierTextBox.Name = "constitutionModifierTextBox";
             this.constitutionModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.constitutionModifierTextBox.TabIndex = 9;
@@ -633,7 +637,7 @@
             this.dexterityPanel.Controls.Add(this.dexterityLabel);
             this.dexterityPanel.Controls.Add(this.dexterityModifierPanel);
             this.dexterityPanel.Location = new System.Drawing.Point(19, 196);
-            this.dexterityPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexterityPanel.Margin = new System.Windows.Forms.Padding(2);
             this.dexterityPanel.Name = "dexterityPanel";
             this.dexterityPanel.Size = new System.Drawing.Size(102, 112);
             this.dexterityPanel.TabIndex = 7;
@@ -642,7 +646,7 @@
             // 
             this.dexterityValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dexterityValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.dexterityValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexterityValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dexterityValueTextBox.Name = "dexterityValueTextBox";
             this.dexterityValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.dexterityValueTextBox.TabIndex = 8;
@@ -664,7 +668,7 @@
             this.dexterityModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dexterityModifierPanel.Controls.Add(this.dexterityModifierTextBox);
             this.dexterityModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.dexterityModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexterityModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.dexterityModifierPanel.Name = "dexterityModifierPanel";
             this.dexterityModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.dexterityModifierPanel.TabIndex = 6;
@@ -673,7 +677,7 @@
             // 
             this.dexterityModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dexterityModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.dexterityModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexterityModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dexterityModifierTextBox.Name = "dexterityModifierTextBox";
             this.dexterityModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.dexterityModifierTextBox.TabIndex = 9;
@@ -687,7 +691,7 @@
             this.strengthPanel.Controls.Add(this.strengthLabel);
             this.strengthPanel.Controls.Add(this.strengthModifierPanel);
             this.strengthPanel.Location = new System.Drawing.Point(19, 49);
-            this.strengthPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthPanel.Margin = new System.Windows.Forms.Padding(2);
             this.strengthPanel.Name = "strengthPanel";
             this.strengthPanel.Size = new System.Drawing.Size(102, 112);
             this.strengthPanel.TabIndex = 6;
@@ -696,7 +700,7 @@
             // 
             this.strengthValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strengthValueTextBox.Location = new System.Drawing.Point(17, 33);
-            this.strengthValueTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthValueTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.strengthValueTextBox.Name = "strengthValueTextBox";
             this.strengthValueTextBox.Size = new System.Drawing.Size(68, 37);
             this.strengthValueTextBox.TabIndex = 8;
@@ -718,7 +722,7 @@
             this.strengthModifierPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.strengthModifierPanel.Controls.Add(this.strengthModifierTextBox);
             this.strengthModifierPanel.Location = new System.Drawing.Point(24, 76);
-            this.strengthModifierPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthModifierPanel.Margin = new System.Windows.Forms.Padding(2);
             this.strengthModifierPanel.Name = "strengthModifierPanel";
             this.strengthModifierPanel.Size = new System.Drawing.Size(54, 36);
             this.strengthModifierPanel.TabIndex = 6;
@@ -727,7 +731,7 @@
             // 
             this.strengthModifierTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.strengthModifierTextBox.Location = new System.Drawing.Point(-7, 10);
-            this.strengthModifierTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthModifierTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.strengthModifierTextBox.Name = "strengthModifierTextBox";
             this.strengthModifierTextBox.Size = new System.Drawing.Size(67, 13);
             this.strengthModifierTextBox.TabIndex = 9;
@@ -738,7 +742,7 @@
             this.statsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statsButton.BackgroundImage")));
             this.statsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.statsButton.Location = new System.Drawing.Point(33, 106);
-            this.statsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statsButton.Margin = new System.Windows.Forms.Padding(2);
             this.statsButton.Name = "statsButton";
             this.statsButton.Size = new System.Drawing.Size(58, 30);
             this.statsButton.TabIndex = 5;
@@ -753,7 +757,7 @@
             this.proficiencyBonusPanel.Controls.Add(this.proficiencyTextBox);
             this.proficiencyBonusPanel.Controls.Add(this.proficiencyLabel);
             this.proficiencyBonusPanel.Location = new System.Drawing.Point(174, 141);
-            this.proficiencyBonusPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.proficiencyBonusPanel.Margin = new System.Windows.Forms.Padding(2);
             this.proficiencyBonusPanel.Name = "proficiencyBonusPanel";
             this.proficiencyBonusPanel.Size = new System.Drawing.Size(124, 49);
             this.proficiencyBonusPanel.TabIndex = 6;
@@ -761,7 +765,7 @@
             // proficiencyTextBox
             // 
             this.proficiencyTextBox.Location = new System.Drawing.Point(3, 15);
-            this.proficiencyTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.proficiencyTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.proficiencyTextBox.Name = "proficiencyTextBox";
             this.proficiencyTextBox.Size = new System.Drawing.Size(23, 20);
             this.proficiencyTextBox.TabIndex = 1;
@@ -800,7 +804,7 @@
             this.savingThrowsPanel.Controls.Add(this.strengthSavingThrowLabel);
             this.savingThrowsPanel.Controls.Add(this.savingThrowsLabel);
             this.savingThrowsPanel.Location = new System.Drawing.Point(174, 208);
-            this.savingThrowsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.savingThrowsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.savingThrowsPanel.Name = "savingThrowsPanel";
             this.savingThrowsPanel.Size = new System.Drawing.Size(124, 165);
             this.savingThrowsPanel.TabIndex = 7;
@@ -808,7 +812,7 @@
             // charismaSavingThrowTextBox
             // 
             this.charismaSavingThrowTextBox.Location = new System.Drawing.Point(19, 119);
-            this.charismaSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.charismaSavingThrowTextBox.Name = "charismaSavingThrowTextBox";
             this.charismaSavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.charismaSavingThrowTextBox.TabIndex = 12;
@@ -816,7 +820,7 @@
             // wisdomSavingThrowTextBox
             // 
             this.wisdomSavingThrowTextBox.Location = new System.Drawing.Point(19, 98);
-            this.wisdomSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomSavingThrowTextBox.Name = "wisdomSavingThrowTextBox";
             this.wisdomSavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.wisdomSavingThrowTextBox.TabIndex = 11;
@@ -824,7 +828,7 @@
             // constitutionSavingThrowTextBox
             // 
             this.constitutionSavingThrowTextBox.Location = new System.Drawing.Point(19, 52);
-            this.constitutionSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionSavingThrowTextBox.Name = "constitutionSavingThrowTextBox";
             this.constitutionSavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.constitutionSavingThrowTextBox.TabIndex = 15;
@@ -832,7 +836,7 @@
             // intelligenceSavingThrowTextBox
             // 
             this.intelligenceSavingThrowTextBox.Location = new System.Drawing.Point(19, 75);
-            this.intelligenceSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligenceSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.intelligenceSavingThrowTextBox.Name = "intelligenceSavingThrowTextBox";
             this.intelligenceSavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.intelligenceSavingThrowTextBox.TabIndex = 13;
@@ -841,7 +845,7 @@
             // 
             this.dexteritySavingThrowCheckBox.AutoSize = true;
             this.dexteritySavingThrowCheckBox.Location = new System.Drawing.Point(3, 31);
-            this.dexteritySavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexteritySavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.dexteritySavingThrowCheckBox.Name = "dexteritySavingThrowCheckBox";
             this.dexteritySavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.dexteritySavingThrowCheckBox.TabIndex = 13;
@@ -850,7 +854,7 @@
             // dexteritySavingThrowTextBox
             // 
             this.dexteritySavingThrowTextBox.Location = new System.Drawing.Point(19, 28);
-            this.dexteritySavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dexteritySavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.dexteritySavingThrowTextBox.Name = "dexteritySavingThrowTextBox";
             this.dexteritySavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.dexteritySavingThrowTextBox.TabIndex = 14;
@@ -859,7 +863,7 @@
             // 
             this.constitutionSavingThrowCheckBox.AutoSize = true;
             this.constitutionSavingThrowCheckBox.Location = new System.Drawing.Point(3, 54);
-            this.constitutionSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.constitutionSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.constitutionSavingThrowCheckBox.Name = "constitutionSavingThrowCheckBox";
             this.constitutionSavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.constitutionSavingThrowCheckBox.TabIndex = 12;
@@ -869,7 +873,7 @@
             // 
             this.intelligenceSavingThrowCheckBox.AutoSize = true;
             this.intelligenceSavingThrowCheckBox.Location = new System.Drawing.Point(3, 77);
-            this.intelligenceSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.intelligenceSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.intelligenceSavingThrowCheckBox.Name = "intelligenceSavingThrowCheckBox";
             this.intelligenceSavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.intelligenceSavingThrowCheckBox.TabIndex = 11;
@@ -879,7 +883,7 @@
             // 
             this.wisdomSavingThrowCheckBox.AutoSize = true;
             this.wisdomSavingThrowCheckBox.Location = new System.Drawing.Point(3, 101);
-            this.wisdomSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wisdomSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.wisdomSavingThrowCheckBox.Name = "wisdomSavingThrowCheckBox";
             this.wisdomSavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.wisdomSavingThrowCheckBox.TabIndex = 10;
@@ -889,7 +893,7 @@
             // 
             this.charismaSavingThrowCheckBox.AutoSize = true;
             this.charismaSavingThrowCheckBox.Location = new System.Drawing.Point(3, 121);
-            this.charismaSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.charismaSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.charismaSavingThrowCheckBox.Name = "charismaSavingThrowCheckBox";
             this.charismaSavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.charismaSavingThrowCheckBox.TabIndex = 9;
@@ -898,7 +902,7 @@
             // strengthSavingThrowTextBox
             // 
             this.strengthSavingThrowTextBox.Location = new System.Drawing.Point(19, 6);
-            this.strengthSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthSavingThrowTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.strengthSavingThrowTextBox.Name = "strengthSavingThrowTextBox";
             this.strengthSavingThrowTextBox.Size = new System.Drawing.Size(20, 20);
             this.strengthSavingThrowTextBox.TabIndex = 8;
@@ -907,7 +911,7 @@
             // 
             this.strengthSavingThrowCheckBox.AutoSize = true;
             this.strengthSavingThrowCheckBox.Location = new System.Drawing.Point(3, 8);
-            this.strengthSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.strengthSavingThrowCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.strengthSavingThrowCheckBox.Name = "strengthSavingThrowCheckBox";
             this.strengthSavingThrowCheckBox.Size = new System.Drawing.Size(15, 14);
             this.strengthSavingThrowCheckBox.TabIndex = 7;
@@ -986,9 +990,12 @@
             // skillsPanel
             // 
             this.skillsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.skillsPanel.Controls.Add(this.acrobaticsLabel);
+            this.skillsPanel.Controls.Add(this.acrobaticsTextBox);
+            this.skillsPanel.Controls.Add(this.acrobaticsCheckBox);
             this.skillsPanel.Controls.Add(this.skillsLabel);
             this.skillsPanel.Location = new System.Drawing.Point(174, 389);
-            this.skillsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.skillsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.skillsPanel.Name = "skillsPanel";
             this.skillsPanel.Size = new System.Drawing.Size(124, 686);
             this.skillsPanel.TabIndex = 8;
@@ -1015,7 +1022,7 @@
             this.hitPanel.Controls.Add(this.temporaryHitPointsPanel);
             this.hitPanel.Controls.Add(this.currentHitPointsPanel);
             this.hitPanel.Location = new System.Drawing.Point(314, 141);
-            this.hitPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hitPanel.Margin = new System.Windows.Forms.Padding(2);
             this.hitPanel.Name = "hitPanel";
             this.hitPanel.Size = new System.Drawing.Size(226, 447);
             this.hitPanel.TabIndex = 9;
@@ -1027,10 +1034,17 @@
             this.speedPanel.Controls.Add(this.speedTextBox);
             this.speedPanel.Controls.Add(this.speedLabel);
             this.speedPanel.Location = new System.Drawing.Point(161, 10);
-            this.speedPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.speedPanel.Margin = new System.Windows.Forms.Padding(2);
             this.speedPanel.Name = "speedPanel";
             this.speedPanel.Size = new System.Drawing.Size(61, 82);
             this.speedPanel.TabIndex = 19;
+            // 
+            // speedTextBox
+            // 
+            this.speedTextBox.Location = new System.Drawing.Point(3, 25);
+            this.speedTextBox.Name = "speedTextBox";
+            this.speedTextBox.Size = new System.Drawing.Size(53, 20);
+            this.speedTextBox.TabIndex = 3;
             // 
             // speedLabel
             // 
@@ -1049,10 +1063,17 @@
             this.initiativePanel.Controls.Add(this.initiativeTextBox);
             this.initiativePanel.Controls.Add(this.initiativeLabel);
             this.initiativePanel.Location = new System.Drawing.Point(82, 10);
-            this.initiativePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.initiativePanel.Margin = new System.Windows.Forms.Padding(2);
             this.initiativePanel.Name = "initiativePanel";
             this.initiativePanel.Size = new System.Drawing.Size(61, 82);
             this.initiativePanel.TabIndex = 18;
+            // 
+            // initiativeTextBox
+            // 
+            this.initiativeTextBox.Location = new System.Drawing.Point(3, 25);
+            this.initiativeTextBox.Name = "initiativeTextBox";
+            this.initiativeTextBox.Size = new System.Drawing.Size(53, 20);
+            this.initiativeTextBox.TabIndex = 2;
             // 
             // initiativeLabel
             // 
@@ -1071,10 +1092,17 @@
             this.armorClassPanel.Controls.Add(this.armorClassTextBox);
             this.armorClassPanel.Controls.Add(this.armorClassLabel);
             this.armorClassPanel.Location = new System.Drawing.Point(2, 10);
-            this.armorClassPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.armorClassPanel.Margin = new System.Windows.Forms.Padding(2);
             this.armorClassPanel.Name = "armorClassPanel";
             this.armorClassPanel.Size = new System.Drawing.Size(61, 82);
             this.armorClassPanel.TabIndex = 17;
+            // 
+            // armorClassTextBox
+            // 
+            this.armorClassTextBox.Location = new System.Drawing.Point(3, 25);
+            this.armorClassTextBox.Name = "armorClassTextBox";
+            this.armorClassTextBox.Size = new System.Drawing.Size(53, 20);
+            this.armorClassTextBox.TabIndex = 1;
             // 
             // armorClassLabel
             // 
@@ -1094,7 +1122,7 @@
             this.deathSavesPanel.Controls.Add(this.successesLabel);
             this.deathSavesPanel.Controls.Add(this.deathSavesLabel);
             this.deathSavesPanel.Location = new System.Drawing.Point(114, 351);
-            this.deathSavesPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deathSavesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.deathSavesPanel.Name = "deathSavesPanel";
             this.deathSavesPanel.Size = new System.Drawing.Size(96, 82);
             this.deathSavesPanel.TabIndex = 16;
@@ -1138,7 +1166,7 @@
             this.hitDicePanel.Controls.Add(this.totalHitDiceLabel);
             this.hitDicePanel.Controls.Add(this.hitDiceLabel);
             this.hitDicePanel.Location = new System.Drawing.Point(14, 351);
-            this.hitDicePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hitDicePanel.Margin = new System.Windows.Forms.Padding(2);
             this.hitDicePanel.Name = "hitDicePanel";
             this.hitDicePanel.Size = new System.Drawing.Size(96, 82);
             this.hitDicePanel.TabIndex = 5;
@@ -1146,7 +1174,7 @@
             // hitDiceTextBox
             // 
             this.hitDiceTextBox.Location = new System.Drawing.Point(10, 39);
-            this.hitDiceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hitDiceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.hitDiceTextBox.Name = "hitDiceTextBox";
             this.hitDiceTextBox.Size = new System.Drawing.Size(76, 20);
             this.hitDiceTextBox.TabIndex = 3;
@@ -1154,7 +1182,7 @@
             // totalHitDiceTextBox
             // 
             this.totalHitDiceTextBox.Location = new System.Drawing.Point(42, 9);
-            this.totalHitDiceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.totalHitDiceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.totalHitDiceTextBox.Name = "totalHitDiceTextBox";
             this.totalHitDiceTextBox.Size = new System.Drawing.Size(44, 20);
             this.totalHitDiceTextBox.TabIndex = 2;
@@ -1186,7 +1214,7 @@
             this.temporaryHitPointsPanel.Controls.Add(this.temporaryHitPointsTextBox);
             this.temporaryHitPointsPanel.Controls.Add(this.temporaryHitPointsLabel);
             this.temporaryHitPointsPanel.Location = new System.Drawing.Point(18, 219);
-            this.temporaryHitPointsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.temporaryHitPointsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.temporaryHitPointsPanel.Name = "temporaryHitPointsPanel";
             this.temporaryHitPointsPanel.Size = new System.Drawing.Size(189, 107);
             this.temporaryHitPointsPanel.TabIndex = 4;
@@ -1194,7 +1222,7 @@
             // temporaryHitPointsTextBox
             // 
             this.temporaryHitPointsTextBox.Location = new System.Drawing.Point(56, 50);
-            this.temporaryHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.temporaryHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.temporaryHitPointsTextBox.Name = "temporaryHitPointsTextBox";
             this.temporaryHitPointsTextBox.Size = new System.Drawing.Size(76, 20);
             this.temporaryHitPointsTextBox.TabIndex = 3;
@@ -1218,7 +1246,7 @@
             this.currentHitPointsPanel.Controls.Add(this.hitPointMaximumLabel);
             this.currentHitPointsPanel.Controls.Add(this.currentHitPointsLabel);
             this.currentHitPointsPanel.Location = new System.Drawing.Point(18, 103);
-            this.currentHitPointsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.currentHitPointsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.currentHitPointsPanel.Name = "currentHitPointsPanel";
             this.currentHitPointsPanel.Size = new System.Drawing.Size(189, 107);
             this.currentHitPointsPanel.TabIndex = 0;
@@ -1226,7 +1254,7 @@
             // currentHitPointsTextBox
             // 
             this.currentHitPointsTextBox.Location = new System.Drawing.Point(56, 50);
-            this.currentHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.currentHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.currentHitPointsTextBox.Name = "currentHitPointsTextBox";
             this.currentHitPointsTextBox.Size = new System.Drawing.Size(76, 20);
             this.currentHitPointsTextBox.TabIndex = 3;
@@ -1234,7 +1262,7 @@
             // hitPointMaximumTextBox
             // 
             this.hitPointMaximumTextBox.Location = new System.Drawing.Point(100, 8);
-            this.hitPointMaximumTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hitPointMaximumTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.hitPointMaximumTextBox.Name = "hitPointMaximumTextBox";
             this.hitPointMaximumTextBox.Size = new System.Drawing.Size(76, 20);
             this.hitPointMaximumTextBox.TabIndex = 2;
@@ -1272,7 +1300,7 @@
             this.personalityPanel.Controls.Add(this.personalityTraitsLabel);
             this.personalityPanel.Controls.Add(this.personalityTraitsTextBox);
             this.personalityPanel.Location = new System.Drawing.Point(555, 141);
-            this.personalityPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalityPanel.Margin = new System.Windows.Forms.Padding(2);
             this.personalityPanel.Name = "personalityPanel";
             this.personalityPanel.Size = new System.Drawing.Size(226, 447);
             this.personalityPanel.TabIndex = 10;
@@ -1311,7 +1339,7 @@
             // 
             this.flawsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.flawsTextBox.Location = new System.Drawing.Point(16, 327);
-            this.flawsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flawsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.flawsTextBox.Name = "flawsTextBox";
             this.flawsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.flawsTextBox.Size = new System.Drawing.Size(191, 78);
@@ -1322,7 +1350,7 @@
             // 
             this.bondsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bondsTextBox.Location = new System.Drawing.Point(16, 228);
-            this.bondsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bondsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.bondsTextBox.Name = "bondsTextBox";
             this.bondsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.bondsTextBox.Size = new System.Drawing.Size(191, 78);
@@ -1333,7 +1361,7 @@
             // 
             this.idealsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idealsTextBox.Location = new System.Drawing.Point(16, 125);
-            this.idealsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idealsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idealsTextBox.Name = "idealsTextBox";
             this.idealsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.idealsTextBox.Size = new System.Drawing.Size(191, 78);
@@ -1354,7 +1382,7 @@
             // 
             this.personalityTraitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personalityTraitsTextBox.Location = new System.Drawing.Point(16, 24);
-            this.personalityTraitsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.personalityTraitsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.personalityTraitsTextBox.Name = "personalityTraitsTextBox";
             this.personalityTraitsTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.personalityTraitsTextBox.Size = new System.Drawing.Size(191, 78);
@@ -1367,7 +1395,7 @@
             this.passivePerceptionPanel.Controls.Add(this.passivePerceptionTextBox);
             this.passivePerceptionPanel.Controls.Add(this.passivePerceptionLabel);
             this.passivePerceptionPanel.Location = new System.Drawing.Point(22, 1097);
-            this.passivePerceptionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passivePerceptionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.passivePerceptionPanel.Name = "passivePerceptionPanel";
             this.passivePerceptionPanel.Size = new System.Drawing.Size(276, 41);
             this.passivePerceptionPanel.TabIndex = 11;
@@ -1375,7 +1403,7 @@
             // passivePerceptionTextBox
             // 
             this.passivePerceptionTextBox.Location = new System.Drawing.Point(19, 11);
-            this.passivePerceptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passivePerceptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passivePerceptionTextBox.Name = "passivePerceptionTextBox";
             this.passivePerceptionTextBox.Size = new System.Drawing.Size(23, 20);
             this.passivePerceptionTextBox.TabIndex = 1;
@@ -1396,7 +1424,7 @@
             this.attacksSpellcastingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.attacksSpellcastingPanel.Controls.Add(this.attacksSpellcastingLabel);
             this.attacksSpellcastingPanel.Location = new System.Drawing.Point(314, 600);
-            this.attacksSpellcastingPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.attacksSpellcastingPanel.Margin = new System.Windows.Forms.Padding(2);
             this.attacksSpellcastingPanel.Name = "attacksSpellcastingPanel";
             this.attacksSpellcastingPanel.Size = new System.Drawing.Size(226, 476);
             this.attacksSpellcastingPanel.TabIndex = 12;
@@ -1417,7 +1445,7 @@
             this.proficiencesLanguagesPanel.Controls.Add(this.proficienciesLanguagesTextBox);
             this.proficiencesLanguagesPanel.Controls.Add(this.label7);
             this.proficiencesLanguagesPanel.Location = new System.Drawing.Point(22, 1156);
-            this.proficiencesLanguagesPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.proficiencesLanguagesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.proficiencesLanguagesPanel.Name = "proficiencesLanguagesPanel";
             this.proficiencesLanguagesPanel.Size = new System.Drawing.Size(276, 221);
             this.proficiencesLanguagesPanel.TabIndex = 13;
@@ -1426,7 +1454,7 @@
             // 
             this.proficienciesLanguagesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.proficienciesLanguagesTextBox.Location = new System.Drawing.Point(10, 13);
-            this.proficienciesLanguagesTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.proficienciesLanguagesTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.proficienciesLanguagesTextBox.Name = "proficienciesLanguagesTextBox";
             this.proficienciesLanguagesTextBox.Size = new System.Drawing.Size(254, 180);
             this.proficienciesLanguagesTextBox.TabIndex = 1;
@@ -1445,9 +1473,10 @@
             // featuresTraitsPanel
             // 
             this.featuresTraitsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.featuresTraitsPanel.Controls.Add(this.featuresTraitsListView);
             this.featuresTraitsPanel.Controls.Add(this.featuresTraitsLabel);
             this.featuresTraitsPanel.Location = new System.Drawing.Point(555, 600);
-            this.featuresTraitsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.featuresTraitsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.featuresTraitsPanel.Name = "featuresTraitsPanel";
             this.featuresTraitsPanel.Size = new System.Drawing.Size(226, 777);
             this.featuresTraitsPanel.TabIndex = 14;
@@ -1468,7 +1497,7 @@
             this.equipmentPanel.Controls.Add(this.equipmentListView);
             this.equipmentPanel.Controls.Add(this.equipmentLabel);
             this.equipmentPanel.Location = new System.Drawing.Point(314, 1097);
-            this.equipmentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.equipmentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.equipmentPanel.Name = "equipmentPanel";
             this.equipmentPanel.Size = new System.Drawing.Size(226, 280);
             this.equipmentPanel.TabIndex = 15;
@@ -1476,7 +1505,7 @@
             // equipmentListView
             // 
             this.equipmentListView.Location = new System.Drawing.Point(18, 11);
-            this.equipmentListView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.equipmentListView.Margin = new System.Windows.Forms.Padding(2);
             this.equipmentListView.Name = "equipmentListView";
             this.equipmentListView.Scrollable = false;
             this.equipmentListView.Size = new System.Drawing.Size(189, 242);
@@ -1497,33 +1526,50 @@
             // 
             this.rollButton.Image = ((System.Drawing.Image)(resources.GetObject("rollButton.Image")));
             this.rollButton.Location = new System.Drawing.Point(72, 102);
-            this.rollButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rollButton.Margin = new System.Windows.Forms.Padding(2);
             this.rollButton.Name = "rollButton";
             this.rollButton.Size = new System.Drawing.Size(42, 37);
             this.rollButton.TabIndex = 16;
             this.rollButton.TabStop = false;
             this.rollButton.Click += new System.EventHandler(this.rollButton_Click);
             // 
-            // armorClassTextBox
+            // featuresTraitsListView
             // 
-            this.armorClassTextBox.Location = new System.Drawing.Point(3, 25);
-            this.armorClassTextBox.Name = "armorClassTextBox";
-            this.armorClassTextBox.Size = new System.Drawing.Size(53, 20);
-            this.armorClassTextBox.TabIndex = 1;
+            this.featuresTraitsListView.Location = new System.Drawing.Point(16, 16);
+            this.featuresTraitsListView.Margin = new System.Windows.Forms.Padding(2);
+            this.featuresTraitsListView.Name = "featuresTraitsListView";
+            this.featuresTraitsListView.Scrollable = false;
+            this.featuresTraitsListView.Size = new System.Drawing.Size(189, 733);
+            this.featuresTraitsListView.TabIndex = 17;
+            this.featuresTraitsListView.UseCompatibleStateImageBehavior = false;
             // 
-            // initiativeTextBox
+            // acrobaticsCheckBox
             // 
-            this.initiativeTextBox.Location = new System.Drawing.Point(3, 25);
-            this.initiativeTextBox.Name = "initiativeTextBox";
-            this.initiativeTextBox.Size = new System.Drawing.Size(53, 20);
-            this.initiativeTextBox.TabIndex = 2;
+            this.acrobaticsCheckBox.AutoSize = true;
+            this.acrobaticsCheckBox.Location = new System.Drawing.Point(2, 8);
+            this.acrobaticsCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.acrobaticsCheckBox.Name = "acrobaticsCheckBox";
+            this.acrobaticsCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.acrobaticsCheckBox.TabIndex = 17;
+            this.acrobaticsCheckBox.UseVisualStyleBackColor = true;
             // 
-            // speedTextBox
+            // acrobaticsTextBox
             // 
-            this.speedTextBox.Location = new System.Drawing.Point(3, 25);
-            this.speedTextBox.Name = "speedTextBox";
-            this.speedTextBox.Size = new System.Drawing.Size(53, 20);
-            this.speedTextBox.TabIndex = 3;
+            this.acrobaticsTextBox.Location = new System.Drawing.Point(19, 5);
+            this.acrobaticsTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.acrobaticsTextBox.Name = "acrobaticsTextBox";
+            this.acrobaticsTextBox.Size = new System.Drawing.Size(20, 20);
+            this.acrobaticsTextBox.TabIndex = 17;
+            // 
+            // acrobaticsLabel
+            // 
+            this.acrobaticsLabel.AutoSize = true;
+            this.acrobaticsLabel.Location = new System.Drawing.Point(40, 9);
+            this.acrobaticsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.acrobaticsLabel.Name = "acrobaticsLabel";
+            this.acrobaticsLabel.Size = new System.Drawing.Size(57, 13);
+            this.acrobaticsLabel.TabIndex = 17;
+            this.acrobaticsLabel.Text = "Acrobatics";
             // 
             // CharacterSheet
             // 
@@ -1551,7 +1597,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "CharacterSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1756,6 +1802,10 @@
         private System.Windows.Forms.TextBox armorClassTextBox;
         private System.Windows.Forms.TextBox speedTextBox;
         private System.Windows.Forms.TextBox initiativeTextBox;
+        private System.Windows.Forms.ListView featuresTraitsListView;
+        private System.Windows.Forms.Label acrobaticsLabel;
+        private System.Windows.Forms.TextBox acrobaticsTextBox;
+        private System.Windows.Forms.CheckBox acrobaticsCheckBox;
     }
 }
 

@@ -96,6 +96,8 @@ namespace dnd_character_gen
         #endregion Stats and Modifiers
 
         public Dictionary<string, string> classFeatures { get; set; }
+        public Dictionary<string, string> raceFeatures { get; set; }
+        public Dictionary<string, string> backgroundFeatures { get; set; }
 
         #region Basic Character Generator Method
 
@@ -194,7 +196,7 @@ namespace dnd_character_gen
             characterBackground.setLanguages();
             characterBackground.setEquipment();
             characterBackground.setToolsProf();
-            characterBackground.setFeatures();
+            backgroundFeatures = characterBackground.setFeatures();
             characterBackground.setSpecial();
 
             personalityTrait = characterBackground.setPersonalityTrait();
@@ -309,6 +311,13 @@ namespace dnd_character_gen
             characterRace.setAbilityScores();
             size = characterRace.setSize();
             movementSpeed = characterRace.setSpeed();
+            characterRace.setHitPointModifier();
+            characterRace.setSkills();
+            characterRace.setToolsProf();
+            characterRace.setWeaponProf();
+            characterRace.setArmorProf();
+            raceFeatures = characterRace.setFeatures();
+            characterRace.setLanguages();
         }
 
         #region Race Generator

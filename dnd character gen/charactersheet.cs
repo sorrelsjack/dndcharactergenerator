@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -25,6 +26,9 @@ namespace dnd_character_gen
         {
             equipmentListView.View = View.List;
             equipmentListView.GridLines = true;
+
+            featuresTraitsListView.View = View.List;
+            featuresTraitsListView.GridLines = true;
 
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
@@ -78,6 +82,8 @@ namespace dnd_character_gen
 
         private void PopulateSkillProficiencies()
         {
+            acrobaticsCheckBox.Checked = currentCharacter.skillProficiencies.Contains("Acrobatics") ? true : false;
+            acrobaticsTextBox.Text = (currentCharacter.dexterityModifier + currentCharacter.proficiencyBonus).ToString();
         }
 
         private void PopulateOtherProficiencies()
@@ -103,6 +109,7 @@ namespace dnd_character_gen
                 rollMainInfo();
 
             PopulateStatBoxes();
+            PopulateSkillProficiencies();
             PopulateDefensive();
         }
 
@@ -117,6 +124,7 @@ namespace dnd_character_gen
             PopulatePersonality();
 
             PopulateStatBoxes();
+            PopulateSkillProficiencies();
             PopulateDefensive();
             PopulateSavingThrows();
         }
@@ -137,6 +145,8 @@ namespace dnd_character_gen
         {
             equipmentListView.Clear();
             equipmentListView.Items.Clear();
+            featuresTraitsListView.Clear();
+            featuresTraitsListView.Items.Clear();
 
             currentCharacter = new Character();
 
@@ -148,6 +158,7 @@ namespace dnd_character_gen
             backgroundTextBox.Text = currentCharacter.background;
             raceTextBox.Text = currentCharacter.race;
 
+            PopulateFeatures();
             PopulateOtherProficiencies();
             PopulateEquipment();
         }
@@ -169,6 +180,18 @@ namespace dnd_character_gen
             hitPointMaximumTextBox.Text = currentCharacter.hitPoints.ToString();
             totalHitDiceTextBox.Text = 1.ToString();
             hitDiceTextBox.Text = currentCharacter.hitDie.ToString();
+        }
+
+        private void PopulateFeatures()
+        {
+            currentCharacter.classFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+            currentCharacter.raceFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+            currentCharacter.backgroundFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+
+            foreach (var item in currentCharacter.features)
+            {
+                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Key}: \r\n {item.Value}" }));
+            }
         }
     }
 }
