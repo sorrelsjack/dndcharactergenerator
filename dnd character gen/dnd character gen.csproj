@@ -77,6 +77,7 @@
     <Compile Include="CharacterClasses\Sorcerer.cs" />
     <Compile Include="CharacterClasses\Warlock.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
+    <Compile Include="CharacterSubRaces\DarkElf.cs" />
     <Compile Include="CharacterSubRaces\DeepGnome.cs" />
     <Compile Include="CharacterRaces\Dragonborn.cs" />
     <Compile Include="CharacterRaces\Dwarf.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="CharacterRaces\HalfElf.cs" />
     <Compile Include="CharacterRaces\Halfling.cs" />
     <Compile Include="CharacterRaces\HalfOrc.cs" />
+    <Compile Include="CharacterSubRaces\HighElf.cs" />
     <Compile Include="CharacterSubRaces\HillDwarf.cs" />
     <Compile Include="CharacterRaces\Human.cs" />
     <Compile Include="CharacterSubRaces\LightfootHalfling.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="CharacterSubClasses\TwoWeaponFightingFighter.cs" />
     <Compile Include="CharacterSubClasses\WarCleric.cs" />
     <Compile Include="CharacterSubClasses\WildMagicSorcerer.cs" />
+    <Compile Include="CharacterSubRaces\WoodElf.cs" />
     <Compile Include="Dictionaries\ArtisansTools.cs" />
     <Compile Include="Dictionaries\GamingSets.cs" />
     <Compile Include="Dictionaries\GuildBusinesses.cs" />

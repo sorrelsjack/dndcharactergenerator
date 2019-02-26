@@ -4,11 +4,11 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterBackgrounds
 {
-    //TODO: Fill out using PHB
-    public class Sailor : ICharacterBackground {
+    public class Sailor : ICharacterBackground
+    {
         private List<string> luckyCharms = new List<string> { "Rabbit foot", "Small stoe with a hole in the center" }; //TODO: Can have trinket
 
-        private List<string> personalityTraits = new List<string> 
+        private List<string> personalityTraits = new List<string>
         {
             "My friends know they can rely on me, no matter what.",
             "I work hard so that I can play hard when the work is done.",
@@ -20,7 +20,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I like a job well done, especially if I can convince someone else to do it."
         };
 
-        private List<string> ideals = new List<string> 
+        private List<string> ideals = new List<string>
         {
             "Respect. The thing that keeps a ship together is mutual respect between captain and crew. (Good)",
             "Fairness. We all do the work, so we all share in the rewards. (Lawful)",
@@ -30,7 +30,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Aspiration. Someday I’ll own my own ship and chart my own destiny. (Any)"
         };
 
-        private List<string> bonds = new List<string> 
+        private List<string> bonds = new List<string>
         {
             "I'm loyal to my captain first, everything else second.",
             "The ship is most important— crewmates and captains come and go.",
@@ -40,7 +40,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Ruthless pirates murdered my captain and crewmates, plundered our ship, and left me to die. Vengeance will be mine."
         };
 
-        private List<string> flaws = new List<string> 
+        private List<string> flaws = new List<string>
         {
             "I follow orders, even if I think they're wrong.",
             "I'll say anything to avoid having to do extra work.",
@@ -52,13 +52,13 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
-        public List<string> setEquipment() => new List<string> 
+        public List<string> setEquipment() => new List<string>
         {
             "Belaying pin (club)", "50 ft of silk rope", $"{luckyCharms[NumberGen.gen(luckyCharms.Count)]}",
             "Set of common clothes", "Belt pouch containing 10 gp"
         };
 
-        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string> 
+        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Ship's Passage", "When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because you’re calling in a favor, you can’t be certain of a schedule or route that will meet your every need. Your Dungeon Master will determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected to assist the crew during the voyage." }
         };

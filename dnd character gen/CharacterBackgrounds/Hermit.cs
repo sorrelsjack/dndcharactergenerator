@@ -5,9 +5,9 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterBackgrounds
 {
-    //TODO: Fill out using PHB
-    public class Hermit : ICharacterBackground {
-        private List<string> livesOfSeclusion = new List<string> 
+    public class Hermit : ICharacterBackground
+    {
+        private List<string> livesOfSeclusion = new List<string>
         {
             "I was searching for spiritual enlightenment.",
             "I was partaking in communal living in accordance with dictates of a religious order.",
@@ -19,7 +19,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I was a pilgrim in search of a person, place, or relic of spiritual significance."
         };
 
-        private List<string> personalityTraits = new List<string> 
+        private List<string> personalityTraits = new List<string>
         {
             "I’ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.",
             "I am utterly serene, even in the face of disaster.",
@@ -31,7 +31,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I am working on a grand philosophical theory and love sharing my ideas."
         };
 
-        private List<string> ideals = new List<string> 
+        private List<string> ideals = new List<string>
         {
             "Greater Good. My gifts are meant to be shared with all, not used for my own benefit. (Good)",
             "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking. (Lawful)",
@@ -41,7 +41,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Self-Knowledge. If you know yourself, there’s nothing left to know. (Any)"
         };
 
-        private List<string> bonds = new List<string> 
+        private List<string> bonds = new List<string>
         {
             "Nothing is more important than the other members of my hermitage, order, or association.",
             "I entered seclusion to hide from the ones who might still be hunting me. I must someday confront them.",
@@ -51,7 +51,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "My isolation gave me great insight into a great evil that only I can destroy."
         };
 
-        private List<string> flaws = new List<string> 
+        private List<string> flaws = new List<string>
         {
             "Now that I've returned to the world, I enjoy its delights a little too much.",
             "I harbor dark, bloodthirsty thoughts that my isolation and meditation failed to quell.",
@@ -63,13 +63,13 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
-        public List<string> setEquipment() => new List<string> 
+        public List<string> setEquipment() => new List<string>
         {
             "Scroll case stuffed full of notes from your studies or prayers", "Winter blanket",
             "Set of common clothes", "Herbalism kit", "5 gp"
         };
 
-        public Dictionary<string, string> setFeatures() => new Dictionary<string, string> 
+        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Discovery", "The quiet seclusion of your extended hermitage gave you access to a unique and pow erful discovery. The exact nature of this revelation depends on the nature of your seclusion. Work with your DM to determine the details of your discovery and its impact on the campaign." }
         };
@@ -84,7 +84,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Medicine", "Religion" };
 
-        public Dictionary<string, string> setSpecial() => new Dictionary<string, string> 
+        public Dictionary<string, string> setSpecial() => new Dictionary<string, string>
         {
             { "Life of Seclusion", $"{livesOfSeclusion[NumberGen.gen(livesOfSeclusion.Count)]}" }
         };

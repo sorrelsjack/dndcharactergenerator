@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -96,10 +95,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Insight", "Religion" };
 
-        public Dictionary<string, string> setSpecial()
-        {
-            throw new NotImplementedException(); //TODO pick a god
-        }
+        public Dictionary<string, string> setSpecial() => null; //TODO: pick a god
 
         public List<string> setToolsProf() => null;
     }

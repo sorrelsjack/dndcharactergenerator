@@ -26,7 +26,18 @@ namespace dnd_character_gen
         public string alignment;
         public int xp = 0;
 
+        public string size = "";
+
         #endregion Basic Info
+
+        #region Personality Info
+
+        public string personalityTrait = "";
+        public string ideal = "";
+        public string bond = "";
+        public string flaw = "";
+
+        #endregion Personality Info
 
         #region Class, Subclass, Race, and Background interfaces
 
@@ -177,8 +188,19 @@ namespace dnd_character_gen
                 characterClass = new Wizard();
         }
 
-        public void initializeBackground()
+        public void initializeBackground() //TODO: In the future, optimize so that if there's duplicates, reroll some stuff.
         {
+            characterBackground.setSkills();
+            characterBackground.setLanguages();
+            characterBackground.setEquipment();
+            characterBackground.setToolsProf();
+            characterBackground.setFeatures();
+            characterBackground.setSpecial();
+
+            personalityTrait = characterBackground.setPersonalityTrait();
+            ideal = characterBackground.setIdeal();
+            bond = characterBackground.setBond();
+            flaw = characterBackground.setFlaw();
         }
 
         private string generateBackground()
@@ -283,7 +305,13 @@ namespace dnd_character_gen
 
         public void initializeRace()
         {
+            name = characterRace.setName();
+            characterRace.setAbilityScores();
+            size = characterRace.setSize();
+            movementSpeed = characterRace.setSpeed();
         }
+
+        #region Race Generator
 
         private string generateRace() //TODO: Fix where I overwrote base class stuff when I wasn't supposed to...
         {
@@ -315,8 +343,25 @@ namespace dnd_character_gen
                 }
             }
 
-            if (randomNumber == 2) //TODO: Integrate
-                race = "Elf";
+            if (randomNumber == 2)
+            {
+                randomNumber = NumberGen.gen(3);
+                if (randomNumber == 0)
+                {
+                    race = "High Elf";
+                    characterRace = new HighElf();
+                }
+                else if (randomNumber == 1)
+                {
+                    race = "Wood Elf";
+                    characterRace = new WoodElf();
+                }
+                else if (randomNumber == 2)
+                {
+                    race = "Dark Elf";
+                    characterRace = new DarkElf();
+                }
+            }
 
             if (randomNumber == 3)
             {
@@ -427,10 +472,12 @@ namespace dnd_character_gen
             return race;
         }
 
+        #endregion Race Generator
+
         private string generateAlignment()
         {
             string alignment = "";
-            int randomNumber = NumberGen.gen(9); //TODO fix an issue where I'm not getting any of these options
+            int randomNumber = NumberGen.gen(9);
 
             if (randomNumber == 0)
                 alignment = "Lawful Good";
@@ -508,6 +555,8 @@ namespace dnd_character_gen
             {
                 statArray.Add(generateStat());
             }
+
+            //TODO: Add racial bonuses here
 
             statArray = statArray.OrderBy(x => x).ToList<int>(); //Ordering by lowest to highest value.
 

@@ -9,6 +9,9 @@ namespace dnd_character_gen
     {
         private Character currentCharacter = new Character();
 
+        [DllImport("user32.dll")]
+        private static extern bool HideCaret(IntPtr hWnd);
+
         public CharacterSheet()
         {
             InitializeComponent();
@@ -45,6 +48,8 @@ namespace dnd_character_gen
             intelligenceModifierTextBox.Text = currentCharacter.intelligenceModifier.ToString();
             wisdomModifierTextBox.Text = currentCharacter.wisdomModifier.ToString();
             charismaModifierTextBox.Text = currentCharacter.charismaModifier.ToString();
+
+            passivePerceptionTextBox.Text = (10 + currentCharacter.wisdomModifier).ToString();
         }
 
         private void PopulateSavingThrows()
@@ -98,6 +103,7 @@ namespace dnd_character_gen
                 rollMainInfo();
 
             PopulateStatBoxes();
+            PopulateDefensive();
         }
 
         private void rollButton_Click(object sender, EventArgs e)
@@ -108,12 +114,12 @@ namespace dnd_character_gen
             if (currentCharacter.characterClass == null)
                 rollMainInfo();
 
+            PopulatePersonality();
+
             PopulateStatBoxes();
+            PopulateDefensive();
             PopulateSavingThrows();
         }
-
-        [DllImport("user32.dll")]
-        private static extern bool HideCaret(IntPtr hWnd);
 
         private void characterNameTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -124,6 +130,7 @@ namespace dnd_character_gen
         private void rollMainInfoButton_Click(object sender, EventArgs e)
         {
             rollMainInfo();
+            PopulatePersonality();
         }
 
         private void rollMainInfo()
@@ -134,6 +141,8 @@ namespace dnd_character_gen
             currentCharacter = new Character();
 
             currentCharacter.generateBasicInfo();
+
+            characterNameTextBox.Text = currentCharacter.name;
             classLevelTextBox.Text = $"{currentCharacter.characterClassSubtype}{(currentCharacter.characterClassSubtype != null ? " " : "")}{currentCharacter.characterClass.GetType().Name} {currentCharacter.level.ToString()}";
             alignmentTextBox.Text = currentCharacter.alignment;
             backgroundTextBox.Text = currentCharacter.background;
@@ -141,6 +150,25 @@ namespace dnd_character_gen
 
             PopulateOtherProficiencies();
             PopulateEquipment();
+        }
+
+        private void PopulatePersonality()
+        {
+            personalityTraitsTextBox.Text = currentCharacter.personalityTrait;
+            idealsTextBox.Text = currentCharacter.ideal;
+            bondsTextBox.Text = currentCharacter.bond;
+            flawsTextBox.Text = currentCharacter.flaw;
+        }
+
+        private void PopulateDefensive()
+        {
+            //TODO: Possibly AC, but that requires A LOT of effort
+            initiativeTextBox.Text = currentCharacter.dexterityModifier.ToString();
+            speedTextBox.Text = currentCharacter.movementSpeed.ToString();
+            currentHitPointsTextBox.Text = currentCharacter.hitPoints.ToString();
+            hitPointMaximumTextBox.Text = currentCharacter.hitPoints.ToString();
+            totalHitDiceTextBox.Text = 1.ToString();
+            hitDiceTextBox.Text = currentCharacter.hitDie.ToString();
         }
     }
 }

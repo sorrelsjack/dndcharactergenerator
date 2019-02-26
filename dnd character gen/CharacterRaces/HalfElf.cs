@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
@@ -71,10 +70,7 @@ namespace dnd_character_gen.CharacterRaces
             return languages;
         }
 
-        public string setName() //TODO: Finish this when I have the Human and Elf names done.
-        {
-            throw new NotImplementedException();
-        }
+        public string setName() => null; //TODO: Finish this when I have the Human and Elf names done.
 
         public string setSize() => "Medium";
 

@@ -20,11 +20,11 @@ namespace dnd_character_gen.CharacterRaces
             "Quillathe", "Sariel", "Shanairra", "Shava", "Silaqui", "Theirastra", "Thia", "Vadania", "Valanthe", "Xanaphia"
         };
 
-        public Dictionary<string, int> setAbilityScores() => new Dictionary<string, int> { { "Dexterity", 2 } };
+        public virtual Dictionary<string, int> setAbilityScores() => new Dictionary<string, int> { { "Dexterity", 2 } };
 
         public List<string> setArmorProf() => null;
 
-        public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
             { "Darkvision", "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray." },
             { "Keen Senses", "You have proficiency in the Perception skill." },
@@ -34,7 +34,7 @@ namespace dnd_character_gen.CharacterRaces
 
         public int setHitPointModifier() => 0;
 
-        public List<string> setLanguages() => new List<string> { "Common", "Elvish" };
+        public virtual List<string> setLanguages() => new List<string> { "Common", "Elvish" };
 
         public string setName() => NumberGen.gen(2) == 0
             ? femaleNames[NumberGen.gen(femaleNames.Count)]
@@ -44,10 +44,10 @@ namespace dnd_character_gen.CharacterRaces
 
         public List<string> setSkills() => new List<string> { "Perception" };
 
-        public int setSpeed() => 30;
+        public virtual int setSpeed() => 30;
 
         public List<string> setToolsProf() => null;
 
-        public List<string> setWeaponProf() => null;
+        public virtual List<string> setWeaponProf() => null;
     }
 }

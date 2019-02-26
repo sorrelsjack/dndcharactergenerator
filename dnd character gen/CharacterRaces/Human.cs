@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -40,10 +39,7 @@ namespace dnd_character_gen.CharacterRaces
             return languages;
         }
 
-        public string setName()
-        {
-            throw new NotImplementedException();
-        }
+        public string setName() => null; //TODO: Human names
 
         public string setSize() => "Medium";
 
