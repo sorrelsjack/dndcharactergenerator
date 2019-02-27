@@ -42,8 +42,11 @@ namespace dnd_character_gen
         #region Class, Subclass, Race, and Background interfaces
 
         public ICharacterClass characterClass { get; set; }
+
         public ICharacterSubClass characterSubClass { get; set; }
+
         public ICharacterRace characterRace { get; set; }
+
         public ICharacterBackground characterBackground { get; set; }
 
         #endregion Class, Subclass, Race, and Background interfaces
@@ -51,10 +54,15 @@ namespace dnd_character_gen
         #region AC, Init, Speed, HP, Spell Save DC
 
         public int armorClass { get; set; }
+
         public int initiative { get; set; }
+
         public int movementSpeed { get; set; }
+
         public int hitDie { get; set; }
+
         public int hitPoints { get; set; }
+
         public int spellSaveDC { get; set; }
 
         #endregion AC, Init, Speed, HP, Spell Save DC
@@ -79,27 +87,50 @@ namespace dnd_character_gen
         private string primaryStat { get; set; }
 
         public int strength { get; private set; }
+
         public int dexterity { get; private set; }
+
         public int constitution { get; private set; }
-        public int intelligence { get; private set; }
+
+        public int intelligence { get; private set; } //TODO: These may be better as an array
+
         public int wisdom { get; private set; }
+
         public int charisma { get; private set; }
 
         public int strengthModifier { get; private set; }
+
         public int dexterityModifier { get; private set; }
+
         public int constitutionModifier { get; private set; }
+
         public int intelligenceModifier { get; private set; }
+
         public int wisdomModifier { get; private set; }
+
         public int charismaModifier { get; private set; }
+
         public int spellAttackModifier { get; set; }
 
         #endregion Stats and Modifiers
 
-        public Dictionary<string, string> classFeatures { get; set; }
+        public Dictionary<string, string> classFeatures { get; set; } //TODO: Is this needed?
+
         public Dictionary<string, string> raceFeatures { get; set; }
+
         public Dictionary<string, string> backgroundFeatures { get; set; }
 
         #region Basic Character Generator Method
+
+        private void removeDuplicates() //TODO: Add option to optimize
+        {
+            armorProficiencies = armorProficiencies.Distinct().ToList();
+            weaponProficiencies = weaponProficiencies.Distinct().ToList();
+            toolProficiencies = toolProficiencies.Distinct().ToList();
+            savingThrowProficiencies = savingThrowProficiencies.Distinct().ToList();
+            skillProficiencies = skillProficiencies.Distinct().ToList();
+            languageProficiencies = languageProficiencies.Distinct().ToList();
+        }
 
         public void generateBasicInfo()
         {
@@ -110,6 +141,8 @@ namespace dnd_character_gen
             this.race = generateRace();
             initializeRace();
             this.alignment = generateAlignment();
+
+            removeDuplicates();
         }
 
         #endregion Basic Character Generator Method
@@ -192,10 +225,16 @@ namespace dnd_character_gen
 
         public void initializeBackground() //TODO: In the future, optimize so that if there's duplicates, reroll some stuff.
         {
-            characterBackground.setSkills();
-            characterBackground.setLanguages();
-            characterBackground.setEquipment();
-            characterBackground.setToolsProf();
+            var backgroundLanguageProficiencies = characterBackground.setLanguages();
+            if (backgroundLanguageProficiencies != null)
+                languageProficiencies.AddRange(backgroundLanguageProficiencies);
+
+            var backgroundToolProficiencies = characterBackground.setToolsProf();
+            if (backgroundToolProficiencies != null)
+                toolProficiencies.AddRange(backgroundToolProficiencies);
+
+            skillProficiencies.AddRange(characterBackground.setSkills());
+            equipment.AddRange(characterBackground.setEquipment());
             backgroundFeatures = characterBackground.setFeatures();
             characterBackground.setSpecial();
 
@@ -207,7 +246,7 @@ namespace dnd_character_gen
 
         private string generateBackground()
         {
-            //TODO need a method to resolve conflicts between things selected in background and class and race
+            //TODO need a method to resolve conflicts between things selected in background and class and race (optimize)
             string background = "";
             int randomNumber = NumberGen.gen(18);
 
@@ -308,16 +347,30 @@ namespace dnd_character_gen
         public void initializeRace()
         {
             name = characterRace.setName();
-            characterRace.setAbilityScores();
             size = characterRace.setSize();
             movementSpeed = characterRace.setSpeed();
-            characterRace.setHitPointModifier();
-            characterRace.setSkills();
-            characterRace.setToolsProf();
-            characterRace.setWeaponProf();
-            characterRace.setArmorProf();
+
+            var raceSkillProficiencies = characterRace.setSkills();
+            if (raceSkillProficiencies != null)
+                skillProficiencies.AddRange(raceSkillProficiencies);
+
+            var raceArmorProficiencies = characterRace.setArmorProf();
+            if (raceArmorProficiencies != null)
+                armorProficiencies.AddRange(raceArmorProficiencies);
+
+            var raceWeaponProficiencies = characterRace.setWeaponProf();
+            if (raceWeaponProficiencies != null)
+                weaponProficiencies.AddRange(raceWeaponProficiencies);
+
+            var raceToolProficiencies = characterRace.setToolsProf();
+            if (raceToolProficiencies != null)
+                toolProficiencies.AddRange(raceToolProficiencies);
+
+            var raceLanguageProficiencies = characterRace.setLanguages();
+            if (raceLanguageProficiencies != null)
+                languageProficiencies.AddRange(raceLanguageProficiencies);
+
             raceFeatures = characterRace.setFeatures();
-            characterRace.setLanguages();
         }
 
         #region Race Generator
@@ -565,8 +618,6 @@ namespace dnd_character_gen
                 statArray.Add(generateStat());
             }
 
-            //TODO: Add racial bonuses here
-
             statArray = statArray.OrderBy(x => x).ToList<int>(); //Ordering by lowest to highest value.
 
             sortedStats[primaryStat] = statArray[statArray.Count - 1];
@@ -578,6 +629,13 @@ namespace dnd_character_gen
                 var nextKey = sortedStats.FirstOrDefault(x => x.Value == 0);
                 sortedStats[nextKey.Key] = statArray[randomNumber];
                 statArray.RemoveAt(randomNumber);
+            }
+
+            var racialAbilityScores = characterRace.setAbilityScores(); //TODO maybe calculate this else where like after the stats are rolled but idk. Or maybe just resort them?
+
+            foreach (var kvp in racialAbilityScores)
+            {
+                sortedStats[kvp.Key] += racialAbilityScores[kvp.Key];
             }
 
             strength = sortedStats["Strength"];
@@ -594,7 +652,7 @@ namespace dnd_character_gen
             wisdomModifier = calculateStatModifier(wisdom);
             charismaModifier = calculateStatModifier(charisma);
 
-            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier); //TODO: Maybe find a more appropriate place for this? idk
+            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier) + characterRace.setHitPointModifier(); ; //TODO: Maybe find a more appropriate place for this? idk
         }
 
         private int calculateStatModifier(int stat)

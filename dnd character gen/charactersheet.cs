@@ -101,7 +101,7 @@ namespace dnd_character_gen
 
                 CheckBox checkBox = skillsPanel.Controls.Find(
                     $"{camelCaseSkill}CheckBox", true).FirstOrDefault() as CheckBox;
-                checkBox.Checked = currentCharacter.skillProficiencies.Contains(skill.Key) ? true : false; //TODO: Come back here once I've got the skills generator ironed out
+                checkBox.Checked = currentCharacter.skillProficiencies.Contains(skill.Key) ? true : false;
 
                 TextBox textBox = skillsPanel.Controls.Find(
                     $"{camelCaseSkill}TextBox", true).FirstOrDefault() as TextBox;
@@ -215,7 +215,9 @@ namespace dnd_character_gen
 
             foreach (var item in currentCharacter.features)
             {
-                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Key}: \r\n {item.Value}" }));
+                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Key}:" }));
+                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Value}" }));
+                featuresTraitsListView.Items.Add(new ListViewItem(new[] { " " }));
             }
         }
 
