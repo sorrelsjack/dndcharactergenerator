@@ -101,6 +101,19 @@
             this.strengthSavingThrowLabel = new System.Windows.Forms.Label();
             this.savingThrowsLabel = new System.Windows.Forms.Label();
             this.skillsPanel = new System.Windows.Forms.Panel();
+            this.deceptionCheckBox = new System.Windows.Forms.CheckBox();
+            this.athleticsLabel = new System.Windows.Forms.Label();
+            this.athleticsTextBox = new System.Windows.Forms.TextBox();
+            this.athleticsCheckBox = new System.Windows.Forms.CheckBox();
+            this.arcanaLabel = new System.Windows.Forms.Label();
+            this.arcanaTextBox = new System.Windows.Forms.TextBox();
+            this.arcanaCheckBox = new System.Windows.Forms.CheckBox();
+            this.animalHandlingLabel = new System.Windows.Forms.Label();
+            this.animalHandlingCheckBox = new System.Windows.Forms.CheckBox();
+            this.animalHandlingTextBox = new System.Windows.Forms.TextBox();
+            this.acrobaticsLabel = new System.Windows.Forms.Label();
+            this.acrobaticsTextBox = new System.Windows.Forms.TextBox();
+            this.acrobaticsCheckBox = new System.Windows.Forms.CheckBox();
             this.skillsLabel = new System.Windows.Forms.Label();
             this.hitPanel = new System.Windows.Forms.Panel();
             this.speedPanel = new System.Windows.Forms.Panel();
@@ -147,15 +160,53 @@
             this.proficienciesLanguagesTextBox = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.featuresTraitsPanel = new System.Windows.Forms.Panel();
+            this.featuresTraitsListView = new System.Windows.Forms.ListView();
             this.featuresTraitsLabel = new System.Windows.Forms.Label();
             this.equipmentPanel = new System.Windows.Forms.Panel();
             this.equipmentListView = new System.Windows.Forms.ListView();
             this.equipmentLabel = new System.Windows.Forms.Label();
             this.rollButton = new System.Windows.Forms.PictureBox();
-            this.featuresTraitsListView = new System.Windows.Forms.ListView();
-            this.acrobaticsCheckBox = new System.Windows.Forms.CheckBox();
-            this.acrobaticsTextBox = new System.Windows.Forms.TextBox();
-            this.acrobaticsLabel = new System.Windows.Forms.Label();
+            this.deceptionTextBox = new System.Windows.Forms.TextBox();
+            this.deceptionLabel = new System.Windows.Forms.Label();
+            this.historyCheckBox = new System.Windows.Forms.CheckBox();
+            this.historyTextBox = new System.Windows.Forms.TextBox();
+            this.History = new System.Windows.Forms.Label();
+            this.insightTextBox = new System.Windows.Forms.TextBox();
+            this.intimidationTextBox = new System.Windows.Forms.TextBox();
+            this.investigationTextBox = new System.Windows.Forms.TextBox();
+            this.medicineTextBox = new System.Windows.Forms.TextBox();
+            this.natureTextBox = new System.Windows.Forms.TextBox();
+            this.perceptionTextBox = new System.Windows.Forms.TextBox();
+            this.performanceTextBox = new System.Windows.Forms.TextBox();
+            this.persuasionTextBox = new System.Windows.Forms.TextBox();
+            this.religionTextBox = new System.Windows.Forms.TextBox();
+            this.sleightOfHandTextBox = new System.Windows.Forms.TextBox();
+            this.stealthTextBox = new System.Windows.Forms.TextBox();
+            this.survivalTextBox = new System.Windows.Forms.TextBox();
+            this.insightLabel = new System.Windows.Forms.Label();
+            this.intimidationLabel = new System.Windows.Forms.Label();
+            this.investigationLabel = new System.Windows.Forms.Label();
+            this.medicineLabel = new System.Windows.Forms.Label();
+            this.natureLabel = new System.Windows.Forms.Label();
+            this.perceptionLabel = new System.Windows.Forms.Label();
+            this.performanceLabel = new System.Windows.Forms.Label();
+            this.persuasionLabel = new System.Windows.Forms.Label();
+            this.religionLabel = new System.Windows.Forms.Label();
+            this.sleightOfHandLabel = new System.Windows.Forms.Label();
+            this.stealthLabel = new System.Windows.Forms.Label();
+            this.survivalLabel = new System.Windows.Forms.Label();
+            this.insightCheckBox = new System.Windows.Forms.CheckBox();
+            this.intimidationCheckBox = new System.Windows.Forms.CheckBox();
+            this.investigationCheckBox = new System.Windows.Forms.CheckBox();
+            this.medicineCheckBox = new System.Windows.Forms.CheckBox();
+            this.natureCheckBox = new System.Windows.Forms.CheckBox();
+            this.perceptionCheckBox = new System.Windows.Forms.CheckBox();
+            this.performanceCheckBox = new System.Windows.Forms.CheckBox();
+            this.persuasionCheckBox = new System.Windows.Forms.CheckBox();
+            this.religionCheckBox = new System.Windows.Forms.CheckBox();
+            this.sleightOfHandCheckBox = new System.Windows.Forms.CheckBox();
+            this.stealthCheckBox = new System.Windows.Forms.CheckBox();
+            this.survivalCheckBox = new System.Windows.Forms.CheckBox();
             this.basicInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -940,7 +991,7 @@
             // intelligenceSavingThrowLabel
             // 
             this.intelligenceSavingThrowLabel.AutoSize = true;
-            this.intelligenceSavingThrowLabel.Location = new System.Drawing.Point(43, 77);
+            this.intelligenceSavingThrowLabel.Location = new System.Drawing.Point(40, 77);
             this.intelligenceSavingThrowLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.intelligenceSavingThrowLabel.Name = "intelligenceSavingThrowLabel";
             this.intelligenceSavingThrowLabel.Size = new System.Drawing.Size(61, 13);
@@ -990,6 +1041,57 @@
             // skillsPanel
             // 
             this.skillsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.skillsPanel.Controls.Add(this.survivalCheckBox);
+            this.skillsPanel.Controls.Add(this.stealthCheckBox);
+            this.skillsPanel.Controls.Add(this.sleightOfHandCheckBox);
+            this.skillsPanel.Controls.Add(this.religionCheckBox);
+            this.skillsPanel.Controls.Add(this.persuasionCheckBox);
+            this.skillsPanel.Controls.Add(this.performanceCheckBox);
+            this.skillsPanel.Controls.Add(this.perceptionCheckBox);
+            this.skillsPanel.Controls.Add(this.natureCheckBox);
+            this.skillsPanel.Controls.Add(this.medicineCheckBox);
+            this.skillsPanel.Controls.Add(this.investigationCheckBox);
+            this.skillsPanel.Controls.Add(this.intimidationCheckBox);
+            this.skillsPanel.Controls.Add(this.insightCheckBox);
+            this.skillsPanel.Controls.Add(this.survivalLabel);
+            this.skillsPanel.Controls.Add(this.stealthLabel);
+            this.skillsPanel.Controls.Add(this.sleightOfHandLabel);
+            this.skillsPanel.Controls.Add(this.religionLabel);
+            this.skillsPanel.Controls.Add(this.persuasionLabel);
+            this.skillsPanel.Controls.Add(this.performanceLabel);
+            this.skillsPanel.Controls.Add(this.perceptionLabel);
+            this.skillsPanel.Controls.Add(this.natureLabel);
+            this.skillsPanel.Controls.Add(this.medicineLabel);
+            this.skillsPanel.Controls.Add(this.investigationLabel);
+            this.skillsPanel.Controls.Add(this.intimidationLabel);
+            this.skillsPanel.Controls.Add(this.insightLabel);
+            this.skillsPanel.Controls.Add(this.survivalTextBox);
+            this.skillsPanel.Controls.Add(this.stealthTextBox);
+            this.skillsPanel.Controls.Add(this.sleightOfHandTextBox);
+            this.skillsPanel.Controls.Add(this.religionTextBox);
+            this.skillsPanel.Controls.Add(this.persuasionTextBox);
+            this.skillsPanel.Controls.Add(this.performanceTextBox);
+            this.skillsPanel.Controls.Add(this.perceptionTextBox);
+            this.skillsPanel.Controls.Add(this.natureTextBox);
+            this.skillsPanel.Controls.Add(this.medicineTextBox);
+            this.skillsPanel.Controls.Add(this.investigationTextBox);
+            this.skillsPanel.Controls.Add(this.intimidationTextBox);
+            this.skillsPanel.Controls.Add(this.insightTextBox);
+            this.skillsPanel.Controls.Add(this.History);
+            this.skillsPanel.Controls.Add(this.historyTextBox);
+            this.skillsPanel.Controls.Add(this.historyCheckBox);
+            this.skillsPanel.Controls.Add(this.deceptionLabel);
+            this.skillsPanel.Controls.Add(this.deceptionTextBox);
+            this.skillsPanel.Controls.Add(this.deceptionCheckBox);
+            this.skillsPanel.Controls.Add(this.athleticsLabel);
+            this.skillsPanel.Controls.Add(this.athleticsTextBox);
+            this.skillsPanel.Controls.Add(this.athleticsCheckBox);
+            this.skillsPanel.Controls.Add(this.arcanaLabel);
+            this.skillsPanel.Controls.Add(this.arcanaTextBox);
+            this.skillsPanel.Controls.Add(this.arcanaCheckBox);
+            this.skillsPanel.Controls.Add(this.animalHandlingLabel);
+            this.skillsPanel.Controls.Add(this.animalHandlingCheckBox);
+            this.skillsPanel.Controls.Add(this.animalHandlingTextBox);
             this.skillsPanel.Controls.Add(this.acrobaticsLabel);
             this.skillsPanel.Controls.Add(this.acrobaticsTextBox);
             this.skillsPanel.Controls.Add(this.acrobaticsCheckBox);
@@ -999,6 +1101,128 @@
             this.skillsPanel.Name = "skillsPanel";
             this.skillsPanel.Size = new System.Drawing.Size(124, 686);
             this.skillsPanel.TabIndex = 8;
+            // 
+            // deceptionCheckBox
+            // 
+            this.deceptionCheckBox.AutoSize = true;
+            this.deceptionCheckBox.Location = new System.Drawing.Point(2, 103);
+            this.deceptionCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.deceptionCheckBox.Name = "deceptionCheckBox";
+            this.deceptionCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.deceptionCheckBox.TabIndex = 21;
+            this.deceptionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // athleticsLabel
+            // 
+            this.athleticsLabel.AutoSize = true;
+            this.athleticsLabel.Location = new System.Drawing.Point(40, 80);
+            this.athleticsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.athleticsLabel.Name = "athleticsLabel";
+            this.athleticsLabel.Size = new System.Drawing.Size(47, 13);
+            this.athleticsLabel.TabIndex = 20;
+            this.athleticsLabel.Text = "Athletics";
+            // 
+            // athleticsTextBox
+            // 
+            this.athleticsTextBox.Location = new System.Drawing.Point(19, 77);
+            this.athleticsTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.athleticsTextBox.Name = "athleticsTextBox";
+            this.athleticsTextBox.Size = new System.Drawing.Size(20, 20);
+            this.athleticsTextBox.TabIndex = 20;
+            // 
+            // athleticsCheckBox
+            // 
+            this.athleticsCheckBox.AutoSize = true;
+            this.athleticsCheckBox.Location = new System.Drawing.Point(2, 79);
+            this.athleticsCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.athleticsCheckBox.Name = "athleticsCheckBox";
+            this.athleticsCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.athleticsCheckBox.TabIndex = 20;
+            this.athleticsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // arcanaLabel
+            // 
+            this.arcanaLabel.AutoSize = true;
+            this.arcanaLabel.Location = new System.Drawing.Point(40, 57);
+            this.arcanaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.arcanaLabel.Name = "arcanaLabel";
+            this.arcanaLabel.Size = new System.Drawing.Size(41, 13);
+            this.arcanaLabel.TabIndex = 19;
+            this.arcanaLabel.Text = "Arcana";
+            // 
+            // arcanaTextBox
+            // 
+            this.arcanaTextBox.Location = new System.Drawing.Point(19, 53);
+            this.arcanaTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.arcanaTextBox.Name = "arcanaTextBox";
+            this.arcanaTextBox.Size = new System.Drawing.Size(20, 20);
+            this.arcanaTextBox.TabIndex = 19;
+            // 
+            // arcanaCheckBox
+            // 
+            this.arcanaCheckBox.AutoSize = true;
+            this.arcanaCheckBox.Location = new System.Drawing.Point(2, 56);
+            this.arcanaCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.arcanaCheckBox.Name = "arcanaCheckBox";
+            this.arcanaCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.arcanaCheckBox.TabIndex = 19;
+            this.arcanaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // animalHandlingLabel
+            // 
+            this.animalHandlingLabel.AutoSize = true;
+            this.animalHandlingLabel.Location = new System.Drawing.Point(40, 32);
+            this.animalHandlingLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.animalHandlingLabel.Name = "animalHandlingLabel";
+            this.animalHandlingLabel.Size = new System.Drawing.Size(83, 13);
+            this.animalHandlingLabel.TabIndex = 18;
+            this.animalHandlingLabel.Text = "Animal Handling";
+            // 
+            // animalHandlingCheckBox
+            // 
+            this.animalHandlingCheckBox.AutoSize = true;
+            this.animalHandlingCheckBox.Location = new System.Drawing.Point(2, 32);
+            this.animalHandlingCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.animalHandlingCheckBox.Name = "animalHandlingCheckBox";
+            this.animalHandlingCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.animalHandlingCheckBox.TabIndex = 18;
+            this.animalHandlingCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // animalHandlingTextBox
+            // 
+            this.animalHandlingTextBox.Location = new System.Drawing.Point(19, 29);
+            this.animalHandlingTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.animalHandlingTextBox.Name = "animalHandlingTextBox";
+            this.animalHandlingTextBox.Size = new System.Drawing.Size(20, 20);
+            this.animalHandlingTextBox.TabIndex = 18;
+            // 
+            // acrobaticsLabel
+            // 
+            this.acrobaticsLabel.AutoSize = true;
+            this.acrobaticsLabel.Location = new System.Drawing.Point(40, 9);
+            this.acrobaticsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.acrobaticsLabel.Name = "acrobaticsLabel";
+            this.acrobaticsLabel.Size = new System.Drawing.Size(57, 13);
+            this.acrobaticsLabel.TabIndex = 17;
+            this.acrobaticsLabel.Text = "Acrobatics";
+            // 
+            // acrobaticsTextBox
+            // 
+            this.acrobaticsTextBox.Location = new System.Drawing.Point(19, 5);
+            this.acrobaticsTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.acrobaticsTextBox.Name = "acrobaticsTextBox";
+            this.acrobaticsTextBox.Size = new System.Drawing.Size(20, 20);
+            this.acrobaticsTextBox.TabIndex = 17;
+            // 
+            // acrobaticsCheckBox
+            // 
+            this.acrobaticsCheckBox.AutoSize = true;
+            this.acrobaticsCheckBox.Location = new System.Drawing.Point(2, 8);
+            this.acrobaticsCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.acrobaticsCheckBox.Name = "acrobaticsCheckBox";
+            this.acrobaticsCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.acrobaticsCheckBox.TabIndex = 17;
+            this.acrobaticsCheckBox.UseVisualStyleBackColor = true;
             // 
             // skillsLabel
             // 
@@ -1481,6 +1705,16 @@
             this.featuresTraitsPanel.Size = new System.Drawing.Size(226, 777);
             this.featuresTraitsPanel.TabIndex = 14;
             // 
+            // featuresTraitsListView
+            // 
+            this.featuresTraitsListView.Location = new System.Drawing.Point(16, 16);
+            this.featuresTraitsListView.Margin = new System.Windows.Forms.Padding(2);
+            this.featuresTraitsListView.Name = "featuresTraitsListView";
+            this.featuresTraitsListView.Scrollable = false;
+            this.featuresTraitsListView.Size = new System.Drawing.Size(189, 733);
+            this.featuresTraitsListView.TabIndex = 17;
+            this.featuresTraitsListView.UseCompatibleStateImageBehavior = false;
+            // 
             // featuresTraitsLabel
             // 
             this.featuresTraitsLabel.AutoSize = true;
@@ -1533,43 +1767,387 @@
             this.rollButton.TabStop = false;
             this.rollButton.Click += new System.EventHandler(this.rollButton_Click);
             // 
-            // featuresTraitsListView
+            // deceptionTextBox
             // 
-            this.featuresTraitsListView.Location = new System.Drawing.Point(16, 16);
-            this.featuresTraitsListView.Margin = new System.Windows.Forms.Padding(2);
-            this.featuresTraitsListView.Name = "featuresTraitsListView";
-            this.featuresTraitsListView.Scrollable = false;
-            this.featuresTraitsListView.Size = new System.Drawing.Size(189, 733);
-            this.featuresTraitsListView.TabIndex = 17;
-            this.featuresTraitsListView.UseCompatibleStateImageBehavior = false;
+            this.deceptionTextBox.Location = new System.Drawing.Point(19, 101);
+            this.deceptionTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.deceptionTextBox.Name = "deceptionTextBox";
+            this.deceptionTextBox.Size = new System.Drawing.Size(20, 20);
+            this.deceptionTextBox.TabIndex = 21;
             // 
-            // acrobaticsCheckBox
+            // deceptionLabel
             // 
-            this.acrobaticsCheckBox.AutoSize = true;
-            this.acrobaticsCheckBox.Location = new System.Drawing.Point(2, 8);
-            this.acrobaticsCheckBox.Margin = new System.Windows.Forms.Padding(2);
-            this.acrobaticsCheckBox.Name = "acrobaticsCheckBox";
-            this.acrobaticsCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.acrobaticsCheckBox.TabIndex = 17;
-            this.acrobaticsCheckBox.UseVisualStyleBackColor = true;
+            this.deceptionLabel.AutoSize = true;
+            this.deceptionLabel.Location = new System.Drawing.Point(40, 104);
+            this.deceptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.deceptionLabel.Name = "deceptionLabel";
+            this.deceptionLabel.Size = new System.Drawing.Size(56, 13);
+            this.deceptionLabel.TabIndex = 21;
+            this.deceptionLabel.Text = "Deception";
             // 
-            // acrobaticsTextBox
+            // historyCheckBox
             // 
-            this.acrobaticsTextBox.Location = new System.Drawing.Point(19, 5);
-            this.acrobaticsTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.acrobaticsTextBox.Name = "acrobaticsTextBox";
-            this.acrobaticsTextBox.Size = new System.Drawing.Size(20, 20);
-            this.acrobaticsTextBox.TabIndex = 17;
+            this.historyCheckBox.AutoSize = true;
+            this.historyCheckBox.Location = new System.Drawing.Point(2, 127);
+            this.historyCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.historyCheckBox.Name = "historyCheckBox";
+            this.historyCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.historyCheckBox.TabIndex = 22;
+            this.historyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // acrobaticsLabel
+            // historyTextBox
             // 
-            this.acrobaticsLabel.AutoSize = true;
-            this.acrobaticsLabel.Location = new System.Drawing.Point(40, 9);
-            this.acrobaticsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.acrobaticsLabel.Name = "acrobaticsLabel";
-            this.acrobaticsLabel.Size = new System.Drawing.Size(57, 13);
-            this.acrobaticsLabel.TabIndex = 17;
-            this.acrobaticsLabel.Text = "Acrobatics";
+            this.historyTextBox.Location = new System.Drawing.Point(19, 125);
+            this.historyTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.historyTextBox.Name = "historyTextBox";
+            this.historyTextBox.Size = new System.Drawing.Size(20, 20);
+            this.historyTextBox.TabIndex = 22;
+            // 
+            // History
+            // 
+            this.History.AutoSize = true;
+            this.History.Location = new System.Drawing.Point(40, 128);
+            this.History.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(39, 13);
+            this.History.TabIndex = 22;
+            this.History.Text = "History";
+            // 
+            // insightTextBox
+            // 
+            this.insightTextBox.Location = new System.Drawing.Point(19, 149);
+            this.insightTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.insightTextBox.Name = "insightTextBox";
+            this.insightTextBox.Size = new System.Drawing.Size(20, 20);
+            this.insightTextBox.TabIndex = 23;
+            // 
+            // intimidationTextBox
+            // 
+            this.intimidationTextBox.Location = new System.Drawing.Point(19, 173);
+            this.intimidationTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.intimidationTextBox.Name = "intimidationTextBox";
+            this.intimidationTextBox.Size = new System.Drawing.Size(20, 20);
+            this.intimidationTextBox.TabIndex = 24;
+            // 
+            // investigationTextBox
+            // 
+            this.investigationTextBox.Location = new System.Drawing.Point(19, 197);
+            this.investigationTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.investigationTextBox.Name = "investigationTextBox";
+            this.investigationTextBox.Size = new System.Drawing.Size(20, 20);
+            this.investigationTextBox.TabIndex = 25;
+            // 
+            // medicineTextBox
+            // 
+            this.medicineTextBox.Location = new System.Drawing.Point(19, 221);
+            this.medicineTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.medicineTextBox.Name = "medicineTextBox";
+            this.medicineTextBox.Size = new System.Drawing.Size(20, 20);
+            this.medicineTextBox.TabIndex = 26;
+            // 
+            // natureTextBox
+            // 
+            this.natureTextBox.Location = new System.Drawing.Point(19, 245);
+            this.natureTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.natureTextBox.Name = "natureTextBox";
+            this.natureTextBox.Size = new System.Drawing.Size(20, 20);
+            this.natureTextBox.TabIndex = 26;
+            // 
+            // perceptionTextBox
+            // 
+            this.perceptionTextBox.Location = new System.Drawing.Point(19, 269);
+            this.perceptionTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.perceptionTextBox.Name = "perceptionTextBox";
+            this.perceptionTextBox.Size = new System.Drawing.Size(20, 20);
+            this.perceptionTextBox.TabIndex = 26;
+            // 
+            // performanceTextBox
+            // 
+            this.performanceTextBox.Location = new System.Drawing.Point(19, 293);
+            this.performanceTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.performanceTextBox.Name = "performanceTextBox";
+            this.performanceTextBox.Size = new System.Drawing.Size(20, 20);
+            this.performanceTextBox.TabIndex = 26;
+            // 
+            // persuasionTextBox
+            // 
+            this.persuasionTextBox.Location = new System.Drawing.Point(19, 317);
+            this.persuasionTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.persuasionTextBox.Name = "persuasionTextBox";
+            this.persuasionTextBox.Size = new System.Drawing.Size(20, 20);
+            this.persuasionTextBox.TabIndex = 26;
+            // 
+            // religionTextBox
+            // 
+            this.religionTextBox.Location = new System.Drawing.Point(19, 341);
+            this.religionTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.religionTextBox.Name = "religionTextBox";
+            this.religionTextBox.Size = new System.Drawing.Size(20, 20);
+            this.religionTextBox.TabIndex = 26;
+            // 
+            // sleightOfHandTextBox
+            // 
+            this.sleightOfHandTextBox.Location = new System.Drawing.Point(19, 365);
+            this.sleightOfHandTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.sleightOfHandTextBox.Name = "sleightOfHandTextBox";
+            this.sleightOfHandTextBox.Size = new System.Drawing.Size(20, 20);
+            this.sleightOfHandTextBox.TabIndex = 26;
+            // 
+            // stealthTextBox
+            // 
+            this.stealthTextBox.Location = new System.Drawing.Point(19, 389);
+            this.stealthTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.stealthTextBox.Name = "stealthTextBox";
+            this.stealthTextBox.Size = new System.Drawing.Size(20, 20);
+            this.stealthTextBox.TabIndex = 26;
+            // 
+            // survivalTextBox
+            // 
+            this.survivalTextBox.Location = new System.Drawing.Point(19, 413);
+            this.survivalTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.survivalTextBox.Name = "survivalTextBox";
+            this.survivalTextBox.Size = new System.Drawing.Size(20, 20);
+            this.survivalTextBox.TabIndex = 26;
+            // 
+            // insightLabel
+            // 
+            this.insightLabel.AutoSize = true;
+            this.insightLabel.Location = new System.Drawing.Point(40, 152);
+            this.insightLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.insightLabel.Name = "insightLabel";
+            this.insightLabel.Size = new System.Drawing.Size(38, 13);
+            this.insightLabel.TabIndex = 23;
+            this.insightLabel.Text = "Insight";
+            // 
+            // intimidationLabel
+            // 
+            this.intimidationLabel.AutoSize = true;
+            this.intimidationLabel.Location = new System.Drawing.Point(40, 176);
+            this.intimidationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.intimidationLabel.Name = "intimidationLabel";
+            this.intimidationLabel.Size = new System.Drawing.Size(60, 13);
+            this.intimidationLabel.TabIndex = 23;
+            this.intimidationLabel.Text = "Intimidation";
+            // 
+            // investigationLabel
+            // 
+            this.investigationLabel.AutoSize = true;
+            this.investigationLabel.Location = new System.Drawing.Point(40, 200);
+            this.investigationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.investigationLabel.Name = "investigationLabel";
+            this.investigationLabel.Size = new System.Drawing.Size(67, 13);
+            this.investigationLabel.TabIndex = 23;
+            this.investigationLabel.Text = "Investigation";
+            // 
+            // medicineLabel
+            // 
+            this.medicineLabel.AutoSize = true;
+            this.medicineLabel.Location = new System.Drawing.Point(40, 224);
+            this.medicineLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.medicineLabel.Name = "medicineLabel";
+            this.medicineLabel.Size = new System.Drawing.Size(50, 13);
+            this.medicineLabel.TabIndex = 23;
+            this.medicineLabel.Text = "Medicine";
+            // 
+            // natureLabel
+            // 
+            this.natureLabel.AutoSize = true;
+            this.natureLabel.Location = new System.Drawing.Point(40, 248);
+            this.natureLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.natureLabel.Name = "natureLabel";
+            this.natureLabel.Size = new System.Drawing.Size(39, 13);
+            this.natureLabel.TabIndex = 23;
+            this.natureLabel.Text = "Nature";
+            // 
+            // perceptionLabel
+            // 
+            this.perceptionLabel.AutoSize = true;
+            this.perceptionLabel.Location = new System.Drawing.Point(40, 272);
+            this.perceptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.perceptionLabel.Name = "perceptionLabel";
+            this.perceptionLabel.Size = new System.Drawing.Size(58, 13);
+            this.perceptionLabel.TabIndex = 23;
+            this.perceptionLabel.Text = "Perception";
+            // 
+            // performanceLabel
+            // 
+            this.performanceLabel.AutoSize = true;
+            this.performanceLabel.Location = new System.Drawing.Point(40, 296);
+            this.performanceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.performanceLabel.Name = "performanceLabel";
+            this.performanceLabel.Size = new System.Drawing.Size(67, 13);
+            this.performanceLabel.TabIndex = 23;
+            this.performanceLabel.Text = "Performance";
+            // 
+            // persuasionLabel
+            // 
+            this.persuasionLabel.AutoSize = true;
+            this.persuasionLabel.Location = new System.Drawing.Point(40, 320);
+            this.persuasionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.persuasionLabel.Name = "persuasionLabel";
+            this.persuasionLabel.Size = new System.Drawing.Size(59, 13);
+            this.persuasionLabel.TabIndex = 23;
+            this.persuasionLabel.Text = "Persuasion";
+            // 
+            // religionLabel
+            // 
+            this.religionLabel.AutoSize = true;
+            this.religionLabel.Location = new System.Drawing.Point(40, 344);
+            this.religionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.religionLabel.Name = "religionLabel";
+            this.religionLabel.Size = new System.Drawing.Size(45, 13);
+            this.religionLabel.TabIndex = 23;
+            this.religionLabel.Text = "Religion";
+            // 
+            // sleightOfHandLabel
+            // 
+            this.sleightOfHandLabel.AutoSize = true;
+            this.sleightOfHandLabel.Location = new System.Drawing.Point(40, 368);
+            this.sleightOfHandLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sleightOfHandLabel.Name = "sleightOfHandLabel";
+            this.sleightOfHandLabel.Size = new System.Drawing.Size(80, 13);
+            this.sleightOfHandLabel.TabIndex = 23;
+            this.sleightOfHandLabel.Text = "Sleight of Hand";
+            // 
+            // stealthLabel
+            // 
+            this.stealthLabel.AutoSize = true;
+            this.stealthLabel.Location = new System.Drawing.Point(40, 392);
+            this.stealthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.stealthLabel.Name = "stealthLabel";
+            this.stealthLabel.Size = new System.Drawing.Size(40, 13);
+            this.stealthLabel.TabIndex = 23;
+            this.stealthLabel.Text = "Stealth";
+            // 
+            // survivalLabel
+            // 
+            this.survivalLabel.AutoSize = true;
+            this.survivalLabel.Location = new System.Drawing.Point(40, 416);
+            this.survivalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.survivalLabel.Name = "survivalLabel";
+            this.survivalLabel.Size = new System.Drawing.Size(45, 13);
+            this.survivalLabel.TabIndex = 23;
+            this.survivalLabel.Text = "Survival";
+            // 
+            // insightCheckBox
+            // 
+            this.insightCheckBox.AutoSize = true;
+            this.insightCheckBox.Location = new System.Drawing.Point(2, 152);
+            this.insightCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.insightCheckBox.Name = "insightCheckBox";
+            this.insightCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.insightCheckBox.TabIndex = 23;
+            this.insightCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // intimidationCheckBox
+            // 
+            this.intimidationCheckBox.AutoSize = true;
+            this.intimidationCheckBox.Location = new System.Drawing.Point(2, 176);
+            this.intimidationCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.intimidationCheckBox.Name = "intimidationCheckBox";
+            this.intimidationCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.intimidationCheckBox.TabIndex = 23;
+            this.intimidationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // investigationCheckBox
+            // 
+            this.investigationCheckBox.AutoSize = true;
+            this.investigationCheckBox.Location = new System.Drawing.Point(2, 200);
+            this.investigationCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.investigationCheckBox.Name = "investigationCheckBox";
+            this.investigationCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.investigationCheckBox.TabIndex = 23;
+            this.investigationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // medicineCheckBox
+            // 
+            this.medicineCheckBox.AutoSize = true;
+            this.medicineCheckBox.Location = new System.Drawing.Point(2, 224);
+            this.medicineCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.medicineCheckBox.Name = "medicineCheckBox";
+            this.medicineCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.medicineCheckBox.TabIndex = 23;
+            this.medicineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // natureCheckBox
+            // 
+            this.natureCheckBox.AutoSize = true;
+            this.natureCheckBox.Location = new System.Drawing.Point(2, 248);
+            this.natureCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.natureCheckBox.Name = "natureCheckBox";
+            this.natureCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.natureCheckBox.TabIndex = 23;
+            this.natureCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // perceptionCheckBox
+            // 
+            this.perceptionCheckBox.AutoSize = true;
+            this.perceptionCheckBox.Location = new System.Drawing.Point(2, 272);
+            this.perceptionCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.perceptionCheckBox.Name = "perceptionCheckBox";
+            this.perceptionCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.perceptionCheckBox.TabIndex = 23;
+            this.perceptionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // performanceCheckBox
+            // 
+            this.performanceCheckBox.AutoSize = true;
+            this.performanceCheckBox.Location = new System.Drawing.Point(2, 296);
+            this.performanceCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.performanceCheckBox.Name = "performanceCheckBox";
+            this.performanceCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.performanceCheckBox.TabIndex = 23;
+            this.performanceCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // persuasionCheckBox
+            // 
+            this.persuasionCheckBox.AutoSize = true;
+            this.persuasionCheckBox.Location = new System.Drawing.Point(2, 320);
+            this.persuasionCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.persuasionCheckBox.Name = "persuasionCheckBox";
+            this.persuasionCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.persuasionCheckBox.TabIndex = 23;
+            this.persuasionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // religionCheckBox
+            // 
+            this.religionCheckBox.AutoSize = true;
+            this.religionCheckBox.Location = new System.Drawing.Point(2, 344);
+            this.religionCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.religionCheckBox.Name = "religionCheckBox";
+            this.religionCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.religionCheckBox.TabIndex = 23;
+            this.religionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // sleightOfHandCheckBox
+            // 
+            this.sleightOfHandCheckBox.AutoSize = true;
+            this.sleightOfHandCheckBox.Location = new System.Drawing.Point(2, 368);
+            this.sleightOfHandCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.sleightOfHandCheckBox.Name = "sleightOfHandCheckBox";
+            this.sleightOfHandCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.sleightOfHandCheckBox.TabIndex = 23;
+            this.sleightOfHandCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // stealthCheckBox
+            // 
+            this.stealthCheckBox.AutoSize = true;
+            this.stealthCheckBox.Location = new System.Drawing.Point(2, 392);
+            this.stealthCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.stealthCheckBox.Name = "stealthCheckBox";
+            this.stealthCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.stealthCheckBox.TabIndex = 23;
+            this.stealthCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // survivalCheckBox
+            // 
+            this.survivalCheckBox.AutoSize = true;
+            this.survivalCheckBox.Location = new System.Drawing.Point(2, 416);
+            this.survivalCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.survivalCheckBox.Name = "survivalCheckBox";
+            this.survivalCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.survivalCheckBox.TabIndex = 23;
+            this.survivalCheckBox.UseVisualStyleBackColor = true;
             // 
             // CharacterSheet
             // 
@@ -1806,6 +2384,57 @@
         private System.Windows.Forms.Label acrobaticsLabel;
         private System.Windows.Forms.TextBox acrobaticsTextBox;
         private System.Windows.Forms.CheckBox acrobaticsCheckBox;
+        private System.Windows.Forms.Label animalHandlingLabel;
+        private System.Windows.Forms.CheckBox animalHandlingCheckBox;
+        private System.Windows.Forms.TextBox animalHandlingTextBox;
+        private System.Windows.Forms.CheckBox arcanaCheckBox;
+        private System.Windows.Forms.TextBox arcanaTextBox;
+        private System.Windows.Forms.Label arcanaLabel;
+        private System.Windows.Forms.TextBox athleticsTextBox;
+        private System.Windows.Forms.CheckBox athleticsCheckBox;
+        private System.Windows.Forms.CheckBox deceptionCheckBox;
+        private System.Windows.Forms.Label athleticsLabel;
+        private System.Windows.Forms.Label deceptionLabel;
+        private System.Windows.Forms.TextBox deceptionTextBox;
+        private System.Windows.Forms.TextBox survivalTextBox;
+        private System.Windows.Forms.TextBox stealthTextBox;
+        private System.Windows.Forms.TextBox sleightOfHandTextBox;
+        private System.Windows.Forms.TextBox religionTextBox;
+        private System.Windows.Forms.TextBox persuasionTextBox;
+        private System.Windows.Forms.TextBox performanceTextBox;
+        private System.Windows.Forms.TextBox perceptionTextBox;
+        private System.Windows.Forms.TextBox natureTextBox;
+        private System.Windows.Forms.TextBox medicineTextBox;
+        private System.Windows.Forms.TextBox investigationTextBox;
+        private System.Windows.Forms.TextBox intimidationTextBox;
+        private System.Windows.Forms.TextBox insightTextBox;
+        private System.Windows.Forms.Label History;
+        private System.Windows.Forms.TextBox historyTextBox;
+        private System.Windows.Forms.CheckBox historyCheckBox;
+        private System.Windows.Forms.CheckBox survivalCheckBox;
+        private System.Windows.Forms.CheckBox stealthCheckBox;
+        private System.Windows.Forms.CheckBox sleightOfHandCheckBox;
+        private System.Windows.Forms.CheckBox religionCheckBox;
+        private System.Windows.Forms.CheckBox persuasionCheckBox;
+        private System.Windows.Forms.CheckBox performanceCheckBox;
+        private System.Windows.Forms.CheckBox perceptionCheckBox;
+        private System.Windows.Forms.CheckBox natureCheckBox;
+        private System.Windows.Forms.CheckBox medicineCheckBox;
+        private System.Windows.Forms.CheckBox investigationCheckBox;
+        private System.Windows.Forms.CheckBox intimidationCheckBox;
+        private System.Windows.Forms.CheckBox insightCheckBox;
+        private System.Windows.Forms.Label survivalLabel;
+        private System.Windows.Forms.Label stealthLabel;
+        private System.Windows.Forms.Label sleightOfHandLabel;
+        private System.Windows.Forms.Label religionLabel;
+        private System.Windows.Forms.Label persuasionLabel;
+        private System.Windows.Forms.Label performanceLabel;
+        private System.Windows.Forms.Label perceptionLabel;
+        private System.Windows.Forms.Label natureLabel;
+        private System.Windows.Forms.Label medicineLabel;
+        private System.Windows.Forms.Label investigationLabel;
+        private System.Windows.Forms.Label intimidationLabel;
+        private System.Windows.Forms.Label insightLabel;
     }
 }
 

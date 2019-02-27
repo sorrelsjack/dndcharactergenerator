@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using dnd_character_gen.Dictionaries;
 
 namespace dnd_character_gen
 {
@@ -82,8 +84,31 @@ namespace dnd_character_gen
 
         private void PopulateSkillProficiencies()
         {
-            acrobaticsCheckBox.Checked = currentCharacter.skillProficiencies.Contains("Acrobatics") ? true : false;
-            acrobaticsTextBox.Text = (currentCharacter.dexterityModifier + currentCharacter.proficiencyBonus).ToString();
+            string camelCaseSkill = "";
+            Dictionary<string, int> skillModifiers = new Dictionary<string, int>
+            {
+                { "Strength", currentCharacter.strengthModifier },
+                { "Dexterity", currentCharacter.dexterityModifier },
+                { "Constitution", currentCharacter.constitutionModifier },
+                { "Intelligence", currentCharacter.intelligenceModifier },
+                { "Wisdom", currentCharacter.wisdomModifier },
+                { "Charisma", currentCharacter.charismaModifier }
+            };
+
+            foreach (var skill in Skills.Instance.skills)
+            {
+                camelCaseSkill = Regex.Replace(Char.ToLowerInvariant(skill.Key[0]) + skill.Key.Substring(1), " ", "");
+
+                CheckBox checkBox = skillsPanel.Controls.Find(
+                    $"{camelCaseSkill}CheckBox", true).FirstOrDefault() as CheckBox;
+                checkBox.Checked = currentCharacter.skillProficiencies.Contains(skill.Key) ? true : false;
+
+                TextBox textBox = skillsPanel.Controls.Find(
+                    $"{camelCaseSkill}TextBox", true).FirstOrDefault() as TextBox;
+                textBox.Text = (currentCharacter.skillProficiencies.Contains(skill.Key) ?
+                    skillModifiers.FirstOrDefault(x => x.Key == skill.Value).Value + currentCharacter.proficiencyBonus
+                    : skillModifiers.FirstOrDefault(x => x.Key == skill.Value).Value).ToString();
+            }
         }
 
         private void PopulateOtherProficiencies()
@@ -143,13 +168,9 @@ namespace dnd_character_gen
 
         private void rollMainInfo()
         {
-            equipmentListView.Clear();
-            equipmentListView.Items.Clear();
-            featuresTraitsListView.Clear();
-            featuresTraitsListView.Items.Clear();
+            ClearLists();
 
             currentCharacter = new Character();
-
             currentCharacter.generateBasicInfo();
 
             characterNameTextBox.Text = currentCharacter.name;
@@ -192,6 +213,14 @@ namespace dnd_character_gen
             {
                 featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Key}: \r\n {item.Value}" }));
             }
+        }
+
+        private void ClearLists()
+        {
+            equipmentListView.Clear();
+            equipmentListView.Items.Clear();
+            featuresTraitsListView.Clear();
+            featuresTraitsListView.Items.Clear();
         }
     }
 }

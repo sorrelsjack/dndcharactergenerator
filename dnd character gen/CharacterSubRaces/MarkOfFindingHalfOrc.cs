@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubRaces
                 { "Strength", 1 },
                 { "Wisdom", 1 }
             };
-            List<string> availableStats = new List<string> { "Constitution", "Intelligence", "Wisdom", "Charisma" }; //TODO: Actually, in these cases, does it include the ones already selected?
+            List<string> availableStats = new List<string> { "Constitution", "Intelligence", "Dexterity", "Charisma" }; //TODO: Actually, in these cases, does it include the ones already selected?
             string stat = "";
 
             while (abilityScores.Count < 3)
