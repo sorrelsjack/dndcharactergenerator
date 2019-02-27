@@ -36,7 +36,7 @@ namespace dnd_character_gen
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
         }
 
-        private void PopulateStatBoxes()
+        private void PopulateStatBoxes() //todo: make prettier
         {
             currentCharacter.generateStatArray();
             //TODO: Tooltip over every stat to show where it's coming from (e.g. Dex mod: Base roll, race, etc..)
@@ -58,7 +58,7 @@ namespace dnd_character_gen
             passivePerceptionTextBox.Text = (10 + currentCharacter.wisdomModifier).ToString();
         }
 
-        private void PopulateSavingThrows()
+        private void PopulateSavingThrows() //todo: make prettier
         {
             strengthSavingThrowCheckBox.Checked = currentCharacter.savingThrowProficiencies.Contains("Strength") ? true : false;
             strengthSavingThrowTextBox.Text = (currentCharacter.proficiencyBonus + currentCharacter.strengthModifier).ToString();
@@ -101,12 +101,12 @@ namespace dnd_character_gen
 
                 CheckBox checkBox = skillsPanel.Controls.Find(
                     $"{camelCaseSkill}CheckBox", true).FirstOrDefault() as CheckBox;
-                checkBox.Checked = currentCharacter.skillProficiencies.Contains(skill.Key) ? true : false;
+                checkBox.Checked = currentCharacter.skillProficiencies.Contains(skill.Key) ? true : false; //TODO: Come back here once I've got the skills generator ironed out
 
                 TextBox textBox = skillsPanel.Controls.Find(
                     $"{camelCaseSkill}TextBox", true).FirstOrDefault() as TextBox;
-                textBox.Text = (currentCharacter.skillProficiencies.Contains(skill.Key) ?
-                    skillModifiers.FirstOrDefault(x => x.Key == skill.Value).Value + currentCharacter.proficiencyBonus
+                textBox.Text = (currentCharacter.skillProficiencies.Contains(skill.Key)
+                    ? skillModifiers.FirstOrDefault(x => x.Key == skill.Value).Value + currentCharacter.proficiencyBonus
                     : skillModifiers.FirstOrDefault(x => x.Key == skill.Value).Value).ToString();
             }
         }
@@ -140,7 +140,7 @@ namespace dnd_character_gen
 
         private void rollButton_Click(object sender, EventArgs e)
         {
-            //SoundPlayer diceSound = new SoundPlayer(@"C:\Users\sorre\source\repos\dnd character gen\dnd character gen\Assets\MANYDICE.WAV");
+            //SoundPlayer diceSound = new SoundPlayer(@"Assets\MANYDICE.WAV");
             //diceSound.Play();
 
             if (currentCharacter.characterClass == null)
@@ -179,6 +179,10 @@ namespace dnd_character_gen
             backgroundTextBox.Text = currentCharacter.background;
             raceTextBox.Text = currentCharacter.race;
 
+            PopulateStatBoxes();
+            PopulateSkillProficiencies();
+            PopulateDefensive();
+            PopulateSavingThrows();
             PopulateFeatures();
             PopulateOtherProficiencies();
             PopulateEquipment();
