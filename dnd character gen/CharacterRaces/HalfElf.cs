@@ -22,6 +22,30 @@ namespace dnd_character_gen.CharacterRaces
             "Quillathe", "Sariel", "Shanairra", "Shava", "Silaqui", "Theirastra", "Thia", "Vadania", "Valanthe", "Xanaphia"
         };
 
+        private List<string> maleHumanNames = new List<string>
+        {
+            "Aseir", "Bardeid", "Haseid", "Khemed", "Mehmen", "Sudeiman", "Zasheir",
+            "Darvin", "Dorn", "Evendur", "Gorstag", "Grim", "Helm", "Malark", "Morn", "Randal", "Stedd",
+            "Bor", "Fodel", "Glar", "Grigor", "Igan", "Ivor", "Kosef", "Mival", "Orel", "Pavel", "Sergor",
+            "Ander", "Blath", "Bran", "Frath", "Geth", "Lander", "Luth", "Malcer", "Stor", "Taman", "Urth",
+            "Aoth", "Bareris", "Ehput-Ki", "Kethoth", "Mumed", "Ramas", "So-Kehur", "Thazar-De", "Urhur",
+            "Borivik", "Faurgar", "Jandar", "Kanithar", "Madislak", "Ralmevik", "Shaumar", "Vladislak",
+            "An", "Chen", "Chi", "Fai", "Jiang", "Jun", "Lian", "Long", "Meng", "On", "Shan", "Shui", "Wen",
+            "Anton", "Diero", "Marcon", "Pieron", "Rimardo", "Romero", "Salazar", "Umbero"
+        };
+
+        private List<string> femaleHumanNames = new List<string>
+        {
+            "Atala", "Ceidil", "Hama", "Jasmal", "Meilil", "Seipora", "Yasheira", "Zasheida",
+            "Arveene", "Esvele", "Jhessail", "Kerri", "Lureene", "Miri", "Rowan", "Shandri", "Tessele",
+            "Alethra", "Kara", "Katernin", "Mara", "Natali", "Olma", "Tana", "Zora",
+            "Amafrey", "Betha", "Cefrey", "Kethra", "Mara", "Olga", "Silifrey", "Westra",
+            "Arizima", "Chathi", "Nephis", "Nulara", "Murithi", "Sefris", "Thola", "Umara", "Zolis",
+            "Fyevarra", "Hulmarra", "Immith", "Imzel", "Navarra", "Shevarra", "Tammith", "Yuldra",
+            "Bai", "Chao", "Jia", "Lei", "Mei", "Qiao", "Shui", "Tai",
+            "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"
+        };
+
         public virtual Dictionary<string, int> setAbilityScores()
         {
             Dictionary<string, int> abilityScores = new Dictionary<string, int>
@@ -70,7 +94,30 @@ namespace dnd_character_gen.CharacterRaces
             return languages;
         }
 
-        public string setName() => null; //TODO: Finish this when I have the Human and Elf names done.
+        public string setName()
+        {
+            string name = "";
+            int randomNumber = NumberGen.gen(2);
+
+            if (randomNumber == 0)
+            {
+                randomNumber = NumberGen.gen(2);
+                if (randomNumber == 0)
+                    name = femaleElfNames[NumberGen.gen(femaleElfNames.Count)];
+                else if (randomNumber == 1)
+                    name = maleElfNames[NumberGen.gen(maleElfNames.Count)];
+            }
+            else
+            {
+                randomNumber = NumberGen.gen(2);
+                if (randomNumber == 0)
+                    name = femaleHumanNames[NumberGen.gen(femaleHumanNames.Count)];
+                else if (randomNumber == 1)
+                    name = maleHumanNames[NumberGen.gen(maleHumanNames.Count)];
+            }
+
+            return name;
+        }
 
         public string setSize() => "Medium";
 

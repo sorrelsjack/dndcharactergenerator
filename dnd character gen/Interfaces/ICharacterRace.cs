@@ -8,7 +8,6 @@ namespace dnd_character_gen.Interfaces
 
         Dictionary<string, int> setAbilityScores();
 
-        //TODO: Alignment?
         string setSize();
 
         int setSpeed();

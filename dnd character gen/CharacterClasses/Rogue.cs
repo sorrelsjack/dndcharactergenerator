@@ -43,11 +43,11 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures()
         {
-            Dictionary<string, string> features = new Dictionary<string, string> //TODO deal with this
+            Dictionary<string, string> features = new Dictionary<string, string>
             {
-                { "Expertise", "-Choose two skill proficiencies or one skill proficiency and thieves' tool proficiency and double their proficiency bonus" },
-                { "Sneak Attack", "-Once per turn, can deal an extra 1d6 to one creature hit with an attack if you have advantage on attack roll. Must use finesse or ranged weapon" },
-                { "Thieves' Cant", "-Secret rogue language that can convey short, simple messages" }
+                { "Expertise", "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves’ tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies." },
+                { "Sneak Attack", "Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll. The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table." },
+                { "Thieves' Cant", "During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly. In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run." }
             };
 
             return features;
