@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using dnd_character_gen.CharacterBackgrounds;
 using dnd_character_gen.CharacterClasses;
+using dnd_character_gen.CharacterLife;
 using dnd_character_gen.CharacterRaces;
 using dnd_character_gen.CharacterSubRaces;
 using dnd_character_gen.Extensions;
@@ -39,7 +40,7 @@ namespace dnd_character_gen
 
         #endregion Personality Info
 
-        #region Class, Subclass, Race, and Background interfaces
+        #region Class, Subclass, Race, and Background interfaces, plus Backstory class
 
         public ICharacterClass characterClass { get; set; }
 
@@ -49,7 +50,9 @@ namespace dnd_character_gen
 
         public ICharacterBackground characterBackground { get; set; }
 
-        #endregion Class, Subclass, Race, and Background interfaces
+        public CharacterBackstory characterBackstory { get; set; }
+
+        #endregion Class, Subclass, Race, and Background interfaces, plus Backstory class
 
         #region AC, Init, Speed, HP, Spell Save DC
 
@@ -141,6 +144,7 @@ namespace dnd_character_gen
             this.race = generateRace();
             initializeRace();
             this.alignment = generateAlignment();
+            generateBackstory();
 
             removeDuplicates();
         }
@@ -535,6 +539,23 @@ namespace dnd_character_gen
         }
 
         #endregion Race Generator
+
+        private void generateBackstory()
+        {
+            characterBackstory = new CharacterBackstory();
+
+            characterBackstory.setParentage(race);
+            characterBackstory.setBirthplace();
+            characterBackstory.setSiblings(race);
+            characterBackstory.setFamily();
+            characterBackstory.setFamilyLifestyle();
+            characterBackstory.setChildhoodHome();
+            characterBackstory.setChildhoodMemories(charismaModifier);
+            characterBackstory.setBackgroundDecision(background);
+            characterBackstory.setClassDecision(characterClass.ToString());
+            characterBackstory.setAge();
+            characterBackstory.setLifeEvents();
+        }
 
         private string generateAlignment()
         {

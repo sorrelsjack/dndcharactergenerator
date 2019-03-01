@@ -68,6 +68,7 @@
     <Compile Include="CharacterBackgrounds\Soldier.cs" />
     <Compile Include="CharacterBackgrounds\Spy.cs" />
     <Compile Include="CharacterBackgrounds\Urchin.cs" />
+    <Compile Include="CharacterLife\CharacterBackstory.cs" />
     <Compile Include="CharacterClasses\Barbarian.cs" />
     <Compile Include="CharacterClasses\Bard.cs" />
     <Compile Include="CharacterClasses\Cleric.cs" />
@@ -80,6 +81,9 @@
     <Compile Include="CharacterClasses\Sorcerer.cs" />
     <Compile Include="CharacterClasses\Warlock.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
+    <Compile Include="CharacterLife\Individual.cs" />
+    <Compile Include="CharacterLife\Parent.cs" />
+    <Compile Include="CharacterLife\Sibling.cs" />
     <Compile Include="CharacterSubRaces\DarkElf.cs" />
     <Compile Include="CharacterSubRaces\DeepGnome.cs" />
     <Compile Include="CharacterRaces\Dragonborn.cs" />
