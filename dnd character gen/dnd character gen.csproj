@@ -145,6 +145,7 @@
     <Compile Include="Dictionaries\MusicalInstruments.cs" />
     <Compile Include="Dictionaries\SimpleWeapons.cs" />
     <Compile Include="Dictionaries\Skills.cs" />
+    <Compile Include="Extensions\DiceRoll.cs" />
     <Compile Include="Extensions\NumberGen.cs" />
     <Compile Include="Interfaces\ICharacterBackground.cs" />
     <Compile Include="Interfaces\ICharacterClass.cs" />

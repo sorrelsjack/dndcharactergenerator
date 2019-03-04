@@ -11,6 +11,7 @@ namespace dnd_character_gen.CharacterLife
         public string strangeBirthEvent = "";
         public string family = "";
         public string familyLifestyle = "";
+        public string childhoodHome = "";
         public string age = "";
         public List<string> lifeEvents = new List<string>();
 
@@ -225,10 +226,34 @@ namespace dnd_character_gen.CharacterLife
 
         public void setFamilyLifestyle()
         {
+            int number = DiceRoll.roll("3d6");
+
+            if (number == 3)
+                familyLifestyle = "Wretched";
+            else if (number == 4 || number == 5)
+                familyLifestyle = "Squalid";
+            else if (6 <= number && number <= 8)
+                familyLifestyle = "Poor";
+            else if (9 <= number && number <= 12)
+                familyLifestyle = "Modest";
+            else if (13 <= number && number <= 15)
+                familyLifestyle = "Comfortable";
+            else if (number == 16 || number == 17)
+                familyLifestyle = "Wealthy";
+            else if (number == 18)
+                familyLifestyle = "Aristocratic";
         }
 
         public void setChildhoodHome()
         {
+            int randomNumber = NumberGen.gen(1, 101);
+            randomNumber += familyLifestyles[familyLifestyle];
+
+            if (0 >= randomNumber)
+            {
+                childhoodHome = "On the streets";
+            }
+            else if ()
         }
 
         public void setChildhoodMemories(int charismaModifier)
