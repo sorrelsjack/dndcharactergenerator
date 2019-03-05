@@ -10,7 +10,7 @@
 
             for (int i = 0; i < number; i++)
             {
-                total += NumberGen.gen(1, die);
+                total += NumberGen.gen(1, die); //TODO: Maybe add 1.
             }
 
             return total;
