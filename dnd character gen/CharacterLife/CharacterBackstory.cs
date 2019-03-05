@@ -5,14 +5,16 @@ namespace dnd_character_gen.CharacterLife
 {
     public class CharacterBackstory
     {
-        public Parent[] parents = new Parent[2];
+        public Parent[] parents = new Parent[2]; //TODO: null if parent  is not known
         public List<Sibling> siblings = new List<Sibling>();
         public string birthplace = "";
-        public string strangeBirthEvent = "";
+        public string strangeBirthEvent = ""; //TODO
         public string family = "";
         public string familyLifestyle = "";
         public string childhoodHome = "";
+        public string childhoodMemory = "";
         public string age = "";
+        public int numberOfLifeEvents = 0;
         public List<string> lifeEvents = new List<string>();
 
         public Dictionary<string, int> familyLifestyles = new Dictionary<string, int>
@@ -26,7 +28,7 @@ namespace dnd_character_gen.CharacterLife
             { "Aristocratic", 40 }
         };
 
-        public Dictionary<string, string> ageLifeEvents = new Dictionary<string, string>
+        public Dictionary<string, string> ageLifeEvents = new Dictionary<string, string> //TODO: possibly remove
         {
             { "20 years or younger", "1" },
             { "21-30 years", "1d4" },
@@ -38,6 +40,7 @@ namespace dnd_character_gen.CharacterLife
 
         public CharacterBackstory()
         {
+
         }
 
         public void setParentage(string race)
@@ -107,13 +110,13 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else
                 {
-                    parents[0].race = race;
+                    parents[0].race = race; //TODO: getting NRE here, so init if needed
                     parents[1].race = race;
                 }
             }
             else
             {
-                //You don't know who your parents are or were
+                //You don't know who your parents are or were. Just keep them as null
             }
         }
 
@@ -226,7 +229,7 @@ namespace dnd_character_gen.CharacterLife
 
         public void setFamilyLifestyle()
         {
-            int number = DiceRoll.roll("3d6");
+            int number = DiceRoll.roll(3, 6);
 
             if (number == 3)
                 familyLifestyle = "Wretched";
@@ -250,26 +253,93 @@ namespace dnd_character_gen.CharacterLife
             randomNumber += familyLifestyles[familyLifestyle];
 
             if (0 >= randomNumber)
-            {
                 childhoodHome = "On the streets";
+            else if (1 <= randomNumber && randomNumber <= 20)
+                childhoodHome = "Rundown shack";
+            else if (21 <= randomNumber && randomNumber <= 30)
+                childhoodHome = "No permanent residence; you moved around a lot";
+            else if (31 <= randomNumber && randomNumber <= 40)
+                childhoodHome = "Encampment or village in the wilderness";
+            else if (41 <= randomNumber && randomNumber <= 50)
+                childhoodHome = "Apartment in a rundown neighborhood";
+            else if (51 <= randomNumber && randomNumber <= 70)
+                childhoodHome = "Small house";
+            else if (71 <= randomNumber && randomNumber <= 90)
+                childhoodHome = "Large house";
+            else if (91 <= randomNumber && randomNumber <= 110)
+                childhoodHome = "Mansion";
+            else 
+            {
+                childhoodHome = "Palace or castle";
             }
-            else if ()
         }
 
         public void setChildhoodMemories(int charismaModifier)
         {
+            int randomNumber = DiceRoll.roll(3, 6) + charismaModifier;
+
+            if (3 >= randomNumber)
+                childhoodMemory = "I am still haunted by my childhood, when I was treated badly by my peers.";
+            else if (randomNumber == 4 || randomNumber == 5)
+                childhoodMemory = "I spent most of my childhood alone, with no close friends.";
+            else if (6 <= randomNumber && randomNumber <= 8)
+                childhoodMemory = "Others saw me as being different or strange, and so I had few companions.";
+            else if (9 <= randomNumber && randomNumber <= 12)
+                childhoodMemory = "I had a few close friends and lived an ordinary childhood.";
+            else if (13 <= randomNumber && randomNumber <= 15)
+                childhoodMemory = "I had several friends, and my childhood was generally a happy one.";
+            else if (randomNumber == 16 || randomNumber == 17)
+                childhoodMemory = "I always found it easy to make friends, and I loved being around people.";
+            else 
+            {
+                childhoodMemory = "Everyone knew who I was, and I had friends everywhere I went.";
+            }
+
         }
 
         public void setBackgroundDecision(string characterBackground)
         {
+            //TODO: may be more appropriate in the actual BG classes
         }
 
         public void setClassDecision(string characterClass)
         {
+            //TODO: may be more appropriate in the actual class classes
         }
 
         public void setAge()
         {
+            int randomNumber = NumberGen.gen(1, 101);
+
+            if (1 <= randomNumber && randomNumber <= 20) {
+                age = "20 years or younger";
+                numberOfLifeEvents = 1;
+            }
+            else if (21 <= randomNumber && randomNumber <= 59) 
+            {
+                age = "21-30 years";
+                numberOfLifeEvents = DiceRoll.roll(1, 4);
+            }
+            else if(60 <= randomNumber && randomNumber <= 69) 
+            {
+                age = "31-40 years";
+                numberOfLifeEvents = DiceRoll.roll(1, 6);
+            }
+            else if(70 <= randomNumber && randomNumber <= 89) 
+            {
+                age = "41-50 years";
+                numberOfLifeEvents = DiceRoll.roll(1, 8);
+            }
+            else if(90 <= randomNumber && randomNumber <= 99) 
+            {
+                age = "51-60 years";
+                numberOfLifeEvents = DiceRoll.roll(1, 10);
+            }
+            else if(randomNumber == 100) 
+            {
+                age = "61 years or older";
+                numberOfLifeEvents = DiceRoll.roll(1, 12);
+            }
         }
 
         public void setLifeEvents()

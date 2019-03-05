@@ -95,7 +95,7 @@ namespace dnd_character_gen
 
         public int constitution { get; private set; }
 
-        public int intelligence { get; private set; } //TODO: These may be better as an array
+        public int intelligence { get; private set; } //TODO: These may be better as an array or dictionary
 
         public int wisdom { get; private set; }
 

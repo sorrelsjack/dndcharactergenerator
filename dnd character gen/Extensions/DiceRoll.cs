@@ -2,10 +2,10 @@
 {
     public class DiceRoll
     {
-        public static int roll(string dice)
+        public static int roll(int numberOfDie, int dieSides) //TODO: fix this so it takes two numbers as params
         {
-            int number = dice[0];
-            int die = dice[2];
+            int number = numberOfDie;
+            int die = dieSides;
             int total = 0;
 
             for (int i = 0; i < number; i++)
