@@ -5,7 +5,7 @@ namespace dnd_character_gen.CharacterLife
 {
     public class CharacterBackstory
     {
-        public Parent[] parents = new Parent[2]; //TODO: null if parent  is not known
+        public Parent[] parents = new Parent[2] { new Parent(), new Parent() };
         public List<Sibling> siblings = new List<Sibling>();
         public string birthplace = "";
         public string strangeBirthEvent = ""; //TODO
@@ -28,16 +28,6 @@ namespace dnd_character_gen.CharacterLife
             { "Aristocratic", 40 }
         };
 
-        public Dictionary<string, string> ageLifeEvents = new Dictionary<string, string> //TODO: possibly remove
-        {
-            { "20 years or younger", "1" },
-            { "21-30 years", "1d4" },
-            { "31-40", "1d6" },
-            { "41-50", "1d8" },
-            { "51-60", "1d10" },
-            { "61 years or older", "1d12" }
-        };
-
         public CharacterBackstory()
         {
 
@@ -53,19 +43,23 @@ namespace dnd_character_gen.CharacterLife
                     randomNumber = NumberGen.gen(1, 9);
                     if (randomNumber < 6)
                     {
-                        randomNumber = NumberGen.gen(2); //One was an elf, the other was human
+                        parents[0].setRace("Elf");
+                        parents[1].setRace("Human");
                     }
                     else if (randomNumber == 6)
                     {
-                        //One was an elf, the other was half-elf
+                        parents[0].setRace("Elf");
+                        parents[1].setRace("Half-Elf");
                     }
                     else if (randomNumber == 7)
                     {
-                        //One was a human, other was half-elf
+                        parents[0].setRace("Human");
+                        parents[1].setRace("Half-Elf");
                     }
                     else if (randomNumber == 8)
                     {
-                        //Both were half-elves
+                        parents[0].setRace("Half-Elf");
+                        parents[1].setRace("Half-Elf");
                     }
                 }
                 else if (race.Contains("Half-Orc"))
@@ -73,19 +67,23 @@ namespace dnd_character_gen.CharacterLife
                     randomNumber = NumberGen.gen(1, 9);
                     if (randomNumber < 4)
                     {
-                        //One parent was Orc, other was human
+                        parents[0].setRace("Orc");
+                        parents[1].setRace("Human");
                     }
                     else if (randomNumber == 4 || randomNumber == 5)
                     {
-                        //One was Orc, other was half-orc
+                        parents[0].setRace("Orc");
+                        parents[1].setRace("Half-Orc");
                     }
                     else if (randomNumber == 6 || randomNumber == 7)
                     {
-                        //One was human, other was half-orc
+                        parents[0].setRace("Half-Orc");
+                        parents[1].setRace("Human");
                     }
                     else if (randomNumber == 8)
                     {
-                        //Both were half-orcs
+                        parents[0].setRace("Half-Orc");
+                        parents[1].setRace("Half-Orc");
                     }
                 }
                 else if (race == "Tiefling")
@@ -93,30 +91,46 @@ namespace dnd_character_gen.CharacterLife
                     randomNumber = NumberGen.gen(1, 9);
                     if (randomNumber < 5)
                     {
-                        //Both were human, infernal hertiage dormant
+                        parents[0].setRace("Human");
+                        parents[1].setRace("Human");
                     }
                     else if (randomNumber == 5 || randomNumber == 6)
                     {
-                        //One was tiefling, other human
+                        parents[0].setRace("Tiefling");
+                        parents[1].setRace("Human");
                     }
                     else if (randomNumber == 7)
                     {
-                        //One was tiefling, other was devil
+                        parents[0].setRace("Tiefling");
+                        parents[1].setRace("Devil");
                     }
                     else if (randomNumber == 8)
                     {
-                        //One was human, other was devil
+                        parents[0].setRace("Devil");
+                        parents[1].setRace("Human");
                     }
+
+                    parents[0].setAlignment();
+                    parents[1].setAlignment();
                 }
                 else
                 {
-                    parents[0].race = race; //TODO: getting NRE here, so init if needed
+                    parents[0].race = race;
                     parents[1].race = race;
+                }
+
+                foreach(Parent parent in parents) 
+                {
+                    parent.setOccupation();
+                    parent.setAlignment();
+                    parent.setRelationship();
+                    //Then status. Alive, dead? etc.
                 }
             }
             else
             {
-                //You don't know who your parents are or were. Just keep them as null
+                parents[0] = parents[1] = null;
+                //You don't know who your parents are or were.
             }
         }
 
@@ -224,6 +238,14 @@ namespace dnd_character_gen.CharacterLife
             else if (76 <= randomNumber && randomNumber <= 100)
                 family = "Mother and father";
 
+            if(randomNumber < 36) 
+            {
+                //Both are absent
+            }
+            else if(36 <= randomNumber && randomNumber <= 75) 
+            {
+                //Just one is absent
+            }
             //TODO: Do absent parent
         }
 
@@ -318,7 +340,7 @@ namespace dnd_character_gen.CharacterLife
             else if (21 <= randomNumber && randomNumber <= 59) 
             {
                 age = "21-30 years";
-                numberOfLifeEvents = DiceRoll.roll(1, 4);
+                numberOfLifeEvents = DiceRoll.roll(1, 4); //TODO: is this end Number inclusive?
             }
             else if(60 <= randomNumber && randomNumber <= 69) 
             {

@@ -1,31 +1,32 @@
-﻿namespace dnd_character_gen.CharacterLife
+﻿using dnd_character_gen.Extensions;
+
+namespace dnd_character_gen.CharacterLife
 {
     public class Parent : Individual //TODO: Complete
     {
-        public bool alive;
-        public string parentClass;
-        public string alignment;
-        public string race;
-        public string occupation;
+        public string absenceReason = "";
 
         public Parent()
         {
         }
 
-        public void setRace()
+        public void setRace(string race)
         {
+            this.race = race;
         }
 
-        public void setStatus()
+        public void setAbsence() 
         {
-        }
+            int randomNumber = DiceRoll.roll(1, 4);
 
-        public void setOccupation()
-        {
-        }
+            switch (randomNumber) 
+            {
+                case 1: absenceReason = "Died"; setCauseOfDeath(); break;
+                case 2: absenceReason = "Imprisoned, enslaved, or otherwise taken away."; break;
+                case 3: absenceReason = "Abandoned you."; break;
+                case 4: absenceReason = "Disappeared to an unknown fate"; break;
+            }
 
-        public void setAlignment()
-        {
         }
     }
 }
