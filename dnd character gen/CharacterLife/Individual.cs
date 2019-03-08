@@ -12,11 +12,12 @@ namespace dnd_character_gen.CharacterLife
         public string race;
         public string occupation;
 
-        public void setStatus() 
+        public void setStatus()
         {
             int randomNumber = DiceRoll.roll(3, 6);
 
-            if (randomNumber == 3) {
+            if (randomNumber == 3)
+            {
                 status = "Dead";
                 setCauseOfDeath();
             }
@@ -34,11 +35,11 @@ namespace dnd_character_gen.CharacterLife
                 status = "Alive and famous";
         }
 
-        public void setCauseOfDeath() 
+        public void setCauseOfDeath()
         {
             int randomNumber = NumberGen.gen(1, 12);
 
-            switch (randomNumber) 
+            switch (randomNumber)
             {
                 case 1: causeOfDeath = "Unknown"; break;
                 case 2: causeOfDeath = "Murdered"; break;
@@ -55,7 +56,7 @@ namespace dnd_character_gen.CharacterLife
             }
         }
 
-        public void setRelationship() 
+        public void setRelationship()
         {
             int randomNumber = DiceRoll.roll(3, 4);
 
@@ -67,11 +68,12 @@ namespace dnd_character_gen.CharacterLife
                 relationship = "Indifferent";
         }
 
-        public void setAlignment() 
+        public void setAlignment()
         {
             int randomNumber = DiceRoll.roll(3, 6); //TODO: is this inclusive?
 
-            if (randomNumber == 3) {
+            if (randomNumber == 3)
+            {
                 randomNumber = NumberGen.gen(2);
                 alignment = randomNumber == 0 ? "Chaotic Evil" : "Chaotic Neutral";
             }
@@ -83,25 +85,26 @@ namespace dnd_character_gen.CharacterLife
                 alignment = "True Neutral";
             else if (13 <= randomNumber && randomNumber <= 15)
                 alignment = "Neutral Good";
-            else if(randomNumber == 16 || randomNumber == 17) 
+            else if (randomNumber == 16 || randomNumber == 17)
             {
                 randomNumber = NumberGen.gen(2);
                 alignment = randomNumber == 0 ? "Lawful Good" : "Lawful Neutral";
             }
-            else if(randomNumber == 18) 
+            else if (randomNumber == 18)
             {
                 randomNumber = NumberGen.gen(2);
                 alignment = randomNumber == 0 ? "Chaotic Good" : "Chaotic Neutral";
             }
         }
 
-        public void setOccupation() 
+        public void setOccupation()
         {
             int randomNumber = DiceRoll.roll(1, 101);
 
             if (1 <= randomNumber && randomNumber <= 5)
                 occupation = "Academic";
-            else if (6 <= randomNumber && randomNumber <= 10) {
+            else if (6 <= randomNumber && randomNumber <= 10)
+            {
                 occupation = "Adventurer";
                 setClass();
             }
@@ -135,7 +138,7 @@ namespace dnd_character_gen.CharacterLife
                 occupation = "Soldier";
         }
 
-        public void setClass() 
+        public void setClass()
         {
             int randomNumber = DiceRoll.roll(1, 101);
 
@@ -165,7 +168,7 @@ namespace dnd_character_gen.CharacterLife
                 adventureClass = "Wizard";
         }
 
-        public void setRace() 
+        public virtual void setRace()
         {
             int randomNumber = DiceRoll.roll(1, 101);
 
