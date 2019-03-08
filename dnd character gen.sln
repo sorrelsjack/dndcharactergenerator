@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnd character gen", "dnd character gen\dnd character gen.csproj", "{87DAAB1A-AC2E-485F-897D-7FADF54F807C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDCharacterGen", "DnDCharacterGen\DnDCharacterGen.csproj", "{549AE15A-E379-4984-81FE-A93D18005080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{87DAAB1A-AC2E-485F-897D-7FADF54F807C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87DAAB1A-AC2E-485F-897D-7FADF54F807C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87DAAB1A-AC2E-485F-897D-7FADF54F807C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549AE15A-E379-4984-81FE-A93D18005080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549AE15A-E379-4984-81FE-A93D18005080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549AE15A-E379-4984-81FE-A93D18005080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549AE15A-E379-4984-81FE-A93D18005080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -228,5 +228,9 @@ namespace dnd_character_gen
             featuresTraitsListView.Clear();
             featuresTraitsListView.Items.Clear();
         }
+
+        private void skillsLabel_Click(object sender, EventArgs e) {
+
+        }
     }
 }

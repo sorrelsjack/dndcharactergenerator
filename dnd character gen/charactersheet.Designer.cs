@@ -195,8 +195,6 @@
             this.passivePerceptionPanel = new System.Windows.Forms.Panel();
             this.passivePerceptionTextBox = new System.Windows.Forms.TextBox();
             this.passivePerceptionLabel = new System.Windows.Forms.Label();
-            this.attacksSpellcastingPanel = new System.Windows.Forms.Panel();
-            this.attacksSpellcastingLabel = new System.Windows.Forms.Label();
             this.proficiencesLanguagesPanel = new System.Windows.Forms.Panel();
             this.proficienciesLanguagesTextBox = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -207,6 +205,9 @@
             this.equipmentListView = new System.Windows.Forms.ListView();
             this.equipmentLabel = new System.Windows.Forms.Label();
             this.rollButton = new System.Windows.Forms.PictureBox();
+            this.backstoryLabel = new System.Windows.Forms.Label();
+            this.backstoryPanel = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.basicInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -236,11 +237,12 @@
             this.currentHitPointsPanel.SuspendLayout();
             this.personalityPanel.SuspendLayout();
             this.passivePerceptionPanel.SuspendLayout();
-            this.attacksSpellcastingPanel.SuspendLayout();
             this.proficiencesLanguagesPanel.SuspendLayout();
             this.featuresTraitsPanel.SuspendLayout();
             this.equipmentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollButton)).BeginInit();
+            this.backstoryPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // basicInfoPanel
@@ -408,7 +410,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1041, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1036, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1575,6 +1577,7 @@
             this.skillsLabel.Size = new System.Drawing.Size(40, 17);
             this.skillsLabel.TabIndex = 0;
             this.skillsLabel.Text = "Skills";
+            this.skillsLabel.Click += new System.EventHandler(this.skillsLabel_Click);
             // 
             // hitPanel
             // 
@@ -1608,7 +1611,7 @@
             // speedTextBox
             // 
             this.speedTextBox.Location = new System.Drawing.Point(4, 31);
-            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.speedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.speedTextBox.Name = "speedTextBox";
             this.speedTextBox.Size = new System.Drawing.Size(69, 22);
             this.speedTextBox.TabIndex = 3;
@@ -1637,7 +1640,7 @@
             // initiativeTextBox
             // 
             this.initiativeTextBox.Location = new System.Drawing.Point(4, 31);
-            this.initiativeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.initiativeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.initiativeTextBox.Name = "initiativeTextBox";
             this.initiativeTextBox.Size = new System.Drawing.Size(69, 22);
             this.initiativeTextBox.TabIndex = 2;
@@ -1666,7 +1669,7 @@
             // armorClassTextBox
             // 
             this.armorClassTextBox.Location = new System.Drawing.Point(4, 31);
-            this.armorClassTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.armorClassTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.armorClassTextBox.Name = "armorClassTextBox";
             this.armorClassTextBox.Size = new System.Drawing.Size(69, 22);
             this.armorClassTextBox.TabIndex = 1;
@@ -1972,25 +1975,6 @@
             this.passivePerceptionLabel.TabIndex = 0;
             this.passivePerceptionLabel.Text = "Passive Wisdom (Perception)";
             // 
-            // attacksSpellcastingPanel
-            // 
-            this.attacksSpellcastingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.attacksSpellcastingPanel.Controls.Add(this.attacksSpellcastingLabel);
-            this.attacksSpellcastingPanel.Location = new System.Drawing.Point(419, 738);
-            this.attacksSpellcastingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.attacksSpellcastingPanel.Name = "attacksSpellcastingPanel";
-            this.attacksSpellcastingPanel.Size = new System.Drawing.Size(301, 585);
-            this.attacksSpellcastingPanel.TabIndex = 12;
-            // 
-            // attacksSpellcastingLabel
-            // 
-            this.attacksSpellcastingLabel.AutoSize = true;
-            this.attacksSpellcastingLabel.Location = new System.Drawing.Point(73, 553);
-            this.attacksSpellcastingLabel.Name = "attacksSpellcastingLabel";
-            this.attacksSpellcastingLabel.Size = new System.Drawing.Size(138, 17);
-            this.attacksSpellcastingLabel.TabIndex = 0;
-            this.attacksSpellcastingLabel.Text = "Attacks & Spellcasting";
-            // 
             // proficiencesLanguagesPanel
             // 
             this.proficiencesLanguagesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2092,6 +2076,35 @@
             this.rollButton.TabStop = false;
             this.rollButton.Click += new System.EventHandler(this.rollButton_Click);
             // 
+            // backstoryLabel
+            // 
+            this.backstoryLabel.AutoSize = true;
+            this.backstoryLabel.Location = new System.Drawing.Point(111, 553);
+            this.backstoryLabel.Name = "backstoryLabel";
+            this.backstoryLabel.Size = new System.Drawing.Size(70, 17);
+            this.backstoryLabel.TabIndex = 0;
+            this.backstoryLabel.Text = "Backstory";
+            // 
+            // backstoryPanel
+            // 
+            this.backstoryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.backstoryPanel.Controls.Add(this.dataGridView1);
+            this.backstoryPanel.Controls.Add(this.backstoryLabel);
+            this.backstoryPanel.Location = new System.Drawing.Point(419, 738);
+            this.backstoryPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.backstoryPanel.Name = "backstoryPanel";
+            this.backstoryPanel.Size = new System.Drawing.Size(301, 585);
+            this.backstoryPanel.TabIndex = 12;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(32, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // CharacterSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2102,7 +2115,7 @@
             this.Controls.Add(this.equipmentPanel);
             this.Controls.Add(this.featuresTraitsPanel);
             this.Controls.Add(this.proficiencesLanguagesPanel);
-            this.Controls.Add(this.attacksSpellcastingPanel);
+            this.Controls.Add(this.backstoryPanel);
             this.Controls.Add(this.passivePerceptionPanel);
             this.Controls.Add(this.personalityPanel);
             this.Controls.Add(this.hitPanel);
@@ -2179,8 +2192,6 @@
             this.personalityPanel.PerformLayout();
             this.passivePerceptionPanel.ResumeLayout(false);
             this.passivePerceptionPanel.PerformLayout();
-            this.attacksSpellcastingPanel.ResumeLayout(false);
-            this.attacksSpellcastingPanel.PerformLayout();
             this.proficiencesLanguagesPanel.ResumeLayout(false);
             this.proficiencesLanguagesPanel.PerformLayout();
             this.featuresTraitsPanel.ResumeLayout(false);
@@ -2188,6 +2199,9 @@
             this.equipmentPanel.ResumeLayout(false);
             this.equipmentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollButton)).EndInit();
+            this.backstoryPanel.ResumeLayout(false);
+            this.backstoryPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2285,8 +2299,6 @@
         private System.Windows.Forms.Panel passivePerceptionPanel;
         private System.Windows.Forms.TextBox passivePerceptionTextBox;
         private System.Windows.Forms.Label passivePerceptionLabel;
-        private System.Windows.Forms.Panel attacksSpellcastingPanel;
-        private System.Windows.Forms.Label attacksSpellcastingLabel;
         private System.Windows.Forms.Panel proficiencesLanguagesPanel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel featuresTraitsPanel;
@@ -2378,6 +2390,9 @@
         private System.Windows.Forms.Label investigationLabel;
         private System.Windows.Forms.Label intimidationLabel;
         private System.Windows.Forms.Label insightLabel;
+        private System.Windows.Forms.Label backstoryLabel;
+        private System.Windows.Forms.Panel backstoryPanel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
