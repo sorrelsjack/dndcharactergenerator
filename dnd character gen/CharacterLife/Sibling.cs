@@ -1,10 +1,34 @@
 ﻿using dnd_character_gen.Extensions;
+using System.Collections.Generic;
 
 namespace dnd_character_gen.CharacterLife
 {
     public class Sibling : Individual
     {
         public string birthOrder = "";
+
+        public string getString() {
+            Dictionary<string, string> siblingAttributes = new Dictionary<string, string>
+            {
+                { "Status", status },
+                { "Cause of Death", causeOfDeath },
+                { "Birth Order", birthOrder },
+                { "Relationship", relationship },
+                { "Race", race },
+                { "Alignment", alignment },
+                { "Class", adventureClass },
+                { "Occupation", occupation }
+            };
+
+            string siblingString = "";
+
+            foreach (var item in siblingAttributes) {
+                if (!string.IsNullOrWhiteSpace(item.Value))
+                    siblingString += $"\n{item.Key}: {item.Value}";
+            }
+
+            return siblingString;
+        }
 
         public void setBirthOrder()
         {

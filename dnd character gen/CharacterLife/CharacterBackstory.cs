@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using dnd_character_gen.CharacterLife.Tables;
 using dnd_character_gen.Extensions;
 
 namespace dnd_character_gen.CharacterLife
@@ -241,43 +242,45 @@ namespace dnd_character_gen.CharacterLife
             }
         }
 
-        public void setFamily() //TODO: Who raised you?
+        public void setFamily()
         {
-            int randomNumber = NumberGen.gen(1, 101); //TODO: Maybe develop this further -- info on family members that arent parents, etc
-            if (randomNumber == 1)
-                family = "None";
-            else if (randomNumber == 2)
-                family = "Institution, such as an asylum";
-            else if (randomNumber == 3)
-                family = "Temple";
-            else if (randomNumber == 4 || randomNumber == 5)
-                family = "Orphanage";
-            else if (randomNumber == 6 || randomNumber == 7)
-                family = "Guardian";
-            else if (8 <= randomNumber && randomNumber <= 15)
-                family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
-            else if (16 <= randomNumber && randomNumber <= 25)
-                family = "Paternal or maternal grandparent(s)";
-            else if (26 <= randomNumber && randomNumber <= 35)
-                family = "Adoptive family (same or different race)";
-            else if (36 <= randomNumber && randomNumber <= 55)
-                family = "Single father or stepfather";
-            else if (56 <= randomNumber && randomNumber <= 75)
-                family = "Single mother or stepmother";
-            else if (76 <= randomNumber && randomNumber <= 100)
-                family = "Mother and father";
+            int randomNumber = 0;
 
-            if (randomNumber < 36)
+            while(family == "") 
             {
-                foreach(Parent parent in parents) 
-                {
-                    parent.setAbsence();
+                randomNumber = NumberGen.gen(1, 101); //TODO: Maybe develop this further -- info on family members that arent parents, etc
+                if (randomNumber == 1)
+                    family = "None";
+                else if (randomNumber == 2)
+                    family = "Institution, such as an asylum";
+                else if (randomNumber == 3)
+                    family = "Temple";
+                else if (randomNumber == 4 || randomNumber == 5)
+                    family = "Orphanage";
+                else if (randomNumber == 6 || randomNumber == 7)
+                    family = "Guardian";
+                else if (8 <= randomNumber && randomNumber <= 15)
+                    family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
+                else if (16 <= randomNumber && randomNumber <= 25)
+                    family = "Paternal or maternal grandparent(s)";
+                else if (26 <= randomNumber && randomNumber <= 35)
+                    family = "Adoptive family (same or different race)";
+                else if (36 <= randomNumber && randomNumber <= 55 && parents != null)
+                    family = "Single father or stepfather";
+                else if (56 <= randomNumber && randomNumber <= 75 && parents != null)
+                    family = "Single mother or stepmother";
+                else if (76 <= randomNumber && randomNumber <= 100 & parents != null)
+                    family = "Mother and father";
+
+                if (randomNumber < 36 && parents != null) {
+                    foreach (Parent parent in parents) {
+                        parent.setAbsence();
+                    }
                 }
-            }
-            else if (36 <= randomNumber && randomNumber <= 75)
-            {
-                randomNumber = NumberGen.gen(2);
-                parents[randomNumber].setAbsence();
+                else if (36 <= randomNumber && randomNumber <= 75 && !parents.All(x => x == null)) {
+                    randomNumber = NumberGen.gen(2);
+                    parents[randomNumber].setAbsence(); //TODO: Fix NRE here
+                }
             }
         }
 
@@ -400,12 +403,13 @@ namespace dnd_character_gen.CharacterLife
         {
             int randomNumber = 0;
 
-            while(lifeEvents.Count < numberOfLifeEvents) 
+            while(lifeEvents.Count < numberOfLifeEvents) //TODO: Fix infinite loop here
             {
                 randomNumber = DiceRoll.roll(1, 101);
 
                 if (1 <= randomNumber && randomNumber <= 10) {
-                    //You suffered a tragedy. Roll on the Tragedies table.
+                    //Tragedies tragedies = new Tragedies();
+                    //result = $"You suffered a tragedy. {tragedies.Roll()}";
                 }
                 else if (11 <= randomNumber && randomNumber <= 20) {
                     //You gained a bit of good fortune. Roll on the Boons table.
@@ -423,7 +427,7 @@ namespace dnd_character_gen.CharacterLife
                     //You made a friend of an adventurer. Use the supplemental tables and work with your DM to add more detail to this friendly character and establish how your friendship began.
                 }
                 else if (51 <= randomNumber && randomNumber <= 70) {
-                    //You spent time working in a job related to your background. Start the game with an extra 2d6 gp.
+                    lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp.");
                 }
                 else if (71 <= randomNumber && randomNumber <= 75) {
                     //You met someone important. Use the supplemental tables to determine this character’s
@@ -448,7 +452,7 @@ namespace dnd_character_gen.CharacterLife
                     //determine the nature of the offense and on the Punishment table to see what became of you.
                 }
                 else if (96 <= randomNumber && randomNumber <= 99) {
-                    //You encountered something magical. Roll on the Arcane Matters table.
+                    lifeEvents.Add($"You encountered something magical. {new ArcaneMatters().Roll()}");
                 }
                 else if (randomNumber == 100) {
                     //Something truly strange happened to you. Roll on the Weird Stuff table.

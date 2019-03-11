@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -28,9 +29,6 @@ namespace dnd_character_gen
         {
             equipmentListView.View = View.List;
             equipmentListView.GridLines = true;
-
-            featuresTraitsListView.View = View.List;
-            featuresTraitsListView.GridLines = true;
 
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
@@ -111,13 +109,28 @@ namespace dnd_character_gen
             }
         }
 
+        private void PopulateBackstory() 
+        {
+            backstoryTextBox.Text =
+                $"Age: {currentCharacter.characterBackstory.age}" +
+                $"\nBirthplace: {currentCharacter.characterBackstory.birthplace}" +
+                $"{(!string.IsNullOrWhiteSpace(currentCharacter.characterBackstory.strangeBirthEvent) ? "\nWhen you were born, " : "")}{currentCharacter.characterBackstory.strangeBirthEvent}" +
+                $"\nFamily: {currentCharacter.characterBackstory.family}" + //TODO: describe that family member
+                $"\nParents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : currentCharacter.characterBackstory.parents[0].getString() + "\n" + currentCharacter.characterBackstory.parents[1].getString())}" + //TODO: Fix issue where the damn thing breaks when parents are null
+                $"\nSiblings:" + //TODO: spit out siblings
+                $"\nFamily Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
+                $"\nChildhood Home: {currentCharacter.characterBackstory.childhoodHome}" +
+                $"\nChildhood Memories: {currentCharacter.characterBackstory.childhoodMemory}";
+            //Life events, siblings, family members
+        }
+
         private void PopulateOtherProficiencies()
         {
             List<string> proficienciesLanguagesList = new List<string>();
             proficienciesLanguagesList.AddRange(currentCharacter.toolProficiencies);
             proficienciesLanguagesList.AddRange(currentCharacter.languageProficiencies);
 
-            proficienciesLanguagesTextBox.Text = String.Join(Environment.NewLine, proficienciesLanguagesList);
+            proficienciesLanguagesTextBox.Text = string.Join(Environment.NewLine, proficienciesLanguagesList);
         }
 
         private void PopulateEquipment()
@@ -183,6 +196,7 @@ namespace dnd_character_gen
             PopulateSkillProficiencies();
             PopulateDefensive();
             PopulateSavingThrows();
+            PopulateBackstory();
             PopulateFeatures();
             PopulateOtherProficiencies();
             PopulateEquipment();
@@ -215,9 +229,7 @@ namespace dnd_character_gen
 
             foreach (var item in currentCharacter.features)
             {
-                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Key}:" }));
-                featuresTraitsListView.Items.Add(new ListViewItem(new[] { $"{item.Value}" }));
-                featuresTraitsListView.Items.Add(new ListViewItem(new[] { " " }));
+                featuresTraitsTextBox.Text += string.Join(Environment.NewLine, $"{item.Key}\n{ item.Value }\n\n" ); //TODO: Fill in actual features instead of the summarized versions I have
             }
         }
 
@@ -225,8 +237,6 @@ namespace dnd_character_gen
         {
             equipmentListView.Clear();
             equipmentListView.Items.Clear();
-            featuresTraitsListView.Clear();
-            featuresTraitsListView.Items.Clear();
         }
 
         private void skillsLabel_Click(object sender, EventArgs e) {

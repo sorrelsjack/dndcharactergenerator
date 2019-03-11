@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDCharacterGen"
         mc:Ignorable="d"
-        Title="Dungeons &amp; Dragons Character Generator" Height="450" Width="800"
-        Icon="Assets/dnd icon.png">
-    <Grid>
-        
-    </Grid>
+        Title="Dungeons &amp; Dragons Character Generator" Width="1075"
+        Icon="Assets/dnd icon.png" ShowInTaskbar="True" Height="1108" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" ResizeMode="NoResize">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="51*"/>
+                <ColumnDefinition Width="231*"/>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="569*"/>
+                <ColumnDefinition Width="137*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="basicInfoPanel" Background="LightGray" Margin="111.6,0,3,941.4" Width="591" Height="137" Grid.ColumnSpan="2" Grid.Column="4">
+                <Border BorderBrush="Black" BorderThickness="1" Height="137" Margin="0,0,0.2,0"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

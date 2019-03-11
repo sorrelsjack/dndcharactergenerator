@@ -554,7 +554,7 @@ namespace dnd_character_gen
             characterBackstory.setBackgroundDecision(background);
             characterBackstory.setClassDecision(characterClass.ToString());
             characterBackstory.setAge();
-            characterBackstory.setLifeEvents();
+            //characterBackstory.setLifeEvents();
         }
 
         private string generateAlignment()

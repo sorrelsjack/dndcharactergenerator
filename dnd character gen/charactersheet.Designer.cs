@@ -199,7 +199,6 @@
             this.proficienciesLanguagesTextBox = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.featuresTraitsPanel = new System.Windows.Forms.Panel();
-            this.featuresTraitsListView = new System.Windows.Forms.ListView();
             this.featuresTraitsLabel = new System.Windows.Forms.Label();
             this.equipmentPanel = new System.Windows.Forms.Panel();
             this.equipmentListView = new System.Windows.Forms.ListView();
@@ -207,7 +206,8 @@
             this.rollButton = new System.Windows.Forms.PictureBox();
             this.backstoryLabel = new System.Windows.Forms.Label();
             this.backstoryPanel = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.featuresTraitsTextBox = new System.Windows.Forms.RichTextBox();
+            this.backstoryTextBox = new System.Windows.Forms.RichTextBox();
             this.basicInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -242,7 +242,6 @@
             this.equipmentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollButton)).BeginInit();
             this.backstoryPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // basicInfoPanel
@@ -410,7 +409,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1036, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1041, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2008,23 +2007,13 @@
             // featuresTraitsPanel
             // 
             this.featuresTraitsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.featuresTraitsPanel.Controls.Add(this.featuresTraitsListView);
+            this.featuresTraitsPanel.Controls.Add(this.featuresTraitsTextBox);
             this.featuresTraitsPanel.Controls.Add(this.featuresTraitsLabel);
             this.featuresTraitsPanel.Location = new System.Drawing.Point(740, 738);
             this.featuresTraitsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.featuresTraitsPanel.Name = "featuresTraitsPanel";
             this.featuresTraitsPanel.Size = new System.Drawing.Size(301, 956);
             this.featuresTraitsPanel.TabIndex = 14;
-            // 
-            // featuresTraitsListView
-            // 
-            this.featuresTraitsListView.Location = new System.Drawing.Point(21, 20);
-            this.featuresTraitsListView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.featuresTraitsListView.Name = "featuresTraitsListView";
-            this.featuresTraitsListView.Scrollable = false;
-            this.featuresTraitsListView.Size = new System.Drawing.Size(251, 901);
-            this.featuresTraitsListView.TabIndex = 17;
-            this.featuresTraitsListView.UseCompatibleStateImageBehavior = false;
             // 
             // featuresTraitsLabel
             // 
@@ -2088,7 +2077,7 @@
             // backstoryPanel
             // 
             this.backstoryPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.backstoryPanel.Controls.Add(this.dataGridView1);
+            this.backstoryPanel.Controls.Add(this.backstoryTextBox);
             this.backstoryPanel.Controls.Add(this.backstoryLabel);
             this.backstoryPanel.Location = new System.Drawing.Point(419, 738);
             this.backstoryPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2096,14 +2085,23 @@
             this.backstoryPanel.Size = new System.Drawing.Size(301, 585);
             this.backstoryPanel.TabIndex = 12;
             // 
-            // dataGridView1
+            // featuresTraitsTextBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.featuresTraitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.featuresTraitsTextBox.Location = new System.Drawing.Point(21, 17);
+            this.featuresTraitsTextBox.Name = "featuresTraitsTextBox";
+            this.featuresTraitsTextBox.Size = new System.Drawing.Size(255, 897);
+            this.featuresTraitsTextBox.TabIndex = 1;
+            this.featuresTraitsTextBox.Text = "";
+            // 
+            // backstoryTextBox
+            // 
+            this.backstoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.backstoryTextBox.Location = new System.Drawing.Point(19, 17);
+            this.backstoryTextBox.Name = "backstoryTextBox";
+            this.backstoryTextBox.Size = new System.Drawing.Size(260, 533);
+            this.backstoryTextBox.TabIndex = 1;
+            this.backstoryTextBox.Text = "";
             // 
             // CharacterSheet
             // 
@@ -2201,7 +2199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.rollButton)).EndInit();
             this.backstoryPanel.ResumeLayout(false);
             this.backstoryPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2335,7 +2332,6 @@
         private System.Windows.Forms.TextBox armorClassTextBox;
         private System.Windows.Forms.TextBox speedTextBox;
         private System.Windows.Forms.TextBox initiativeTextBox;
-        private System.Windows.Forms.ListView featuresTraitsListView;
         private System.Windows.Forms.Label acrobaticsLabel;
         private System.Windows.Forms.TextBox acrobaticsTextBox;
         private System.Windows.Forms.CheckBox acrobaticsCheckBox;
@@ -2392,7 +2388,8 @@
         private System.Windows.Forms.Label insightLabel;
         private System.Windows.Forms.Label backstoryLabel;
         private System.Windows.Forms.Panel backstoryPanel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox featuresTraitsTextBox;
+        private System.Windows.Forms.RichTextBox backstoryTextBox;
     }
 }
 

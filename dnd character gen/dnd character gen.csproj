@@ -84,6 +84,8 @@
     <Compile Include="CharacterLife\Individual.cs" />
     <Compile Include="CharacterLife\Parent.cs" />
     <Compile Include="CharacterLife\Sibling.cs" />
+    <Compile Include="CharacterLife\Tables\Adventures.cs" />
+    <Compile Include="CharacterLife\Tables\ArcaneMatters.cs" />
     <Compile Include="CharacterSubRaces\DarkElf.cs" />
     <Compile Include="CharacterSubRaces\DeepGnome.cs" />
     <Compile Include="CharacterRaces\Dragonborn.cs" />
