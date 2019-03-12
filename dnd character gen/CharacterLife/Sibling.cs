@@ -7,7 +7,7 @@ namespace dnd_character_gen.CharacterLife
     {
         public string birthOrder = "";
 
-        public string getString() {
+        public override string getString() {
             Dictionary<string, string> siblingAttributes = new Dictionary<string, string>
             {
                 { "Status", status },

@@ -11,7 +11,7 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
-        public string getString()
+        public override string getString()
         {
             Dictionary<string, string> parentAttributes = new Dictionary<string, string>
             {

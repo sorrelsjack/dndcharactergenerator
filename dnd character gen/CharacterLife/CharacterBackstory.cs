@@ -405,33 +405,44 @@ namespace dnd_character_gen.CharacterLife
         {
             int randomNumber = 0;
 
-            while (lifeEvents.Count < numberOfLifeEvents) //TODO: Fix infinite loop here
+            while (lifeEvents.Count < numberOfLifeEvents)
             {
                 randomNumber = DiceRoll.roll(1, 100);
 
                 if (1 <= randomNumber && randomNumber <= 10)
                 {
-                    //Tragedies tragedies = new Tragedies();
-                    //result = $"You suffered a tragedy. {tragedies.Roll()}";
+                    Tragedies tragedies = new Tragedies();
+                    lifeEvents.Add($"You suffered a tragedy. {tragedies.Roll()}");
                 }
                 else if (11 <= randomNumber && randomNumber <= 20)
                 {
-                    //You gained a bit of good fortune. Roll on the Boons table.
+                    Boons boons = new Boons();
+                    lifeEvents.Add($"You gained a bit of good fortune. {boons.Roll()}");
                 }
                 else if (21 <= randomNumber && randomNumber <= 30)
                 {
-                    //You fell in love or got married. If you get this result more than once, you can choose to have a child instead. Work with your DM to determine the identity of your love interest.
+                    Individual individual = generateIndividual();
+                    if(lifeEvents.Contains("You fell in love or got married")) 
+                        lifeEvents.Add($"You had a child.\n{individual.getString()}");
+                    else 
+                    {
+                        lifeEvents.Add($"You fell in love or got married.\n{individual.getString()}");
+                    }
                 }
                 else if (31 <= randomNumber && randomNumber <= 40)
                 {
-                    //You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to
-                    //blame for the rift, and an even number indicates you are blameless.Use the
-                    //supplemental tables and work with your DM to determine this hostile character’s identity
-                    //and the danger this enemy poses to you.
+                    Individual adventurer = generateAdventurer();
+                    adventurer.relationship = "Hostile";
+
+                    lifeEvents.Add($"You made an enemy of an adventurer. You are {(DiceRoll.roll(1, 6) % 2 == 0 ? "to blame" : "blameless")} for the rift between you two. " +
+                        $"Work with your DM to determine this hostile character’s identity and the danger this enemy poses to you.\n{adventurer.getString()}");
                 }
                 else if (41 <= randomNumber && randomNumber <= 50)
                 {
-                    //You made a friend of an adventurer. Use the supplemental tables and work with your DM to add more detail to this friendly character and establish how your friendship began.
+                    Individual adventurer = generateAdventurer();
+                    adventurer.relationship = "Friendly";
+
+                    lifeEvents.Add($"You made a friend of an adventurer. Work with your DM to add more detail to this friendly character and establish how your friendship began.\n{adventurer.getString()}");
                 }
                 else if (51 <= randomNumber && randomNumber <= 70)
                 {
@@ -439,9 +450,8 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (71 <= randomNumber && randomNumber <= 75)
                 {
-                    //You met someone important. Use the supplemental tables to determine this character’s
-                    //identity and how this individual feels about you. Work out additional details with your
-                    //DM as needed to fit this character into your backstory.
+                    Individual individual = generateIndividual();
+                    lifeEvents.Add($"You met someone important. Work out additional details with your DM as needed to fit this character into your backstory.\n{individual.getString()}");
                 }
                 else if (76 <= randomNumber && randomNumber <= 80)
                 {
@@ -471,7 +481,8 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (randomNumber == 100)
                 {
-                    //Something truly strange happened to you. Roll on the Weird Stuff table.
+                    WeirdStuff weirdStuff = new WeirdStuff();
+                    lifeEvents.Add($"Something truly strange happened to you. {weirdStuff.Roll()}");
                 }
             }
         }
@@ -484,8 +495,30 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
-        private void generateIndividual()
+        private Individual generateIndividual() 
         {
+            Individual individual = new Individual();
+
+            individual.setStatus();
+            individual.setRelationship();
+            individual.setAlignment();
+            individual.setOccupation();
+            individual.setRace();
+
+            return individual;
+        }
+
+        private Individual generateAdventurer()
+        {
+            Individual adventurer = new Individual();
+
+            adventurer.setStatus(); //TODO: Config this so theyre never dead
+            adventurer.setRelationship();
+            adventurer.setAlignment();
+            adventurer.setClass();
+            adventurer.setRace();
+
+            return adventurer;
         }
 
         private void setAdventure()

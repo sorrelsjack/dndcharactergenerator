@@ -1,4 +1,5 @@
 ﻿using dnd_character_gen.Extensions;
+using System.Collections.Generic;
 
 namespace dnd_character_gen.CharacterLife
 {
@@ -11,6 +12,33 @@ namespace dnd_character_gen.CharacterLife
         public string alignment;
         public string race;
         public string occupation;
+
+        public Individual() 
+        {
+
+        }
+
+        public virtual string getString() {
+            Dictionary<string, string> individualAttributes = new Dictionary<string, string>
+            {
+                { "Status", status },
+                { "Cause of Death", causeOfDeath },
+                { "Relationship", relationship },
+                { "Race", race },
+                { "Alignment", alignment },
+                { "Class", adventureClass },
+                { "Occupation", occupation }
+            };
+
+            string individualString = "";
+
+            foreach (var item in individualAttributes) {
+                if (!string.IsNullOrWhiteSpace(item.Value))
+                    individualString += $"\n{item.Key}: {item.Value}";
+            }
+
+            return individualString;
+        }
 
         public void setStatus()
         {

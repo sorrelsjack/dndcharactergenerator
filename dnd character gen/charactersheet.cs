@@ -115,12 +115,13 @@ namespace dnd_character_gen
                 $"\nBirthplace: {currentCharacter.characterBackstory.birthplace}" +
                 $"{(!string.IsNullOrWhiteSpace(currentCharacter.characterBackstory.strangeBirthEvent) ? "\nWhen you were born, " : "")}{currentCharacter.characterBackstory.strangeBirthEvent}" +
                 $"\nFamily: {currentCharacter.characterBackstory.family}" + //TODO: describe that family member
-                $"\nParents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : currentCharacter.characterBackstory.parents[0].getString() + "\n" + currentCharacter.characterBackstory.parents[1].getString())}" + //TODO: Fix issue where the damn thing breaks when parents are null
-                $"\nSiblings:" + //TODO: spit out siblings
-                $"\nFamily Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
+                $"\n\nParents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}")}" +
+                $"\n\nSiblings: {(currentCharacter.characterBackstory.siblings.Any() ? $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}" : "You have no siblings.")}" +
+                $"\n\nFamily Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
                 $"\nChildhood Home: {currentCharacter.characterBackstory.childhoodHome}" +
-                $"\nChildhood Memories: {currentCharacter.characterBackstory.childhoodMemory}";
-            //Life events, siblings, family members
+                $"\nChildhood Memories: {currentCharacter.characterBackstory.childhoodMemory}" +
+                $"\n\nLife Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
+            //family members who raised you
         }
 
         private void PopulateOtherProficiencies()
