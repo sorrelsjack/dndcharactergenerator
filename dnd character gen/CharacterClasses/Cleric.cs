@@ -57,8 +57,8 @@ namespace dnd_character_gen.CharacterClasses
         {
             Dictionary<string, string> features = new Dictionary<string, string>
             {
-                { "Spellcasting", "-Oh you know" },
-                { "Divine Domain", "-Choose a domain related to a deity from which you draw your power (Knowledge, Life, Light, Nature, Tempest, Trickery, War)" }
+                { "Spellcasting", "As a conduit for divine power, you can cast cleric spells. See Spells Rules for the general rules of spellcasting and the Spells Listing for the cleric spell list." },
+                { "Divine Domain", "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. The Life domain is detailed at the end of the class description and provides examples of gods associated with it. See the Player’s Handbook for details on all the domains.Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels." }
             };
 
             foreach (KeyValuePair<string, string> pair in features)

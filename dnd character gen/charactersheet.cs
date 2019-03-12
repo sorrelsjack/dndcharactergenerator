@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -109,18 +110,18 @@ namespace dnd_character_gen
         }
 
         private void PopulateBackstory()
-        {
+        { //TODO: Bold headers
             backstoryTextBox.Text =
-                $"Age: {currentCharacter.characterBackstory.age}" +
-                $"\nBirthplace: {currentCharacter.characterBackstory.birthplace}" +
-                $"{(!string.IsNullOrWhiteSpace(currentCharacter.characterBackstory.strangeBirthEvent) ? "\nWhen you were born, " : "")}{currentCharacter.characterBackstory.strangeBirthEvent}" +
-                $"\nFamily: {currentCharacter.characterBackstory.family}" + //TODO: describe that family member
-                $"\n\nParents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}")}" +
-                $"\n\nSiblings: {(currentCharacter.characterBackstory.siblings.Any() ? $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}" : "You have no siblings.")}" +
-                $"\n\nFamily Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
-                $"\nChildhood Home: {currentCharacter.characterBackstory.childhoodHome}" +
-                $"\nChildhood Memories: {currentCharacter.characterBackstory.childhoodMemory}" +
-                $"\n\nLife Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
+                $"•Age: {currentCharacter.characterBackstory.age}" +
+                $"\n•Birthplace: {currentCharacter.characterBackstory.birthplace}" +
+                $"{(!string.IsNullOrWhiteSpace(currentCharacter.characterBackstory.strangeBirthEvent) ? "\n•When you were born, " : "")}{currentCharacter.characterBackstory.strangeBirthEvent}" +
+                $"\n•Family: {currentCharacter.characterBackstory.family}" + //TODO: describe that family member
+                $"\n\n•Parents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}")}" +
+                $"\n\n•Siblings: {(currentCharacter.characterBackstory.siblings.Any() ? $"{string.Join("\n", currentCharacter.characterBackstory.siblings.Select(p => p.getString()))}" : "You have no siblings.")}" +
+                $"\n\n•Family Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
+                $"\n•Childhood Home: {currentCharacter.characterBackstory.childhoodHome}" +
+                $"\n•Childhood Memories: {currentCharacter.characterBackstory.childhoodMemory}" +
+                $"\n\n•Life Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
             //family members who raised you
         }
 
@@ -153,8 +154,8 @@ namespace dnd_character_gen
 
         private void rollButton_Click(object sender, EventArgs e)
         {
-            //SoundPlayer diceSound = new SoundPlayer(@"Assets\MANYDICE.WAV");
-            //diceSound.Play();
+            SoundPlayer diceSound = new SoundPlayer(Properties.Resources.MANYDICE);
+            diceSound.Play();
 
             if (currentCharacter.characterClass == null)
                 rollMainInfo();

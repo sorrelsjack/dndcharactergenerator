@@ -58,9 +58,15 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Rage", "-Can enter Rage as bonus action/n-Advantage on Strength checks and Strength saving throws" +
-                "/n-Melee weapon attacks using Strength get a bonus to damage rolls/n-Resistance to bludgeoning, piercing, and slashing damage" },
-            { "Unarmored Defense", "-While not wearing armor, AC is 10 + Dexterity modifier + Constitution modifier. Can use a shield still." }
+            { "Rage", "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. " +
+                "\nWhile raging, you gain the following benefits if you aren’t wearing heavy armor:" +
+                "\n- You have advantage on Strength checks and Strength saving throws." +
+                "\n- When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table." +
+                "\n- You have resistance to bludgeoning, piercing, and slashing damage." +
+                "\nIf you are able to cast spells, you can’t cast them or concentrate on them while raging." +
+                "\nYour rage lasts for 1 minute.It ends early if you are knocked unconscious or if your turn ends and you haven’t attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action." +
+                "\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again." },
+            { "Unarmored Defense", "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit." }
         };
 
         public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => 0;

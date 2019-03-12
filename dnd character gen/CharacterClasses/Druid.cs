@@ -29,8 +29,8 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Druidic", "-Knows Druidic, the secret language of druids\n-Language can be used to leave hidden messages\n-Other can spot messages on a successful DC 15 Perception check"},
-            { "Spellcasting", "Oh you know." }
+            { "Druidic", "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message’s presence with a successful DC 15 Wisdom (Perception) check but can’t decipher it without magic."},
+            { "Spellcasting", "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will. See Spells Rules for the general rules of spellcasting and the Spells Listing for the druid spell list." }
         };
 
         public int setHitDie() => 8;

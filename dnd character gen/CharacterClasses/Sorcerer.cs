@@ -38,13 +38,14 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Spellcasting", "-Oh you know." },
-            { "Sorcerous Origin", "-Choose a sorcerous origin." }
+            { "Spellcasting", "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells. See Spells Rules for the general rules of spellcasting and the Spells Listing for the sorcerer spell list." },
+            { "Sorcerous Origin", "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline, detailed at the end of the class description, or one from another source." +
+                "\nYour choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level." }
         };
 
         public int setHitDie() => 6;
 
-        public int setHitPoints(int hitDie, int constitution) => origin != "Draconic Bloodline" ? hitDie + constitution : hitDie + constitution + 1; //For first level characters, of course.
+        public int setHitPoints(int hitDie, int constitution) => origin != "Draconic Bloodline" ? hitDie + constitution : hitDie + constitution + 1;
 
         public List<string> setLanguages() => _languageProficiencies;
 

@@ -27,8 +27,9 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Spellcasting", "Oh you know." },
-            { "Arcane Recovery", "-1/day, when finishing a short rest, choose expended spell slots to recover./n-Slots can have a combined level equal to or less than half of your Wizard level (rounded up)"}
+            { "Spellcasting", "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power. See Spells Rules for the general rules of spellcasting and the Spells Listing for the wizard spell list." },
+            { "Arcane Recovery", "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher." +
+                "\nFor example, if you’re a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots."}
         };
 
         public int setHitDie() => 6;

@@ -56,8 +56,8 @@ namespace dnd_character_gen.CharacterClasses
         {
             Dictionary<string, string> features = new Dictionary<string, string>
             {
-                { "Fighting Style", "Adopt a fighting style as speciality (Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting" },
-                { "Second Wind", "-On turn, can use a bonus action to regain HP equal to 1d10 + level\n-Can use once per short or long rest" }
+                { "Fighting Style", "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again. (Archery, Defense, Dueling, Great Weapon Fighting, Protection, Two-Weapon Fighting" },
+                { "Second Wind", "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again." }
             };
 
             foreach (KeyValuePair<string, string> pair in features)

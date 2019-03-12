@@ -63,7 +63,7 @@ namespace dnd_character_gen.CharacterClasses
                 ? availableFavoredEnemies[NumberGen.gen(13)]
                 : "Gnolls and Orcs";
 
-            string favoredTerrain = availableFavoredTerrain[NumberGen.gen(8)];
+            string favoredTerrain = availableFavoredTerrain[NumberGen.gen(8)]; //TODO: replace features with actual ones
 
             Dictionary<string, string> features = new Dictionary<string, string>
             {

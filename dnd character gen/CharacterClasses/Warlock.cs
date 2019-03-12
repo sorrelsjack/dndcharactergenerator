@@ -37,8 +37,8 @@ namespace dnd_character_gen.CharacterClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Otherworldly Patron", "-Make a pact with an otherworldly being of your choice"},
-            { "Pact Magic", "-Arcane research and magic from patron let you cast spells"}
+            { "Otherworldly Patron", "At 1st level, you have struck a bargain with an otherworldly being of your choice: the Fiend, which is detailed at the end of the class description, or one from another source. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."},
+            { "Pact Magic", "Your arcane research and the magic bestowed on you by your patron have given you facility with spells. See Spells Rules for the general rules of spellcasting and the Spells Listing for the warlock spell list."}
         };
 
         public int setHitDie() => 8;
