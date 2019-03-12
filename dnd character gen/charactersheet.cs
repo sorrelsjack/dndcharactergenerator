@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -109,7 +108,7 @@ namespace dnd_character_gen
             }
         }
 
-        private void PopulateBackstory() 
+        private void PopulateBackstory()
         {
             backstoryTextBox.Text =
                 $"Age: {currentCharacter.characterBackstory.age}" +
@@ -212,7 +211,6 @@ namespace dnd_character_gen
 
         private void PopulateDefensive()
         {
-            //TODO: Possibly AC, but that requires A LOT of effort
             initiativeTextBox.Text = currentCharacter.dexterityModifier.ToString();
             speedTextBox.Text = currentCharacter.movementSpeed.ToString();
             currentHitPointsTextBox.Text = currentCharacter.hitPoints.ToString();
@@ -229,7 +227,7 @@ namespace dnd_character_gen
 
             foreach (var item in currentCharacter.features)
             {
-                featuresTraitsTextBox.Text += string.Join(Environment.NewLine, $"{item.Key}\n{ item.Value }\n\n" ); //TODO: Fill in actual features instead of the summarized versions I have
+                featuresTraitsTextBox.Text += string.Join(Environment.NewLine, $"{item.Key}\n{ item.Value }\n\n"); //TODO: Fill in actual features instead of the summarized versions I have
             }
         }
 
@@ -239,8 +237,8 @@ namespace dnd_character_gen
             equipmentListView.Items.Clear();
         }
 
-        private void skillsLabel_Click(object sender, EventArgs e) {
-
+        private void skillsLabel_Click(object sender, EventArgs e)
+        {
         }
     }
 }

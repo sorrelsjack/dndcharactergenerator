@@ -543,10 +543,12 @@ namespace dnd_character_gen
         private void generateBackstory()
         {
             characterBackstory = new CharacterBackstory();
+            var splitRace = race.Split(' ');
+            string baseRace = splitRace[splitRace.Length - 1];
 
-            characterBackstory.setParentage(race);
+            characterBackstory.setParentage(baseRace);
             characterBackstory.setBirthplace();
-            characterBackstory.setSiblings(race);
+            characterBackstory.setSiblings(baseRace);
             characterBackstory.setFamily();
             characterBackstory.setFamilyLifestyle();
             characterBackstory.setChildhoodHome();
@@ -673,7 +675,7 @@ namespace dnd_character_gen
             wisdomModifier = calculateStatModifier(wisdom);
             charismaModifier = calculateStatModifier(charisma);
 
-            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier) + characterRace.setHitPointModifier(); ; //TODO: Maybe find a more appropriate place for this? idk
+            hitPoints = characterClass.setHitPoints(hitDie, constitutionModifier) + characterRace.setHitPointModifier();
         }
 
         private int calculateStatModifier(int stat)

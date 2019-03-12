@@ -180,30 +180,29 @@ namespace dnd_character_gen.CharacterLife
                 birthplace = "In the Shadowfell";
             else if (randomNumber == 98)
                 birthplace = "On the Astral Plane or the Ethereal Plane";
-            else if (randomNumber == 99) 
+            else if (randomNumber == 99)
             {
                 string[] innerPlanes = new string[] { "Air Plane", "Earth Plane", "Fire Plane", "Water Plane" };
-                randomNumber = NumberGen.gen(innerPlanes.Length);                
+                randomNumber = NumberGen.gen(innerPlanes.Length);
                 birthplace = innerPlanes[randomNumber];
             }
-            else if (randomNumber == 100) 
+            else if (randomNumber == 100)
             {
                 string[] outerPlanes = new string[] { };
                 randomNumber = NumberGen.gen(outerPlanes.Length);
                 birthplace = outerPlanes[randomNumber];
             }
 
-            randomNumber = DiceRoll.roll(1, 101); //Does a strange event happen at your birth?
-                
+            randomNumber = DiceRoll.roll(1, 100); //Does a strange event happen at your birth?
+
             if (randomNumber == 100)
                 setStrangeBirthEvent();
-
         }
 
-        private void setStrangeBirthEvent() 
+        private void setStrangeBirthEvent()
         {
             //When you were born,
-            string[] strangeBirthEvents = new string[] 
+            string[] strangeBirthEvents = new string[]
             { "the moon briefly turned red",
               "all the milk within a mile spoiled",
               "the water in the area froze solid in midsummer",
@@ -246,7 +245,7 @@ namespace dnd_character_gen.CharacterLife
         {
             int randomNumber = 0;
 
-            while(family == "") 
+            while (family == "")
             {
                 randomNumber = NumberGen.gen(1, 101); //TODO: Maybe develop this further -- info on family members that arent parents, etc
                 if (randomNumber == 1)
@@ -272,14 +271,17 @@ namespace dnd_character_gen.CharacterLife
                 else if (76 <= randomNumber && randomNumber <= 100 & parents != null)
                     family = "Mother and father";
 
-                if (randomNumber < 36 && parents != null) {
-                    foreach (Parent parent in parents) {
+                if (randomNumber < 36 && parents != null)
+                {
+                    foreach (Parent parent in parents)
+                    {
                         parent.setAbsence();
                     }
                 }
-                else if (36 <= randomNumber && randomNumber <= 75 && !parents.All(x => x == null)) {
+                else if (36 <= randomNumber && randomNumber <= 75 && !parents.All(x => x == null))
+                {
                     randomNumber = NumberGen.gen(2);
-                    parents[randomNumber].setAbsence(); //TODO: Fix NRE here
+                    parents[randomNumber].setAbsence();
                 }
             }
         }
@@ -375,7 +377,7 @@ namespace dnd_character_gen.CharacterLife
             else if (21 <= randomNumber && randomNumber <= 59)
             {
                 age = "21-30 years";
-                numberOfLifeEvents = DiceRoll.roll(1, 4); //TODO: is this end Number inclusive?
+                numberOfLifeEvents = DiceRoll.roll(1, 4);
             }
             else if (60 <= randomNumber && randomNumber <= 69)
             {
@@ -403,58 +405,71 @@ namespace dnd_character_gen.CharacterLife
         {
             int randomNumber = 0;
 
-            while(lifeEvents.Count < numberOfLifeEvents) //TODO: Fix infinite loop here
+            while (lifeEvents.Count < numberOfLifeEvents) //TODO: Fix infinite loop here
             {
-                randomNumber = DiceRoll.roll(1, 101);
+                randomNumber = DiceRoll.roll(1, 100);
 
-                if (1 <= randomNumber && randomNumber <= 10) {
+                if (1 <= randomNumber && randomNumber <= 10)
+                {
                     //Tragedies tragedies = new Tragedies();
                     //result = $"You suffered a tragedy. {tragedies.Roll()}";
                 }
-                else if (11 <= randomNumber && randomNumber <= 20) {
+                else if (11 <= randomNumber && randomNumber <= 20)
+                {
                     //You gained a bit of good fortune. Roll on the Boons table.
                 }
-                else if (21 <= randomNumber && randomNumber <= 30) {
+                else if (21 <= randomNumber && randomNumber <= 30)
+                {
                     //You fell in love or got married. If you get this result more than once, you can choose to have a child instead. Work with your DM to determine the identity of your love interest.
                 }
-                else if (31 <= randomNumber && randomNumber <= 40) {
+                else if (31 <= randomNumber && randomNumber <= 40)
+                {
                     //You made an enemy of an adventurer. Roll a d6. An odd number indicates you are to
                     //blame for the rift, and an even number indicates you are blameless.Use the
                     //supplemental tables and work with your DM to determine this hostile character’s identity
                     //and the danger this enemy poses to you.
                 }
-                else if (41 <= randomNumber && randomNumber <= 50) {
+                else if (41 <= randomNumber && randomNumber <= 50)
+                {
                     //You made a friend of an adventurer. Use the supplemental tables and work with your DM to add more detail to this friendly character and establish how your friendship began.
                 }
-                else if (51 <= randomNumber && randomNumber <= 70) {
+                else if (51 <= randomNumber && randomNumber <= 70)
+                {
                     lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp.");
                 }
-                else if (71 <= randomNumber && randomNumber <= 75) {
+                else if (71 <= randomNumber && randomNumber <= 75)
+                {
                     //You met someone important. Use the supplemental tables to determine this character’s
                     //identity and how this individual feels about you. Work out additional details with your
                     //DM as needed to fit this character into your backstory.
                 }
-                else if (76 <= randomNumber && randomNumber <= 80) {
+                else if (76 <= randomNumber && randomNumber <= 80)
+                {
                     //You met someone important. Use the supplemental tables to determine this character’s
                     //identity and how this individual feels about you. Work out additional details with your
                     //DM as needed to fit this character into your backstory.
                 }
-                else if (81 <= randomNumber && randomNumber <= 85) {
+                else if (81 <= randomNumber && randomNumber <= 85)
+                {
                     //You had a supernatural experience. Roll on the Supernatural Events table to find out what it was.
                 }
-                else if (86 <= randomNumber && randomNumber <= 90) {
+                else if (86 <= randomNumber && randomNumber <= 90)
+                {
                     //You fought in a battle. Roll on the War table to learn what happened to you. Work with
                     //your DM to come up with the reason for the battle and the factions involved.It might
                     //have been a small conflict between your community and a band of orcs, or it could have d100 Event been a major battle in a larger war
                 }
-                else if (91 <= randomNumber && randomNumber <= 95) {
+                else if (91 <= randomNumber && randomNumber <= 95)
+                {
                     //You committed a crime or were wrongly accused of doing so. Roll on the Crime table to
                     //determine the nature of the offense and on the Punishment table to see what became of you.
                 }
-                else if (96 <= randomNumber && randomNumber <= 99) {
+                else if (96 <= randomNumber && randomNumber <= 99)
+                {
                     lifeEvents.Add($"You encountered something magical. {new ArcaneMatters().Roll()}");
                 }
-                else if (randomNumber == 100) {
+                else if (randomNumber == 100)
+                {
                     //Something truly strange happened to you. Roll on the Weird Stuff table.
                 }
             }

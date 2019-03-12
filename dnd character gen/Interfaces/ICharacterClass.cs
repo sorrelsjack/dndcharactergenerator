@@ -31,7 +31,5 @@ namespace dnd_character_gen.Interfaces
         int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers);
 
         int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers);
-
-        //TODO Spells known? Cantrips? Spell slots?
     }
 }

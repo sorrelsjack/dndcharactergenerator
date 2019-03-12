@@ -2,7 +2,7 @@
 {
     public class DiceRoll
     {
-        public static int roll(int numberOfDie, int dieSides) //TODO: fix this so it takes two numbers as params
+        public static int roll(int numberOfDie, int dieSides)
         {
             int number = numberOfDie;
             int die = dieSides;
@@ -10,7 +10,7 @@
 
             for (int i = 0; i < number; i++)
             {
-                total += NumberGen.gen(1, die); //TODO: Maybe add 1.
+                total += NumberGen.gen(1, die + 1);
             }
 
             return total;

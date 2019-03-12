@@ -1,5 +1,5 @@
-﻿using dnd_character_gen.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Extensions;
 
 namespace dnd_character_gen.CharacterLife
 {
@@ -11,7 +11,7 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
-        public string getString() 
+        public string getString()
         {
             Dictionary<string, string> parentAttributes = new Dictionary<string, string>
             {
@@ -27,7 +27,7 @@ namespace dnd_character_gen.CharacterLife
 
             string parentString = "";
 
-            foreach(var item in parentAttributes) 
+            foreach (var item in parentAttributes)
             {
                 if (!string.IsNullOrWhiteSpace(item.Value))
                     parentString += $"\n{item.Key}: {item.Value}";
@@ -36,23 +36,22 @@ namespace dnd_character_gen.CharacterLife
             return parentString;
         }
 
-        public void setRace(string race) //TODO: Fix issue where entire race shows up
+        public void setRace(string race)
         {
             this.race = race;
         }
 
-        public void setAbsence() 
+        public void setAbsence()
         {
             int randomNumber = DiceRoll.roll(1, 4);
 
-            switch (randomNumber) 
+            switch (randomNumber)
             {
                 case 1: absenceReason = "Died"; setCauseOfDeath(); break;
                 case 2: absenceReason = "Imprisoned, enslaved, or otherwise taken away"; break;
                 case 3: absenceReason = "Abandoned you"; break;
                 case 4: absenceReason = "Disappeared to an unknown fate"; break;
             }
-
         }
     }
 }

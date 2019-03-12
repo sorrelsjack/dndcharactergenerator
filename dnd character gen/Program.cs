@@ -15,7 +15,6 @@ namespace dnd_character_gen
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new CharacterSheet());
             //TODO talk to SQLite DB (library references provided)
-            //TODO ask user if they want to save upon quit
             //TODO make a log to see the source of each stat and all that
         }
     }

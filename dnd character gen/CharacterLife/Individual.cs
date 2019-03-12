@@ -70,7 +70,7 @@ namespace dnd_character_gen.CharacterLife
 
         public void setAlignment()
         {
-            int randomNumber = DiceRoll.roll(3, 6); //TODO: is this inclusive?
+            int randomNumber = DiceRoll.roll(3, 6);
 
             if (randomNumber == 3)
             {
@@ -99,7 +99,7 @@ namespace dnd_character_gen.CharacterLife
 
         public void setOccupation()
         {
-            int randomNumber = DiceRoll.roll(1, 101);
+            int randomNumber = DiceRoll.roll(1, 100);
 
             if (1 <= randomNumber && randomNumber <= 5)
                 occupation = "Academic";
@@ -140,7 +140,7 @@ namespace dnd_character_gen.CharacterLife
 
         public void setClass()
         {
-            int randomNumber = DiceRoll.roll(1, 101);
+            int randomNumber = DiceRoll.roll(1, 100);
 
             if (1 <= randomNumber && randomNumber <= 7)
                 adventureClass = "Barbarian";
@@ -170,7 +170,7 @@ namespace dnd_character_gen.CharacterLife
 
         public virtual void setRace()
         {
-            int randomNumber = DiceRoll.roll(1, 101);
+            int randomNumber = DiceRoll.roll(1, 100);
 
             if (1 <= randomNumber && randomNumber <= 40)
                 race = "Human";
