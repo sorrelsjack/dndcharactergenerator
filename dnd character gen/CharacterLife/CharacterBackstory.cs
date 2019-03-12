@@ -445,24 +445,25 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (76 <= randomNumber && randomNumber <= 80)
                 {
-                    //You met someone important. Use the supplemental tables to determine this character’s
-                    //identity and how this individual feels about you. Work out additional details with your
-                    //DM as needed to fit this character into your backstory.
+                    Adventures adventures = new Adventures();
+                    lifeEvents.Add($"You went on an adventure. {adventures.Roll()} Work with your DM to determine the nature of the adventure and the creatures you encountered.");
                 }
                 else if (81 <= randomNumber && randomNumber <= 85)
                 {
-                    //You had a supernatural experience. Roll on the Supernatural Events table to find out what it was.
+                    SupernaturalEvents supernaturalEvents = new SupernaturalEvents();
+                    lifeEvents.Add($"You had a supernatural experience. {supernaturalEvents.Roll()}");
                 }
                 else if (86 <= randomNumber && randomNumber <= 90)
                 {
-                    //You fought in a battle. Roll on the War table to learn what happened to you. Work with
-                    //your DM to come up with the reason for the battle and the factions involved.It might
-                    //have been a small conflict between your community and a band of orcs, or it could have d100 Event been a major battle in a larger war
+                    Wars wars = new Wars();
+                    lifeEvents.Add($"You fought in a battle. {wars.Roll()} Work with your DM to come up with the reason for the battle and the factions involved. It might have been a small conflict between your community and a band of orcs, or it could have been a major battle in a larger war.");
                 }
                 else if (91 <= randomNumber && randomNumber <= 95)
                 {
-                    //You committed a crime or were wrongly accused of doing so. Roll on the Crime table to
-                    //determine the nature of the offense and on the Punishment table to see what became of you.
+                    Crimes crimes = new Crimes();
+                    Punishments punishments = new Punishments();
+
+                    lifeEvents.Add($"You committed a crime or were wrong accused of doing so, the nature of which was was {crimes.Roll()}. {punishments.Roll()}");
                 }
                 else if (96 <= randomNumber && randomNumber <= 99)
                 {

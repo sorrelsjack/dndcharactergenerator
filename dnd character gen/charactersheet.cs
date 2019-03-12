@@ -235,6 +235,8 @@ namespace dnd_character_gen
         {
             equipmentListView.Clear();
             equipmentListView.Items.Clear();
+
+            featuresTraitsTextBox.Text = "";
         }
 
         private void skillsLabel_Click(object sender, EventArgs e)

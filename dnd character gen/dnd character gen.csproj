@@ -86,6 +86,13 @@
     <Compile Include="CharacterLife\Sibling.cs" />
     <Compile Include="CharacterLife\Tables\Adventures.cs" />
     <Compile Include="CharacterLife\Tables\ArcaneMatters.cs" />
+    <Compile Include="CharacterLife\Tables\Boons.cs" />
+    <Compile Include="CharacterLife\Tables\Crimes.cs" />
+    <Compile Include="CharacterLife\Tables\Punishments.cs" />
+    <Compile Include="CharacterLife\Tables\SupernaturalEvents.cs" />
+    <Compile Include="CharacterLife\Tables\Tragedies.cs" />
+    <Compile Include="CharacterLife\Tables\Wars.cs" />
+    <Compile Include="CharacterLife\Tables\WeirdStuff.cs" />
     <Compile Include="CharacterSubRaces\DarkElf.cs" />
     <Compile Include="CharacterSubRaces\DeepGnome.cs" />
     <Compile Include="CharacterRaces\Dragonborn.cs" />
