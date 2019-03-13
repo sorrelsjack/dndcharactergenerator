@@ -146,6 +146,12 @@
     <Compile Include="CharacterSubClasses\WarCleric.cs" />
     <Compile Include="CharacterSubClasses\WildMagicSorcerer.cs" />
     <Compile Include="CharacterSubRaces\WoodElf.cs" />
+    <Compile Include="ConsoleLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsoleLog.Designer.cs">
+      <DependentUpon>ConsoleLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dictionaries\ArtisansTools.cs" />
     <Compile Include="Dictionaries\GamingSets.cs" />
     <Compile Include="Dictionaries\GuildBusinesses.cs" />
@@ -164,6 +170,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CharacterSheet.resx">
       <DependentUpon>CharacterSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsoleLog.resx">
+      <DependentUpon>ConsoleLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

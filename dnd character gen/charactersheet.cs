@@ -19,6 +19,8 @@ namespace dnd_character_gen
         public CharacterSheet()
         {
             InitializeComponent();
+            ConsoleLog log = new ConsoleLog();
+            log.Show();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
