@@ -12,6 +12,7 @@ namespace dnd_character_gen
     public partial class CharacterSheet : Form
     {
         private Character currentCharacter = new Character();
+        public ConsoleLog log = new ConsoleLog();
 
         [DllImport("user32.dll")]
         private static extern bool HideCaret(IntPtr hWnd);
@@ -19,21 +20,29 @@ namespace dnd_character_gen
         public CharacterSheet()
         {
             InitializeComponent();
-            ConsoleLog log = new ConsoleLog();
-            log.Show();
         }
 
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CharacterSheet_LocationChanged(object sender, EventArgs e) 
         {
+            log.Location = new System.Drawing.Point(Width + Location.X, Height / 3 + Location.Y);
+            log.Show();
         }
 
         private void CharacterSheet_Load(object sender, EventArgs e)
         {
+            log.StartPosition = FormStartPosition.Manual;
+
             equipmentListView.View = View.List;
             equipmentListView.GridLines = true;
 
             xpTextBox.Text = currentCharacter.xp.ToString();
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
+        }
+
+        private void CharacterSheet_Shown(object sender, EventArgs e) 
+        {
+            log.Location = new System.Drawing.Point(Width + Location.X, Height / 3 + Location.Y);
+            log.Show();
         }
 
         private void PopulateStatBoxes() //todo: make prettier

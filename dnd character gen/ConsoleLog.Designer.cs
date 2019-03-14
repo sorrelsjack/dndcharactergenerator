@@ -34,9 +34,9 @@
             // consoleLogTextBox
             // 
             this.consoleLogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.consoleLogTextBox.Location = new System.Drawing.Point(-2, 0);
+            this.consoleLogTextBox.Location = new System.Drawing.Point(12, 12);
             this.consoleLogTextBox.Name = "consoleLogTextBox";
-            this.consoleLogTextBox.Size = new System.Drawing.Size(415, 387);
+            this.consoleLogTextBox.Size = new System.Drawing.Size(387, 363);
             this.consoleLogTextBox.TabIndex = 0;
             this.consoleLogTextBox.Text = "";
             // 
@@ -47,8 +47,10 @@
             this.ClientSize = new System.Drawing.Size(411, 387);
             this.Controls.Add(this.consoleLogTextBox);
             this.Name = "ConsoleLog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConsoleLog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Console Log";
             this.ResumeLayout(false);
 
         }

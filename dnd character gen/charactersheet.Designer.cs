@@ -199,6 +199,7 @@
             this.proficienciesLanguagesTextBox = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.featuresTraitsPanel = new System.Windows.Forms.Panel();
+            this.featuresTraitsTextBox = new System.Windows.Forms.RichTextBox();
             this.featuresTraitsLabel = new System.Windows.Forms.Label();
             this.equipmentPanel = new System.Windows.Forms.Panel();
             this.equipmentListView = new System.Windows.Forms.ListView();
@@ -206,7 +207,6 @@
             this.rollButton = new System.Windows.Forms.PictureBox();
             this.backstoryLabel = new System.Windows.Forms.Label();
             this.backstoryPanel = new System.Windows.Forms.Panel();
-            this.featuresTraitsTextBox = new System.Windows.Forms.RichTextBox();
             this.backstoryTextBox = new System.Windows.Forms.RichTextBox();
             this.basicInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).BeginInit();
@@ -422,7 +422,6 @@
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.loadToolStripMenuItem.Text = "Menu";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -2015,6 +2014,15 @@
             this.featuresTraitsPanel.Size = new System.Drawing.Size(301, 956);
             this.featuresTraitsPanel.TabIndex = 14;
             // 
+            // featuresTraitsTextBox
+            // 
+            this.featuresTraitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.featuresTraitsTextBox.Location = new System.Drawing.Point(21, 17);
+            this.featuresTraitsTextBox.Name = "featuresTraitsTextBox";
+            this.featuresTraitsTextBox.Size = new System.Drawing.Size(255, 897);
+            this.featuresTraitsTextBox.TabIndex = 1;
+            this.featuresTraitsTextBox.Text = "";
+            // 
             // featuresTraitsLabel
             // 
             this.featuresTraitsLabel.AutoSize = true;
@@ -2085,15 +2093,6 @@
             this.backstoryPanel.Size = new System.Drawing.Size(301, 585);
             this.backstoryPanel.TabIndex = 12;
             // 
-            // featuresTraitsTextBox
-            // 
-            this.featuresTraitsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.featuresTraitsTextBox.Location = new System.Drawing.Point(21, 17);
-            this.featuresTraitsTextBox.Name = "featuresTraitsTextBox";
-            this.featuresTraitsTextBox.Size = new System.Drawing.Size(255, 897);
-            this.featuresTraitsTextBox.TabIndex = 1;
-            this.featuresTraitsTextBox.Text = "";
-            // 
             // backstoryTextBox
             // 
             this.backstoryTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2135,6 +2134,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dungeons & Dragons Character Generator";
             this.Load += new System.EventHandler(this.CharacterSheet_Load);
+            this.Shown += new System.EventHandler(this.CharacterSheet_Shown);
+            this.LocationChanged += new System.EventHandler(this.CharacterSheet_LocationChanged);
             this.basicInfoPanel.ResumeLayout(false);
             this.basicInfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rollMainInfoButton)).EndInit();
