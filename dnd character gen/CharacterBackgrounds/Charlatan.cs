@@ -60,6 +60,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I hate to admit it and will hate myself for it, but I'll run and preserve my own hide if the going gets tough."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I was left to my own devices, and my knack for manipulating others helped me survive.",
+            "I learned early on that people are gullible and easy to exploit.",
+            "I often got in trouble, but managed to talk my way out of it every time.",
+            "I took up with a confidence artist, from whom I learned my craft.",
+            "After a charlatan fleeced my family, I decided to learn the trade so I would never be fooled by such deception again.",
+            "I was poor or I feared becoming poor, so I learned the tricks I needed to keep myself out of poverty."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string>
@@ -79,6 +89,8 @@ namespace dnd_character_gen.CharacterBackgrounds
         public List<string> setLanguages() => null;
 
         public string setPersonalityTrait() => personalityTraits[NumberGen.gen(personalityTraits.Count)];
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
 
         public List<string> setSkills() => new List<string> { "Deception", "Sleight of Hand" };
 

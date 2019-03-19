@@ -6,7 +6,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class DraconicBloodlineSorcerer : ICharacterSubClass //TODO: fix Draconic BL sorcerer
+    public class DraconicBloodlineSorcerer : ICharacterSubClass
     {
         private Dictionary<string, string> _dragons = new Dictionary<string, string>
         {
@@ -32,8 +32,10 @@ namespace dnd_character_gen.CharacterSubClasses
             var selectedDragon = selectDragon();
             Dictionary<string, string> features = new Dictionary<string, string>
             {
-                { "Dragon Ancestor", $"-Had a(n) {selectedDragon[0]} ancestor, giving the damage type {selectedDragon[1]}\n-Gain proficiency in the Draconic language\n-Charisma checks involving dragons get a doubled proficiency bonus" },
-                { "Draconic Resilience", "-HP maximum increases by 1-When not wearing armor, AC is 13 + Dexterity modifier" }
+                { "Dragon Ancestor", $"At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later. You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check." +
+                $"\nIn your case, you had a {selectedDragon[0]} dragon ancestor, giving you the damage type {selectedDragon[1]}" },
+                { "Draconic Resilience", "As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class." +
+                "\nAdditionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier." }
             };
 
             return features;

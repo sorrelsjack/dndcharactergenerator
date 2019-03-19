@@ -5,13 +5,14 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class KnowledgeCleric : ICharacterSubClass //TODO: knowledge cleric
+    public class KnowledgeCleric : ICharacterSubClass
     {
         public List<string> setArmorProf() => null;
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Blessing of Knowledge", "-Learn two languages\n-Become proficient in Arcana, History, Nature, or Religion\n-Proficiency bonus is doubled for either of the chosen skills" }
+            { "Blessing of Knowledge", "At 1st level, you learn two languages of your choice. You also become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion." +
+                "\nYour proficiency bonus is doubled for any ability check you make that uses either of those skills." }
         };
 
         public List<string> setLanguageProf()

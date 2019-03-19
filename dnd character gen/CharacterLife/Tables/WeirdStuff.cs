@@ -20,7 +20,8 @@ namespace dnd_character_gen.CharacterLife.Tables {
                 case 3: return $"You were enslaved by a hag, a satyr, or some other being and lived in that creature’s thrall for {DiceRoll.roll(1, 6)} years.";
                 case 4: return $"A dragon held you as a prisoner for {DiceRoll.roll(1, 4)} months until adventurers killed it.";
                 case 5: return "You were taken captive by a race of evil humanoids such as drow, kuo-toa, or quaggoths. You lived as a slave in the Underdark until you escaped.";
-                case 6: return "You served a powerful adventurer as a hireling. You have only recently left that service. Use the supplemental tables and work with your DM to determine the basic details about your former employer."; //TODO: determine former employer
+                case 6: return "You served a powerful adventurer as a hireling. You have only recently left that service. Use the supplemental tables and work with your DM to determine the basic details about your former employer." +
+                        $"\n{Individual.generateIndividual().getString()}";
                 case 7: return $"You went insane for {DiceRoll.roll(1, 6)} years and recently regained your sanity. A tic or some other bit of odd behavior might linger.";
                 case 8: return "A lover of yours was secretly a silver dragon.";
                 case 9: return "You were captured by a cult and nearly sacrificed on an altar to the foul being the cultists served. You escaped, but you fear they will find you.";

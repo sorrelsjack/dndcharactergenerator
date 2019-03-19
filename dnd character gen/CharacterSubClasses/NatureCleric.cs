@@ -4,14 +4,14 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class NatureCleric : ICharacterSubClass //TODO: nature cleric
+    public class NatureCleric : ICharacterSubClass
     {
         public List<string> setArmorProf() => new List<string> { "Heavy armor" };
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>()
         {
-            { "Acolyte of Nature", "-Learn one Druid cantrip\n-Gain proficiency in one of the following: Animal Handling, Nature, Survival" },
-            { "Bonus Proficiency", "-Proficiency with heavy armor" }
+            { "Acolyte of Nature", "At 1st level, you learn one cantrip of your choice from the druid spell list. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival." },
+            { "Bonus Proficiency", "Also at 1st level, you gain proficiency with heavy armor." }
         };
 
         public List<string> setLanguageProf() => null;

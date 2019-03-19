@@ -65,6 +65,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I have trouble trusting in my allies."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I learned what was right and wrong from my family.",
+            "I was always enamored by tales of heroes and wished I could be something more than ordinary.",
+            "I hated my mundane life, so when it was time for someone to step up and do the right thing, I took my chance.",
+            "A parent or one of my relatives was an adventurer, and I was inspired by that person’s courage.",
+            "A mad old hermit spoke a prophecy when I was born, saying that I would accomplish great things.",
+            "I have always stood up for those who are weaker than I am."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string> { $"{artisansTools}", "Shovel", "Iron pot", "Set of common clothes", "Belt pouch containing 10 gp" };
@@ -81,6 +91,8 @@ namespace dnd_character_gen.CharacterBackgrounds
         public List<string> setLanguages() => null;
 
         public string setPersonalityTrait() => personalityTraits[NumberGen.gen(personalityTraits.Count)];
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
 
         public List<string> setSkills() => new List<string> { "Animal Handling", "Survival" };
 

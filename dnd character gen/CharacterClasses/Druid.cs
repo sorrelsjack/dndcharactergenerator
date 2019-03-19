@@ -7,6 +7,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Druid : ICharacterClass
     {
+        private List<string> reasons = new List<string> 
+        {
+            "I saw too much devastation in the wild places, too much of nature’s splendor ruined by the despoilers. I joined a circle of druids to fight back against the enemies of nature.",
+            "I found a place among a group of druids after I fled a catastrophe.",
+            "I have always had an affinity for animals, so I explored my talent to see how I could best use it.",
+            "I befriended a druid and was moved by druidic teachings. I decided to follow my friend’s guidance and give something back to the world.",
+            "While I was growing up, I saw spirits all around me — entities no one else could perceive. I sought out the druids to help me understand the visions and communicate with these beings.",
+            "I have always felt disgust for creatures of unnatural origin. For this reason, I immersed myself in the study of the druidic mysteries and became a champion of the natural order."
+        };
+
         public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Shields" };
 
         public List<string> setEquipment()
@@ -71,5 +81,7 @@ namespace dnd_character_gen.CharacterClasses
 
         public List<string> setWeaponProf() => new List<string>()
             { "Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

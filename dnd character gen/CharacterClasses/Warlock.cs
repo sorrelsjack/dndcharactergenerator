@@ -8,6 +8,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Warlock : ICharacterClass
     {
+        private List<string> reasons = new List<string>
+        {
+            "While wandering around in a forbidden place, I encountered an otherworldly being that offered to enter into a pact with me.",
+            "I was examining a strange tome I found in an abandoned library when the entity that would become my patron suddenly appeared before me.",
+            "I stumbled into the clutches of my patron after I accidentally stepped through a magical doorway.",
+            "When I was faced with a terrible crisis, I prayed to any being who would listen, and the creature that answered became my patron.",
+            "My future patron visited me in my dreams and offered great power in exchange for my service.",
+            "One of my ancestors had a pact with my patron, so that entity was determined to bind me to the same agreement."
+        };
+
         private string patron;
         private ICharacterSubClass subClass;
 
@@ -99,5 +109,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => null;
 
         public List<string> setWeaponProf() => new List<string> { "Simple weapons" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

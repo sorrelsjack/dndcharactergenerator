@@ -40,8 +40,6 @@ namespace dnd_character_gen.Dictionaries
             languageMap.Add("Gnolls", "Gnoll");
             languageMap.Add("Orcs", "Orcish");
 
-            //TODO: Aberrations, monstrosities, plants, undead
-
             languageMap.Add("Demons", "Abyssal");
             languageMap.Add("Celestials", "Celestial");
             languageMap.Add("Dragons", "Draconic");

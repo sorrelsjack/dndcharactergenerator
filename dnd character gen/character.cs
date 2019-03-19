@@ -88,6 +88,17 @@ namespace dnd_character_gen
 
         private string primaryStat { get; set; }
 
+        public Dictionary<string, int> stats = new Dictionary<string, int>() 
+        {
+            { "Strength", 0 }, { "Dexterity", 0 }, { "Constitution", 0 },
+            { "Intelligence", 0 }, { "Wisdom", 0 }, { "Charisma", 0 }
+        };
+        public Dictionary<string, int> statModifiers = new Dictionary<string, int>() 
+        {
+            { "Strength", 0 }, { "Dexterity", 0 }, { "Constitution", 0 },
+            { "Intelligence", 0 }, { "Wisdom", 0 }, { "Charisma", 0 }
+        };
+
         public int strength { get; private set; }
 
         public int dexterity { get; private set; }
@@ -116,7 +127,7 @@ namespace dnd_character_gen
 
         #endregion Stats and Modifiers
 
-        public Dictionary<string, string> classFeatures { get; set; } //TODO: Is this needed?
+        public Dictionary<string, string> classFeatures { get; set; }
 
         public Dictionary<string, string> raceFeatures { get; set; }
 
@@ -378,7 +389,7 @@ namespace dnd_character_gen
 
         #region Race Generator
 
-        private string generateRace() //TODO: Fix where I overwrote base class stuff when I wasn't supposed to...
+        private string generateRace()
         {
             string race = "";
             int randomNumber = NumberGen.gen(9);
@@ -652,12 +663,22 @@ namespace dnd_character_gen
                 statArray.RemoveAt(randomNumber);
             }
 
-            var racialAbilityScores = characterRace.setAbilityScores(); //TODO maybe calculate this else where like after the stats are rolled but idk. Or maybe just resort them?
+            var racialAbilityScores = characterRace.setAbilityScores();
 
             foreach (var kvp in racialAbilityScores)
             {
                 sortedStats[kvp.Key] += racialAbilityScores[kvp.Key];
             }
+
+            /*foreach(var stat in sortedStats) 
+            {
+                stats[stat.Key] = sortedStats[stat.Key];
+            }
+
+            foreach(var stat in stats) 
+            {
+                statModifiers[stat.Key] = calculateStatModifier(stat.Value);
+            }*/
 
             strength = sortedStats["Strength"];
             dexterity = sortedStats["Dexterity"];

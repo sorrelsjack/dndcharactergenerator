@@ -194,7 +194,13 @@ namespace dnd_character_gen.CharacterLife
             }
             else if (randomNumber == 100)
             {
-                string[] outerPlanes = new string[] { }; //TODO: outer planes
+                string[] outerPlanes = new string[] 
+                {
+                    "The Abyss", "Acheron", "Arcadia", "Concordant Opposition/Outlands", "Elysium", "Gehenna",
+                    "Gladsheim/Ysgard", "Hades/The Gray Waste", "Happy Hunting Grounds/Beastlands", "Limbo",
+                    "The Nine Hells/Baator", "Nirvana/Mechanus", "Olympus/Arborea/Arvandor", "Pandemonium",
+                    "Seven Heavens/Mount Celestia", "Tarterus/Carceri", "Twin Paradises/Bytopia"
+                };
                 randomNumber = NumberGen.gen(outerPlanes.Length);
                 birthplace = outerPlanes[randomNumber];
             }
@@ -265,7 +271,7 @@ namespace dnd_character_gen.CharacterLife
                 else if (randomNumber == 6 || randomNumber == 7)
                 {
                     family = "Guardian";
-                    guardians.Add(generateIndividual());
+                    guardians.Add(Individual.generateIndividual());
                 }
                 else if (8 <= randomNumber && randomNumber <= 15) //TODO: Paternal or maternal aunt uncle or both, etc...
                     family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
@@ -276,7 +282,7 @@ namespace dnd_character_gen.CharacterLife
 
                     while (guardians.Count < randomNumber)
                     {
-                        guardians.Add(generateIndividual());
+                        guardians.Add(Individual.generateIndividual());
                     }
                 }
                 else if (26 <= randomNumber && randomNumber <= 35)
@@ -288,7 +294,7 @@ namespace dnd_character_gen.CharacterLife
                 else if (76 <= randomNumber && randomNumber <= 100 & parents != null)
                     family = "Mother and father";
 
-                if (randomNumber < 36 && parents != null)
+                if (randomNumber < 36 && parents.Any())
                 {
                     foreach (Parent parent in parents)
                     {
@@ -374,14 +380,12 @@ namespace dnd_character_gen.CharacterLife
 
         public void setBackgroundDecision(ICharacterBackground background)
         {
-            background.setReason();
-            //TODO: call background here and deposit results here
+            backgroundReason = background.setReason();
         }
 
         public void setClassDecision(ICharacterClass adventureClass)
         {
-            adventureClass.setReason();
-            //TODO: call class here and deposit results here
+            classReason = adventureClass.setReason();
         }
 
         public void setAge()
@@ -440,7 +444,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (21 <= randomNumber && randomNumber <= 30)
                 {
-                    Individual individual = generateIndividual();
+                    Individual individual = Individual.generateIndividual();
                     if (lifeEvents.Contains("You fell in love or got married"))
                         lifeEvents.Add($"You had a child.\n{individual.getString()}");
                     else
@@ -450,7 +454,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (31 <= randomNumber && randomNumber <= 40)
                 {
-                    Individual adventurer = generateIndividual();
+                    Individual adventurer = Individual.generateIndividual();
                     adventurer.relationship = "Hostile";
                     adventurer.setLivingStatus();
 
@@ -459,7 +463,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (41 <= randomNumber && randomNumber <= 50)
                 {
-                    Individual adventurer = generateIndividual();
+                    Individual adventurer = Individual.generateIndividual();
                     adventurer.relationship = "Friendly";
                     adventurer.setLivingStatus();
 
@@ -471,7 +475,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (71 <= randomNumber && randomNumber <= 75)
                 {
-                    Individual individual = generateIndividual();
+                    Individual individual = Individual.generateIndividual();
                     lifeEvents.Add($"You met someone important. Work out additional details with your DM as needed to fit this character into your backstory.\n{individual.getString()}");
                 }
                 else if (76 <= randomNumber && randomNumber <= 80)
@@ -514,19 +518,6 @@ namespace dnd_character_gen.CharacterLife
 
         private void setBoon()
         {
-        }
-
-        private Individual generateIndividual()
-        {
-            Individual individual = new Individual();
-
-            individual.setStatus();
-            individual.setRelationship();
-            individual.setAlignment();
-            individual.setOccupation();
-            individual.setRace();
-
-            return individual;
         }
 
         private void setAdventure()

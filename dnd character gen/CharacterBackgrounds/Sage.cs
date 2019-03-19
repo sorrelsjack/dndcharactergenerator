@@ -54,6 +54,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I can’t keep a secret to save my life, or anyone else’s."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I was naturally curious, so I packed up and went to a university to learn more about the world.",
+            "My mentor’s teachings opened my mind to new possibilities in that field of study.",
+            "I was always an avid reader, and I learned much about my favorite topic on my own.",
+            "I discovered an old library and pored over the texts I found there. That experience awakened a hunger for more knowledge.",
+            "I impressed a wizard who told me I was squandering my talents and should seek out an education to take advantage of my gifts.",
+            "One of my parents or a relative gave me a basic education that whetted my appetite, and I left home to build on what I had learned"
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string>
@@ -92,5 +102,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         public Dictionary<string, string> setSpecial() => new Dictionary<string, string> { { "Specialty", $"{specialties[NumberGen.gen(specialties.Count)]}" } };
 
         public List<string> setToolsProf() => null;
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

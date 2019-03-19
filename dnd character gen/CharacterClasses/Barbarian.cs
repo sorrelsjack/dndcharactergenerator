@@ -7,6 +7,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Barbarian : ICharacterClass
     {
+        private List<string> reasons = new List<string> 
+        {
+            "My devotion to my people lifted me in battle, making me powerful and dangerous. ",
+            "The spirits of my ancestors called on me to carry out a great task.",
+            "I lost control in battle one day, and it was as if something else was manipulating my body, forcing it to kill every foe I could reach.",
+            "I went on a spiritual journey to find myself and instead found a spirit animal to guide, protect, and inspire me.",
+            "I was struck by lightning and lived. Afterward, I found a new strength within me that let me push beyond my limitations.",
+            "My anger needed to be channeled into battle, or I risked becoming an indiscriminate killer."
+        };
+
         public string setSubType() => null;
 
         public string setPrimaryStat() => "Strength";
@@ -74,5 +84,7 @@ namespace dnd_character_gen.CharacterClasses
         public int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers) => 0;
 
         public List<string> setLanguages() => null;
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

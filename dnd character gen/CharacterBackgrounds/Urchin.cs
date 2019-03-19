@@ -48,6 +48,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "People who can't take care of themselves get what they deserve."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "Wanderlust caused me to leave my family to see the world. I look after myself.",
+            "I ran away from a bad situation at home and made my own way in the world.",
+            "Monsters wiped out my village, and I was the sole survivor. I had to find a way to survive.",
+            "A notorious thief looked after me and other orphans, and we spied and stole to earn our keep.",
+            "One day I woke up on the streets, alone and hungry, with no memory of my early childhood.",
+            "My parents died, leaving no one to look after me. I raised myself."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string> 
@@ -74,5 +84,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         public Dictionary<string, string> setSpecial() => null;
 
         public List<string> setToolsProf() => new List<string> { "Disguise kit", "Thieves' tools" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

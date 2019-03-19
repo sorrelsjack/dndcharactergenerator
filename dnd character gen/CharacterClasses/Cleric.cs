@@ -8,8 +8,19 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Cleric : ICharacterClass
     {
+        private List<string> reasons = new List<string> 
+        {
+            "A supernatural being in service to the gods called me to become a divine agent in the world.",
+            "I saw the injustice and horror in the world and felt moved to take a stand against them.",
+            "My god gave me an unmistakable sign. I dropped everything to serve the divine.",
+            "Although I was always devout, it wasn’t until I completed a pilgrimage that I knew my true calling.",
+            "I used to serve in my religion’s bureaucracy but found I needed to work in the world, to bring the message of my faith to the darkest corners of the land.",
+            "I realize that my god works through me, and I do as commanded, even though I don’t know why I was chosen to serve."
+        };
+
         private string domain;
         private ICharacterSubClass subClass;
+        private God god;
 
         private List<string> _armorProficiencies = new List<string>();
         private List<string> _languageProficiencies = new List<string>();
@@ -163,5 +174,7 @@ namespace dnd_character_gen.CharacterClasses
             _armorProficiencies.AddRange(new List<string> { "Simple weapons" });
             return _armorProficiencies;
         }
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

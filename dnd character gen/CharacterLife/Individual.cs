@@ -18,6 +18,18 @@ namespace dnd_character_gen.CharacterLife
 
         }
 
+        public static Individual generateIndividual() {
+            Individual individual = new Individual();
+
+            individual.setStatus();
+            individual.setRelationship();
+            individual.setAlignment();
+            individual.setOccupation();
+            individual.setRace();
+
+            return individual;
+        }
+
         public virtual string getString() {
             Dictionary<string, string> individualAttributes = new Dictionary<string, string>
             {

@@ -8,6 +8,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Ranger : ICharacterClass
     {
+        private List<string> reasons = new List<string>
+        {
+            "I found purpose while I honed my hunting skills by bringing down dangerous animals at the edge of civilization.",
+            "I always had a way with animals, able to calm them with a soothing word and a touch.",
+            "I suffer from terrible wanderlust, so being a ranger gave me a reason not to remain in one place for too long.",
+            "I have seen what happens when the monsters come out from the dark. I took it upon myself to become the first line of defense against the evils that lie beyond civilization’s borders.",
+            "I met a grizzled ranger who taught me woodcraft and the secrets of the wild lands.",
+            "I served in an army, learning the precepts of my profession while blazing trails and scouting enemy encampments."
+        };
+
         private List<string> _favoredEnemies = new List<string>();
 
         public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Shields" };
@@ -72,7 +82,7 @@ namespace dnd_character_gen.CharacterClasses
             {
                 while (_favoredEnemies.Count < 2)
                 {
-                    randomNumber = NumberGen.gen(availableFavoredHumanoidEnemies.Count); //TODO: Test to see if favored enemies work and are generated properly
+                    randomNumber = NumberGen.gen(availableFavoredHumanoidEnemies.Count);
                     string enemy = availableFavoredHumanoidEnemies[randomNumber];
                     if (!_favoredEnemies.Contains(enemy))
                         _favoredEnemies.Add(enemy);
@@ -84,7 +94,7 @@ namespace dnd_character_gen.CharacterClasses
             Dictionary<string, string> features = new Dictionary<string, string>
             {
                 { "Favored Enemy", $"Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy." +
-                                   $"\nYour favored enemies are: {string.Join(" and ", _favoredEnemies)}" + //TODO: WHat if theres only one favored enemy
+                                   $"\nYour favored enemies are: {string.Join(" and ", _favoredEnemies)}" +
                                    "\nYou have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them." +
                                    "\nWhen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all." },
 
@@ -105,7 +115,9 @@ namespace dnd_character_gen.CharacterClasses
 
         public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
 
-        public List<string> setLanguages() => Languages.Instance.languageMap.Keys.Where(x => _favoredEnemies.All(y => y == x)).ToList();
+        public List<string> setLanguages() => 
+            new List<string> { Languages.Instance.languageMap.FirstOrDefault(x => x.Key == _favoredEnemies[0]).Value };
+            //Languages.Instance.languageMap.Keys.Where(x => _favoredEnemies.All(y => y == x)).ToList();
 
         public string setPrimaryStat() => "Dexterity";
 
@@ -125,7 +137,7 @@ namespace dnd_character_gen.CharacterClasses
             skillProficiencies.Add(skill);
             availableSkills.Remove(skill);
 
-            skill = availableSkills[NumberGen.gen(7)];
+            skill = availableSkills[NumberGen.gen(6)];
             skillProficiencies.Add(skill);
 
             return skillProficiencies;
@@ -140,5 +152,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => null;
 
         public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Martial weapons" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

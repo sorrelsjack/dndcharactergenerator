@@ -7,6 +7,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     internal class Monk : ICharacterClass
     {
+        private List<string> reasons = new List<string>
+        {
+            "I was chosen to study at a secluded monastery. There, I was taught the fundamental techniques required to eventually master a tradition.",
+            "I sought instruction to gain a deeper understanding of existence and my place in the world.",
+            "I stumbled into a portal to the Shadowfell and took refuge in a strange monastery, where I learned how to defend myself against the forces of darkness.",
+            "I was overwhelmed with grief after losing someone close to me, and I sought the advice of philosophers to help me cope with my loss.",
+            "I could feel that a special sort of power lay within me, so I sought out those who could help me call it forth and master it. ",
+            "I was wild and undisciplined as a youngster, but then I realized the error of my ways. I applied to a monastery and became a monk as a way to live a life of discipline."
+        };
+
         public List<string> setArmorProf() => null;
 
         public List<string> setEquipment()
@@ -87,5 +97,7 @@ namespace dnd_character_gen.CharacterClasses
 
             return weaponProficiencies;
         }
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

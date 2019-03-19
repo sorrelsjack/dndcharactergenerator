@@ -61,6 +61,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I like keeping secrets and won’t share them with anyone."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "My enemies ruined my reputation, and I fled to the wilds to avoid further disparagement.",
+            "I am comfortable with being isolated, as I seek inner peace.",
+            "I never liked the people I called my friends, so it was easy for me to strike out on my own.",
+            "I felt compelled to forsake my past, but did so with great reluctance, and sometimes I regret making that decision.",
+            "I lost everything — my home, my family, my friends. Going it alone was all I could do.",
+            "Society’s decadence disgusted me, so I decided to leave it behind."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string>
@@ -90,5 +100,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         };
 
         public List<string> setToolsProf() => new List<string> { "Herbalism kit" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

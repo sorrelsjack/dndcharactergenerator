@@ -53,6 +53,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Don’t expect me to save those who can’t save themselves. It is nature’s way that the strong thrive and the weak perish."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I spent a lot of time in the wilderness as a youngster, and I came to love that way of life.",
+            "From a young age, I couldn’t abide the stink of the cities and preferred to spend my time in nature.",
+            "I came to understand the darkness that lurks in the wilds, and I vowed to combat it.",
+            "My people lived on the edges of civilization, and I learned the methods of survival from my family.",
+            "After a tragedy I retreated to the wilderness, leaving my old life behind.",
+            "My family moved away from civilization, and I learned to adapt to my new environment."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string>
@@ -79,5 +89,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         };
 
         public List<string> setToolsProf() => new List<string> { MusicalInstruments.Instance.instruments[NumberGen.gen(MusicalInstruments.Instance.instruments.Count)] };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

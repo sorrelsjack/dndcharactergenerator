@@ -9,6 +9,16 @@ using System.Threading.Tasks;
 
 namespace dnd_character_gen.CharacterClasses {
     public class Bard : ICharacterClass {
+        private List<string> reasons = new List<string> 
+        {
+            "I awakened my latent bardic abilities through trial and error.",
+            "I was a gifted performer and attracted the attention of a master bard who schooled me in the old techniques.",
+            "I joined a loose society of scholars and orators to learn new techniques of performance and magic.",
+            "I felt a calling to recount the deeds of champions and heroes, to bring them alive in song and story.",
+            "I joined one of the great colleges to learn old lore, the secrets of magic, and the art of performance.",
+            "I picked up a musical instrument one day and instantly discovered that I could play it."
+        };
+
         public int setHitDie() => 8;
 
         public int setHitPoints(int hitDie, int constitution) => hitDie + constitution;
@@ -93,5 +103,7 @@ namespace dnd_character_gen.CharacterClasses {
         public int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers) => proficiency + modifiers["Charisma"];
 
         public List<string> setLanguages() => null;
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

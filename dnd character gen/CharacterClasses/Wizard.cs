@@ -6,6 +6,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Wizard : ICharacterClass
     {
+        private List<string> reasons = new List<string>
+        {
+            "An old wizard chose me from among several candidates to serve an apprenticeship.",
+            "When I became lost in a forest, a hedge wizard found me, took me in, and taught me the rudiments of magic.",
+            "I grew up listening to tales of great wizards and knew I wanted to follow their path. I strove to be accepted at an academy of magic and succeeded.",
+            "One of my relatives was an accomplished wizard who decided I was smart enough to learn the craft.",
+            "While exploring an old tomb, library, or temple, I found a spellbook. I was immediately driven to learn all I could about becoming a wizard.",
+            "I was a prodigy who demonstrated mastery of the arcane arts at an early age. When I became old enough to set out on my own, I did so to learn more magic and expand my power."
+        };
+
         public List<string> setArmorProf() => null;
 
         public List<string> setEquipment()
@@ -68,5 +78,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => null;
 
         public List<string> setWeaponProf() => new List<string> { "Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

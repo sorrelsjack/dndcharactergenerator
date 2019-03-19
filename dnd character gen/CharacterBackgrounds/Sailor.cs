@@ -50,6 +50,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "My pride will probably lead to my destruction."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I was press-ganged by pirates and forced to serve on their ship until I finally escaped.",
+            "I wanted to see the world, so I signed on as a deckhand for a merchant ship.",
+            "One of my relatives was a sailor who took me to sea.",
+            "I needed to escape my community quickly, so I stowed away on a ship. When the crew found me, I was forced to work for my passage.",
+            "Reavers attacked my community, so I found refuge on a ship until I could seek vengeance.",
+            "I had few prospects where I was living, so I left to find my fortune elsewhere."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string>
@@ -76,5 +86,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         public Dictionary<string, string> setSpecial() => null;
 
         public List<string> setToolsProf() => new List<string> { "Navigator's tools", "Vehicles (water)" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

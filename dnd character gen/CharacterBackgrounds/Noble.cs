@@ -58,6 +58,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "By my words and actions, I often bring shame to my family."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I come from an old and storied family, and it fell to me to preserve the family name.",
+            "My family has been disgraced, and I intend to clear our name.",
+            "My family recently came by its title, and that elevation thrust us into a new and strange world.",
+            "My family has a title, but none of my ancestors have distinguished themselves since we gained it.",
+            "My family is filled with remarkable people. I hope to live up to their example.",
+            "I hope to increase my family’s power and influence."
+        };
+
         public Noble()
         {
             int randomNumber = NumberGen.gen(features.Count);
@@ -83,5 +93,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         public Dictionary<string, string> setSpecial() => null;
 
         public List<string> setToolsProf() => new List<string> { GamingSets.Instance.sets[NumberGen.gen(GamingSets.Instance.sets.Count)] };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

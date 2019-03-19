@@ -5,8 +5,18 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterClasses
 {
-    public class Paladin : ICharacterClass
+    public class Paladin : ICharacterClass //TODO: paladin religion?
     {
+        private List<string> reasons = new List<string>
+        {
+            "A fantastical being appeared before me and called on me to undertake a holy quest.",
+            "One of my ancestors left a holy quest unfulfilled, so I intend to finish that work.",
+            "The world is a dark and terrible place. I decided to serve as a beacon of light shining out against the gathering shadows.",
+            "I served as a paladin’s squire, learning all I needed to swear my own sacred oath.",
+            "Evil must be opposed on all fronts. I feel compelled to seek out wickedness and purge it from the world.",
+            "Becoming a paladin was a natural consequence of my unwavering faith. In taking my vows, I became the holy sword of my religion."
+        };
+
         public List<string> setArmorProf() => new List<string> { "Light armor", "Medium armor", "Heavy Armor", "Shields" };
 
         public List<string> setEquipment()
@@ -85,5 +95,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => null;
 
         public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Martial weapons" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

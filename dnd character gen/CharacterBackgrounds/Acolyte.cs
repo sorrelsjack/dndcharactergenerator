@@ -93,6 +93,21 @@ namespace dnd_character_gen.CharacterBackgrounds
             return personalityTraits[NumberGen.gen(personalityTraits.Count)];
         }
 
+        public string setReason() 
+        {
+            List<string> reasons = new List<string>
+            {
+                "I ran away from home at an early age and found refuge in a temple.",
+                "My family gave me to a temple, since they were unable or unwilling to care for me.",
+                "I grew up in a household with strong religious convictions. Entering the service of one or more gods seemed natural.",
+                "An impassioned sermon struck a chord deep in my soul and moved me to serve the faith.",
+                "I followed a childhood friend, a respected acquaintance, or someone I loved into religious service.",
+                "After encountering a true servant of the gods, I was so inspired that I immediately entered the service of a religious group."
+            };
+
+            return reasons[NumberGen.gen(reasons.Count)];
+        }
+
         public List<string> setSkills() => new List<string> { "Insight", "Religion" };
 
         public Dictionary<string, string> setSpecial() => null; //TODO: pick a god

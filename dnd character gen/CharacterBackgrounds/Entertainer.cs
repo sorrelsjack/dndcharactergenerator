@@ -60,6 +60,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Despite my best efforts, I am unreliable to my friends."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "Members of my family made ends meet by performing, so it was fitting for me to follow their example.",
+            "I always had a keen insight into other people, enough so that I could make them laugh or cry with my stories or songs.",
+            "I ran away from home to follow a minstrel troupe.",
+            "I saw a bard perform once, and I knew from that moment on what I was born to do.",
+            "I earned coin by performing on street corners and eventually made a name for myself.",
+            "A traveling entertainer took me in and taught me the trade."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public virtual List<string> setEquipment() => new List<string>
@@ -86,5 +96,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         public virtual Dictionary<string, string> setSpecial() => new Dictionary<string, string> { { "Entertainer Routine", $"{entertainerRoutines[NumberGen.gen(entertainerRoutines.Count)]}" } };
 
         public List<string> setToolsProf() => new List<string> { "Disguise kit", $"{musicalInstrument}" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

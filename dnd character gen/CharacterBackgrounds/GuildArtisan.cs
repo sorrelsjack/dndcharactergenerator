@@ -54,6 +54,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I’m horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I’m surrounded by rivals."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I was apprenticed to a master who taught me the guild’s business.",
+            "I helped a guild artisan keep a secret or complete a task, and in return I was taken on as an apprentice.",
+            "One of my family members who belonged to the guild made a place for me.",
+            "I was always good with my hands, so I took the opportunity to learn a trade.",
+            "I wanted to get away from my home situation and start a new life.",
+            "I learned the essentials of my craft from a mentor but had to join the guild to finish my training."
+        };
+
         public GuildArtisan()
         {
             this.guild = GuildBusinesses.Instance.guilds.Keys.ElementAt(NumberGen.gen(GuildBusinesses.Instance.guilds.Count));
@@ -80,6 +90,8 @@ namespace dnd_character_gen.CharacterBackgrounds
             new List<string> { Languages.Instance.languages[NumberGen.gen(Languages.Instance.languages.Count)] };
 
         public string setPersonalityTrait() => personalityTraits[NumberGen.gen(personalityTraits.Count)];
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
 
         public List<string> setSkills() => new List<string> { "Insight", "Persuasion" };
 

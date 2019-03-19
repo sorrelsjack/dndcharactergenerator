@@ -6,6 +6,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Rogue : ICharacterClass
     {
+        private List<string> reasons = new List<string>
+        {
+            "I’ve always been nimble and quick of wit, so I decided to use those talents to help me make my way in the world.",
+            "An assassin or a thief wronged me, so I focused my training on mastering the skills of my enemy to better combat foes of that sort.",
+            "An experienced rogue saw something in me and taught me several useful tricks.",
+            "I decided to turn my natural lucky streak into the basis of a career, though I still realize that improving my skills is essential.",
+            "I took up with a group of ruffians who showed me how to get what I want through sneakiness rather than direct confrontation.",
+            "I’m a sucker for a shiny bauble or a sack of coins, as long as I can get my hands on it without risking life and limb."
+        };
+
         public List<string> setArmorProf() => new List<string> { "Light armor" };
 
         public List<string> setEquipment()
@@ -96,5 +106,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => new List<string> { "Thieves' Tools" };
 
         public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Hand crossbows", "Longswords", "Rapiers", "Shortswords" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

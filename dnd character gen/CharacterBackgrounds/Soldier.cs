@@ -57,6 +57,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I’d rather eat my armor than admit when I’m wrong."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I joined the militia to help protect my community from monsters.",
+            "A relative of mine was a soldier, and I wanted to carry on the family tradition.",
+            "The local lord forced me to enlist in the army.",
+            "War ravaged my homeland while I was growing up. Fighting was the only life I ever knew.",
+            "I wanted fame and fortune, so I joined a mercenary company, selling my sword to the highest bidder.",
+            "Invaders attacked my homeland. It was my duty to take up arms in defense of my people."
+        };
+
         private string gamingSet = GamingSets.Instance.sets[NumberGen.gen(GamingSets.Instance.sets.Count)];
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
@@ -88,5 +98,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         };
 
         public List<string> setToolsProf() => new List<string> { $"{gamingSet}", "Vehicles (land)" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }

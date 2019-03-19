@@ -54,6 +54,16 @@ namespace dnd_character_gen.CharacterBackgrounds
             "An innocent person is in prison for a crime that I committed. I’m okay with that."
         };
 
+        private List<string> reasons = new List<string> 
+        {
+            "I resented authority in my younger day and saw a life of crime as the best way to fight against tyranny and oppression.",
+            "Necessity forced me to take up the life, since it was the only way I could survive.",
+            "I fell in with a gang of reprobates and ne’er-do-wells, and I learned my specialty from them.",
+            "A parent or relative taught me my criminal specialty to prepare me for the family business.",
+            "I left home and found a place in a thieves’ guild or some other criminal organization.",
+            "I was always bored, so I turned to crime to pass the time and discovered I was quite good at it."
+        };
+
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 
         public List<string> setEquipment() => new List<string> { "Crowbar", "Set of dark common clothes including a hood", "Belt pouch containing 15 gp" };
@@ -70,6 +80,8 @@ namespace dnd_character_gen.CharacterBackgrounds
         public List<string> setLanguages() => null;
 
         public string setPersonalityTrait() => personalityTraits[NumberGen.gen(personalityTraits.Count)];
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
 
         public List<string> setSkills() => new List<string> { "Deception", "Stealth" };
 

@@ -8,6 +8,12 @@ namespace dnd_character_gen.CharacterRaces
 {
     public class HalfElf : ICharacterRace //TODO: fix this to reflect heritage (features). Fix subraces too.
     {
+        //Half-elves use either human or elven naming conventions. As if to emphasize that they don’t really fit in to either society, 
+        //half-elves raised among humans are often given elven names, and those raised among elves often take human names.
+
+        //Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character 
+        //can forgo Skill Versatility and instead take the elf trait Keen Senses or a trait based on your elf parentage:
+
         private List<string> maleElfNames = new List<string>
         {
             "Adran", "Aelar", "Aramil", "Arannis", "Aust", "Beiro", "Berrian", "Carric", "Enialis", "Erdan", "Erevan",
@@ -46,7 +52,7 @@ namespace dnd_character_gen.CharacterRaces
             "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"
         };
 
-        public virtual Dictionary<string, int> setAbilityScores()
+        public virtual Dictionary<string, int> setAbilityScores() //TODO: need to check into half elf stats and stuff again
         {
             Dictionary<string, int> abilityScores = new Dictionary<string, int>
             {

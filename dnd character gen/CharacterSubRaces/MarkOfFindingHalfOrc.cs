@@ -4,7 +4,7 @@ using dnd_character_gen.Extensions;
 
 namespace dnd_character_gen.CharacterSubRaces
 {
-    public class MarkOfFindingHalfOrc : HalfOrc
+    public class MarkOfFindingHalfOrc : HalfOrc //TODO; look at half-orc again
     {
         public override Dictionary<string, int> setAbilityScores()
         {

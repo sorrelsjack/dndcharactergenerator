@@ -134,6 +134,8 @@ namespace dnd_character_gen
                 $"\n\n•Family Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
                 $"\n•Childhood Home: {currentCharacter.characterBackstory.childhoodHome}" +
                 $"\n•Childhood Memories: {currentCharacter.characterBackstory.childhoodMemory}" +
+                $"\n•I became a(n) {currentCharacter.characterBackground.GetType().Name} because {currentCharacter.characterBackstory.backgroundReason}" +
+                $"\n•I became a(n) {currentCharacter.characterClass.GetType().Name} because {currentCharacter.characterBackstory.classReason}" +
                 $"\n\n•Life Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
             //family members who raised you
         }
@@ -242,7 +244,7 @@ namespace dnd_character_gen
 
             foreach (var item in currentCharacter.features)
             {
-                featuresTraitsTextBox.Text += string.Join(Environment.NewLine, $"{item.Key}\n{ item.Value }\n\n"); //TODO: Fill in actual features instead of the summarized versions I have
+                featuresTraitsTextBox.Text += string.Join(Environment.NewLine, $"{item.Key}\n{ item.Value }\n\n");
             }
         }
 

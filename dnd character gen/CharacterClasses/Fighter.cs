@@ -8,6 +8,16 @@ namespace dnd_character_gen.CharacterClasses
 {
     public class Fighter : ICharacterClass
     {
+        private List<string> reasons = new List<string> 
+        {
+            "I wanted to hone my combat skills, and so I joined a war college.",
+            "I squired for a knight who taught me how to fight, care for a steed, and conduct myself with honor. I decided to take up that path for myself.",
+            "Horrible monsters descended on my community, killing someone I loved. I took up arms to destroy those creatures and others of a similar nature.",
+            "I joined the army and learned how to fight as part of a group.",
+            "I grew up fighting, and I refined my talents by defending myself against people who crossed me.",
+            "I could always pick up just about any weapon and know how to use it effectively."
+        };
+
         private string fightingStyle;
         private ICharacterSubClass subClass;
 
@@ -129,5 +139,7 @@ namespace dnd_character_gen.CharacterClasses
         public List<string> setToolsProf() => null;
 
         public List<string> setWeaponProf() => new List<string> { "Simple weapons", "Martial weapons" };
+
+        public string setReason() => reasons[NumberGen.gen(reasons.Count)];
     }
 }
