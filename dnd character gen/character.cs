@@ -595,8 +595,7 @@ namespace dnd_character_gen
 
             for (int i = 0; i < 3; i++)
             {
-                Random rnd = new Random(Guid.NewGuid().GetHashCode()); //TODO convert this to my extension method
-                int randomNumber = rnd.Next(1, 7);
+                int randomNumber = NumberGen.gen(1, 7);
                 generatedNumbers[i] = randomNumber;
             }
 

@@ -8,8 +8,9 @@ namespace dnd_character_gen.CharacterLife
     public class CharacterBackstory
     {
         public Parent[] parents = new Parent[2] { new Parent(), new Parent() };
+        public List<Individual> guardians = new List<Individual>();
         public List<Sibling> siblings = new List<Sibling>();
-        public List<Individual> individual = new List<Individual>();
+        public List<Individual> individuals = new List<Individual>();
         public string birthplace = "";
         public string strangeBirthEvent = "";
         public string family = "";
@@ -188,12 +189,12 @@ namespace dnd_character_gen.CharacterLife
             }
             else if (randomNumber == 100)
             {
-                string[] outerPlanes = new string[] { };
+                string[] outerPlanes = new string[] { }; //TODO: outer planes
                 randomNumber = NumberGen.gen(outerPlanes.Length);
                 birthplace = outerPlanes[randomNumber];
             }
 
-            randomNumber = DiceRoll.roll(1, 100); //Does a strange event happen at your birth?
+            randomNumber = DiceRoll.roll(1, 100); //Did a strange event happen at your birth?
 
             if (randomNumber == 100)
                 setStrangeBirthEvent();
@@ -256,14 +257,26 @@ namespace dnd_character_gen.CharacterLife
                     family = "Temple";
                 else if (randomNumber == 4 || randomNumber == 5)
                     family = "Orphanage";
-                else if (randomNumber == 6 || randomNumber == 7)
+                else if (randomNumber == 6 || randomNumber == 7) 
+                {
                     family = "Guardian";
-                else if (8 <= randomNumber && randomNumber <= 15)
+                    guardians.Add(generateIndividual());
+                }
+                else if (8 <= randomNumber && randomNumber <= 15) //TODO: Paternal or maternal aunt uncle or both, etc...
                     family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
-                else if (16 <= randomNumber && randomNumber <= 25)
+                else if (16 <= randomNumber && randomNumber <= 25) 
+                {
+                    randomNumber = NumberGen.gen(2);
                     family = "Paternal or maternal grandparent(s)";
+
+                    while(guardians.Count < randomNumber) 
+                    {
+                        guardians.Add(generateIndividual());
+                    }
+                }
                 else if (26 <= randomNumber && randomNumber <= 35)
-                    family = "Adoptive family (same or different race)";
+                    family = "Adoptive family (same or different race)"; //TODO: generate entire family
+
                 else if (36 <= randomNumber && randomNumber <= 55 && parents != null)
                     family = "Single father or stepfather";
                 else if (56 <= randomNumber && randomNumber <= 75 && parents != null)
@@ -431,16 +444,18 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (31 <= randomNumber && randomNumber <= 40)
                 {
-                    Individual adventurer = generateAdventurer();
+                    Individual adventurer = generateIndividual();
                     adventurer.relationship = "Hostile";
+                    adventurer.setLivingStatus();
 
                     lifeEvents.Add($"You made an enemy of an adventurer. You are {(DiceRoll.roll(1, 6) % 2 == 0 ? "to blame" : "blameless")} for the rift between you two. " +
                         $"Work with your DM to determine this hostile character’s identity and the danger this enemy poses to you.\n{adventurer.getString()}");
                 }
                 else if (41 <= randomNumber && randomNumber <= 50)
                 {
-                    Individual adventurer = generateAdventurer();
+                    Individual adventurer = generateIndividual();
                     adventurer.relationship = "Friendly";
+                    adventurer.setLivingStatus();
 
                     lifeEvents.Add($"You made a friend of an adventurer. Work with your DM to add more detail to this friendly character and establish how your friendship began.\n{adventurer.getString()}");
                 }
@@ -508,19 +523,6 @@ namespace dnd_character_gen.CharacterLife
             return individual;
         }
 
-        private Individual generateAdventurer()
-        {
-            Individual adventurer = new Individual();
-
-            adventurer.setStatus(); //TODO: Config this so theyre never dead
-            adventurer.setRelationship();
-            adventurer.setAlignment();
-            adventurer.setClass();
-            adventurer.setRace();
-
-            return adventurer;
-        }
-
         private void setAdventure()
         {
         }
@@ -545,7 +547,7 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
-        private void setweirdStuff()
+        private void setWeirdStuff()
         {
         }
     }

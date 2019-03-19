@@ -63,6 +63,22 @@ namespace dnd_character_gen.CharacterLife
                 status = "Alive and famous";
         }
 
+        public void setLivingStatus() 
+        {
+            int randomNumber = NumberGen.gen(1, 14);
+
+            if (1 <= randomNumber && randomNumber <= 3)
+                status = "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties";
+            else if (4 <= randomNumber && randomNumber <= 7)
+                status = "Alive and well";
+            else if (8 <= randomNumber && randomNumber <= 10)
+                status = "Alive and quite successful";
+            else if (randomNumber == 11 || randomNumber == 12)
+                status = "Alive and infamous";
+            else if (randomNumber == 13)
+                status = "Alive and famous";
+        }
+
         public void setCauseOfDeath()
         {
             int randomNumber = NumberGen.gen(1, 12);

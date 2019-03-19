@@ -154,14 +154,22 @@
     </Compile>
     <Compile Include="Dictionaries\ArtisansTools.cs" />
     <Compile Include="Dictionaries\GamingSets.cs" />
+    <Compile Include="Dictionaries\Gods.cs" />
     <Compile Include="Dictionaries\GuildBusinesses.cs" />
     <Compile Include="Dictionaries\Languages.cs" />
     <Compile Include="Dictionaries\MartialWeapons.cs" />
     <Compile Include="Dictionaries\MusicalInstruments.cs" />
     <Compile Include="Dictionaries\SimpleWeapons.cs" />
     <Compile Include="Dictionaries\Skills.cs" />
+    <Compile Include="Dictionaries\Trinkets.cs" />
     <Compile Include="Extensions\DiceRoll.cs" />
     <Compile Include="Extensions\NumberGen.cs" />
+    <Compile Include="Forms\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ICharacterBackground.cs" />
     <Compile Include="Interfaces\ICharacterClass.cs" />
     <Compile Include="Interfaces\ICharacterRace.cs" />
@@ -173,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsoleLog.resx">
       <DependentUpon>ConsoleLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

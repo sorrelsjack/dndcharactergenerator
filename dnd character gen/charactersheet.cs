@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Forms;
 
 namespace dnd_character_gen
 {
@@ -254,6 +256,12 @@ namespace dnd_character_gen
 
         private void skillsLabel_Click(object sender, EventArgs e)
         {
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e) 
+        {
+            OptionsForm options = new OptionsForm();
+            options.Show();
         }
     }
 }

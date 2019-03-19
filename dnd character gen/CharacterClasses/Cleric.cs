@@ -114,7 +114,7 @@ namespace dnd_character_gen.CharacterClasses
 
             domain = domains[NumberGen.gen(7)];
 
-            if (domain == "Knowledge")
+            if (domain == "Knowledge") //TODO: pick a god to worship
                 subClass = new KnowledgeCleric();
             else if (domain == "Life")
                 subClass = new LifeCleric();
