@@ -24,7 +24,7 @@ namespace dnd_character_gen.CharacterRaces
 
         public List<string> setArmorProf() => null;
 
-        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string>
+        public virtual Dictionary<string, string> setFeatures() => new Dictionary<string, string> //TODO make this a field and then let sub races take this and combine into
         {
             { "Darkvision", "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray." },
             { "Keen Senses", "You have proficiency in the Perception skill." },

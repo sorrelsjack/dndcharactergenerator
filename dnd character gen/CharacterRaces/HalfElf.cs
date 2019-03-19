@@ -8,11 +8,14 @@ namespace dnd_character_gen.CharacterRaces
 {
     public class HalfElf : ICharacterRace //TODO: fix this to reflect heritage (features). Fix subraces too.
     {
-        //Half-elves use either human or elven naming conventions. As if to emphasize that they don’t really fit in to either society, 
-        //half-elves raised among humans are often given elven names, and those raised among elves often take human names.
-
         //Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character 
         //can forgo Skill Versatility and instead take the elf trait Keen Senses or a trait based on your elf parentage:
+
+
+        //Half-elves use either human or elven naming conventions.As if to emphasize that they don’t really fit in to either society,
+        //half-elves raised among humans are often given elven names, and those raised among elves often take human names.
+        private string raisedAmong = "";
+        private string elfHeritage = ""; //TODO: set this equal to the elf sub race. Then, use fields of subraces to get features
 
         private List<string> maleElfNames = new List<string>
         {
@@ -107,6 +110,7 @@ namespace dnd_character_gen.CharacterRaces
 
             if (randomNumber == 0)
             {
+                raisedAmong = "Humans";
                 randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                     name = femaleElfNames[NumberGen.gen(femaleElfNames.Count)];
@@ -115,6 +119,7 @@ namespace dnd_character_gen.CharacterRaces
             }
             else
             {
+                raisedAmong = "Elves";
                 randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                     name = femaleHumanNames[NumberGen.gen(femaleHumanNames.Count)];
