@@ -23,5 +23,7 @@ namespace dnd_character_gen.Interfaces
         string setBond();
 
         string setFlaw();
+
+        string setReason();
     }
 }

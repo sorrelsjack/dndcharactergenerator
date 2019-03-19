@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Defense", "-While wearing armor, gain +1 bonus to AC" }
+            { "Defense", "While you are wearing armor, you gain a +1 bonus to AC." }
         };
 
         public List<string> setLanguageProf()

@@ -5,7 +5,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class KnowledgeCleric : ICharacterSubClass
+    public class KnowledgeCleric : ICharacterSubClass //TODO: knowledge cleric
     {
         public List<string> setArmorProf() => null;
 

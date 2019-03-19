@@ -3,7 +3,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class LightCleric : ICharacterSubClass
+    public class LightCleric : ICharacterSubClass //TODO: light cleric
     {
         public List<string> setArmorProf() => null;
 

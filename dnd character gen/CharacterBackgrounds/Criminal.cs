@@ -73,7 +73,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Deception", "Stealth" };
 
-        public Dictionary<string, string> setSpecial() => new Dictionary<string, string>
+        public Dictionary<string, string> setSpecial() => new Dictionary<string, string> //TODO: actually do something with the special traits from the bgs
         {
             { "Criminal Speciality", $"{criminalSpecialities[NumberGen.gen(criminalSpecialities.Count)]}" }
         };

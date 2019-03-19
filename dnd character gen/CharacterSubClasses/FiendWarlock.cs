@@ -8,7 +8,7 @@ namespace dnd_character_gen.CharacterSubClasses
         public List<string> setArmorProf() => null;
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string> {
-            { "Dark One's Blessing", "-When you kill a hostile creature, you gain temporary hit points equal to your Charisma modifier + your warlock level" }
+            { "Dark One's Blessing", "Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1)." }
         };
 
         public List<string> setLanguageProf() => null;

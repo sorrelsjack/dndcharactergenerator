@@ -3,7 +3,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class GreatOldOneWarlock : ICharacterSubClass
+    public class GreatOldOneWarlock : ICharacterSubClass //TODO: fix GOO lock
     {
         public List<string> setArmorProf() => null;
 

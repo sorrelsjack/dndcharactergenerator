@@ -3,7 +3,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class ArchfeyWarlock : ICharacterSubClass
+    public class ArchfeyWarlock : ICharacterSubClass //TODO: fix archey lock
     {
         public List<string> setArmorProf() => null;
 

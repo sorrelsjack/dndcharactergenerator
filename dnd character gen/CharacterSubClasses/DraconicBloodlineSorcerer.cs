@@ -6,7 +6,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class DraconicBloodlineSorcerer : ICharacterSubClass
+    public class DraconicBloodlineSorcerer : ICharacterSubClass //TODO: fix Draconic BL sorcerer
     {
         private Dictionary<string, string> _dragons = new Dictionary<string, string>
         {

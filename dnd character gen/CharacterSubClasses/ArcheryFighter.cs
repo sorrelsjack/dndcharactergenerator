@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Archery", "-Gain +2 bonus to attack rolls with ranged weapons" }
+            { "Archery", "You gain a +2 bonus to attack rolls you make with ranged weapons." }
         };
 
         public List<string> setLanguageProf()

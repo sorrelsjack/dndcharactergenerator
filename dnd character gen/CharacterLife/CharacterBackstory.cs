@@ -2,6 +2,7 @@
 using System.Linq;
 using dnd_character_gen.CharacterLife.Tables;
 using dnd_character_gen.Extensions;
+using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterLife
 {
@@ -11,6 +12,8 @@ namespace dnd_character_gen.CharacterLife
         public List<Individual> guardians = new List<Individual>();
         public List<Sibling> siblings = new List<Sibling>();
         public List<Individual> individuals = new List<Individual>();
+        public List<string> lifeEvents = new List<string>();
+
         public string birthplace = "";
         public string strangeBirthEvent = "";
         public string family = "";
@@ -19,7 +22,9 @@ namespace dnd_character_gen.CharacterLife
         public string childhoodMemory = "";
         public string age = "";
         public int numberOfLifeEvents = 0;
-        public List<string> lifeEvents = new List<string>();
+
+        public string classReason = "";
+        public string backgroundReason = "";
 
         public Dictionary<string, int> familyLifestyles = new Dictionary<string, int>
         {
@@ -257,26 +262,25 @@ namespace dnd_character_gen.CharacterLife
                     family = "Temple";
                 else if (randomNumber == 4 || randomNumber == 5)
                     family = "Orphanage";
-                else if (randomNumber == 6 || randomNumber == 7) 
+                else if (randomNumber == 6 || randomNumber == 7)
                 {
                     family = "Guardian";
                     guardians.Add(generateIndividual());
                 }
                 else if (8 <= randomNumber && randomNumber <= 15) //TODO: Paternal or maternal aunt uncle or both, etc...
                     family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
-                else if (16 <= randomNumber && randomNumber <= 25) 
+                else if (16 <= randomNumber && randomNumber <= 25)
                 {
                     randomNumber = NumberGen.gen(2);
                     family = "Paternal or maternal grandparent(s)";
 
-                    while(guardians.Count < randomNumber) 
+                    while (guardians.Count < randomNumber)
                     {
                         guardians.Add(generateIndividual());
                     }
                 }
                 else if (26 <= randomNumber && randomNumber <= 35)
-                    family = "Adoptive family (same or different race)"; //TODO: generate entire family
-
+                    family = "Adoptive family (same or different race)"; //TODO: generate entire family of ADOPTIVE siblings and ADOPTIVE parents.. different than blood relations
                 else if (36 <= randomNumber && randomNumber <= 55 && parents != null)
                     family = "Single father or stepfather";
                 else if (56 <= randomNumber && randomNumber <= 75 && parents != null)
@@ -368,14 +372,16 @@ namespace dnd_character_gen.CharacterLife
             }
         }
 
-        public void setBackgroundDecision(string characterBackground)
+        public void setBackgroundDecision(ICharacterBackground background)
         {
-            //TODO: may be more appropriate in the actual BG classes
+            background.setReason();
+            //TODO: call background here and deposit results here
         }
 
-        public void setClassDecision(string characterClass)
+        public void setClassDecision(ICharacterClass adventureClass)
         {
-            //TODO: may be more appropriate in the actual class classes
+            adventureClass.setReason();
+            //TODO: call class here and deposit results here
         }
 
         public void setAge()
@@ -435,9 +441,9 @@ namespace dnd_character_gen.CharacterLife
                 else if (21 <= randomNumber && randomNumber <= 30)
                 {
                     Individual individual = generateIndividual();
-                    if(lifeEvents.Contains("You fell in love or got married")) 
+                    if (lifeEvents.Contains("You fell in love or got married"))
                         lifeEvents.Add($"You had a child.\n{individual.getString()}");
-                    else 
+                    else
                     {
                         lifeEvents.Add($"You fell in love or got married.\n{individual.getString()}");
                     }
@@ -510,7 +516,7 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
-        private Individual generateIndividual() 
+        private Individual generateIndividual()
         {
             Individual individual = new Individual();
 

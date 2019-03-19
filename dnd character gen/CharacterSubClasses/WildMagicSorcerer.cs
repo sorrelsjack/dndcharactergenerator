@@ -4,7 +4,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class WildMagicSorcerer : ICharacterSubClass
+    public class WildMagicSorcerer : ICharacterSubClass //todo: WM sorcerer
     {
         public List<string> setArmorProf()
         {

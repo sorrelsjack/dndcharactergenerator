@@ -28,6 +28,8 @@ namespace dnd_character_gen.Interfaces
 
         List<string> setEquipment();
 
+        string setReason();
+
         int setSpellSaveDC(int proficiency, Dictionary<string, int> modifiers);
 
         int setSpellAttackMod(int proficiency, Dictionary<string, int> modifiers);

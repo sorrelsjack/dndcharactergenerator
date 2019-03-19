@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Protection", "-When a seeable creature attacks a target other than self within 5 ft, can use reaction to impose disadvantage on the attack roll. Must be wielding a shield" }
+            { "Protection", "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." }
         };
 
         public List<string> setLanguageProf()

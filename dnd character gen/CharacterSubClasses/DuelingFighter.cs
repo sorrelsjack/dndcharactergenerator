@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Dueling", "-While wielding a melee weapon in one hand with no other weapons, gain a +2 bonus to damage rolls with that weapon" }
+            { "Dueling", "When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." }
         };
 
         public List<string> setLanguageProf()

@@ -3,7 +3,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class TempestCleric : ICharacterSubClass
+    public class TempestCleric : ICharacterSubClass //TODO: tempest cleric
     {
         public List<string> setArmorProf() => new List<string> { "Heavy armor" };
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using dnd_character_gen.CharacterBackgrounds;
 using dnd_character_gen.CharacterClasses;
@@ -553,8 +552,8 @@ namespace dnd_character_gen
             characterBackstory.setFamilyLifestyle();
             characterBackstory.setChildhoodHome();
             characterBackstory.setChildhoodMemories(charismaModifier);
-            characterBackstory.setBackgroundDecision(background);
-            characterBackstory.setClassDecision(characterClass.ToString());
+            characterBackstory.setBackgroundDecision(characterBackground);
+            characterBackstory.setClassDecision(characterClass);
             characterBackstory.setAge();
             characterBackstory.setLifeEvents();
         }

@@ -4,7 +4,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterSubClasses
 {
-    public class NatureCleric : ICharacterSubClass
+    public class NatureCleric : ICharacterSubClass //TODO: nature cleric
     {
         public List<string> setArmorProf() => new List<string> { "Heavy armor" };
 

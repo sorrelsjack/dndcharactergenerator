@@ -13,7 +13,7 @@ namespace dnd_character_gen.CharacterSubClasses
 
         public Dictionary<string, string> setFeatures() => new Dictionary<string, string>
         {
-            { "Two-Weapon Fighting", "-When engaging in two-weapon fighting, can add ability modifier to the damage of the second attack" }
+            { "Two-Weapon Fighting", "When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack." }
         };
 
         public List<string> setLanguageProf()
