@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
@@ -24,7 +23,7 @@ namespace dnd_character_gen
             InitializeComponent();
         }
 
-        private void CharacterSheet_LocationChanged(object sender, EventArgs e) 
+        private void CharacterSheet_LocationChanged(object sender, EventArgs e)
         {
             log.Location = new System.Drawing.Point(Width + Location.X, Height / 3 + Location.Y);
             log.Show();
@@ -41,7 +40,7 @@ namespace dnd_character_gen
             proficiencyTextBox.Text = currentCharacter.proficiencyBonus.ToString();
         }
 
-        private void CharacterSheet_Shown(object sender, EventArgs e) 
+        private void CharacterSheet_Shown(object sender, EventArgs e)
         {
             log.Location = new System.Drawing.Point(Width + Location.X, Height / 3 + Location.Y);
             log.Show();
@@ -128,7 +127,7 @@ namespace dnd_character_gen
                 $"•Age: {currentCharacter.characterBackstory.age}" +
                 $"\n•Birthplace: {currentCharacter.characterBackstory.birthplace}" +
                 $"{(!string.IsNullOrWhiteSpace(currentCharacter.characterBackstory.strangeBirthEvent) ? "\n•When you were born, " : "")}{currentCharacter.characterBackstory.strangeBirthEvent}" +
-                $"\n•Family: {currentCharacter.characterBackstory.family}" + //TODO: describe that family member
+                $"\n•Family: {currentCharacter.characterBackstory.family} {string.Join("\n", currentCharacter.characterBackstory.otherFamilyMembers.Select(p => p.getString()))}" +
                 $"\n\n•Parents: {(currentCharacter.characterBackstory.parents.All(x => x == null) ? "You don't know who your parents are or were." : $"{string.Join("\n", currentCharacter.characterBackstory.parents.Select(p => p.getString()))}")}" +
                 $"\n\n•Siblings: {(currentCharacter.characterBackstory.siblings.Any() ? $"{string.Join("\n", currentCharacter.characterBackstory.siblings.Select(p => p.getString()))}" : "You have no siblings.")}" +
                 $"\n\n•Family Lifestyle: {currentCharacter.characterBackstory.familyLifestyle}" +
@@ -137,7 +136,6 @@ namespace dnd_character_gen
                 $"\n•I became a(n) {currentCharacter.characterBackground.GetType().Name} because {currentCharacter.characterBackstory.backgroundReason}" +
                 $"\n•I became a(n) {currentCharacter.characterClass.GetType().Name} because {currentCharacter.characterBackstory.classReason}" +
                 $"\n\n•Life Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
-            //family members who raised you
         }
 
         private void PopulateOtherProficiencies()
@@ -260,7 +258,7 @@ namespace dnd_character_gen
         {
         }
 
-        private void optionsToolStripMenuItem_Click(object sender, EventArgs e) 
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OptionsForm options = new OptionsForm();
             options.Show();

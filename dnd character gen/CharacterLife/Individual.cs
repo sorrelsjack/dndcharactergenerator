@@ -1,5 +1,5 @@
-﻿using dnd_character_gen.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Extensions;
 
 namespace dnd_character_gen.CharacterLife
 {
@@ -13,12 +13,12 @@ namespace dnd_character_gen.CharacterLife
         public string race;
         public string occupation;
 
-        public Individual() 
+        public Individual()
         {
-
         }
 
-        public static Individual generateIndividual() {
+        public static Individual generateIndividual()
+        {
             Individual individual = new Individual();
 
             individual.setStatus();
@@ -30,7 +30,8 @@ namespace dnd_character_gen.CharacterLife
             return individual;
         }
 
-        public virtual string getString() {
+        public virtual string getString()
+        {
             Dictionary<string, string> individualAttributes = new Dictionary<string, string>
             {
                 { "Status", status },
@@ -44,7 +45,8 @@ namespace dnd_character_gen.CharacterLife
 
             string individualString = "";
 
-            foreach (var item in individualAttributes) {
+            foreach (var item in individualAttributes)
+            {
                 if (!string.IsNullOrWhiteSpace(item.Value))
                     individualString += $"\n{item.Key}: {item.Value}";
             }
@@ -75,7 +77,7 @@ namespace dnd_character_gen.CharacterLife
                 status = "Alive and famous";
         }
 
-        public void setLivingStatus() 
+        public void setLivingStatus()
         {
             int randomNumber = NumberGen.gen(1, 14);
 
