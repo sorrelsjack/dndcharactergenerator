@@ -9,8 +9,8 @@ namespace dnd_character_gen.CharacterLife
     public class CharacterBackstory
     {
         public Parent[] parents = new Parent[2] { new Parent(), new Parent() };
-        public List<Individual> guardians = new List<Individual>();
         public List<Sibling> siblings = new List<Sibling>();
+        public List<Individual> otherFamilyMembers = new List<Individual>();
         public List<Individual> individuals = new List<Individual>();
         public List<string> lifeEvents = new List<string>();
 
@@ -141,6 +141,12 @@ namespace dnd_character_gen.CharacterLife
             }
         }
 
+        public void setAdoptiveFamily()
+        {
+            //Parents
+            //Siblings
+        }
+
         public void setBirthplace()
         {
             int randomNumber = NumberGen.gen(1, 101);
@@ -194,7 +200,7 @@ namespace dnd_character_gen.CharacterLife
             }
             else if (randomNumber == 100)
             {
-                string[] outerPlanes = new string[] 
+                string[] outerPlanes = new string[]
                 {
                     "The Abyss", "Acheron", "Arcadia", "Concordant Opposition/Outlands", "Elysium", "Gehenna",
                     "Gladsheim/Ysgard", "Hades/The Gray Waste", "Happy Hunting Grounds/Beastlands", "Limbo",
@@ -259,7 +265,7 @@ namespace dnd_character_gen.CharacterLife
 
             while (family == "")
             {
-                randomNumber = NumberGen.gen(1, 101); //TODO: Maybe develop this further -- info on family members that arent parents, etc
+                randomNumber = NumberGen.gen(1, 101);
                 if (randomNumber == 1)
                     family = "None";
                 else if (randomNumber == 2)
@@ -271,22 +277,25 @@ namespace dnd_character_gen.CharacterLife
                 else if (randomNumber == 6 || randomNumber == 7)
                 {
                     family = "Guardian";
-                    guardians.Add(Individual.generateIndividual());
+                    otherFamilyMembers.Add(Individual.generateIndividual());
                 }
-                else if (8 <= randomNumber && randomNumber <= 15) //TODO: Paternal or maternal aunt uncle or both, etc...
+                else if (8 <= randomNumber && randomNumber <= 15)
                     family = "Paternal or material aunt, uncle, or both; or extended family such as a tribe or clan";
                 else if (16 <= randomNumber && randomNumber <= 25)
                 {
                     randomNumber = NumberGen.gen(2);
                     family = "Paternal or maternal grandparent(s)";
 
-                    while (guardians.Count < randomNumber)
+                    while (otherFamilyMembers.Count < randomNumber)
                     {
-                        guardians.Add(Individual.generateIndividual());
+                        otherFamilyMembers.Add(Individual.generateIndividual());
                     }
                 }
                 else if (26 <= randomNumber && randomNumber <= 35)
+                {
                     family = "Adoptive family (same or different race)"; //TODO: generate entire family of ADOPTIVE siblings and ADOPTIVE parents.. different than blood relations
+                    setAdoptiveFamily();
+                }
                 else if (36 <= randomNumber && randomNumber <= 55 && parents != null)
                     family = "Single father or stepfather";
                 else if (56 <= randomNumber && randomNumber <= 75 && parents != null)
