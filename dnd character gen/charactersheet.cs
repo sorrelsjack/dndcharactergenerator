@@ -136,13 +136,38 @@ namespace dnd_character_gen
                 $"\n•I became a(n) {currentCharacter.characterBackground.GetType().Name} because {currentCharacter.characterBackstory.backgroundReason}" +
                 $"\n•I became a(n) {currentCharacter.characterClass.GetType().Name} because {currentCharacter.characterBackstory.classReason}" +
                 $"\n\n•Life Events: \n{string.Join("\n\n", currentCharacter.characterBackstory.lifeEvents)}";
+
+            //BoldBackstoryHeaders(backstoryTextBox.Text);
+        }
+
+        private void BoldBackstoryHeaders(string text) 
+        {
+            int startingIndex = 0;
+
+            List<string> headers = new List<string> 
+            {
+                "•Age:", "\n•Birthplace:", "\n•Family:", "\n\n•Parents:", "\n\n•Siblings:",
+                "\n\n•Family Lifestyle:", "\n•Childhood Home:", "\n•Childhood Memories:",
+                $"\n•I became a(n) {currentCharacter.characterBackground.GetType().Name} because",
+                $"\n•I became a(n) {currentCharacter.characterClass.GetType().Name} because",
+                "\n\n•Life Events:"
+            };
+
+            foreach (var header in headers) 
+            {
+                startingIndex = text.IndexOf(header);
+                backstoryTextBox.SelectionFont = new System.Drawing.Font(backstoryTextBox.SelectionFont,
+                    System.Drawing.FontStyle.Bold);
+                backstoryTextBox.SelectedText = backstoryTextBox.Text.Substring(startingIndex, header.Length);
+            }
         }
 
         private void PopulateOtherProficiencies()
         {
             proficienciesLanguagesTextBox.Text =
                 $"•Languages:\n{string.Join("\n", currentCharacter.languageProficiencies.Select(x => x))}" +
-                $"\n\n•Tools:\n{string.Join("\n", currentCharacter.toolProficiencies.Select(x => x))}";
+                $"\n\n•Tools:\n{string.Join("\n", currentCharacter.toolProficiencies.Select(x => x))}" +
+                $"\n\n•Weapons:\n{string.Join("\n", currentCharacter.weaponProficiencies.Select(x => x))}";
         }
 
         private void PopulateEquipment()
@@ -236,7 +261,8 @@ namespace dnd_character_gen
         {
             currentCharacter.classFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.raceFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
-            currentCharacter.specialFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+            if (currentCharacter.specialFeatures != null)
+                currentCharacter.specialFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.backgroundFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
 
             foreach (var item in currentCharacter.features)
