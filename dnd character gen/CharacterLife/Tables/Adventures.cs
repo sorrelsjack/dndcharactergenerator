@@ -39,7 +39,7 @@ namespace dnd_character_gen.CharacterLife.Tables {
             else if (91 <= randomNumber && randomNumber <= 99)
                 result = $"You found a considerable amount of treasure on your adventure. You have {DiceRoll.roll(1, 20) + 50} gp left of your share of it.";
             else if (randomNumber == 100)
-                result = $"You came across a common magic item (of the DM's choice)."; //TODO: generate magic items?
+                result = $"You came across a common magic item (of the DM's choice).";
 
             return result;
         }

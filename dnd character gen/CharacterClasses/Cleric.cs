@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using dnd_character_gen.CharacterSubClasses;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
@@ -69,7 +70,8 @@ namespace dnd_character_gen.CharacterClasses
             Dictionary<string, string> features = new Dictionary<string, string>
             {
                 { "Spellcasting", "As a conduit for divine power, you can cast cleric spells. See Spells Rules for the general rules of spellcasting and the Spells Listing for the cleric spell list." },
-                { "Divine Domain", "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. The Life domain is detailed at the end of the class description and provides examples of gods associated with it. See the Player’s Handbook for details on all the domains.Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels." }
+                { "Divine Domain", "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. The Life domain is detailed at the end of the class description and provides examples of gods associated with it. See the Player’s Handbook for details on all the domains.Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels."
+                  + $"\n\nAs a cleric of the {domain} domain, you follow a god with the following attributes: \n{god.getString(god.name)}"}
             };
 
             foreach (KeyValuePair<string, string> pair in features)
@@ -125,7 +127,7 @@ namespace dnd_character_gen.CharacterClasses
 
             domain = domains[NumberGen.gen(7)];
 
-            if (domain == "Knowledge") //TODO: pick a god to worship
+            if (domain == "Knowledge")
                 subClass = new KnowledgeCleric();
             else if (domain == "Life")
                 subClass = new LifeCleric();
@@ -165,6 +167,9 @@ namespace dnd_character_gen.CharacterClasses
             var subClassSkillProf = subClass.setSkillProf();
             if (subClassSkillProf != null)
                 _skillProficiencies.AddRange(subClassSkillProf);
+
+            var availableGods = Gods.Instance.gods.Where(x => x.domains.Contains(domain)).ToList();
+            god = availableGods[NumberGen.gen(availableGods.Count())];
         }
 
         public List<string> setToolsProf() => null;

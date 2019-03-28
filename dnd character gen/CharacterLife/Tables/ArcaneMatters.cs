@@ -24,7 +24,7 @@ namespace dnd_character_gen.CharacterLife.Tables {
                 case 7: return "You turned invisible for a time.";
                 case 8: return "You identified an illusion for what it was.";
                 case 9: return "You saw a creature being conjured by magic.";
-                case 10: return "Your fortune was read by a diviner. Roll twice on the Life Events table, but don't apply the results. Instead, the DM picks one event as a portent of your future (which might or might not come true)."; //TODO: maybe do this on my own
+                case 10: return "Your fortune was read by a diviner. Roll twice on the Life Events table, but don't apply the results. Instead, the DM picks one event as a portent of your future (which might or might not come true).";
 
                 default: return "";
             }

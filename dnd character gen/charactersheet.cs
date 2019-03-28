@@ -96,7 +96,7 @@ namespace dnd_character_gen
         private void PopulateSkillProficiencies()
         {
             string camelCaseSkill = "";
-            Dictionary<string, int> skillModifiers = new Dictionary<string, int>
+            Dictionary<string, int> skillModifiers = new Dictionary<string, int> //TODO: are all the skills being checked off
             {
                 { "Strength", currentCharacter.strengthModifier },
                 { "Dexterity", currentCharacter.dexterityModifier },
@@ -142,11 +142,9 @@ namespace dnd_character_gen
 
         private void PopulateOtherProficiencies()
         {
-            List<string> proficienciesLanguagesList = new List<string>();
-            proficienciesLanguagesList.AddRange(currentCharacter.toolProficiencies);
-            proficienciesLanguagesList.AddRange(currentCharacter.languageProficiencies);
-
-            proficienciesLanguagesTextBox.Text = string.Join(Environment.NewLine, proficienciesLanguagesList);
+            proficienciesLanguagesTextBox.Text =
+                $"•Languages:\n{string.Join("\n", currentCharacter.languageProficiencies.Select(x => x))}" +
+                $"\n\n•Tools:\n{string.Join("\n", currentCharacter.toolProficiencies.Select(x => x))}";
         }
 
         private void PopulateEquipment()
@@ -240,6 +238,7 @@ namespace dnd_character_gen
         {
             currentCharacter.classFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.raceFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+            currentCharacter.specialFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.backgroundFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
 
             foreach (var item in currentCharacter.features)

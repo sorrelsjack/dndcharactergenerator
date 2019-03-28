@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -110,7 +111,10 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Insight", "Religion" };
 
-        public Dictionary<string, string> setSpecial() => null; //TODO: pick a god
+        public Dictionary<string, string> setSpecial() => new Dictionary<string, string>
+        {
+            {"Religious Belief", GodExtensions.getString(Gods.Instance.gods[NumberGen.gen(Gods.Instance.gods.Count())])}
+        };
 
         public List<string> setToolsProf() => null;
     }

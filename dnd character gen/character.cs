@@ -133,6 +133,8 @@ namespace dnd_character_gen
 
         public Dictionary<string, string> backgroundFeatures { get; set; }
 
+        public Dictionary<string, string> specialFeatures { get; set; }
+
         #region Basic Character Generator Method
 
         private void removeDuplicates() //TODO: Add option to optimize
@@ -250,7 +252,7 @@ namespace dnd_character_gen
             skillProficiencies.AddRange(characterBackground.setSkills());
             equipment.AddRange(characterBackground.setEquipment());
             backgroundFeatures = characterBackground.setFeatures();
-            characterBackground.setSpecial();
+            specialFeatures = characterBackground.setSpecial();
 
             personalityTrait = characterBackground.setPersonalityTrait();
             ideal = characterBackground.setIdeal();

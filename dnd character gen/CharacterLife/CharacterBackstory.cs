@@ -298,7 +298,7 @@ namespace dnd_character_gen.CharacterLife
                 {
                     foreach (Parent parent in parents)
                     {
-                        parent.setAbsence();
+                        parent.setAbsence(); //TODO: fix NRE here
                     }
                 }
                 else if (36 <= randomNumber && randomNumber <= 75 && !parents.All(x => x == null))

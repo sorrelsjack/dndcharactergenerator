@@ -5,7 +5,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterClasses
 {
-    public class Paladin : ICharacterClass //TODO: paladin religion?
+    public class Paladin : ICharacterClass //TODO: nature of paladin quest
     {
         private List<string> reasons = new List<string>
         {
