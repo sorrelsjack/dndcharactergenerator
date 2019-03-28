@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
@@ -10,7 +11,7 @@ namespace dnd_character_gen.CharacterBackgrounds
         private string musicalInstrument =
             MusicalInstruments.Instance.instruments[NumberGen.gen(MusicalInstruments.Instance.instruments.Count)];
 
-        private List<string> admirerFavor = new List<string> { "Love letter", "Lock of hair", "Trinket" };
+        private List<string> admirerFavor = new List<string> { "Love letter", "Lock of hair" };
 
         protected List<string> entertainerRoutines = new List<string>
         {
@@ -60,7 +61,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Despite my best efforts, I am unreliable to my friends."
         };
 
-        private List<string> reasons = new List<string> 
+        private List<string> reasons = new List<string>
         {
             "Members of my family made ends meet by performing, so it was fitting for me to follow their example.",
             "I always had a keen insight into other people, enough so that I could make them laugh or cry with my stories or songs.",
@@ -69,6 +70,11 @@ namespace dnd_character_gen.CharacterBackgrounds
             "I earned coin by performing on street corners and eventually made a name for myself.",
             "A traveling entertainer took me in and taught me the trade."
         };
+
+        public Entertainer()
+        {
+            admirerFavor.AddRange(Trinkets.Instance.trinkets.ToList());
+        }
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 

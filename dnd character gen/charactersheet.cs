@@ -232,7 +232,7 @@ namespace dnd_character_gen
             hitDiceTextBox.Text = currentCharacter.hitDie.ToString();
         }
 
-        private void PopulateFeatures()
+        private void PopulateFeatures() //TODO: maybe organize by class, race, bg
         {
             currentCharacter.classFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.raceFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));

@@ -54,7 +54,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "An innocent person is in prison for a crime that I committed. I’m okay with that."
         };
 
-        private List<string> reasons = new List<string> 
+        private List<string> reasons = new List<string>
         {
             "I resented authority in my younger day and saw a life of crime as the best way to fight against tyranny and oppression.",
             "Necessity forced me to take up the life, since it was the only way I could survive.",
@@ -85,7 +85,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 
         public List<string> setSkills() => new List<string> { "Deception", "Stealth" };
 
-        public Dictionary<string, string> setSpecial() => new Dictionary<string, string> //TODO: actually do something with the special traits from the bgs
+        public Dictionary<string, string> setSpecial() => new Dictionary<string, string>
         {
             { "Criminal Speciality", $"{criminalSpecialities[NumberGen.gen(criminalSpecialities.Count)]}" }
         };

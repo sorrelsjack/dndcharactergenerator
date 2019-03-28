@@ -55,6 +55,6 @@ namespace dnd_character_gen.CharacterRaces
 
         public List<string> setToolsProf() => new List<string> { toolProficiencies[NumberGen.gen(toolProficiencies.Count)] };
 
-        public List<string> setWeaponProf() => new List<string> { "Battleaxe", "Handaxe", "Light hammer", "Warhammer" }; //TODO: On classes, pass all simple weapons if proficient
+        public List<string> setWeaponProf() => new List<string> { "Battleaxe", "Handaxe", "Light hammer", "Warhammer" };
     }
 }

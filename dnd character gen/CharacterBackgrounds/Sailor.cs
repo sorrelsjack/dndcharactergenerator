@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using dnd_character_gen.Dictionaries;
 using dnd_character_gen.Extensions;
 using dnd_character_gen.Interfaces;
 
@@ -6,7 +8,7 @@ namespace dnd_character_gen.CharacterBackgrounds
 {
     public class Sailor : ICharacterBackground
     {
-        private List<string> luckyCharms = new List<string> { "Rabbit foot", "Small stoe with a hole in the center" }; //TODO: Can have trinket
+        private List<string> luckyCharms = new List<string> { "Rabbit foot", "Small stone with a hole in the center" };
 
         private List<string> personalityTraits = new List<string>
         {
@@ -50,7 +52,7 @@ namespace dnd_character_gen.CharacterBackgrounds
             "My pride will probably lead to my destruction."
         };
 
-        private List<string> reasons = new List<string> 
+        private List<string> reasons = new List<string>
         {
             "I was press-ganged by pirates and forced to serve on their ship until I finally escaped.",
             "I wanted to see the world, so I signed on as a deckhand for a merchant ship.",
@@ -59,6 +61,11 @@ namespace dnd_character_gen.CharacterBackgrounds
             "Reavers attacked my community, so I found refuge on a ship until I could seek vengeance.",
             "I had few prospects where I was living, so I left to find my fortune elsewhere."
         };
+
+        public Sailor()
+        {
+            luckyCharms.AddRange(Trinkets.Instance.trinkets.ToList());
+        }
 
         public string setBond() => bonds[NumberGen.gen(bonds.Count)];
 

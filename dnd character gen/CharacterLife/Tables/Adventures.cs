@@ -1,19 +1,15 @@
-﻿using dnd_character_gen.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using dnd_character_gen.Dictionaries;
+using dnd_character_gen.Extensions;
 
-namespace dnd_character_gen.CharacterLife.Tables {
-    public class Adventures 
+namespace dnd_character_gen.CharacterLife.Tables
+{
+    public class Adventures
     {
         public Adventures()
         {
-
         }
 
-        public string Roll() 
+        public string Roll()
         {
             string result = "";
             int randomNumber = NumberGen.gen(101);
@@ -29,7 +25,7 @@ namespace dnd_character_gen.CharacterLife.Tables {
             else if (41 <= randomNumber && randomNumber <= 50)
                 result = "You were poisoned by a trap or a monster. You recovered, but the next time you must make a saving throw against poison, you make the saving throw with disadvantage.";
             else if (51 <= randomNumber && randomNumber <= 60)
-                result = "You lost something of sentimental value to you during your adventure. Remove one trinket from your possessions."; //TODO: Can I do something with this
+                result = $"You lost something of sentimental value to you during your adventure. In your case, this was a(n) {Trinkets.Instance.trinkets[NumberGen.gen(Trinkets.Instance.trinkets.Length)].ToLower()}.";
             else if (61 <= randomNumber && randomNumber <= 70)
                 result = "You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate.";
             else if (71 <= randomNumber && randomNumber <= 80)
