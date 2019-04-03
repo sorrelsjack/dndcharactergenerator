@@ -236,7 +236,8 @@ namespace dnd_character_gen
         {
             currentCharacter.classFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.raceFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
-            currentCharacter.specialFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
+            if (currentCharacter.specialFeatures.Any())
+                currentCharacter.specialFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
             currentCharacter.backgroundFeatures.ToList().ForEach(x => currentCharacter.features.Add(x.Key, x.Value));
 
             foreach (var item in currentCharacter.features)
