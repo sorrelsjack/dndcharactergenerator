@@ -3,7 +3,7 @@ using dnd_character_gen.CharacterRaces;
 
 namespace dnd_character_gen.CharacterSubRaces
 {
-    public class DarkElf : Elf //TODO: re-evalute all subrace features and stuff
+    public class DarkElf : Elf
     {
         public override Dictionary<string, int> setAbilityScores() => new Dictionary<string, int>
         {

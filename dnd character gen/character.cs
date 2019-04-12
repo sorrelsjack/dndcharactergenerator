@@ -88,12 +88,13 @@ namespace dnd_character_gen
 
         private string primaryStat { get; set; }
 
-        public Dictionary<string, int> stats = new Dictionary<string, int>() 
+        public Dictionary<string, int> stats = new Dictionary<string, int>()
         {
             { "Strength", 0 }, { "Dexterity", 0 }, { "Constitution", 0 },
             { "Intelligence", 0 }, { "Wisdom", 0 }, { "Charisma", 0 }
         };
-        public Dictionary<string, int> statModifiers = new Dictionary<string, int>() 
+
+        public Dictionary<string, int> statModifiers = new Dictionary<string, int>()
         {
             { "Strength", 0 }, { "Dexterity", 0 }, { "Constitution", 0 },
             { "Intelligence", 0 }, { "Wisdom", 0 }, { "Charisma", 0 }
@@ -403,18 +404,13 @@ namespace dnd_character_gen
             }
             else if (randomNumber == 1)
             {
-                randomNumber = NumberGen.gen(3);
+                randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                 {
                     race = "Hill Dwarf";
                     characterRace = new HillDwarf();
                 }
                 else if (randomNumber == 1)
-                {
-                    race = "Mark Of Warding Dwarf";
-                    characterRace = new MarkOfWardingDwarf();
-                }
-                else if (randomNumber == 2)
                 {
                     race = "Mountain Dwarf";
                     characterRace = new MountainDwarf();
@@ -451,8 +447,8 @@ namespace dnd_character_gen
                 }
                 else if (randomNumber == 1)
                 {
-                    race = "Mark Of Scribing Gnome";
-                    characterRace = new MarkOfScribingGnome();
+                    race = "Forest Gnome";
+                    characterRace = new ForestGnome();
                 }
                 else if (randomNumber == 2)
                 {
@@ -463,38 +459,19 @@ namespace dnd_character_gen
 
             if (randomNumber == 4)
             {
-                randomNumber = NumberGen.gen(2);
-                if (randomNumber == 0)
-                {
-                    race = "Mark of Detection Half-Elf";
-                    characterRace = new MarkOfDetectionHalfElf();
-                }
-                else
-                {
-                    race = "Mark of Storm Half-Elf";
-                    characterRace = new MarkOfStormHalfElf();
-                }
+                race = "Half-Elf";
+                characterRace = new HalfElf();
             }
 
             if (randomNumber == 5)
             {
-                randomNumber = NumberGen.gen(4);
+                randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                 {
                     race = "Lightfoot Halfling";
                     characterRace = new LightfootHalfling();
                 }
                 else if (randomNumber == 1)
-                {
-                    race = "Mark of Healing Halfling";
-                    characterRace = new MarkOfHealingHalfling();
-                }
-                else if (randomNumber == 2)
-                {
-                    race = "Mark of Hospitality Halfling";
-                    characterRace = new MarkOfHospitalityHalfling();
-                }
-                else if (randomNumber == 3)
                 {
                     race = "Stout Halfling";
                     characterRace = new StoutHalfling();
@@ -503,42 +480,14 @@ namespace dnd_character_gen
 
             if (randomNumber == 6)
             {
-                randomNumber = NumberGen.gen(2);
-                if (randomNumber == 0)
-                {
-                    race = "Half-Orc";
-                    characterRace = new HalfOrc();
-                }
-                else
-                {
-                    race = "Mark of Finding Half-Orc";
-                    characterRace = new MarkOfFindingHalfOrc();
-                }
+                race = "Half-Orc";
+                characterRace = new HalfOrc();
             }
 
             if (randomNumber == 7)
             {
-                randomNumber = NumberGen.gen(4);
-                if (randomNumber == 0)
-                {
-                    race = "Mark of Handling Human";
-                    characterRace = new MarkOfHandlingHuman();
-                }
-                else if (randomNumber == 1)
-                {
-                    race = "Mark of Making Human";
-                    characterRace = new MarkOfMakingHuman();
-                }
-                else if (randomNumber == 2)
-                {
-                    race = "Mark of Passage Human";
-                    characterRace = new MarkOfPassageHuman();
-                }
-                else if (randomNumber == 3)
-                {
-                    race = "Mark of Sentinel Human";
-                    characterRace = new MarkOfSentinelHuman();
-                }
+                race = "Human";
+                characterRace = new Human();
             }
 
             if (randomNumber == 8)
@@ -573,7 +522,7 @@ namespace dnd_character_gen
 
         private string generateAlignment()
         {
-            string alignment = "";
+            string alignment = ""; //TODO: personality traits should ALIGN heh with alignment
             int randomNumber = NumberGen.gen(9);
 
             if (randomNumber == 0)
@@ -672,12 +621,12 @@ namespace dnd_character_gen
                 sortedStats[kvp.Key] += racialAbilityScores[kvp.Key];
             }
 
-            /*foreach(var stat in sortedStats) 
+            /*foreach(var stat in sortedStats)
             {
                 stats[stat.Key] = sortedStats[stat.Key];
             }
 
-            foreach(var stat in stats) 
+            foreach(var stat in stats)
             {
                 statModifiers[stat.Key] = calculateStatModifier(stat.Value);
             }*/

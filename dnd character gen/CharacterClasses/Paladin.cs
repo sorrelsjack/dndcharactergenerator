@@ -74,7 +74,7 @@ namespace dnd_character_gen.CharacterClasses
             List<string> availableSkills = new List<string>()
                 { "Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion" };
 
-            string skill = availableSkills[NumberGen.gen(6)]; //TODO make it so that it accounts for a 0 index system.. sigh.
+            string skill = availableSkills[NumberGen.gen(6)];
             skillProficiencies.Add(skill);
             availableSkills.Remove(skill);
 

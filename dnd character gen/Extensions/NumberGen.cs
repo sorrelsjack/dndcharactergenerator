@@ -6,7 +6,7 @@ namespace dnd_character_gen.Extensions
     {
         public static int gen(int endNumber)
         {
-            Random rnd = new Random(Guid.NewGuid().GetHashCode()); //Let's make sure it's inclusive of endNumber. Maybe.
+            Random rnd = new Random(Guid.NewGuid().GetHashCode());
             return rnd.Next(0, endNumber);
         }
 
