@@ -1,17 +1,16 @@
-﻿using dnd_character_gen.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using dnd_character_gen.Extensions;
 
-namespace dnd_character_gen.CharacterLife.Tables {
-    class SupernaturalEvents {
-        public SupernaturalEvents() {
-
+namespace dnd_character_gen.CharacterLife.Tables
+{
+    internal class SupernaturalEvents
+    {
+        public SupernaturalEvents()
+        {
         }
 
-        public string Roll() {
+        public string Roll()
+        {
             string result = "";
             int randomNumber = NumberGen.gen(101);
 
@@ -33,8 +32,9 @@ namespace dnd_character_gen.CharacterLife.Tables {
                 result = "You witnessed a minor miracle.";
             else if (61 <= randomNumber && randomNumber <= 70)
                 result = "You explored an empty house and found it to be haunted.";
-            else if (71 <= randomNumber && randomNumber <= 75) {
-                Dictionary<int, string> creatures = new Dictionary<int, string> 
+            else if (71 <= randomNumber && randomNumber <= 75)
+            {
+                Dictionary<int, string> creatures = new Dictionary<int, string>
                 {
                     { 1, "Celestial" },
                     { 2, "Devil" },
@@ -57,7 +57,7 @@ namespace dnd_character_gen.CharacterLife.Tables {
             else if (96 <= randomNumber && randomNumber <= 100)
                 result = "You saw a portal that you believe leads to another plane or existence.";
 
-                return result;
+            return result;
         }
     }
 }

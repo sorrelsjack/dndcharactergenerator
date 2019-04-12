@@ -445,7 +445,7 @@ namespace dnd_character_gen.CharacterLife
 
                 if (1 <= randomNumber && randomNumber <= 10)
                 {
-                    Tragedies tragedies = new Tragedies();
+                    Tragedies tragedies = new Tragedies(parents, siblings);
                     lifeEvents.Add($"You suffered a tragedy. {tragedies.Roll()}");
                 }
                 else if (11 <= randomNumber && randomNumber <= 20)
@@ -483,7 +483,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (51 <= randomNumber && randomNumber <= 70)
                 {
-                    lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp."); //TODO: money
+                    lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp.");
                 }
                 else if (71 <= randomNumber && randomNumber <= 75)
                 {

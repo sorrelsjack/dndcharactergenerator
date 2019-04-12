@@ -17,6 +17,11 @@ namespace dnd_character_gen.CharacterLife
         {
         }
 
+        public Individual(string status)
+        {
+            this.status = status;
+        }
+
         public static Individual generateIndividual()
         {
             Individual individual = new Individual();
@@ -56,25 +61,30 @@ namespace dnd_character_gen.CharacterLife
 
         public void setStatus()
         {
-            int randomNumber = DiceRoll.roll(3, 6);
-
-            if (randomNumber == 3)
+            if (status != null)
             {
-                status = "Dead";
-                setCauseOfDeath();
+                int randomNumber = DiceRoll.roll(3, 6);
+
+                if (randomNumber == 3)
+                {
+                    status = "Dead";
+                    setCauseOfDeath();
+                }
+                else if (randomNumber == 4 || randomNumber == 5)
+                    status = "Missing or unknown";
+                else if (6 <= randomNumber && randomNumber <= 8)
+                    status = "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties";
+                else if (9 <= randomNumber && randomNumber <= 12)
+                    status = "Alive and well";
+                else if (13 <= randomNumber && randomNumber <= 15)
+                    status = "Alive and quite successful";
+                else if (randomNumber == 16 || randomNumber == 17)
+                    status = "Alive and infamous";
+                else if (randomNumber == 18)
+                    status = "Alive and famous";
             }
-            else if (randomNumber == 4 || randomNumber == 5)
-                status = "Missing or unknown";
-            else if (6 <= randomNumber && randomNumber <= 8)
-                status = "Alive, but doing poorly due to injury, financial trouble, or relationship difficulties";
-            else if (9 <= randomNumber && randomNumber <= 12)
-                status = "Alive and well";
-            else if (13 <= randomNumber && randomNumber <= 15)
-                status = "Alive and quite successful";
-            else if (randomNumber == 16 || randomNumber == 17)
-                status = "Alive and infamous";
-            else if (randomNumber == 18)
-                status = "Alive and famous";
+            else if (status == "Dead")
+                setCauseOfDeath();
         }
 
         public void setLivingStatus()
