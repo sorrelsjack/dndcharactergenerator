@@ -13,6 +13,7 @@ namespace dnd_character_gen.CharacterLife
         public List<Individual> otherFamilyMembers = new List<Individual>();
         public List<Individual> individuals = new List<Individual>();
         public List<string> lifeEvents = new List<string>();
+        public List<string> equipment = new List<string>();
 
         public string birthplace = "";
         public string strangeBirthEvent = "";
@@ -307,7 +308,8 @@ namespace dnd_character_gen.CharacterLife
                 {
                     foreach (Parent parent in parents)
                     {
-                        parent.setAbsence(); //TODO: fix NRE here
+                        if (parent != null)
+                            parent.setAbsence();
                     }
                 }
                 else if (36 <= randomNumber && randomNumber <= 75 && !parents.All(x => x == null))
@@ -450,6 +452,7 @@ namespace dnd_character_gen.CharacterLife
                 {
                     Boons boons = new Boons();
                     lifeEvents.Add($"You gained a bit of good fortune. {boons.Roll()}");
+                    equipment.Add(boons.GetItem());
                 }
                 else if (21 <= randomNumber && randomNumber <= 30)
                 {
@@ -480,7 +483,7 @@ namespace dnd_character_gen.CharacterLife
                 }
                 else if (51 <= randomNumber && randomNumber <= 70)
                 {
-                    lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp.");
+                    lifeEvents.Add("You spent time working in a job related to your background. Start the game with an extra 2d6 gp."); //TODO: money
                 }
                 else if (71 <= randomNumber && randomNumber <= 75)
                 {
@@ -491,6 +494,7 @@ namespace dnd_character_gen.CharacterLife
                 {
                     Adventures adventures = new Adventures();
                     lifeEvents.Add($"You went on an adventure. {adventures.Roll()} Work with your DM to determine the nature of the adventure and the creatures you encountered.");
+                    equipment.Add(adventures.GetItem());
                 }
                 else if (81 <= randomNumber && randomNumber <= 85)
                 {
@@ -520,6 +524,9 @@ namespace dnd_character_gen.CharacterLife
                 }
             }
         }
+
+        public List<string> setEquipment()
+            => equipment;
 
         private void setTragedy()
         {

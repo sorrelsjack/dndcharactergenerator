@@ -6,16 +6,9 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterRaces
 {
-    public class HalfElf : ICharacterRace //TODO: fix this to reflect heritage (features). Fix subraces too.
+    public class HalfElf : ICharacterRace
     {
-        //Some half-elves in Faerûn have a racial trait in place of the Skill Versatility trait. If your DM allows it, your half-elf character
-        //can forgo Skill Versatility and instead take the elf trait Keen Senses or a trait based on your elf parentage:
-
-        //Half-elves use either human or elven naming conventions.As if to emphasize that they don’t really fit in to either society,
-        //half-elves raised among humans are often given elven names, and those raised among elves often take human names.
         private string raisedAmong = "";
-
-        private string elfHeritage = ""; //TODO: set this equal to the elf sub race. Then, use fields of subraces to get features
 
         private List<string> maleElfNames = new List<string>
         {
@@ -55,7 +48,7 @@ namespace dnd_character_gen.CharacterRaces
             "Balama", "Dona", "Faila", "Jalana", "Luisa", "Marta", "Quara", "Selise", "Vonda"
         };
 
-        public virtual Dictionary<string, int> setAbilityScores() //TODO: need to check into half elf stats and stuff again
+        public virtual Dictionary<string, int> setAbilityScores()
         {
             Dictionary<string, int> abilityScores = new Dictionary<string, int>
             {
@@ -82,7 +75,8 @@ namespace dnd_character_gen.CharacterRaces
             { "Darkvision", "Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray." },
             { "Fey Ancestry", "You have advantage on saving throws against being charmed, and magic can’t put you to sleep." },
             { "Skill Versatility", "You gain proficiency in two skills of your choice." },
-            { "Languages", "You can speak, read, and write Common, Elvish, and one extra language of your choice." }
+            { "Languages", "You can speak, read, and write Common, Elvish, and one extra language of your choice." },
+            { "Impressions", $"You were raised among {raisedAmong}." } //I added this.
         };
 
         public int setHitPointModifier() => 0;
@@ -110,7 +104,7 @@ namespace dnd_character_gen.CharacterRaces
 
             if (randomNumber == 0)
             {
-                raisedAmong = "Humans";
+                raisedAmong = "humans";
                 randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                     name = femaleElfNames[NumberGen.gen(femaleElfNames.Count)];
@@ -119,7 +113,7 @@ namespace dnd_character_gen.CharacterRaces
             }
             else
             {
-                raisedAmong = "Elves";
+                raisedAmong = "elves";
                 randomNumber = NumberGen.gen(2);
                 if (randomNumber == 0)
                     name = femaleHumanNames[NumberGen.gen(femaleHumanNames.Count)];

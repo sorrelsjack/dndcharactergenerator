@@ -5,7 +5,7 @@ using dnd_character_gen.Interfaces;
 
 namespace dnd_character_gen.CharacterRaces
 {
-    public class Human : ICharacterRace //TODO: look at human subraces again
+    public class Human : ICharacterRace
     {
         private List<string> maleNames = new List<string>
         {

@@ -518,6 +518,7 @@ namespace dnd_character_gen
             characterBackstory.setClassDecision(characterClass);
             characterBackstory.setAge();
             characterBackstory.setLifeEvents();
+            equipment.AddRange(characterBackstory.setEquipment());
         }
 
         private string generateAlignment()
